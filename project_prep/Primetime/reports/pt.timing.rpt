@@ -1,0 +1,86 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-max_paths 1
+	-sort_by slack
+Design : top
+Version: X-2025.06
+Date   : Sat Jan 31 17:41:56 2026
+****************************************
+
+
+  Startpoint: p6_reg[1] (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out1_reg[16]
+               (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  p6_reg[1]/CLK (DFFHQNx1_ASAP7_75t_R)                    0.00       0.00 r
+  p6_reg[1]/QN (DFFHQNx1_ASAP7_75t_R)                    69.92 &    69.92 f
+  U3715/Y (NAND2x1p5_ASAP7_75t_R)                        34.46 &   104.38 r
+  U3712/Y (NAND2x1p5_ASAP7_75t_R)                        14.64 &   119.02 f
+  U2812/Y (INVx1_ASAP7_75t_R)                            15.05 &   134.07 r
+  FE_RC_627_0/Y (INVxp67_ASAP7_75t_R)                    10.56 &   144.63 f
+  FE_RC_625_0/Y (NAND2xp5_ASAP7_75t_R)                   13.92 &   158.55 r
+  FE_RC_624_0/Y (INVxp67_ASAP7_75t_R)                    13.25 &   171.81 f
+  FE_RC_622_0/Y (OAI21x1_ASAP7_75t_R)                    18.22 &   190.03 r
+  mult_67/S3_3_3/CON (FAx1_ASAP7_75t_R)                  22.78 &   212.81 f
+  U2790/Y (INVx1_ASAP7_75t_R)                            20.25 &   233.06 r
+  FE_RC_508_0/Y (OA21x2_ASAP7_75t_R)                     28.42 &   261.48 r
+  mult_67/S3_5_3/CON (FAx1_ASAP7_75t_R)                  18.65 &   280.14 f
+  mult_67/S3_5_3/SN (FAx1_ASAP7_75t_R)                   19.25 &   299.39 r
+  U2782/Y (INVx1_ASAP7_75t_R)                            16.71 &   316.10 f
+  FE_RC_328_0/Y (INVx1_ASAP7_75t_R)                      10.16 &   326.26 r
+  FE_RC_332_0/Y (NAND2xp5_ASAP7_75t_R)                   16.43 &   342.70 f
+  FE_RC_325_0/Y (AO21x2_ASAP7_75t_R)                     31.50 &   374.20 f
+  mult_67/S2_7_2/CON (FAx1_ASAP7_75t_R)                  22.80 &   397.00 r
+  U2770/Y (INVx1_ASAP7_75t_R)                            21.16 &   418.16 f
+  mult_67/S2_8_2/CON (FAx1_ASAP7_75t_R)                  25.81 &   443.97 r
+  U3574/Y (INVx1_ASAP7_75t_R)                            21.25 &   465.22 f
+  mult_67/S2_9_2/CON (FAx1_ASAP7_75t_R)                  25.84 &   491.07 r
+  mult_67/S2_9_2/SN (FAx1_ASAP7_75t_R)                   18.35 &   509.42 f
+  U2760/Y (INVx1_ASAP7_75t_R)                            19.71 &   529.12 r
+  mult_67/S2_10_1/SN (FAx1_ASAP7_75t_R)                  54.78 &   583.91 f
+  U3991/Y (NOR2xp33_ASAP7_75t_R)                         40.02 &   623.93 r
+  U3427/Y (XNOR2x2_ASAP7_75t_R)                          49.40 &   673.33 f
+  U3061/Y (XOR2x2_ASAP7_75t_R)                           38.41 &   711.74 r
+  add_2_root_add_0_root_add_74_3/U1_12/CON (FAx1_ASAP7_75t_R)
+                                                         18.90 &   730.64 f
+  U3702/Y (INVx1_ASAP7_75t_R)                            17.67 &   748.31 r
+  add_2_root_add_0_root_add_74_3/U1_13/CON (FAx1_ASAP7_75t_R)
+                                                         21.78 &   770.09 f
+  add_2_root_add_0_root_add_74_3/U1_13/SN (FAx1_ASAP7_75t_R)
+                                                         20.21 &   790.30 r
+  FE_OCPC93_add_2_root_add_0_root_add_74_3_n26/Y (INVx1_ASAP7_75t_R)
+                                                         16.86 &   807.16 f
+  FE_RC_488_0/Y (MAJx2_ASAP7_75t_R)                      28.13 &   835.29 f
+  FE_RC_457_0/Y (MAJx2_ASAP7_75t_R)                      27.48 &   862.77 f
+  add_0_root_add_0_root_add_74_3/U1_15/CON (FAx1_ASAP7_75t_R)
+                                                         23.21 &   885.98 r
+  FE_RC_714_0/Y (XNOR2xp5_ASAP7_75t_R)                   26.14 &   912.12 r
+  FE_RC_16_0/Y (INVx1_ASAP7_75t_R)                       11.70 &   923.81 f
+  FE_RC_15_0/Y (OAI22xp5_ASAP7_75t_R)                    17.47 &   941.28 r
+  FE_RC_88_0/Y (AO21x1_ASAP7_75t_R)                      21.53 &   962.81 r
+  out1_reg[16]/D (DFFHQNx2_ASAP7_75t_R)                   0.02 &   962.83 r
+  data arrival time                                                962.83
+
+  clock clk (rise edge)                                 972.00     972.00
+  clock network delay (ideal)                             0.00     972.00
+  out1_reg[16]/CLK (DFFHQNx2_ASAP7_75t_R)                          972.00 r
+  clock reconvergence pessimism                           0.00     972.00
+  clock uncertainty                                      -0.01     971.99
+  library setup time                                     -7.29     964.70
+  data required time                                               964.70
+  ------------------------------------------------------------------------------
+  data required time                                               964.70
+  data arrival time                                               -962.83
+  ------------------------------------------------------------------------------
+  slack (MET)                                                        1.87
+
+
+1

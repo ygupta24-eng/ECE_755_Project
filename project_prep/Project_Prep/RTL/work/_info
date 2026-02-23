@@ -1,0 +1,63 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dF:/Into_to_Comp_Arch_ECE_552/phase_5
+vDNN
+Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z1 !s110 1769189725
+!i10b 1
+!s100 HRI=OkQ73FaQ?E?:M`01:0
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IS4iDVJeeQT9`J^;Bg1[6V2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+S1
+Z4 dF:/ECE_755_Advanced_VLSI_Design/Project_Prep/RTL
+w1769189717
+8F:/ECE_755_Advanced_VLSI_Design/Project_Prep/RTL/DNN.sv
+FF:/ECE_755_Advanced_VLSI_Design/Project_Prep/RTL/DNN.sv
+!i122 2
+L0 1 63
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1769189724.000000
+!s107 F:/ECE_755_Advanced_VLSI_Design/Project_Prep/RTL/DNN.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|F:/ECE_755_Advanced_VLSI_Design/Project_Prep/RTL/DNN.sv|
+!i113 1
+Z6 o-work work -sv
+Z7 tCvgOpt 0
+n@d@n@n
+vDNN_tb
+R0
+R1
+!i10b 1
+!s100 k7N;VHK;Fnz3`=59U[>Na0
+R2
+I[Sa7U>NcFnQCUzIi`<Iz22
+R3
+S1
+R4
+w1769184946
+8F:/ECE_755_Advanced_VLSI_Design/Project_Prep/RTL/DNN_tb.sv
+FF:/ECE_755_Advanced_VLSI_Design/Project_Prep/RTL/DNN_tb.sv
+!i122 3
+L0 1 99
+R5
+r1
+!s85 0
+31
+!s108 1769189725.000000
+!s107 F:/ECE_755_Advanced_VLSI_Design/Project_Prep/RTL/DNN_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|F:/ECE_755_Advanced_VLSI_Design/Project_Prep/RTL/DNN_tb.sv|
+!i113 1
+R6
+R7
+n@d@n@n_tb

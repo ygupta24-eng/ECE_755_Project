@@ -1,8 +1,9 @@
 module pe #(
     parameter DATA_W = 8,
-    parameter ACC_W  = 24,
-    parameter CH_PAR = 8
-)(
+    parameter CH_PAR = 8,
+    parameter ACC_W  = 24    
+)
+(
     input  logic                 clk,
     input  logic                 rst_n,
 

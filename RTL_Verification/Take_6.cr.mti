@@ -1,0 +1,15 @@
+{C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Verification/tb_tasks_New_CNN.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Verification/tb_tasks_New_CNN.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling package tb_tasks
+
+Top level modules:
+	--none--
+
+} {} {}} {C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Verification/tb_CNN.sv} {1 {vlog -work work -sv -stats=none {C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Verification/tb_CNN.sv}
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module tb_pe_zigzag_v2
+
+Top level modules:
+	tb_pe_zigzag_v2
+
+} {} {}}

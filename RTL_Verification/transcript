@@ -1,7 +1,56 @@
-# Compile of tb_tasks_CNN.sv failed with 30 errors.
-# Compile of tb_tasks_CNN.sv failed with 24 errors.
-# Compile of tb_tasks_CNN.sv failed with 6 errors.
-# Compile of tb_tasks_CNN.sv was successful.
-# Compile of tb_tasks_CNN.sv was successful.
-# Compile of pe_cnn.sv was successful with warnings.
-# 2 compiles, 0 failed with no errors.
+# Compile of tb_CNN.sv was successful.
+# Compile of tb_tasks_New_CNN.sv was successful.
+# Compile of pe_small.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.tb_pe_zigzag_v2
+# vsim -gui work.tb_pe_zigzag_v2 
+# Start time: 20:35:53 on Mar 11,2026
+# Loading sv_std.std
+# Loading work.tb_pe_zigzag_v2
+# Loading work.pe
+# ** Error (suppressible): (vsim-3389) Port 'en' not found in the connected module (3rd connection).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pe_zigzag_v2/dut File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Verification/tb_CNN.sv Line: 54
+# ** Error (suppressible): (vsim-3389) Port 'src_sel' not found in the connected module (5th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pe_zigzag_v2/dut File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Verification/tb_CNN.sv Line: 54
+# ** Error (suppressible): (vsim-3389) Port 'dst_sel' not found in the connected module (6th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_pe_zigzag_v2/dut File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Verification/tb_CNN.sv Line: 54
+# Error loading design
+# End time: 20:35:54 on Mar 11,2026, Elapsed time: 0:00:01
+# Errors: 3, Warnings: 4
+# Compile of tb_CNN.sv was successful.
+# Compile of tb_tasks_New_CNN.sv was successful.
+# Compile of pe_small.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.tb_pe_zigzag_v2
+# vsim -gui work.tb_pe_zigzag_v2 
+# Start time: 20:40:04 on Mar 11,2026
+# Loading sv_std.std
+# Loading work.tb_pe_zigzag_v2
+# Loading work.pe
+add wave -position insertpoint sim:/tb_pe_zigzag_v2/*
+run -all
+# ========================================
+#   ZigZag PE Testbench v2
+#   src=RIGHT, dst=UP, compute on cycle 4
+# ========================================
+# [RESET] Done
+# [WEIGHT] w_reg <= 5
+# --- Cycles 1-3 : receive RIGHT + pass UP (en=0) ---
+#   cycle 1 : act_from_right=10  act_to_up=0  psum_out=0
+#   cycle 2 : act_from_right=20  act_to_up=10  psum_out=0
+#   cycle 3 : act_from_right=30  act_to_up=20  psum_out=0
+# --- Cycle 4 : last activation + en=1 for exactly 1 cycle ---
+#   cycle 4 : act_from_right=40  act_to_up=30  psum_out=150  golden=150  [en now LOW]
+# --- Post-compute : en=0, psum must stay frozen ---
+#   frozen cycle 1 : psum_out=150  golden=150
+#   frozen cycle 2 : psum_out=150  golden=150
+#   frozen cycle 3 : psum_out=150  golden=150
+# [FINAL] OK  psum_out=150
+# [AFTER_CLR] OK  psum_out=0
+# ========================================
+#   Testbench DONE
+# ========================================
+# ** Note: $finish    : C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Verification/tb_CNN.sv(244)
+#    Time: 176 ns  Iteration: 0  Instance: /tb_pe_zigzag_v2
+# 1
+# Break in Module tb_pe_zigzag_v2 at C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Verification/tb_CNN.sv line 244

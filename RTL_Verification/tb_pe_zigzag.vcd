@@ -1,0 +1,475 @@
+$date
+	Wed Mar 11 20:27:47 2026
+$end
+$version
+	ModelSim Version 2020.1
+$end
+$timescale
+	1ps
+$end
+
+$scope module tb_pe_zigzag $end
+$var parameter 32 ! DATA_W $end
+$var parameter 32 " ACC_W $end
+$var reg 1 # clk $end
+$var reg 1 $ rst_n $end
+$var reg 1 % pe_clk_en $end
+$var reg 1 & move_en $end
+$var reg 2 ' sel_src [1:0] $end
+$var reg 8 ( act_from_left [7:0] $end
+$var reg 8 ) act_from_right [7:0] $end
+$var reg 8 * act_from_up [7:0] $end
+$var reg 8 + act_from_down [7:0] $end
+$var reg 8 , act_to_left [7:0] $end
+$var reg 8 - act_to_right [7:0] $end
+$var reg 8 . act_to_up [7:0] $end
+$var reg 8 / act_to_down [7:0] $end
+$var reg 1 0 w_ld_en $end
+$var reg 8 1 w_in [7:0] $end
+$var reg 8 2 w_out [7:0] $end
+$var reg 24 3 psum_out [23:0] $end
+$var reg 1 4 psum_clr $end
+$var reg 24 5 golden_psum [23:0] $end
+$var reg 8 6 golden_w [7:0] $end
+
+$scope task tick $end
+$upscope $end
+
+$scope task check_psum $end
+$upscope $end
+
+$scope module dut $end
+$var parameter 32 7 DATA_W $end
+$var parameter 32 8 ACC_W $end
+$var wire 1 9 clk $end
+$var wire 1 : rst_n $end
+$var wire 1 ; pe_clk_en $end
+$var wire 1 < move_en $end
+$var wire 1 = sel_src [1] $end
+$var wire 1 > sel_src [0] $end
+$var wire 1 ? act_from_left [7] $end
+$var wire 1 @ act_from_left [6] $end
+$var wire 1 A act_from_left [5] $end
+$var wire 1 B act_from_left [4] $end
+$var wire 1 C act_from_left [3] $end
+$var wire 1 D act_from_left [2] $end
+$var wire 1 E act_from_left [1] $end
+$var wire 1 F act_from_left [0] $end
+$var wire 1 G act_from_right [7] $end
+$var wire 1 H act_from_right [6] $end
+$var wire 1 I act_from_right [5] $end
+$var wire 1 J act_from_right [4] $end
+$var wire 1 K act_from_right [3] $end
+$var wire 1 L act_from_right [2] $end
+$var wire 1 M act_from_right [1] $end
+$var wire 1 N act_from_right [0] $end
+$var wire 1 O act_from_up [7] $end
+$var wire 1 P act_from_up [6] $end
+$var wire 1 Q act_from_up [5] $end
+$var wire 1 R act_from_up [4] $end
+$var wire 1 S act_from_up [3] $end
+$var wire 1 T act_from_up [2] $end
+$var wire 1 U act_from_up [1] $end
+$var wire 1 V act_from_up [0] $end
+$var wire 1 W act_from_down [7] $end
+$var wire 1 X act_from_down [6] $end
+$var wire 1 Y act_from_down [5] $end
+$var wire 1 Z act_from_down [4] $end
+$var wire 1 [ act_from_down [3] $end
+$var wire 1 \ act_from_down [2] $end
+$var wire 1 ] act_from_down [1] $end
+$var wire 1 ^ act_from_down [0] $end
+$var reg 8 _ act_to_left [7:0] $end
+$var reg 8 ` act_to_right [7:0] $end
+$var reg 8 a act_to_up [7:0] $end
+$var reg 8 b act_to_down [7:0] $end
+$var wire 1 c w_ld_en $end
+$var wire 1 d w_in [7] $end
+$var wire 1 e w_in [6] $end
+$var wire 1 f w_in [5] $end
+$var wire 1 g w_in [4] $end
+$var wire 1 h w_in [3] $end
+$var wire 1 i w_in [2] $end
+$var wire 1 j w_in [1] $end
+$var wire 1 k w_in [0] $end
+$var reg 8 l w_out [7:0] $end
+$var reg 24 m psum_out [23:0] $end
+$var wire 1 n psum_clr $end
+$var reg 8 o move_reg [7:0] $end
+$var reg 8 p w_reg [7:0] $end
+$var reg 8 q incoming [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0#
+0$
+0%
+0&
+b1 '
+b0 (
+b0 )
+b0 *
+b0 +
+b0 ,
+b0 -
+b0 .
+b0 /
+00
+b0 1
+b0 2
+b0 3
+04
+b0 _
+b0 `
+b0 a
+b0 b
+b0 l
+b0 m
+b0 o
+b0 p
+b0 q
+b0 5
+b0 6
+b1000 !
+b11000 "
+b1000 7
+b11000 8
+09
+0:
+0;
+0<
+1>
+0=
+0F
+0E
+0D
+0C
+0B
+0A
+0@
+0?
+0N
+0M
+0L
+0K
+0J
+0I
+0H
+0G
+0V
+0U
+0T
+0S
+0R
+0Q
+0P
+0O
+0^
+0]
+0\
+0[
+0Z
+0Y
+0X
+0W
+0c
+0k
+0j
+0i
+0h
+0g
+0f
+0e
+0d
+0n
+$end
+#5000
+1#
+19
+#10000
+0#
+09
+#15000
+1#
+19
+#20000
+0#
+09
+#25000
+1#
+19
+#26000
+1$
+1:
+#30000
+0#
+09
+#35000
+1#
+19
+#40000
+0#
+09
+#45000
+1#
+19
+#46000
+b101 6
+b101 1
+10
+1k
+1i
+1c
+#50000
+0#
+09
+#55000
+1#
+19
+b101 p
+b101 l
+b101 2
+#56000
+00
+0c
+#60000
+0#
+09
+#65000
+1#
+19
+#66000
+1&
+b1010 )
+1<
+1M
+1K
+b1010 q
+#70000
+0#
+09
+#75000
+1#
+19
+b1010 o
+#76000
+b10100 )
+0M
+1L
+0K
+1J
+b10100 q
+#80000
+0#
+09
+#85000
+1#
+19
+b1010 _
+b10100 o
+b1010 ,
+#86000
+b11110 )
+1M
+1K
+b11110 q
+#90000
+0#
+09
+#95000
+1#
+19
+b10100 _
+b11110 o
+b10100 ,
+#96000
+b101000 )
+0M
+0L
+0J
+1I
+b101000 q
+#100000
+0#
+09
+#105000
+1#
+19
+b11110 _
+b101000 o
+b11110 ,
+#106000
+0&
+b0 )
+0<
+0K
+0I
+b0 q
+#110000
+0#
+09
+#115000
+1#
+19
+#116000
+b10 '
+1&
+1<
+0>
+1=
+#120000
+0#
+09
+#125000
+1#
+19
+b101000 b
+b0 o
+b101000 /
+#126000
+0&
+0<
+#130000
+0#
+09
+#135000
+1#
+19
+#136000
+b1 '
+1&
+b1010 )
+1%
+b11001000 5
+1<
+1;
+1M
+1K
+1>
+0=
+b1010 q
+#140000
+0#
+09
+#145000
+1#
+19
+b0 _
+b1010 o
+b0 ,
+#146000
+0%
+b10100 )
+0;
+0M
+1L
+0K
+1J
+b10100 q
+#150000
+0#
+09
+#155000
+1#
+19
+b1010 _
+b10100 o
+b1010 ,
+#156000
+b11110 )
+1M
+1K
+b11110 q
+#160000
+0#
+09
+#165000
+1#
+19
+b10100 _
+b11110 o
+b10100 ,
+#166000
+b101000 )
+0M
+0L
+0J
+1I
+b101000 q
+#170000
+0#
+09
+#175000
+1#
+19
+b11110 _
+b101000 o
+b11110 ,
+#176000
+0&
+b0 )
+0<
+0K
+0I
+b0 q
+#180000
+0#
+09
+#185000
+1#
+19
+#190000
+0#
+09
+#195000
+1#
+19
+#200000
+0#
+09
+#205000
+1#
+19
+#210000
+0#
+09
+#215000
+1#
+19
+#220000
+0#
+09
+#225000
+1#
+19
+#230000
+0#
+09
+#235000
+1#
+19
+#236000
+14
+1%
+1n
+1;
+#240000
+0#
+09
+#245000
+1#
+19
+#246000
+04
+b0 5
+0n
+#250000
+0#
+09
+#255000
+1#
+19
+b11001000 m
+b11001000 3

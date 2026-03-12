@@ -11,51 +11,153 @@ cModel Technology
 dC:/intelFPGA/20.1
 vpe
 Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z1 !s110 1772429943
+Z1 !s110 1773279594
 !i10b 1
-!s100 <4ljT<1[5641=ChMcKKSF2
+!s100 I;K_HlZV6chY<G:2M=01c2
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IZVZ8dKO8FQIjGlFYFDiDC0
-VDg1SIo80bB@j0V0VzS_@n1
+I8N]OgWKWW<f9ln;0=d0VE0
+Z3 VDg1SIo80bB@j0V0VzS_@n1
 S1
-Z3 dC:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Verification
-w1772425992
-8C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_cnn.sv
-FC:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_cnn.sv
-!i122 2
-L0 1 154
-Z4 OV;L;2020.1;71
+Z4 dC:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Verification
+w1773279589
+8C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Verification/pe_small.sv
+FC:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Verification/pe_small.sv
+!i122 74
+L0 1 127
+Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1772429943.000000
-!s107 C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_cnn.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_cnn.sv|
+Z6 !s108 1773279594.000000
+!s107 C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Verification/pe_small.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Verification/pe_small.sv|
 !i113 1
-Z6 o-work work -sv
-Z7 tCvgOpt 0
+Z7 o-work work -sv
+Z8 tCvgOpt 0
+vtb
+R0
+!s110 1773275530
+!i10b 1
+!s100 ePW]8>V2@`LNOzmg75;_10
+R2
+IU?^7R:FoPPA?_F8a0741I1
+R3
+S1
+R4
+w1773275508
+Z9 8C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Verification/tb_CNN.sv
+Z10 FC:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Verification/tb_CNN.sv
+!i122 43
+L0 3 139
+R5
+r1
+!s85 0
+31
+!s108 1773275530.000000
+Z11 !s107 C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Verification/tb_CNN.sv|
+Z12 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Verification/tb_CNN.sv|
+!i113 1
+R7
+R8
+Xtb_CNN_sv_unit
+R0
+DXx4 work 8 tb_tasks 0 22 ^VKSHM^M:l;fM<h=`YIl[2
+!s110 1773270199
+VI<BK=hIQl8m<X]6XJJ>h@0
+r1
+!s85 0
+!i10b 1
+!s100 :YjXh_8:8:G@Lk5LOSTmT2
+II<BK=hIQl8m<X]6XJJ>h@0
+!i103 1
+S1
+R4
+w1773270105
+R9
+R10
+!i122 19
+L0 2 0
+R5
+31
+!s108 1773270199.000000
+R11
+R12
+!i113 1
+R7
+R8
+ntb_@c@n@n_sv_unit
+vtb_pe_zigzag
+R0
+!s110 1773277356
+!i10b 1
+!s100 >9fkBoQ@=2N8b]U;8O41f0
+R2
+IDgF6`_[zVg3JJMGVW:4]e1
+R3
+S1
+R4
+w1773277305
+R9
+R10
+!i122 55
+L0 3 262
+R5
+r1
+!s85 0
+31
+!s108 1773277356.000000
+R11
+R12
+!i113 1
+R7
+R8
+vtb_pe_zigzag_v2
+R0
+R1
+!i10b 1
+!s100 Z7]5e;9fiZO4mR>BAh;4J1
+R2
+IhE5j8I=R^8CcH:e:b]RkJ0
+R3
+S1
+R4
+w1773278971
+R9
+R10
+!i122 72
+L0 13 243
+R5
+r1
+!s85 0
+31
+R6
+R11
+R12
+!i113 1
+R7
+R8
 Xtb_tasks
 R0
 R1
 !i10b 1
-!s100 BM8n@;E5_NL?^4lHB^S^V3
+!s100 RYmWPUz?dCRR]4==DLmZW0
 R2
-I;4=6Zafk]7T[m:nFoU6Y61
-V;4=6Zafk]7T[m:nFoU6Y61
+I^VKSHM^M:l;fM<h=`YIl[2
+V^VKSHM^M:l;fM<h=`YIl[2
 S1
-R3
-w1772429912
-8C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Verification/tb_tasks_CNN.sv
-FC:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Verification/tb_tasks_CNN.sv
-!i122 1
-L0 1 0
 R4
+w1773262562
+8C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Verification/tb_tasks_New_CNN.sv
+FC:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Verification/tb_tasks_New_CNN.sv
+!i122 73
+L0 1 0
+R5
 r1
 !s85 0
 31
-R5
-!s107 C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Verification/tb_tasks_CNN.sv|
-!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Verification/tb_tasks_CNN.sv|
-!i113 1
 R6
+!s107 C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Verification/tb_tasks_New_CNN.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Verification/tb_tasks_New_CNN.sv|
+!i113 1
 R7
+R8

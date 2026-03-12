@@ -1,0 +1,630 @@
+# Compile of tb_CNN.sv failed with 1 errors.
+# Compile of tb_tasks_New_CNN.sv was successful.
+# Compile of pe_small.sv was successful.
+# 3 compiles, 1 failed with 1 error.
+# Compile of tb_CNN.sv failed with 2 errors.
+# Compile of tb_tasks_New_CNN.sv was successful.
+# Compile of pe_small.sv was successful.
+# 3 compiles, 1 failed with 2 errors.
+# Compile of tb_CNN.sv failed with 2 errors.
+# Compile of tb_tasks_New_CNN.sv was successful.
+# Compile of pe_small.sv was successful.
+# 3 compiles, 1 failed with 2 errors.
+# Compile of tb_CNN.sv failed with 2 errors.
+# Compile of tb_tasks_New_CNN.sv was successful.
+# Compile of pe_small.sv was successful.
+# 3 compiles, 1 failed with 2 errors.
+# Compile of tb_CNN.sv was successful.
+# Compile of tb_tasks_New_CNN.sv was successful.
+# Compile of pe_small.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.tb
+# vsim -gui work.tb 
+# Start time: 15:25:51 on Mar 11,2026
+# Loading sv_std.std
+# Loading work.tb_tasks
+# Loading work.tb_CNN_sv_unit
+# Loading work.tb
+# ** Error: (vsim-3033) Instantiation of 'pe_array' failed. The design unit was not found.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 48
+#         Searched libraries:
+#             C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/work
+# Error loading design
+# End time: 15:25:52 on Mar 11,2026, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 10
+# Compile of tb_CNN.sv was successful.
+# Compile of tb_tasks_New_CNN.sv was successful.
+# Compile of pe_small.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.tb
+# vsim -gui work.tb 
+# Start time: 15:26:52 on Mar 11,2026
+# Loading sv_std.std
+# Loading work.tb_tasks
+# Loading work.tb_CNN_sv_unit
+# Loading work.tb
+# Loading work.pe
+# ** Error: (vsim-8282) Actual argument expression for ref formal 'act_from_down' is not an equivalent type.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 123
+# ** Error: (vsim-8282) Actual argument expression for ref formal 'act_from_up' is not an equivalent type.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 122
+# ** Error: (vsim-8282) Actual argument expression for ref formal 'act_from_right' is not an equivalent type.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 121
+# ** Error: (vsim-8282) Actual argument expression for ref formal 'act_from_left' is not an equivalent type.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 120
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 18, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /tb/dut File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 48
+# ** Error: (vsim-3063) Port 'w_ld_data' not found in the connected module (12th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/dut File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 48
+# ** Error (suppressible): (vsim-12027) Array connection type 'reg[23:0]$[0:7]' is incompatible with 'reg[23:0]' for  port (psum_out):  Can't mix packed and unpacked types.
+#    Time: 0 ps  Iteration: 0  Instance: /tb/dut File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 48
+# ** Warning: (vsim-3722) C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv(48): [TFMPC] - Missing connection for port 'act_to_left'.
+# ** Warning: (vsim-3722) C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv(48): [TFMPC] - Missing connection for port 'act_to_right'.
+# ** Warning: (vsim-3722) C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv(48): [TFMPC] - Missing connection for port 'act_to_up'.
+# ** Warning: (vsim-3722) C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv(48): [TFMPC] - Missing connection for port 'act_to_down'.
+# ** Warning: (vsim-3722) C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv(48): [TFMPC] - Missing connection for port 'w_in'.
+# ** Warning: (vsim-3722) C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv(48): [TFMPC] - Missing connection for port 'w_out'.
+# Error loading design
+# End time: 15:26:53 on Mar 11,2026, Elapsed time: 0:00:01
+# Errors: 6, Warnings: 9
+# Compile of tb_CNN.sv was successful.
+# Compile of tb_tasks_New_CNN.sv was successful.
+# Compile of pe_small.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.tb
+# vsim -gui work.tb 
+# Start time: 15:31:06 on Mar 11,2026
+# Loading sv_std.std
+# Loading work.tb_tasks
+# Loading work.tb_CNN_sv_unit
+# Loading work.tb
+# Loading work.pe
+# ** Error: (vsim-8282) Actual argument expression for ref formal 'act_from_down' is not an equivalent type.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 130
+# ** Error: (vsim-8282) Actual argument expression for ref formal 'act_from_up' is not an equivalent type.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 129
+# ** Error: (vsim-8282) Actual argument expression for ref formal 'act_from_right' is not an equivalent type.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 128
+# ** Error: (vsim-8282) Actual argument expression for ref formal 'act_from_left' is not an equivalent type.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 127
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'dut'.  Expected 18, found 13.
+#    Time: 0 ps  Iteration: 0  Instance: /tb/dut File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 55
+# ** Error: (vsim-3063) Port 'w_ld_data' not found in the connected module (12th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/dut File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 55
+# ** Error (suppressible): (vsim-12027) Array connection type 'reg[23:0]$[0:7]' is incompatible with 'reg[23:0]' for  port (psum_out):  Can't mix packed and unpacked types.
+#    Time: 0 ps  Iteration: 0  Instance: /tb/dut File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 55
+# ** Warning: (vsim-3722) C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv(55): [TFMPC] - Missing connection for port 'act_to_left'.
+# ** Warning: (vsim-3722) C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv(55): [TFMPC] - Missing connection for port 'act_to_right'.
+# ** Warning: (vsim-3722) C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv(55): [TFMPC] - Missing connection for port 'act_to_up'.
+# ** Warning: (vsim-3722) C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv(55): [TFMPC] - Missing connection for port 'act_to_down'.
+# ** Warning: (vsim-3722) C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv(55): [TFMPC] - Missing connection for port 'w_in'.
+# ** Warning: (vsim-3722) C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv(55): [TFMPC] - Missing connection for port 'w_out'.
+# Error loading design
+# End time: 15:31:06 on Mar 11,2026, Elapsed time: 0:00:00
+# Errors: 6, Warnings: 9
+# Compile of tb_CNN.sv failed with 1 errors.
+# Compile of tb_tasks_New_CNN.sv was successful.
+# Compile of pe_small.sv was successful.
+# 3 compiles, 1 failed with 1 error.
+# Compile of tb_CNN.sv was successful.
+# Compile of tb_tasks_New_CNN.sv was successful.
+# Compile of pe_small.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.tb
+# vsim -gui work.tb 
+# Start time: 15:33:25 on Mar 11,2026
+# Loading sv_std.std
+# Loading work.tb_tasks
+# Loading work.tb_CNN_sv_unit
+# Loading work.tb
+# Loading work.pe
+# ** Error: (vsim-8282) Actual argument expression for ref formal 'act_from_down' is not an equivalent type.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 138
+# ** Error: (vsim-8282) Actual argument expression for ref formal 'act_from_up' is not an equivalent type.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 137
+# ** Error: (vsim-8282) Actual argument expression for ref formal 'act_from_right' is not an equivalent type.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 136
+# ** Error: (vsim-8282) Actual argument expression for ref formal 'act_from_left' is not an equivalent type.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 135
+# ** Error (suppressible): (vsim-3389) Port 'w_ld_data' not found in the connected module (16th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/dut File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 55
+# ** Error (suppressible): (vsim-3389) Port 'Win' not found in the connected module (18th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/dut File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 55
+# ** Error (suppressible): (vsim-3389) Port 'direction' not found in the connected module (20th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/dut File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 55
+# ** Error (suppressible): (vsim-3389) Port 'data' not found in the connected module (21st connection).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/dut File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 55
+# ** Error (suppressible): (vsim-12027) Array connection type 'reg[23:0]$[0:7]' is incompatible with 'reg[23:0]' for  port (psum_out):  Can't mix packed and unpacked types.
+#    Time: 0 ps  Iteration: 0  Instance: /tb/dut File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 55
+# Error loading design
+# End time: 15:33:25 on Mar 11,2026, Elapsed time: 0:00:00
+# Errors: 9, Warnings: 3
+# Compile of tb_CNN.sv was successful.
+# Compile of tb_tasks_New_CNN.sv was successful.
+# Compile of pe_small.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.tb
+# vsim -gui work.tb 
+# Start time: 15:36:46 on Mar 11,2026
+# Loading sv_std.std
+# Loading work.tb_tasks
+# Loading work.tb_CNN_sv_unit
+# Loading work.tb
+# Loading work.pe
+# ** Error: (vsim-8282) Actual argument expression for ref formal 'act_from_down' is not an equivalent type.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 138
+# ** Error: (vsim-8282) Actual argument expression for ref formal 'act_from_up' is not an equivalent type.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 137
+# ** Error: (vsim-8282) Actual argument expression for ref formal 'act_from_right' is not an equivalent type.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 136
+# ** Error: (vsim-8282) Actual argument expression for ref formal 'act_from_left' is not an equivalent type.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 135
+# ** Error (suppressible): (vsim-3389) Port 'w_ld_data' not found in the connected module (16th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/dut File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 55
+# ** Error (suppressible): (vsim-3389) Port 'direction' not found in the connected module (20th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/dut File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 55
+# ** Error (suppressible): (vsim-3389) Port 'data' not found in the connected module (21st connection).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/dut File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 55
+# ** Error (suppressible): (vsim-12027) Array connection type 'reg[23:0]$[0:7]' is incompatible with 'reg[23:0]' for  port (psum_out):  Can't mix packed and unpacked types.
+#    Time: 0 ps  Iteration: 0  Instance: /tb/dut File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 55
+# Error loading design
+# End time: 15:36:46 on Mar 11,2026, Elapsed time: 0:00:00
+# Errors: 8, Warnings: 2
+# Compile of tb_CNN.sv was successful.
+# Compile of tb_tasks_New_CNN.sv was successful.
+# Compile of pe_small.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.tb
+# vsim -gui work.tb 
+# Start time: 15:38:17 on Mar 11,2026
+# Loading sv_std.std
+# Loading work.tb_tasks
+# Loading work.tb_CNN_sv_unit
+# Loading work.tb
+# Loading work.pe
+# ** Error: (vsim-8282) Actual argument expression for ref formal 'act_from_down' is not an equivalent type.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 136
+# ** Error: (vsim-8282) Actual argument expression for ref formal 'act_from_up' is not an equivalent type.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 135
+# ** Error: (vsim-8282) Actual argument expression for ref formal 'act_from_right' is not an equivalent type.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 134
+# ** Error: (vsim-8282) Actual argument expression for ref formal 'act_from_left' is not an equivalent type.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 133
+# ** Error (suppressible): (vsim-3389) Port 'w_ld_data' not found in the connected module (16th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/dut File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 55
+# ** Error (suppressible): (vsim-12027) Array connection type 'reg[23:0]$[0:7]' is incompatible with 'reg[23:0]' for  port (psum_out):  Can't mix packed and unpacked types.
+#    Time: 0 ps  Iteration: 0  Instance: /tb/dut File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 55
+# Error loading design
+# End time: 15:38:18 on Mar 11,2026, Elapsed time: 0:00:01
+# Errors: 6, Warnings: 2
+# Compile of tb_CNN.sv was successful.
+# Compile of tb_tasks_New_CNN.sv was successful.
+# Compile of pe_small.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.tb
+# vsim -gui work.tb 
+# Start time: 15:40:42 on Mar 11,2026
+# Loading sv_std.std
+# Loading work.tb_tasks
+# Loading work.tb_CNN_sv_unit
+# Loading work.tb
+# Loading work.pe
+# ** Error: (vsim-8282) Actual argument expression for ref formal 'act_from_down' is not an equivalent type.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 136
+# ** Error: (vsim-8282) Actual argument expression for ref formal 'act_from_up' is not an equivalent type.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 135
+# ** Error: (vsim-8282) Actual argument expression for ref formal 'act_from_right' is not an equivalent type.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 134
+# ** Error: (vsim-8282) Actual argument expression for ref formal 'act_from_left' is not an equivalent type.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 133
+# ** Error (suppressible): (vsim-3389) Port 'w_ld_data' not found in the connected module (16th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/dut File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 55
+# Error loading design
+# End time: 15:40:43 on Mar 11,2026, Elapsed time: 0:00:01
+# Errors: 5, Warnings: 2
+# Compile of tb_CNN.sv was successful.
+# Compile of tb_tasks_New_CNN.sv was successful.
+# Compile of pe_small.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.tb
+# vsim -gui work.tb 
+# Start time: 15:43:53 on Mar 11,2026
+# Loading sv_std.std
+# Loading work.tb_tasks
+# Loading work.tb_CNN_sv_unit
+# Loading work.tb
+# Loading work.pe
+# ** Error: (vsim-8282) Actual argument expression for ref formal 'act_from_down' is not an equivalent type.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 136
+# ** Error: (vsim-8282) Actual argument expression for ref formal 'act_from_up' is not an equivalent type.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 135
+# ** Error: (vsim-8282) Actual argument expression for ref formal 'act_from_right' is not an equivalent type.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 134
+# ** Error: (vsim-8282) Actual argument expression for ref formal 'act_from_left' is not an equivalent type.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 133
+# ** Error (suppressible): (vsim-3389) Port 'w_ld_data' not found in the connected module (16th connection).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/dut File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 55
+# Error loading design
+# End time: 15:43:54 on Mar 11,2026, Elapsed time: 0:00:01
+# Errors: 5, Warnings: 2
+# Compile of tb_CNN.sv failed with 2 errors.
+# Compile of tb_tasks_New_CNN.sv was successful.
+# Compile of pe_small.sv was successful.
+# 3 compiles, 1 failed with 2 errors.
+# Compile of tb_CNN.sv was successful.
+# Compile of tb_tasks_New_CNN.sv was successful.
+# Compile of pe_small.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.tb
+# vsim -gui work.tb 
+# Start time: 15:53:51 on Mar 11,2026
+# Loading sv_std.std
+# Loading work.tb_tasks
+# Loading work.tb_CNN_sv_unit
+# Loading work.tb
+# Loading work.pe
+# ** Error: (vsim-8282) Actual argument expression for ref formal 'act_from_down' is not an equivalent type.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 173
+# ** Error: (vsim-8282) Actual argument expression for ref formal 'act_from_up' is not an equivalent type.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 172
+# ** Error: (vsim-8282) Actual argument expression for ref formal 'act_from_right' is not an equivalent type.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 171
+# ** Error: (vsim-8282) Actual argument expression for ref formal 'act_from_left' is not an equivalent type.
+#    Time: 0 ps  Iteration: 0  Instance: /tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 170
+# Error loading design
+# End time: 15:53:52 on Mar 11,2026, Elapsed time: 0:00:01
+# Errors: 4, Warnings: 3
+# Compile of tb_CNN.sv was successful.
+# Compile of tb_tasks_New_CNN.sv was successful.
+# Compile of pe_small.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.tb
+# vsim -gui work.tb 
+# Start time: 15:56:18 on Mar 11,2026
+# ** Error: (vsim-13) Recompile work.tb_CNN_sv_unit because work.tb_tasks has changed.
+# ** Error (suppressible): (vsim-12) Recompile work.tb after work.tb_CNN_sv_unit is recompiled.
+# ** Error: (vsim-13) Recompile work.tb because work.tb_tasks has changed.
+# Error loading design
+# End time: 15:56:19 on Mar 11,2026, Elapsed time: 0:00:01
+# Errors: 3, Warnings: 2
+# Compile of tb_CNN.sv was successful.
+# Compile of tb_tasks_New_CNN.sv was successful.
+# Compile of pe_small.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.tb
+# vsim -gui work.tb 
+# Start time: 15:56:48 on Mar 11,2026
+# Loading sv_std.std
+# Loading work.tb_tasks
+# Loading work.tb_CNN_sv_unit
+# Loading work.tb
+# Loading work.pe
+add wave -position insertpoint sim:/tb/*
+run -all
+# RESET DONE
+# WEIGHTS LOADED
+# ACT MOVED dir=0 data=5
+# ** Error: PSUM MISMATCH DUT=0 GOLD=5
+#    Time: 115 ns  Scope: tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 195
+# PSUM CLEARED
+# ** Error: CLOCK GATING FAILED
+#    Time: 195 ns  Scope: tb_tasks.autotest_clock_gating File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_tasks_New_CNN.sv Line: 258
+# CLOCK GATING TEST DONE
+# TEST COMPLETE
+# ** Note: $finish    : C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv(227)
+#    Time: 245 ns  Iteration: 0  Instance: /tb
+# 1
+# Break in Module tb at C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv line 227
+quit -sim
+# End time: 16:05:35 on Mar 11,2026, Elapsed time: 0:08:47
+# Errors: 2, Warnings: 2
+# Compile of tb_CNN.sv was successful.
+# Compile of tb_tasks_New_CNN.sv was successful.
+# Compile of pe_small.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.tb
+# vsim -gui work.tb 
+# Start time: 16:05:47 on Mar 11,2026
+# Loading sv_std.std
+# Loading work.tb_tasks
+# Loading work.tb_CNN_sv_unit
+# Loading work.tb
+# Loading work.pe
+add wave -position insertpoint sim:/tb/*
+run -all
+# RESET DONE
+# Weight Loaded = 3
+# Activation injected from LEFT = 5
+# Shift upward
+# Shift upward
+# Shift upward
+# Computation cycle
+# Activation * Weight = 5 * 3
+# PSUM OUT = 15
+# PASS: PSUM correct
+# ** Note: $finish    : C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv(188)
+#    Time: 135 ns  Iteration: 0  Instance: /tb
+# 1
+# Break in Module tb at C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv line 188
+quit -sim
+# Compile of tb_CNN.sv was successful.
+# Compile of tb_tasks_New_CNN.sv was successful.
+# Compile of pe_small.sv was successful.
+# 3 compiles, 0 failed with no errors.
+# End time: 16:14:51 on Mar 11,2026, Elapsed time: 0:09:04
+# Errors: 0, Warnings: 3
+vsim -gui work.tb
+# vsim -gui work.tb 
+# Start time: 16:14:58 on Mar 11,2026
+# Loading sv_std.std
+# Loading work.tb_tasks
+# Loading work.tb_CNN_sv_unit
+# Loading work.tb
+# Loading work.pe
+add wave -position insertpoint sim:/tb/*
+run -all
+# RESET DONE
+# Weight Loaded = 3
+# Activation injected from LEFT = 5
+# Shift upward
+# Shift upward
+# Shift upward
+# Shift right
+# Shift right
+# Shift right
+# Shift down
+# Shift down
+# Shift down
+# Computation cycle
+# Activation * Weight = 5 * 3
+# PSUM OUT = 60
+# ** Error: FAIL: Expected 15 Got 60
+#    Time: 155 ns  Scope: tb File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 198
+# ** Note: $finish    : C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv(201)
+#    Time: 195 ns  Iteration: 0  Instance: /tb
+# 1
+# Break in Module tb at C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv line 201
+quit -sim
+# End time: 16:19:11 on Mar 11,2026, Elapsed time: 0:04:13
+# Errors: 1, Warnings: 1
+# Compile of tb_CNN.sv was successful.
+# Compile of tb_tasks_New_CNN.sv was successful.
+# Compile of pe_small.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.tb
+# vsim -gui work.tb 
+# Start time: 16:19:35 on Mar 11,2026
+# Loading sv_std.std
+# Loading work.tb_tasks
+# Loading work.tb_CNN_sv_unit
+# Loading work.tb
+# Loading work.pe
+add wave -position insertpoint sim:/tb/*
+run -all
+# Weight Loaded = 3
+# Cycle 1 : Inject activation from LEFT
+# Shift UP | psum_out = 0
+# Shift UP | psum_out = 15
+# Shift UP | psum_out = 15
+# Final psum_out = 15
+# Expected = 15
+# ** Note: $finish    : C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv(165)
+#    Time: 115 ns  Iteration: 0  Instance: /tb
+# 1
+# Break in Module tb at C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv line 165
+quit -sim
+# Compile of tb_CNN.sv was successful.
+# Compile of tb_tasks_New_CNN.sv was successful.
+# Compile of pe_small.sv was successful.
+# 3 compiles, 0 failed with no errors.
+# End time: 16:30:16 on Mar 11,2026, Elapsed time: 0:10:41
+# Errors: 0, Warnings: 3
+# Compile of tb_CNN.sv was successful.
+# Compile of tb_tasks_New_CNN.sv was successful.
+# Compile of pe_small.sv was successful.
+# 3 compiles, 0 failed with no errors.
+vsim -gui work.tb
+# vsim -gui work.tb 
+# Start time: 16:30:31 on Mar 11,2026
+# Loading sv_std.std
+# Loading work.tb
+# Loading work.pe
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_right'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[0]/COL[0]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_down'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[0]/COL[0]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_right'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[0]/COL[1]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_down'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[0]/COL[1]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_right'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[0]/COL[2]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_down'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[0]/COL[2]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_right'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[0]/COL[3]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_down'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[0]/COL[3]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_right'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[1]/COL[0]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_down'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[1]/COL[0]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_right'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[1]/COL[1]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_down'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[1]/COL[1]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_right'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[1]/COL[2]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_down'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[1]/COL[2]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_right'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[1]/COL[3]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_down'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[1]/COL[3]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_right'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[2]/COL[0]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_down'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[2]/COL[0]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_right'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[2]/COL[1]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_down'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[2]/COL[1]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_right'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[2]/COL[2]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_down'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[2]/COL[2]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_right'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[2]/COL[3]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_down'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[2]/COL[3]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_right'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[3]/COL[0]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_down'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[3]/COL[0]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_right'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[3]/COL[1]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_down'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[3]/COL[1]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_right'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[3]/COL[2]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_down'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[3]/COL[2]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_right'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[3]/COL[3]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_down'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[3]/COL[3]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+add wave -position insertpoint sim:/tb/*
+run -all
+# RESET COMPLETE
+# WEIGHTS LOADED VERTICALLY
+# ACTIVATIONS SHIFTED THROUGH ARRAY
+# COMPUTATION STARTED
+# PSUM[0][0] = 8
+# PSUM[0][1] = 12
+# PSUM[0][2] = 16
+# PSUM[0][3] = 15
+# PSUM[1][0] = 16
+# PSUM[1][1] = 24
+# PSUM[1][2] = 32
+# PSUM[1][3] = 30
+# PSUM[2][0] = 24
+# PSUM[2][1] = 36
+# PSUM[2][2] = 48
+# PSUM[2][3] = 45
+# PSUM[3][0] = 32
+# PSUM[3][1] = 48
+# PSUM[3][2] = 64
+# PSUM[3][3] = 60
+# ** Note: $finish    : C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv(189)
+#    Time: 225 ns  Iteration: 0  Instance: /tb
+# 1
+# Break in Module tb at C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv line 189
+add wave -position insertpoint {sim:/tb/ROW[3]/*}
+# ** UI-Msg: (vish-4014) No objects found matching '/tb/ROW[3]/*'.
+quit -sim
+# End time: 16:32:02 on Mar 11,2026, Elapsed time: 0:01:31
+# Errors: 0, Warnings: 34
+vsim -gui work.tb
+# vsim -gui work.tb 
+# Start time: 16:32:21 on Mar 11,2026
+# Loading sv_std.std
+# Loading work.tb
+# Loading work.pe
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_right'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[0]/COL[0]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_down'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[0]/COL[0]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_right'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[0]/COL[1]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_down'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[0]/COL[1]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_right'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[0]/COL[2]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_down'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[0]/COL[2]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_right'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[0]/COL[3]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_down'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[0]/COL[3]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_right'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[1]/COL[0]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_down'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[1]/COL[0]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_right'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[1]/COL[1]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_down'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[1]/COL[1]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_right'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[1]/COL[2]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_down'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[1]/COL[2]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_right'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[1]/COL[3]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_down'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[1]/COL[3]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_right'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[2]/COL[0]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_down'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[2]/COL[0]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_right'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[2]/COL[1]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_down'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[2]/COL[1]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_right'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[2]/COL[2]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_down'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[2]/COL[2]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_right'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[2]/COL[3]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_down'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[2]/COL[3]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_right'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[3]/COL[0]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_down'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[3]/COL[0]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_right'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[3]/COL[1]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_down'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[3]/COL[1]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_right'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[3]/COL[2]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_down'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[3]/COL[2]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_right'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(18).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[3]/COL[3]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (32) for port 'act_from_down'. The port definition is at: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/RTL_Design/pe_small.sv(20).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/ROW[3]/COL[3]/PE File: C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv Line: 73
+add wave -position insertpoint sim:/tb/*
+add wave -position insertpoint {sim:/tb/ROW[3]/*}
+# ** UI-Msg: (vish-4014) No objects found matching '/tb/ROW[3]/*'.
+add wave -position insertpoint sim:/tb/*
+run -all
+# RESET COMPLETE
+# WEIGHTS LOADED VERTICALLY
+# ACTIVATIONS SHIFTED THROUGH ARRAY
+# COMPUTATION STARTED
+# PSUM[0][0] = 8
+# PSUM[0][1] = 12
+# PSUM[0][2] = 16
+# PSUM[0][3] = 15
+# PSUM[1][0] = 16
+# PSUM[1][1] = 24
+# PSUM[1][2] = 32
+# PSUM[1][3] = 30
+# PSUM[2][0] = 24
+# PSUM[2][1] = 36
+# PSUM[2][2] = 48
+# PSUM[2][3] = 45
+# PSUM[3][0] = 32
+# PSUM[3][1] = 48
+# PSUM[3][2] = 64
+# PSUM[3][3] = 60
+# ** Note: $finish    : C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv(189)
+#    Time: 225 ns  Iteration: 0  Instance: /tb
+# 1
+# Break in Module tb at C:/Users/Tanya R J/Desktop/ECE/ECE755/ECE_755_Project/tb_CNN.sv line 189
+run -all
+# Break key hit
+# Simulation stop requested.
+# End time: 16:37:48 on Mar 11,2026, Elapsed time: 0:05:27
+# Errors: 0, Warnings: 34

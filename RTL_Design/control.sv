@@ -2,7 +2,18 @@ module zigzag_fsm (
     input  logic clk,
     input  logic rst_n,
     input  logic start,
-    output logic done
+    output logic done,
+
+    // ----------------------------------------------------------------
+    // Internal control signals → PE array
+    // ----------------------------------------------------------------
+    output logic       en,
+    output logic       move_en,
+    output logic       w_ld_en,
+    output logic       fifo_en,
+    output logic       psum_shift_en,
+    output logic       psum_clr,
+    output logic [1:0] direction
 );
 
     // ----------------------------------------------------------------
@@ -29,16 +40,7 @@ module zigzag_fsm (
     logic [1:0] h_cnt;    // h-shift counter     0..1 (row 0 only)
     logic [2:0] v_cnt;    // v-shift counter     0..6
 
-    // ----------------------------------------------------------------
-    // Internal control signals → PE array
-    // ----------------------------------------------------------------
-    logic       en;
-    logic       move_en;
-    logic       w_ld_en;
-    logic       fifo_en;
-    logic       psum_shift_en;
-    logic       psum_clr;
-    logic [1:0] direction;
+    
 
     // ----------------------------------------------------------------
     // State register

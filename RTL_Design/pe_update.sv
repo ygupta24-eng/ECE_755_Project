@@ -79,10 +79,10 @@ module pe #(
     // Always updated regardless of en/move_en/psum_shift_en
     // So when psum_shift_en rises, psum_hold_reg already has
     // the final accumulated psum_out value ready to go
-    always_ff @(posedge clk or negedge rst_n) begin
-        if (!rst_n) psum_hold_reg <= '0;
-        else        psum_hold_reg <= psum_out;
-    end
+    // always_ff @(posedge clk or negedge rst_n) begin
+    //     if (!rst_n) psum_hold_reg <= '0;
+    //     else        psum_hold_reg <= psum_out;
+    // end
 
     // ── shift edge detect ─────────────────────────────────────────
     logic psum_shift_en_d;
@@ -102,10 +102,12 @@ module pe #(
     logic [ACC_W-1:0] act_out_val;
     always_comb begin
         if (first_shift)
-            act_out_val = ACC_W'(psum_hold_reg);  // immediate: own psum
+            act_out_val = ACC_W'(psum_out);  // immediate: own psum
         else
             act_out_val = move_reg;                // normal or chain forward
     end
+
+    
 
     // ── Movement + output drive ───────────────────────────────────
     always_ff @(posedge clk or negedge rst_n) begin

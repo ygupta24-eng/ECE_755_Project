@@ -1,0 +1,374 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);color:var(--color-text-primary)}
+.tabs{display:flex;gap:6px;padding:8px 0 10px;flex-wrap:wrap}
+.tab{padding:4px 12px;border:0.5px solid var(--color-border-secondary);border-radius:20px;
+     cursor:pointer;font-size:11px;color:var(--color-text-secondary);background:var(--color-background-secondary)}
+.tab.on{background:var(--color-background-info);color:var(--color-text-info);
+        border-color:var(--color-border-info);font-weight:500}
+</style>
+<div class="tabs">
+  <button class="tab on" onclick="go('full')">Full array</button>
+  <button class="tab" onclick="go('peg')">PEG detail</button>
+  <button class="tab" onclick="go('io')">I/O ports</button>
+</div>
+<svg id="svg" width="100%" viewBox="0 0 680 700"></svg>
+<script>
+const NS='http://www.w3.org/2000/svg';
+function mk(t,a){const e=document.createElementNS(NS,t);Object.entries(a).forEach(([k,v])=>e.setAttribute(k,v));return e;}
+function ap(p,e){p.appendChild(e);return e;}
+
+function mkDefs(svg){
+  const d=ap(svg,mk('defs',{}));
+  [['ab','#378ADD'],['ar','#E24B4A'],['ag','#1D9E75'],
+   ['aa','#BA7517'],['ap','#7F77DD'],['agr','#888780'],
+   ['ao','#EF9F27'],['am','#D4537E']].forEach(([id,col])=>{
+    const m=mk('marker',{id,viewBox:'0 0 10 10',refX:'8',refY:'5',
+      markerWidth:'4',markerHeight:'4',orient:'auto-start-reverse'});
+    ap(m,mk('path',{d:'M2 1L8 5L2 9',fill:'none',stroke:col,
+      'stroke-width':'1.8','stroke-linecap':'round','stroke-linejoin':'round'}));
+    ap(d,m);
+  });
+}
+
+const GFIL=['#E6F1FB','#EAF3DE','#FAEEDA','#FBEAF0'];
+const GSTK=['#185FA5','#3B6D11','#854F0B','#993556'];
+const GTXT=['#0C447C','#27500A','#633806','#72243E'];
+const PN=[['PE00','PE01','PE02','PE03'],['PE10','PE11','PE12','PE13'],
+          ['PE20','PE21','PE22','PE23'],['PE30','PE31','PE32','PE33']];
+
+function grp(r,c){
+  if(r%2===0&&c%2===0)return 0;
+  if(r%2===0&&c%2===1)return 1;
+  if(r%2===1&&c%2===0)return 2;
+  return 3;
+}
+
+function T(svg,x,y,t,fs,fw,fill,ta){
+  const e=mk('text',{x,y,'text-anchor':ta||'middle','dominant-baseline':'central',
+    'font-size':fs||10,...(fw?{'font-weight':fw}:{}),
+    fill:fill||'var(--color-text-primary)'});
+  e.textContent=t; ap(svg,e);
+}
+
+function R(svg,x,y,w,h,rx,fill,stroke,sw,dash){
+  const a={x,y,width:w,height:h,rx:rx||4,fill:fill||'none',
+    stroke:stroke||'var(--color-border-tertiary)','stroke-width':sw||1};
+  if(dash)a['stroke-dasharray']=dash;
+  ap(svg,mk('rect',a));
+}
+
+function AL(svg,x1,y1,x2,y2,col,mid,w,dash){
+  const dx=x2-x1,dy=y2-y1,L=Math.sqrt(dx*dx+dy*dy)||1,sh=4;
+  const nx=dx/L,ny=dy/L;
+  const a={x1:x1+nx*sh,y1:y1+ny*sh,x2:x2-nx*sh,y2:y2-ny*sh,
+    stroke:col,'stroke-width':w||1.5,'marker-end':'url(#'+mid+')'};
+  if(dash)a['stroke-dasharray']=dash;
+  ap(svg,mk('line',a));
+}
+
+function PA(svg,d,col,mid,dash,w){
+  const a={d,fill:'none',stroke:col,'stroke-width':w||1.5};
+  if(dash)a['stroke-dasharray']=dash;
+  if(mid)a['marker-end']='url(#'+mid+')';
+  ap(svg,mk('path',a));
+}
+
+// ── FULL ARRAY ────────────────────────────────────────────────────
+function drawFull(svg){
+  mkDefs(svg);
+  const CW=68,CH=52,GX=20,GY=20,OX=90,OY=70;
+  function px(c){return OX+c*(CW+GX);}
+  function py(r){return OY+r*(CH+GY);}
+  function cx(c){return px(c)+CW/2;}
+  function cy(r){return py(r)+CH/2;}
+
+  // module boundary
+  R(svg,30,44,600,560,8,'none','var(--color-border-secondary)',1,'6 3');
+  T(svg,330,36,'zig_zag_4x4',12,500,'var(--color-text-secondary)');
+
+  // PEG boundaries
+  [[0,0],[0,2],[2,0],[2,2]].forEach(([r,c])=>{
+    R(svg,px(c)-6,py(r)-6,2*CW+GX+12,2*CH+GY+12,8,'none','#888780',0.7,'5 3');
+    T(svg,px(c)+CW,py(r)-14,`PEG[${r/2},${c/2}]`,8,null,'#888780');
+  });
+
+  // PE boxes
+  for(let r=0;r<4;r++) for(let c=0;c<4;c++){
+    const g=grp(r,c);
+    R(svg,px(c),py(r),CW,CH,5,GFIL[g],GSTK[g],1.3);
+    T(svg,cx(c),py(r)+16,PN[r][c],10,500,GTXT[g]);
+    T(svg,cx(c),py(r)+30,`g${g}`,8,null,GSTK[g]);
+    T(svg,cx(c),py(r)+42,'1 MAC',7,null,GSTK[g]);
+  }
+
+  // ── horizontal internal wires (from_left = act_to_right of left neighbour) ──
+  for(let r=0;r<4;r++) for(let c=1;c<4;c++){
+    // skip removed connections: col1↔col2
+    if(c===2) continue;
+    const y1=cy(r)-5, y2=cy(r)+5;
+    // rightward (act_to_right → act_from_left)
+    AL(svg,cx(c-1),y1,cx(c),y1,'#378ADD','ab',1.2);
+    // leftward (act_to_left → act_from_right)
+    AL(svg,cx(c),y2,cx(c-1),y2,'#378ADD','ab',1.2);
+  }
+
+  // ── vertical internal wires ──
+  for(let r=1;r<4;r++) for(let c=0;c<4;c++){
+    // skip removed: odd col inter-PEG vertical (c=1,3 between r=1↔2)
+    if((c===1||c===3) && r===2) continue;
+    const x1=cx(c)-5, x2=cx(c)+5;
+    // downward (act_to_down → act_from_up)
+    AL(svg,x1,cy(r-1),x1,cy(r),'#378ADD','ab',1.2);
+    // upward (act_to_up → act_from_down)
+    AL(svg,x2,cy(r),x2,cy(r-1),'#378ADD','ab',1.2);
+  }
+
+  // ── FIFO1: PE30 wr(h), PE20 wr(v) → PE10 rd ──
+  const f1x=36, f1y=py(1)+8;
+  R(svg,f1x,f1y,44,36,4,'#EEEDFE','#534AB7',1.2,'4 2');
+  T(svg,f1x+22,f1y+12,'FIFO1',8,500,'#3C3489');
+  T(svg,f1x+22,f1y+24,'d=9',7,null,'#534AB7');
+  // PE30 wr(h)
+  PA(svg,`M${px(0)} ${cy(3)} L${f1x+22} ${cy(3)} L${f1x+22} ${f1y+36}`,'#7F77DD','ap',true,1.3);
+  T(svg,f1x-8,cy(3),'wr(h)',7,null,'#534AB7','end');
+  // PE20 wr(v)
+  PA(svg,`M${px(0)} ${cy(2)} L${f1x+10} ${cy(2)} L${f1x+10} ${f1y+36}`,'#7F77DD',null,true,1.1);
+  T(svg,f1x-8,cy(2),'wr(v)',7,null,'#534AB7','end');
+  // FIFO1 → PE10 rd
+  PA(svg,`M${f1x+22} ${f1y} L${f1x+22} ${py(1)-10} L${px(0)} ${py(1)-10} L${px(0)} ${cy(1)}`,'#7F77DD','ap',true,1.3);
+  T(svg,f1x-8,py(1)-6,'rd',7,null,'#534AB7','end');
+
+  // ── FIFO2: PE32 wr(h), PE22 wr(v) → PE12 rd ──
+  const f2x=px(2)-54, f2y=py(1)+8;
+  R(svg,f2x,f2y,44,36,4,'#EEEDFE','#534AB7',1.2,'4 2');
+  T(svg,f2x+22,f2y+12,'FIFO2',8,500,'#3C3489');
+  T(svg,f2x+22,f2y+24,'d=9',7,null,'#534AB7');
+  PA(svg,`M${px(2)} ${cy(3)} L${f2x+22} ${cy(3)} L${f2x+22} ${f2y+36}`,'#7F77DD','ap',true,1.3);
+  T(svg,f2x-8,cy(3),'wr(h)',7,null,'#534AB7','end');
+  PA(svg,`M${px(2)} ${cy(2)} L${f2x+10} ${cy(2)} L${f2x+10} ${f2y+36}`,'#7F77DD',null,true,1.1);
+  T(svg,f2x-8,cy(2),'wr(v)',7,null,'#534AB7','end');
+  PA(svg,`M${f2x+22} ${f2y} L${f2x+22} ${py(1)-10} L${px(2)} ${py(1)-10} L${px(2)} ${cy(1)}`,'#7F77DD','ap',true,1.3);
+  T(svg,f2x-8,py(1)-6,'rd',7,null,'#534AB7','end');
+
+  // ── boundary inputs ──
+  // h_in0 → PE13 (from right)
+  const hx=px(3)+CW+36;
+  AL(svg,hx,cy(1),px(3)+CW,cy(1),'#E24B4A','ar',1.8);
+  T(svg,hx+20,cy(1),'h_in0',9,500,'#A32D2D');
+  // h_in1 → PE33
+  AL(svg,hx,cy(3),px(3)+CW,cy(3),'#E24B4A','ar',1.8);
+  T(svg,hx+20,cy(3),'h_in1',9,500,'#A32D2D');
+
+  // v_in0 → PE30 (from below)
+  AL(svg,cx(0),py(3)+CH+36,cx(0),py(3)+CH,'#1D9E75','ag',1.8);
+  T(svg,cx(0)+28,py(3)+CH+26,'v_in0',9,500,'#0F6E56');
+  // v_in1 → PE32
+  AL(svg,cx(2),py(3)+CH+36,cx(2),py(3)+CH,'#1D9E75','ag',1.8);
+  T(svg,cx(2)+28,py(3)+CH+26,'v_in1',9,500,'#0F6E56');
+
+  // ── weight chain: w_in → row0, chains down ──
+  for(let c=0;c<4;c++){
+    // w_in enters at top of col
+    AL(svg,cx(c),OY-24,cx(c),py(0),'#BA7517','aa',1.5);
+    T(svg,cx(c),OY-32,`w_in[${c}]`,7,null,'#854F0B');
+    // chain: row0→row1→row2→row3 (dashed)
+    for(let r=0;r<3;r++){
+      PA(svg,`M${cx(c)+8} ${py(r)+CH} L${cx(c)+8} ${py(r+1)}`,'#BA7517','aa',true,1.2);
+    }
+  }
+
+  // ── psum drain outputs ──
+  // psum_out0 from PE10 act_to_left[1][0]
+  AL(svg,px(0),cy(1),36,cy(1),'#0F6E56','ag',2);
+  T(svg,18,cy(1)-10,'psum',8,500,'#0F6E56');
+  T(svg,18,cy(1)+2,'_out0',8,null,'#0F6E56');
+  // psum_out1 from PE30 act_to_left[3][0]
+  AL(svg,px(0),cy(3),36,cy(3),'#0F6E56','ag',2);
+  T(svg,18,cy(3)-10,'psum',8,500,'#0F6E56');
+  T(svg,18,cy(3)+2,'_out1',8,null,'#0F6E56');
+
+  // ── control bus ──
+  const ctlY=py(3)+CH+60;
+  R(svg,90,ctlY,520,28,4,'var(--color-background-secondary)','var(--color-border-secondary)',0.8);
+  T(svg,340,ctlY+14,'control bus: en  move_en  w_ld_en  fifo_en  psum_shift_en  psum_clr  direction[1:0]',9,null,'var(--color-text-secondary)');
+  // arrows from bus to array
+  for(let i=0;i<4;i++){
+    AL(svg,180+i*90,ctlY,180+i*90,py(3)+CH+2,'#888780','agr',1,false);
+  }
+
+  // ── direction decode box ──
+  const ddY=OY-50;
+  R(svg,200,ddY,282,28,4,'var(--color-background-secondary)','var(--color-border-secondary)',0.8);
+  T(svg,341,ddY+14,'direction_encoding → dst_sel[0..3]  src_sel[0..3]',9,null,'var(--color-text-secondary)');
+}
+
+// ── PEG DETAIL ───────────────────────────────────────────────────
+function drawPEG(svg){
+  mkDefs(svg);
+  // Show one 2×2 PEG in detail with internal structure
+  const CW=130,CH=100,GX=60,GY=60,OX=80,OY=80;
+  function px(c){return OX+c*(CW+GX);}
+  function py(r){return OY+r*(CH+GY);}
+  function cx(c){return px(c)+CW/2;}
+  function cy(r){return py(r)+CH/2;}
+
+  T(svg,340,24,'PEG[0,0] — internal structure',12,500,'var(--color-text-secondary)');
+
+  // PEG outline
+  R(svg,OX-12,OY-12,2*CW+GX+24,2*CH+GY+24,10,'none','#888780',0.8,'6 3');
+  T(svg,OX+CW,OY-22,'PEG[0,0]',10,null,'#888780');
+
+  const pes=[[0,0],[0,1],[1,0],[1,1]];
+  pes.forEach(([r,c])=>{
+    const g=grp(r,c);
+    R(svg,px(c),py(r),CW,CH,8,GFIL[g],GSTK[g],1.5);
+    T(svg,cx(c),py(r)+20,PN[r][c],13,500,GTXT[g]);
+    T(svg,cx(c),py(r)+38,`grp${g}`,10,null,GSTK[g]);
+    // internal PE detail
+    R(svg,px(c)+10,py(r)+52,CW-20,30,4,'var(--color-background-primary)','var(--color-border-secondary)',0.8);
+    T(svg,cx(c),py(r)+67,'MAC + psum_reg + move_reg',8,null,'var(--color-text-secondary)');
+    T(svg,cx(c),py(r)+80,'w_reg + psum_hold_reg',7,null,'var(--color-text-secondary)');
+  });
+
+  // horizontal connections with labels
+  const yr=cy(0), ya=cy(0)-8, yb=cy(0)+8;
+  // PE00 → PE01 rightward
+  AL(svg,px(0)+CW,ya,px(1),ya,'#378ADD','ab',1.5);
+  T(svg,(px(0)+CW+px(1))/2,ya-10,'act_to_right[0][0]',8,null,'#185FA5');
+  // PE01 → PE00 leftward
+  AL(svg,px(1),yb,px(0)+CW,yb,'#378ADD','ab',1.5);
+  T(svg,(px(0)+CW+px(1))/2,yb+10,'act_to_left[0][1]',8,null,'#185FA5');
+
+  // vertical connections
+  const xr=cx(0), xa=cx(0)-8, xb=cx(0)+8;
+  // PE00 → PE10 downward
+  AL(svg,xa,py(0)+CH,xa,py(1),'#378ADD','ab',1.5);
+  T(svg,xa-42,(py(0)+CH+py(1))/2,'act_to_down[0][0]',8,null,'#185FA5');
+  // PE10 → PE00 upward
+  AL(svg,xb,py(1),xb,py(0)+CH,'#378ADD','ab',1.5);
+  T(svg,xb+42,(py(0)+CH+py(1))/2,'act_to_up[1][0]',8,null,'#185FA5');
+
+  // boundary arrows
+  // h_in from right to PE01
+  AL(svg,px(1)+CW+40,cy(0),px(1)+CW,cy(0),'#E24B4A','ar',1.8);
+  T(svg,px(1)+CW+60,cy(0),'h_in0',9,500,'#A32D2D','start');
+  // v_in from below to PE10
+  AL(svg,cx(0),py(1)+CH+36,cx(0),py(1)+CH,'#1D9E75','ag',1.8);
+  T(svg,cx(0)+28,py(1)+CH+24,'v_in0',9,500,'#0F6E56');
+  // psum_out from PE10 left
+  AL(svg,px(0),cy(1),px(0)-50,cy(1),'#0F6E56','ag',2);
+  T(svg,px(0)-68,cy(1),'psum_out0',8,500,'#0F6E56');
+  // w_in from top
+  AL(svg,cx(0),py(0)-36,cx(0),py(0),'#BA7517','aa',1.5);
+  T(svg,cx(0)+26,py(0)-24,'w_in[0]',8,null,'#854F0B');
+  // w chain
+  PA(svg,`M${cx(0)+10} ${py(0)+CH} L${cx(0)+10} ${py(1)}`,'#BA7517','aa',true,1.2);
+  T(svg,cx(0)+30,(py(0)+CH+py(1))/2,'w_chain',7,null,'#854F0B');
+}
+
+// ── I/O PORTS ────────────────────────────────────────────────────
+function drawIO(svg){
+  mkDefs(svg);
+  const BX=160,BY=60,BW=360,BH=440;
+
+  // module box
+  R(svg,BX,BY,BW,BH,8,'var(--color-background-secondary)','var(--color-border-secondary)',1.2);
+  T(svg,BX+BW/2,BY+22,'zig_zag_4x4',13,500,'var(--color-text-primary)');
+  T(svg,BX+BW/2,BY+38,'4×4 PE array',10,null,'var(--color-text-secondary)');
+  // divider
+  ap(svg,mk('line',{x1:BX,y1:BY+48,x2:BX+BW,y2:BY+48,
+    stroke:'var(--color-border-tertiary)','stroke-width':0.5}));
+
+  // parameters inside
+  const params=['DATA_W=6','WEIGHT_W=2','ACC_W=13','ROWS=4','COLS=4'];
+  params.forEach((p,i)=>{
+    T(svg,BX+BW/2,BY+62+i*14,p,9,null,'var(--color-text-tertiary)');
+  });
+
+  // Left side inputs
+  const linputs=[
+    {label:'clk',         col:'#888780', y:180},
+    {label:'rst_n',       col:'#888780', y:198},
+    {label:'en',          col:'#185FA5', y:224},
+    {label:'move_en',     col:'#185FA5', y:242},
+    {label:'psum_shift_en',col:'#185FA5',y:260},
+    {label:'psum_clr',    col:'#185FA5', y:278},
+    {label:'w_ld_en',     col:'#854F0B', y:296},
+    {label:'fifo_en',     col:'#854F0B', y:314},
+    {label:'direction[1:0]',col:'#185FA5',y:332},
+  ];
+  linputs.forEach(({label,col,y})=>{
+    AL(svg,BX-44,y,BX,y,col,'ab',1.3);
+    T(svg,BX-50,y,label,9,null,col,'end');
+  });
+
+  // Left side array inputs
+  const ainputs=[
+    {label:'w_in[0..3] [1:0]', col:'#854F0B', y:360},
+    {label:'h_in0 [5:0]',      col:'#A32D2D', y:378},
+    {label:'h_in1 [5:0]',      col:'#A32D2D', y:396},
+    {label:'v_in0 [5:0]',      col:'#0F6E56', y:414},
+    {label:'v_in1 [5:0]',      col:'#0F6E56', y:432},
+  ];
+  ainputs.forEach(({label,col,y})=>{
+    AL(svg,BX-44,y,BX,y,col,'ab',1.3);
+    T(svg,BX-50,y,label,9,null,col,'end');
+  });
+
+  // Right side outputs
+  const outputs=[
+    {label:'psum_out0 [12:0]', col:'#0F6E56', y:360},
+    {label:'psum_out1 [12:0]', col:'#0F6E56', y:390},
+    {label:'(psum_out0 = PE10 drain)', col:'#888780', y:380, note:true},
+    {label:'(psum_out1 = PE30 drain)', col:'#888780', y:410, note:true},
+  ];
+  outputs.forEach(({label,col,y,note})=>{
+    if(!note){
+      AL(svg,BX+BW,y,BX+BW+44,y,col,'ag',1.5);
+      T(svg,BX+BW+50,y,label,9,null,col,'start');
+    } else {
+      T(svg,BX+BW+50,y,label,8,null,col,'start');
+    }
+  });
+
+  // internal structure note
+  T(svg,BX+BW/2,BY+160,'16 PEs (4×4)',11,500,'var(--color-text-primary)');
+  T(svg,BX+BW/2,BY+178,'4 PEGs (2×2 each)',10,null,'var(--color-text-secondary)');
+  T(svg,BX+BW/2,BY+196,'2× FIFO9 (inter-PEG)',10,null,'#534AB7');
+  T(svg,BX+BW/2,BY+214,'weight column chain',10,null,'#854F0B');
+  T(svg,BX+BW/2,BY+232,'direction → dst_sel/src_sel',10,null,'#185FA5');
+
+  // port group labels
+  T(svg,BX-52,170,'clock/reset',8,500,'#888780','end');
+  T(svg,BX-52,215,'compute ctrl',8,500,'#185FA5','end');
+  T(svg,BX-52,305,'memory ctrl',8,500,'#854F0B','end');
+  T(svg,BX-52,352,'data inputs',8,500,'#A32D2D','end');
+
+  // group lines
+  ap(svg,mk('line',{x1:BX-12,y1:174,x2:BX-12,y2:210,
+    stroke:'#888780','stroke-width':1.5}));
+  ap(svg,mk('line',{x1:BX-12,y1:217,x2:BX-12,y2:340,
+    stroke:'#185FA5','stroke-width':1.5}));
+  ap(svg,mk('line',{x1:BX-12,y1:288,x2:BX-12,y2:325,
+    stroke:'#854F0B','stroke-width':1.5}));
+}
+
+function render(mode){
+  const svg=document.getElementById('svg');
+  svg.innerHTML='';
+  if(mode==='full') drawFull(svg);
+  else if(mode==='peg') drawPEG(svg);
+  else drawIO(svg);
+}
+
+function go(m){
+  document.querySelectorAll('.tab').forEach(b=>{
+    const map={full:'Full array',peg:'PEG detail',io:'I/O ports'};
+    b.classList.toggle('on',b.textContent.trim()===map[m]);
+  });
+  render(m);
+}
+go('full');
+</script>

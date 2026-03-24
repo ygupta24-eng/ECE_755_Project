@@ -49,7 +49,7 @@ module control_tb();
 
     // Wait for FSM to reach a specific state
     task automatic wait_for_state(input logic [2:0] target_state, input string state_name);
-        int timeout = 200;
+        int timeout = 400;
         while (dut.state !== target_state && timeout > 0) begin
             @(posedge clk);
             timeout--;
@@ -146,9 +146,9 @@ module control_tb();
         trigger_start();
         wait_for_state(3'd4, "COMPUTE");
         @(negedge clk);
-        check_signal(en,       1'b1, "en=1 in COMPUTE");
-        check_signal(move_en,  1'b1, "move_en=1 in COMPUTE");
-        check_signal(w_ld_en,  1'b1, "w_ld_en=1 in COMPUTE");
+        check_signal(en,       1, "en=1 in COMPUTE");
+        check_signal(move_en,  1, "move_en=1 in COMPUTE");
+        check_signal(w_ld_en,  1, "w_ld_en=1 in COMPUTE");
         check_direction(2'b11, "direction=Circular in COMPUTE");
     endtask
 

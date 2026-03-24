@@ -169,7 +169,8 @@ module zigzag_fsm (
                         next_state = H_SHIFT;
                     else
                         next_state = V_SHIFT;
-                end else begin
+                end
+                else begin
                     next_state = W_LOAD;
                 end
             end

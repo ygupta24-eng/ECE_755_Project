@@ -6,7 +6,6 @@ module pe_tb;
     parameter int DATA_W   = 6;
     parameter int WEIGHT_W = 2;
     parameter int ACC_W    = 13;
-    parameter int CLK_PERIOD = 10;
 
     // ── DUT Signals ───────────────────────────────────────────────
     logic              clk, rst_n;
@@ -50,7 +49,7 @@ module pe_tb;
 
     // ── Clock ─────────────────────────────────────────────────────
     initial clk = 0;
-    always #(CLK_PERIOD/2) clk = ~clk;
+    always #(5) clk = ~clk;
 
     // ── Tasks ─────────────────────────────────────────────────────
     task init_dut();

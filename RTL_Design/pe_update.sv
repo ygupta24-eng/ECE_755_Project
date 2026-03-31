@@ -75,15 +75,6 @@ module pe #(
         end
     end
 
-    // ── psum_hold_reg: shadows psum_out every cycle ───────────────
-    // Always updated regardless of en/move_en/psum_shift_en
-    // So when psum_shift_en rises, psum_hold_reg already has
-    // the final accumulated psum_out value ready to go
-    // always_ff @(posedge clk or negedge rst_n) begin
-    //     if (!rst_n) psum_hold_reg <= '0;
-    //     else        psum_hold_reg <= psum_out;
-    // end
-
     // ── shift edge detect ─────────────────────────────────────────
     logic psum_shift_en_d;
     always_ff @(posedge clk or negedge rst_n) begin
@@ -107,39 +98,46 @@ module pe #(
             act_out_val = move_reg;                // normal or chain forward
     end
 
-    
-
     // ── Movement + output drive ───────────────────────────────────
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             move_reg     <= '0;
-            act_to_left  <= '0;
-            act_to_right <= '0;
-            act_to_up    <= '0;
-            act_to_down  <= '0;
+            // act_to_left  <= '0;
+            // act_to_right <= '0;
+            // act_to_up    <= '0;
+            // act_to_down  <= '0;
         end 
         else begin
 
             if (shift_falling) begin
                 move_reg     <= '0;        // ← added: flush stale psum
-                act_to_left  <= '0;
-                act_to_right <= '0;
-                act_to_up    <= '0;
-                act_to_down  <= '0;
+                // act_to_left  <= '0;
+                // act_to_right <= '0;
+                // act_to_up    <= '0;
+                // act_to_down  <= '0;
             end else if (move_en) begin    // ← changed: if → else if
                 if (psum_shift_en)
                     move_reg <= incoming;
                 else
                     move_reg <= ACC_W'(incoming[DATA_W-1:0]);
     
-                unique case (dst_sel)
-                    2'b00: act_to_right <= act_out_val;
-                    2'b01: act_to_left  <= act_out_val;
-                    2'b10: act_to_down  <= act_out_val;
-                    2'b11: act_to_up    <= act_out_val;
-                endcase
+                // unique case (dst_sel)
+                //     2'b00: act_to_right <= act_out_val;
+                //     2'b01: act_to_left  <= act_out_val;
+                //     2'b10: act_to_down  <= act_out_val;
+                //     2'b11: act_to_up    <= act_out_val;
+                // endcase
             end
         end
     end
+
+
+    // ── act_to_* combinational outputs ───────────────────────────
+    // driven directly from act_out_val via dst_sel — no FF delay
+    // only the active direction gets act_out_val, others are '0
+    assign act_to_right = (dst_sel == 2'b00) ? act_out_val : '0;
+    assign act_to_left  = (dst_sel == 2'b01) ? act_out_val : '0;
+    assign act_to_down  = (dst_sel == 2'b10) ? act_out_val : '0;
+    assign act_to_up    = (dst_sel == 2'b11) ? act_out_val : '0;
 
 endmodule

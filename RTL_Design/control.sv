@@ -40,7 +40,6 @@ module zigzag_fsm (
     logic [1:0] h_cnt;    // h-shift counter     0..1 (row 0 only)
     logic [2:0] v_cnt;    // v-shift counter     0..6
 
-    
 
     // ----------------------------------------------------------------
     // State register
@@ -233,7 +232,7 @@ module zigzag_fsm (
             COMPUTE: begin
                 en        = 1'b1;
                 move_en   = 1'b1;
-                w_ld_en   = 1'b1;
+                //w_ld_en   = 1'b1;
                 direction = 2'b11;
             end
 

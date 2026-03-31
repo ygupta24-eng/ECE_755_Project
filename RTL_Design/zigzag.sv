@@ -148,8 +148,8 @@ module zig_zag_4x4 #(
         .rst_n   (rst_n),
         .wr_en   (move_en && fifo_en && !psum_shift_en &&   // fix: gate psum_shift
                   ((direction == 2'b10) || (direction == 2'b01))),
-        .wr_data ((direction == 2'b10) ? act_to_down[3][0]
-                                       : act_to_down[2][0]),
+        .wr_data ((direction == 2'b10) ? act_to_left[3][0]
+                                       : act_to_up[2][0]),
         .full    (fifo1_full),
         .rd_en   (move_en && !psum_shift_en && (direction == 2'b01)),
         .rd_data (fifo1_dout),
@@ -161,10 +161,10 @@ module zig_zag_4x4 #(
         .rst_n   (rst_n),
         .wr_en   (move_en && fifo_en && !psum_shift_en &&
                   ((direction == 2'b10) || (direction == 2'b01))),
-        .wr_data ((direction == 2'b10) ? act_to_down[3][2]
-                                       : act_to_down[2][2]),
+        .wr_data ((direction == 2'b10) ? act_to_left[3][2]
+                                       : act_to_up[2][2]),
         .full    (fifo2_full),
-        .rd_en   (move_en && !psum_shift_en && (direction == 2'b01)),
+        .rd_en   (move_en && !psum_shift_en && (direction == 2'b01)), //vertical only
         .rd_data (fifo2_dout),
         .empty   (fifo2_empty)
     );

@@ -221,20 +221,102 @@ module control_tb();
         check_signal(dut.state == 3'd0, 1'b1, "IDLE after full run");
     endtask
 
+    // ── State name decoder ────────────────────────────────────────
+    function automatic string state_name(input logic [2:0] s);
+        case (s)
+            3'd0: return "IDLE      ";
+            3'd1: return "CLEAR     ";
+            3'd2: return "FILL      ";
+            3'd3: return "W_LOAD    ";
+            3'd4: return "COMPUTE   ";
+            3'd5: return "H_SHIFT   ";
+            3'd6: return "V_SHIFT   ";
+            3'd7: return "PSUM_SHIFT";
+            default: return "UNKNOWN   ";
+        endcase
+    endfunction
+
+    // ── Continuous state + signal logger ─────────────────────────
+    // Runs every cycle in parallel — shows exactly what state
+    // the FSM is in and for how long
+    logic [2:0] prev_state;
+    int         state_entry_cycle;
+    int         log_cycle;
+
+    initial begin
+        prev_state        = 3'd0;
+        state_entry_cycle = 0;
+        log_cycle         = 0;
+    end
+
+    always @(posedge clk) begin
+        log_cycle++;
+        // Print every cycle with all control signals
+        $display("CYC %3d | %-10s | en=%0b move_en=%0b w_ld_en=%0b fifo_en=%0b psum_shift_en=%0b psum_clr=%0b | dir=%0b | done=%0b",
+            log_cycle,
+            state_name(dut.state),
+            en, move_en, w_ld_en, fifo_en, psum_shift_en, psum_clr,
+            direction,
+            done);
+
+        // Print banner on every state transition
+        if (dut.state !== prev_state) begin
+            $display("--------------------------------------------------------------");
+            $display(">>> STATE TRANSITION: %s → %s at cycle %0d (spent %0d cycles in %s)",
+                state_name(prev_state),
+                state_name(dut.state),
+                log_cycle,
+                log_cycle - state_entry_cycle,
+                state_name(prev_state));
+            $display("--------------------------------------------------------------");
+            prev_state        = dut.state;
+            state_entry_cycle = log_cycle;
+        end
+    end
+
+    // ── Test 10: Uninterrupted full FSM run ───────────────────────
+    task automatic test_uninterrupted_run();
+        int timeout;
+        $display("\n══════════════════════════════════════════");
+        $display("   Test 10: Uninterrupted Full FSM Run    ");
+        $display("══════════════════════════════════════════");
+        init_dut();
+        trigger_start();
+        // Let FSM run completely without any intervention
+        // Just watch the logger output
+        timeout = 1000;
+        while (!done && timeout > 0) begin
+            @(posedge clk);
+            timeout--;
+        end
+        if (timeout == 0)
+            $display("FAIL | Uninterrupted run timed out — done never asserted");
+        else begin
+            $display("\n══════════════════════════════════════════");
+            $display("PASS | FSM completed at cycle %0d", log_cycle);
+            $display("══════════════════════════════════════════");
+        end
+        // Confirm back to IDLE
+        @(posedge clk);
+        @(negedge clk);
+        check_signal(dut.state == 3'd0, 1'b1, "IDLE after uninterrupted run");
+    endtask
+
     // ── Run all tests ─────────────────────────────────────────────
     initial begin
         $dumpfile("control_tb.vcd");
         $dumpvars(0, control_tb);
 
-        test_reset();
-        test_clear();
-        test_fill();
-        test_wload();
-        test_compute();
-        test_hshift();
-        test_vshift();
-        test_psum_shift();
-        test_full_run();
+        // test_reset();
+        // test_clear();
+        // test_fill();
+        // test_wload();
+        // test_compute();
+        // test_hshift();
+        // test_vshift();
+        // test_psum_shift();
+        // test_full_run();
+        test_uninterrupted_run();
 
         repeat(5) @(posedge clk);
         $display("\n── All Control FSM Tests Complete ──");

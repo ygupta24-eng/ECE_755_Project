@@ -1,0 +1,52 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-max_paths 1
+	-sort_by slack
+Design : top
+Version: X-2025.06
+Date   : Fri Apr 10 16:33:45 2026
+****************************************
+
+
+  Startpoint: u_fsm/ch_cnt_en_d_reg
+               (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_fsm/ch_cnt_en_latched_reg
+               (negative level-sensitive latch clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  ------------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_fsm/ch_cnt_en_d_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)     0.00       0.00 r
+  u_fsm/ch_cnt_en_d_reg/QN (DFFASRHQNx1_ASAP7_75t_R)     60.57 &    60.57 f
+  u_fsm/ch_cnt_en_latched_reg/D (DLLx1_ASAP7_75t_R)       0.06 &    60.63 f
+  data arrival time                                                 60.63
+
+  clock clk (fall edge)                                1000.00    1000.00
+  clock network delay (ideal)                             0.00    1000.00
+  u_fsm/ch_cnt_en_latched_reg/CLK (DLLx1_ASAP7_75t_R)             1000.00 f
+  clock reconvergence pessimism                           0.00    1000.00
+  clock uncertainty                                      -0.01     999.99
+  time borrowed from endpoint                             0.00     999.99
+  data required time                                               999.99
+  ------------------------------------------------------------------------------
+  data required time                                               999.99
+  data arrival time                                                -60.63
+  ------------------------------------------------------------------------------
+  slack (MET)                                                      939.36
+
+  Time Borrowing Information
+  ------------------------------------------------------------------
+  clk nominal pulse width                              1000.00
+  library setup time                                     -1.98
+  ------------------------------------------------------------------
+  max time borrow                                       998.02
+  actual time borrow                                      0.00
+  ------------------------------------------------------------------
+
+
+1

@@ -1,0 +1,54 @@
+****************************************
+Report : Averaged Power
+	-verbose
+Design : top
+Version: X-2025.06
+Date   : Fri Apr 10 16:33:46 2026
+****************************************
+
+Library(s) Used:
+
+    asap7sc7p5t_AO_RVT_TT_nldm_211120 (File: /filespace/v/vsathishkuma/ECE755/ECE_755_Project/Synthesis/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_AO_RVT_TT_nldm_211120.db)
+    asap7sc7p5t_OA_RVT_TT_nldm_211120 (File: /filespace/v/vsathishkuma/ECE755/ECE_755_Project/Synthesis/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_OA_RVT_TT_nldm_211120.db)
+    asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120 (File: /filespace/v/vsathishkuma/ECE755/ECE_755_Project/Synthesis/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.db)
+    asap7sc7p5t_INVBUF_RVT_TT_nldm_211120 (File: /filespace/v/vsathishkuma/ECE755/ECE_755_Project/Synthesis/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_211120.db)
+    asap7sc7p5t_SEQ_RVT_TT_nldm_220123 (File: /filespace/v/vsathishkuma/ECE755/ECE_755_Project/Synthesis/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.db)
+
+
+Operating Conditions: PVT_0P7V_25C   Library: asap7sc7p5t_AO_RVT_TT_nldm_211120
+Wire Load Model Mode: segmented
+
+<no wire load model is set>
+
+Power-specific unit information :
+    Voltage Units = 1 V
+    Capacitance Units = 0.001 pf
+    Time Units = 0.001 ns
+    Dynamic Power Units = 1 W
+    Leakage Power Units = 1 W
+
+
+
+  Attributes
+  ----------
+      i  -  Including register clock pin internal power
+      u  -  User defined power group
+
+                        Internal  Switching  Leakage    Total
+Power Group             Power     Power      Power      Power   (     %)  Attrs
+--------------------------------------------------------------------------------
+clock_network           5.001e-05 5.389e-09 2.429e-09 5.002e-05 (51.58%)  i
+register                2.738e-06 1.133e-06 2.447e-08 3.896e-06 ( 4.02%)  
+combinational           3.000e-06 1.454e-05 3.856e-07 1.793e-05 (18.49%)  
+sequential              2.108e-05 7.972e-08 1.673e-07 2.133e-05 (21.99%)  
+memory                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+io_pad                     0.0000    0.0000    0.0000    0.0000 ( 0.00%)  
+black_box                  0.0000 3.793e-06    0.0000 3.793e-06 ( 3.91%)  
+
+  Net Switching Power  = 1.956e-05   (20.17%)
+  Cell Internal Power  = 7.683e-05   (79.23%)
+  Cell Leakage Power   = 5.798e-07   ( 0.60%)
+                         ---------
+Total Power            = 9.696e-05  (100.00%)
+
+1

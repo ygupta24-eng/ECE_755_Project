@@ -1,0 +1,15 @@
+****************************************
+Report : timing
+	-path_type full
+	-delay_type max
+	-slack_lesser_than 0.00
+	-max_paths 20
+	-sort_by slack
+Design : top
+Version: X-2025.06
+Date   : Fri Apr 10 16:33:46 2026
+****************************************
+
+No paths with slack less than 0.00.
+
+1

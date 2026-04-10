@@ -1,0 +1,24 @@
+#-check_same_via_cell true               # bool, default=false, user setting
+ *** Starting Verify DRC (MEM: 4072.4) ***
+
+  VERIFY DRC ...... Starting Verification
+  VERIFY DRC ...... Initializing
+  VERIFY DRC ...... Deleting Existing Violations
+  VERIFY DRC ...... Creating Sub-Areas
+  VERIFY DRC ...... Using new threading
+ VERIFY DRC ...... Sub-Area: {92.160 92.160 136.640 136.640} 9 of 9  Thread : 0
+ VERIFY DRC ...... Sub-Area: {0.000 92.160 46.080 136.640} 7 of 9  Thread : 4
+ VERIFY DRC ...... Sub-Area: {92.160 0.000 136.640 46.080} 3 of 9  Thread : 3
+ VERIFY DRC ...... Sub-Area: {0.000 0.000 46.080 46.080} 1 of 9  Thread : 7
+ VERIFY DRC ...... Sub-Area: {46.080 92.160 92.160 136.640} 8 of 9  Thread : 4
+ VERIFY DRC ...... Sub-Area: {46.080 0.000 92.160 46.080} 2 of 9  Thread : 7
+ VERIFY DRC ...... Sub-Area: {92.160 46.080 136.640 92.160} 6 of 9  Thread : 4
+ VERIFY DRC ...... Sub-Area: {0.000 46.080 46.080 92.160} 4 of 9  Thread : 7
+ VERIFY DRC ...... Thread : 4 finished.
+ VERIFY DRC ...... Sub-Area: {46.080 46.080 92.160 92.160} 5 of 9  Thread : 7
+ VERIFY DRC ...... Thread : 7 finished.
+
+  Verification Complete : 0 Viols.
+
+ *** End Verify DRC (CPU: 0:00:00.7  ELAPSED TIME: 0.00  MEM: 288.1M) ***
+

@@ -1,0 +1,31 @@
+
+64. Executing CHECK pass (checking for obvious problems).
+Checking module top...
+Warning: Wire top.\psum_out1 [12] is used but has no driver.
+Warning: Wire top.\psum_out1 [11] is used but has no driver.
+Warning: Wire top.\psum_out1 [10] is used but has no driver.
+Warning: Wire top.\psum_out1 [9] is used but has no driver.
+Warning: Wire top.\psum_out1 [8] is used but has no driver.
+Warning: Wire top.\psum_out1 [7] is used but has no driver.
+Warning: Wire top.\psum_out1 [6] is used but has no driver.
+Warning: Wire top.\psum_out1 [5] is used but has no driver.
+Warning: Wire top.\psum_out1 [4] is used but has no driver.
+Warning: Wire top.\psum_out1 [3] is used but has no driver.
+Warning: Wire top.\psum_out1 [2] is used but has no driver.
+Warning: Wire top.\psum_out1 [1] is used but has no driver.
+Warning: Wire top.\psum_out1 [0] is used but has no driver.
+Warning: Wire top.\psum_out0 [12] is used but has no driver.
+Warning: Wire top.\psum_out0 [11] is used but has no driver.
+Warning: Wire top.\psum_out0 [10] is used but has no driver.
+Warning: Wire top.\psum_out0 [9] is used but has no driver.
+Warning: Wire top.\psum_out0 [8] is used but has no driver.
+Warning: Wire top.\psum_out0 [7] is used but has no driver.
+Warning: Wire top.\psum_out0 [6] is used but has no driver.
+Warning: Wire top.\psum_out0 [5] is used but has no driver.
+Warning: Wire top.\psum_out0 [4] is used but has no driver.
+Warning: Wire top.\psum_out0 [3] is used but has no driver.
+Warning: Wire top.\psum_out0 [2] is used but has no driver.
+Warning: Wire top.\psum_out0 [1] is used but has no driver.
+Warning: Wire top.\psum_out0 [0] is used but has no driver.
+Warning: Wire top.\done is used but has no driver.
+Found and reported 27 problems.

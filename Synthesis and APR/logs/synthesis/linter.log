@@ -1,0 +1,22 @@
+%Warning-UNUSEDPARAM: /openlane/designs/dnn/src/zigzag.sv:7:15: Parameter is not used: 'UNQ_DIR'
+                                                              : ... In instance top.u_pe_array
+    7 |     parameter UNQ_DIR  = 4
+      |               ^~~~~~~
+                      ... For warning description see https://verilator.org/warn/UNUSEDPARAM?v=5.009
+                      ... Use "/* verilator lint_off UNUSEDPARAM */" and lint_on around source to disable this message.
+%Warning-UNUSEDSIGNAL: /openlane/designs/dnn/src/zigzag.sv:106:22: Signal is not used: 'fifo1_full'
+                                                                 : ... In instance top.u_pe_array
+  106 |     wire             fifo1_full, fifo1_empty;
+      |                      ^~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /openlane/designs/dnn/src/zigzag.sv:106:34: Signal is not used: 'fifo1_empty'
+                                                                 : ... In instance top.u_pe_array
+  106 |     wire             fifo1_full, fifo1_empty;
+      |                                  ^~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /openlane/designs/dnn/src/zigzag.sv:107:22: Signal is not used: 'fifo2_full'
+                                                                 : ... In instance top.u_pe_array
+  107 |     wire             fifo2_full, fifo2_empty;
+      |                      ^~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /openlane/designs/dnn/src/zigzag.sv:107:34: Signal is not used: 'fifo2_empty'
+                                                                 : ... In instance top.u_pe_array
+  107 |     wire             fifo2_full, fifo2_empty;
+      |                                  ^~~~~~~~~~~

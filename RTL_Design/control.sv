@@ -52,7 +52,7 @@ module zigzag_fsm (
             ch_cnt_en_d <= ch_cnt_en;
     end
     
-    // ✅ LATCH-BASED ICG: Integrated Clock Gate for ch_cnt
+    // LATCH-BASED ICG: Integrated Clock Gate for ch_cnt
     // Step 1: Latch - samples enable only when clock is LOW
     logic ch_cnt_en_latched;
     always_latch begin

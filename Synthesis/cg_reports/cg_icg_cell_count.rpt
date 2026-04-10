@@ -1,0 +1,29 @@
+============================================================
+LATCH-BASED ICG CELL INSTANTIATION VERIFICATION
+============================================================
+
+Expected Configuration:
+  PE Module Instances:                  16
+  ICG Latches per PE psum_out:          1
+  Total ICG Latches for PE psum:        16
+
+  FSM Module Instances:                 1
+  ICG Latches per FSM ch_cnt:           1
+  Total ICG Latches for FSM:            1
+
+  TOTAL EXPECTED ICG LATCHES:           17
+
+============================================================
+Gated Clock Signal Details:
+============================================================
+
+Warning: Can't find objects matching '*clk*gated*' in design 'top'. (UID-95)
+Error: Value for list '<net_list>' must have 1 elements. (CMD-036)
+
+============================================================
+Gating Enable Signal Details:
+============================================================
+
+Warning: Can't find objects matching '*latched*' in design 'top'. (UID-95)
+Error: Value for list '<net_list>' must have 1 elements. (CMD-036)
+0

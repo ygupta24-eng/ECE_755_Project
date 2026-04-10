@@ -1,0 +1,293 @@
+ 
+****************************************
+Report : area
+Design : top
+Version: X-2025.06
+Date   : Fri Apr 10 14:32:57 2026
+****************************************
+
+Information: Updating design information... (UID-85)
+Library(s) Used:
+
+    asap7sc7p5t_INVBUF_RVT_TT_nldm_211120 (File: /filespace/v/vsathishkuma/ECE755/ECE_755_Project/Synthesis/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_211120.db)
+    asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120 (File: /filespace/v/vsathishkuma/ECE755/ECE_755_Project/Synthesis/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.db)
+    asap7sc7p5t_OA_RVT_TT_nldm_211120 (File: /filespace/v/vsathishkuma/ECE755/ECE_755_Project/Synthesis/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_OA_RVT_TT_nldm_211120.db)
+    asap7sc7p5t_AO_RVT_TT_nldm_211120 (File: /filespace/v/vsathishkuma/ECE755/ECE_755_Project/Synthesis/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_AO_RVT_TT_nldm_211120.db)
+    asap7sc7p5t_SEQ_RVT_TT_nldm_220123 (File: /filespace/v/vsathishkuma/ECE755/ECE_755_Project/Synthesis/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.db)
+
+Number of ports:                         3666
+Number of nets:                          9694
+Number of cells:                         6330
+Number of combinational cells:           5374
+Number of sequential cells:               831
+Number of macros/black boxes:               0
+Number of buf/inv:                       1705
+Number of references:                       2
+
+Combinational area:                457.403759
+Buf/Inv area:                      115.094521
+Noncombinational area:             285.170216
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                   742.573975
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  --------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
+                                  Total      Total    national  national   boxes   Design
+--------------------------------  ---------  -------  --------  ---------  ------  ----------------------------------------------------------
+top                                742.5740    100.0    0.0000     0.0000  0.0000  top
+u_fsm                               14.0405      1.9    7.8732     5.9049  0.0000  zigzag_fsm
+u_fsm/clk_gate_v_cnt_reg             0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_zigzag_fsm
+u_pe_array                         728.5334     98.1   10.5559     0.0000  0.0000  zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4
+u_pe_array/g_pe_row[0].g_pe_col[0].u_pe
+                                    37.5581      5.1   14.1426    11.5911  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_0
+u_pe_array/g_pe_row[0].g_pe_col[0].u_pe/add_113
+                                     3.7033      0.5    3.7033     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_0_DW01_add_0_DW01_add_30
+u_pe_array/g_pe_row[0].g_pe_col[0].u_pe/clk_gate_move_reg_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_31
+u_pe_array/g_pe_row[0].g_pe_col[0].u_pe/clk_gate_psum_out_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_0
+u_pe_array/g_pe_row[0].g_pe_col[0].u_pe/mult_97
+                                     7.5962      1.0    5.1030     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_0_DW02_mult_0_DW02_mult_15
+u_pe_array/g_pe_row[0].g_pe_col[0].u_pe/mult_97/FS_3
+                                     2.4932      0.3    2.4932     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_0_DW01_add_1_DW01_add_31
+u_pe_array/g_pe_row[0].g_pe_col[1].u_pe
+                                    37.6310      5.1   14.2009    11.5911  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_15
+u_pe_array/g_pe_row[0].g_pe_col[1].u_pe/add_113
+                                     3.7033      0.5    3.7033     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_15_DW01_add_0_DW01_add_28
+u_pe_array/g_pe_row[0].g_pe_col[1].u_pe/clk_gate_move_reg_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_29
+u_pe_array/g_pe_row[0].g_pe_col[1].u_pe/clk_gate_psum_out_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_30
+u_pe_array/g_pe_row[0].g_pe_col[1].u_pe/mult_97
+                                     7.6108      1.0    5.1176     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_15_DW02_mult_0_DW02_mult_14
+u_pe_array/g_pe_row[0].g_pe_col[1].u_pe/mult_97/FS_3
+                                     2.4932      0.3    2.4932     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_15_DW01_add_1_DW01_add_29
+u_pe_array/g_pe_row[0].g_pe_col[2].u_pe
+                                    37.5581      5.1   14.1280    11.5911  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_14
+u_pe_array/g_pe_row[0].g_pe_col[2].u_pe/add_113
+                                     3.7033      0.5    3.7033     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_14_DW01_add_0_DW01_add_26
+u_pe_array/g_pe_row[0].g_pe_col[2].u_pe/clk_gate_move_reg_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_27
+u_pe_array/g_pe_row[0].g_pe_col[2].u_pe/clk_gate_psum_out_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_28
+u_pe_array/g_pe_row[0].g_pe_col[2].u_pe/mult_97
+                                     7.6108      1.0    5.1176     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_14_DW02_mult_0_DW02_mult_13
+u_pe_array/g_pe_row[0].g_pe_col[2].u_pe/mult_97/FS_3
+                                     2.4932      0.3    2.4932     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_14_DW01_add_1_DW01_add_27
+u_pe_array/g_pe_row[0].g_pe_col[3].u_pe
+                                    37.2519      5.0   13.8364    11.5911  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_13
+u_pe_array/g_pe_row[0].g_pe_col[3].u_pe/add_113
+                                     3.7033      0.5    3.7033     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_13_DW01_add_0_DW01_add_24
+u_pe_array/g_pe_row[0].g_pe_col[3].u_pe/clk_gate_move_reg_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_25
+u_pe_array/g_pe_row[0].g_pe_col[3].u_pe/clk_gate_psum_out_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_26
+u_pe_array/g_pe_row[0].g_pe_col[3].u_pe/mult_97
+                                     7.5962      1.0    5.1030     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_13_DW02_mult_0_DW02_mult_12
+u_pe_array/g_pe_row[0].g_pe_col[3].u_pe/mult_97/FS_3
+                                     2.4932      0.3    2.4932     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_13_DW01_add_1_DW01_add_25
+u_pe_array/g_pe_row[1].g_pe_col[0].u_pe
+                                    37.7914      5.1   14.1718    11.5911  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_12
+u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/add_113
+                                     3.7033      0.5    3.7033     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_12_DW01_add_0_DW01_add_22
+u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/clk_gate_move_reg_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_23
+u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/clk_gate_psum_out_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_24
+u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/mult_97
+                                     7.8003      1.1    5.3071     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_12_DW02_mult_0_DW02_mult_11
+u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/mult_97/FS_3
+                                     2.4932      0.3    2.4932     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_12_DW01_add_1_DW01_add_23
+u_pe_array/g_pe_row[1].g_pe_col[1].u_pe
+                                    37.4269      5.0   13.8073    11.5911  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_11
+u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/add_113
+                                     3.7033      0.5    3.7033     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_11_DW01_add_0_DW01_add_20
+u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/clk_gate_move_reg_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_21
+u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/clk_gate_psum_out_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_22
+u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/mult_97
+                                     7.8003      1.1    5.3071     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_11_DW02_mult_0_DW02_mult_10
+u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/mult_97/FS_3
+                                     2.4932      0.3    2.4932     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_11_DW01_add_1_DW01_add_21
+u_pe_array/g_pe_row[1].g_pe_col[2].u_pe
+                                    37.4414      5.0   13.8218    11.5911  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_10
+u_pe_array/g_pe_row[1].g_pe_col[2].u_pe/add_113
+                                     3.7033      0.5    3.7033     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_10_DW01_add_0_DW01_add_18
+u_pe_array/g_pe_row[1].g_pe_col[2].u_pe/clk_gate_move_reg_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_19
+u_pe_array/g_pe_row[1].g_pe_col[2].u_pe/clk_gate_psum_out_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_20
+u_pe_array/g_pe_row[1].g_pe_col[2].u_pe/mult_97
+                                     7.8003      1.1    5.3071     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_10_DW02_mult_0_DW02_mult_9
+u_pe_array/g_pe_row[1].g_pe_col[2].u_pe/mult_97/FS_3
+                                     2.4932      0.3    2.4932     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_10_DW01_add_1_DW01_add_19
+u_pe_array/g_pe_row[1].g_pe_col[3].u_pe
+                                    37.7039      5.1   14.0697    11.5911  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_9
+u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/add_113
+                                     3.7033      0.5    3.7033     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_9_DW01_add_0_DW01_add_16
+u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/clk_gate_move_reg_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_17
+u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/clk_gate_psum_out_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_18
+u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/mult_97
+                                     7.8149      1.1    5.3217     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_9_DW02_mult_0_DW02_mult_8
+u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/mult_97/FS_3
+                                     2.4932      0.3    2.4932     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_9_DW01_add_1_DW01_add_17
+u_pe_array/g_pe_row[2].g_pe_col[0].u_pe
+                                    37.3540      5.0   13.7344    11.5911  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_8
+u_pe_array/g_pe_row[2].g_pe_col[0].u_pe/add_113
+                                     3.7033      0.5    3.7033     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_8_DW01_add_0_DW01_add_14
+u_pe_array/g_pe_row[2].g_pe_col[0].u_pe/clk_gate_move_reg_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_15
+u_pe_array/g_pe_row[2].g_pe_col[0].u_pe/clk_gate_psum_out_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_16
+u_pe_array/g_pe_row[2].g_pe_col[0].u_pe/mult_97
+                                     7.8003      1.1    5.3071     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_8_DW02_mult_0_DW02_mult_7
+u_pe_array/g_pe_row[2].g_pe_col[0].u_pe/mult_97/FS_3
+                                     2.4932      0.3    2.4932     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_8_DW01_add_1_DW01_add_15
+u_pe_array/g_pe_row[2].g_pe_col[1].u_pe
+                                    37.6456      5.1   13.9385    11.5911  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_7
+u_pe_array/g_pe_row[2].g_pe_col[1].u_pe/add_113
+                                     3.7033      0.5    3.7033     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_7_DW01_add_0_DW01_add_12
+u_pe_array/g_pe_row[2].g_pe_col[1].u_pe/clk_gate_move_reg_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_13
+u_pe_array/g_pe_row[2].g_pe_col[1].u_pe/clk_gate_psum_out_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_14
+u_pe_array/g_pe_row[2].g_pe_col[1].u_pe/mult_97
+                                     7.8878      1.1    5.3946     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_7_DW02_mult_0_DW02_mult_6
+u_pe_array/g_pe_row[2].g_pe_col[1].u_pe/mult_97/FS_3
+                                     2.4932      0.3    2.4932     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_7_DW01_add_1_DW01_add_13
+u_pe_array/g_pe_row[2].g_pe_col[2].u_pe
+                                    37.5435      5.1   13.8364    11.5911  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_6
+u_pe_array/g_pe_row[2].g_pe_col[2].u_pe/add_113
+                                     3.7033      0.5    3.7033     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_6_DW01_add_0_DW01_add_10
+u_pe_array/g_pe_row[2].g_pe_col[2].u_pe/clk_gate_move_reg_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_11
+u_pe_array/g_pe_row[2].g_pe_col[2].u_pe/clk_gate_psum_out_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_12
+u_pe_array/g_pe_row[2].g_pe_col[2].u_pe/mult_97
+                                     7.8878      1.1    5.3946     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_6_DW02_mult_0_DW02_mult_5
+u_pe_array/g_pe_row[2].g_pe_col[2].u_pe/mult_97/FS_3
+                                     2.4932      0.3    2.4932     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_6_DW01_add_1_DW01_add_11
+u_pe_array/g_pe_row[2].g_pe_col[3].u_pe
+                                    37.6893      5.1   13.9822    11.5911  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_5
+u_pe_array/g_pe_row[2].g_pe_col[3].u_pe/add_113
+                                     3.7033      0.5    3.7033     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_5_DW01_add_0_DW01_add_8
+u_pe_array/g_pe_row[2].g_pe_col[3].u_pe/clk_gate_move_reg_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_9
+u_pe_array/g_pe_row[2].g_pe_col[3].u_pe/clk_gate_psum_out_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_10
+u_pe_array/g_pe_row[2].g_pe_col[3].u_pe/mult_97
+                                     7.8878      1.1    5.3946     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_5_DW02_mult_0_DW02_mult_4
+u_pe_array/g_pe_row[2].g_pe_col[3].u_pe/mult_97/FS_3
+                                     2.4932      0.3    2.4932     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_5_DW01_add_1_DW01_add_9
+u_pe_array/g_pe_row[3].g_pe_col[0].u_pe
+                                    37.2373      5.0   13.7489    11.5911  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_4
+u_pe_array/g_pe_row[3].g_pe_col[0].u_pe/add_113
+                                     3.7033      0.5    3.7033     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_4_DW01_add_0_DW01_add_6
+u_pe_array/g_pe_row[3].g_pe_col[0].u_pe/clk_gate_move_reg_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_7
+u_pe_array/g_pe_row[3].g_pe_col[0].u_pe/clk_gate_psum_out_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_8
+u_pe_array/g_pe_row[3].g_pe_col[0].u_pe/mult_97
+                                     7.6691      1.0    5.1759     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_4_DW02_mult_0_DW02_mult_3
+u_pe_array/g_pe_row[3].g_pe_col[0].u_pe/mult_97/FS_3
+                                     2.4932      0.3    2.4932     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_4_DW01_add_1_DW01_add_7
+u_pe_array/g_pe_row[3].g_pe_col[1].u_pe
+                                    37.1644      5.0   13.6760    11.5911  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_3
+u_pe_array/g_pe_row[3].g_pe_col[1].u_pe/add_113
+                                     3.7033      0.5    3.7033     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_3_DW01_add_0_DW01_add_4
+u_pe_array/g_pe_row[3].g_pe_col[1].u_pe/clk_gate_move_reg_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_5
+u_pe_array/g_pe_row[3].g_pe_col[1].u_pe/clk_gate_psum_out_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_6
+u_pe_array/g_pe_row[3].g_pe_col[1].u_pe/mult_97
+                                     7.6691      1.0    5.1759     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_3_DW02_mult_0_DW02_mult_2
+u_pe_array/g_pe_row[3].g_pe_col[1].u_pe/mult_97/FS_3
+                                     2.4932      0.3    2.4932     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_3_DW01_add_1_DW01_add_5
+u_pe_array/g_pe_row[3].g_pe_col[2].u_pe
+                                    38.0975      5.1   14.5946    11.5911  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_2
+u_pe_array/g_pe_row[3].g_pe_col[2].u_pe/add_113
+                                     3.7033      0.5    3.7033     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_2_DW01_add_0_DW01_add_2
+u_pe_array/g_pe_row[3].g_pe_col[2].u_pe/clk_gate_move_reg_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_3
+u_pe_array/g_pe_row[3].g_pe_col[2].u_pe/clk_gate_psum_out_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_4
+u_pe_array/g_pe_row[3].g_pe_col[2].u_pe/mult_97
+                                     7.6837      1.0    5.1905     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_2_DW02_mult_0_DW02_mult_1
+u_pe_array/g_pe_row[3].g_pe_col[2].u_pe/mult_97/FS_3
+                                     2.4932      0.3    2.4932     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_2_DW01_add_1_DW01_add_3
+u_pe_array/g_pe_row[3].g_pe_col[3].u_pe
+                                    37.7476      5.1   14.2447    11.5911  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_1
+u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/add_113
+                                     3.7033      0.5    3.7033     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_1_DW01_add_0
+u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/clk_gate_move_reg_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_1
+u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/clk_gate_psum_out_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_2
+u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/mult_97
+                                     7.6837      1.0    5.1905     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_1_DW02_mult_0
+u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/mult_97/FS_3
+                                     2.4932      0.3    2.4932     0.0000  0.0000  pe_DATA_W6_WEIGHT_W2_ACC_W13_1_DW01_add_1
+u_pe_array/u_fifo1                  58.5679      7.9   15.9943    39.4243  0.0000  fifo9_DATA_W13_0
+u_pe_array/u_fifo1/clk_gate_buffer_reg[0]
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_0
+u_pe_array/u_fifo1/clk_gate_buffer_reg[1]
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_23
+u_pe_array/u_fifo1/clk_gate_buffer_reg[2]
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_22
+u_pe_array/u_fifo1/clk_gate_buffer_reg[3]
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_21
+u_pe_array/u_fifo1/clk_gate_buffer_reg[4]
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_20
+u_pe_array/u_fifo1/clk_gate_buffer_reg[5]
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_19
+u_pe_array/u_fifo1/clk_gate_buffer_reg[6]
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_18
+u_pe_array/u_fifo1/clk_gate_buffer_reg[7]
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_17
+u_pe_array/u_fifo1/clk_gate_buffer_reg[8]
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_16
+u_pe_array/u_fifo1/clk_gate_count_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_13
+u_pe_array/u_fifo1/clk_gate_rd_ptr_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_14
+u_pe_array/u_fifo1/clk_gate_wr_ptr_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_15
+u_pe_array/u_fifo2                  58.5679      7.9   15.9943    39.4243  0.0000  fifo9_DATA_W13_1
+u_pe_array/u_fifo2/clk_gate_buffer_reg[0]
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_12
+u_pe_array/u_fifo2/clk_gate_buffer_reg[1]
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_11
+u_pe_array/u_fifo2/clk_gate_buffer_reg[2]
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_10
+u_pe_array/u_fifo2/clk_gate_buffer_reg[3]
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_9
+u_pe_array/u_fifo2/clk_gate_buffer_reg[4]
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_8
+u_pe_array/u_fifo2/clk_gate_buffer_reg[5]
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_7
+u_pe_array/u_fifo2/clk_gate_buffer_reg[6]
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_6
+u_pe_array/u_fifo2/clk_gate_buffer_reg[7]
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_5
+u_pe_array/u_fifo2/clk_gate_buffer_reg[8]
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_4
+u_pe_array/u_fifo2/clk_gate_count_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_1
+u_pe_array/u_fifo2/clk_gate_rd_ptr_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_2
+u_pe_array/u_fifo2/clk_gate_wr_ptr_reg
+                                     0.2624      0.0    0.0000     0.2624  0.0000  SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_3
+--------------------------------  ---------  -------  --------  ---------  ------  ----------------------------------------------------------
+Total                                                 457.4038   285.1702  0.0000
+
+1

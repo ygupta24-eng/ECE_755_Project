@@ -58,7 +58,7 @@ module top #(
     // ----------------------------------------------------------------
     // PE array — zigzag dataflow accelerator
     // ----------------------------------------------------------------
-    pe_array #(
+    zig_zag_4x4 #(
         .DATA_W   (DATA_W),
         .WEIGHT_W (WEIGHT_W),
         .ACC_W    (ACC_W),

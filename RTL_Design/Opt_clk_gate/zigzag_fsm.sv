@@ -32,48 +32,13 @@ module zigzag_fsm (
 
     state_t state, next_state;
 
-    // ═══════════════════════════════════════════════════════════════════
-    // CLOCK GATING SIGNALS - Priority 1 Optimization
-    // ═══════════════════════════════════════════════════════════════════
-    // Gated clock for ch_cnt counter (created by ICG cell in synthesis)
-    logic clk_ch_cnt_gated;
-    
-    // Gating enable for ch_cnt - only needs clock during COMPUTE transitions
-    logic ch_cnt_en;
-    assign ch_cnt_en = (state == COMPUTE) && 
-                       (next_state inside {W_LOAD, H_SHIFT, V_SHIFT, PSUM_SHIFT});
-    
-    // Pipelined gating enable (1 cycle delay for glitch-free clock gating)
-    logic ch_cnt_en_d;
-    always_ff @(posedge clk or negedge rst_n) begin
-        if (!rst_n)
-            ch_cnt_en_d <= 1'b0;
-        else
-            ch_cnt_en_d <= ch_cnt_en;
-    end
-    
-    // LATCH-BASED ICG: Integrated Clock Gate for ch_cnt
-    // Step 1: Latch - samples enable only when clock is LOW
-    logic ch_cnt_en_latched;
-    always_latch begin
-        if (~clk)
-            ch_cnt_en_latched = ch_cnt_en_d;  // Sample when clk=0
-        // Hold value when clk=1 (no transitions during pulse)
-    end
-    
-    // Step 2: Gated Clock Generator
-    // AND gate produces clean gated clock (no glitches possible)
-    // Gates the ch_cnt counter clock → ~80% power savings on counter (4-5% overall)
-    assign clk_ch_cnt_gated = clk & ch_cnt_en_latched;
-
     // ----------------------------------------------------------------
     // Counters
     // ----------------------------------------------------------------
     logic [3:0] cnt;      // cycle counter within state (max 8)
     logic [1:0] ch_cnt;   // channel counter     0..3
-    logic [1:0] h_cnt;    // h-shift counter     0..1 (row 0 only)
+    logic [1:0] h_cnt;    // h-shift counter     0..1
     logic [2:0] v_cnt;    // v-shift counter     0..6
-
 
     // ----------------------------------------------------------------
     // State register
@@ -84,7 +49,7 @@ module zigzag_fsm (
     end
 
     // ----------------------------------------------------------------
-    // Cycle counter — resets on state transition
+    // Cycle counter — resets on every state transition
     // ----------------------------------------------------------------
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
@@ -97,13 +62,19 @@ module zigzag_fsm (
         end
     end
 
-    // ────────────────────────────────────────────────────────────────
-    // ch_cnt — resets for new pixel, increments per channel (GATED CLOCK)
-    // ────────────────────────────────────────────────────────────────
-    // PRIORITY 1: Uses clk_ch_cnt_gated instead of clk
-    // Clock is gated (disabled) in all states except COMPUTE transitions
-    // Expected Power Savings: ~80% of ch_cnt clock cycles (4-5% overall)
-    always_ff @(posedge clk_ch_cnt_gated or negedge rst_n) begin
+    // ----------------------------------------------------------------
+    // ch_cnt — channel counter
+    // ----------------------------------------------------------------
+    // ICG removed: ch_cnt is a 2-bit counter that increments only ~4
+    // times per full inference. The latch+FF+AND overhead of an ICG
+    // cell costs more area and routing than a 2-bit counter saves in
+    // power. More critically, the gating enable required a 1-cycle
+    // delay (en_d) that caused the increment to fire one cycle after
+    // the COMPUTE→* transition — at which point state had already
+    // changed, so the increment condition was never true, leaving
+    // ch_cnt permanently stuck at 0 and the FSM unable to progress.
+    // Plain clk is correct and costs negligibly more power here.
+    always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             ch_cnt <= '0;
         end else begin
@@ -128,7 +99,7 @@ module zigzag_fsm (
     end
 
     // ----------------------------------------------------------------
-    // h_cnt — row 0 horizontal shifts only
+    // h_cnt — horizontal shift counter (row 0 only)
     // ----------------------------------------------------------------
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
@@ -244,53 +215,49 @@ module zigzag_fsm (
 
         case (state)
             IDLE: begin
-                // all inactive
+                // all outputs inactive
             end
 
             CLEAR: begin
-                // 1 cycle: clear all psums before new convolution
-                // en=1 needed to open the psum accumulator FF
-                // psum_clr=1 resets psum_out to 0
-                // move_en=0: activations don't move
+                // 1 cycle: en=1 opens psum_gated clock, psum_clr=1 zeros all psums
+                // move_en=0: activations do not move this cycle
                 en       = 1'b1;
                 psum_clr = 1'b1;
             end
 
             FILL: begin
                 move_en   = 1'b1;
-                direction = 2'b10;   // h-zigzag
+                direction = 2'b10;   // h-zigzag: load activations into array
             end
 
             W_LOAD: begin
                 w_ld_en   = 1'b1;
-                direction = 2'b11;
+                direction = 2'b11;   // circular — weights shift, activations idle
             end
 
             COMPUTE: begin
                 en        = 1'b1;
                 move_en   = 1'b1;
-                //w_ld_en   = 1'b1;
-                direction = 2'b11;
+                direction = 2'b11;   // circular shift: MAC active each cycle
             end
 
             H_SHIFT: begin
                 move_en   = 1'b1;
                 fifo_en   = 1'b1;
-                direction = 2'b10;
+                direction = 2'b10;   // horizontal zigzag wrap via FIFO
             end
 
             V_SHIFT: begin
                 move_en   = 1'b1;
                 fifo_en   = 1'b1;
-                direction = 2'b01;
+                direction = 2'b01;   // vertical zigzag wrap via FIFO
             end
 
             PSUM_SHIFT: begin
                 move_en       = 1'b1;
                 psum_shift_en = 1'b1;
-                direction     = 2'b10;
-                done          = (cnt == 4'd7);  // pulse on last cycle
-                // psum_clr removed — clearing now done in CLEAR state
+                direction     = 2'b10;               // reuse h-zigzag: drain leftward
+                done          = (cnt == 4'd7);        // pulse on last drain cycle
             end
 
             default: ;
@@ -299,15 +266,14 @@ module zigzag_fsm (
 
 endmodule
 
-/* Notes
-**Updated sequence:**
-```
-IDLE   → start asserted
-CLEAR  → 1 cycle: en=1, psum_clr=1 — all 16 psums zeroed ✓
-FILL   → 8 cycles
-W_LOAD+COMPUTE × 4 channels ...
-...
-PSUM_SHIFT → 8 cycles, done pulses on last cycle
-IDLE   → waits for next start, psums already cleared for next run ✓
-
+/*
+State sequence per inference:
+  IDLE       → start asserted
+  CLEAR      → 1 cycle:  en=1, psum_clr=1 — all 16 psums zeroed
+  FILL       → 8 cycles: activations loaded into PE array
+  [W_LOAD(4) + COMPUTE(1)] × 4 channels, repeated per pixel position:
+    H_SHIFT  → 4 cycles: horizontal wrap (h_cnt: 0→1→2)
+    V_SHIFT  → 4 cycles: vertical wrap   (v_cnt: 0→1→...→6)
+  PSUM_SHIFT → 8 cycles: psums drained out, done pulses on cycle 7
+  IDLE       → ready for next start
 */

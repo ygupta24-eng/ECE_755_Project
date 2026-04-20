@@ -5,7 +5,7 @@ module pe #(
 )(
     input  logic              clk,
     input  logic              rst_n,
-    input  logic              en,          // compute enable — high in CLEAR and COMPUTE only
+    //input  logic              en,          // compute enable — high in CLEAR and COMPUTE only
     input  logic              move_en,
     input  logic              psum_shift_en,
     input  logic [1:0]        dst_sel,

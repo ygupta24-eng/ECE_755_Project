@@ -220,7 +220,6 @@ module zig_zag_4x4 #(
                 ) u_pe (
                     .clk            (clk),
                     .rst_n          (rst_n),
-                    .en             (en),
                     .move_en        (move_en),
                     .psum_shift_en  (psum_shift_en),
                     .dst_sel        (dst_sel[grp(r,c)]),
@@ -238,6 +237,7 @@ module zig_zag_4x4 #(
                     .w_out          (w_chain[r+1][c]),
                     .psum_clr       (psum_clr),      
                     .en_latched     (en_latched)
+                    //removed en input and en_latched connection to fix clk gating
                 );
             end
         end

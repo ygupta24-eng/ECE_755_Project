@@ -26,19 +26,9 @@ module pe #(
     output logic [WEIGHT_W-1:0]     w_out,
 
     input  logic                    psum_clr,
-    input  logic                    en_latched // gated clock for psum_out register
+    input  logic                    en_latched // gated clock en signal for psum_out register
 );
 
-    // ═══════════════════════════════════════════════════════════════════
-    // ICG — psum_out accumulator
-    // ═══════════════════════════════════════════════════════════════════
-    // en is a registered FSM output — stable well before rising edge.
-    // Safe to sample directly in latch without a pipeline stage.
-    // Removing en_for_gating_d fixes the Bug1 miss: CLEAR has en=1
-    // but the old en_d was still 0 from IDLE, silently blocking psum_clr.
-    //
-    // Structure: latch (transparent clk=0) → AND clk → clk_psum_gated
-    // Latch holds enable stable across full clk-high phase → no glitch.
 
     logic clk_psum_gated;
 
@@ -90,12 +80,11 @@ module pe #(
     always_ff @(posedge clk_psum_gated or negedge rst_n) begin
         if (!rst_n) begin
             psum_out <= '0;
-        end else if (en) begin
-            if (psum_clr)
-                psum_out <= '0;
-            else
-                psum_out <= psum_out + product;
-        end
+        end // else if (en) begin not needed — en=1 whenever clk_psum_gated toggles
+        if (psum_clr)
+            psum_out <= '0;
+        else
+            psum_out <= psum_out + product;
     end
 
     // ── Psum shift edge detect ────────────────────────────────────

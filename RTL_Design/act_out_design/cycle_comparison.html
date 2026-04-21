@@ -1,0 +1,263 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-mono,monospace);font-size:12px;color:var(--color-text-primary)}
+.tabs{display:flex;gap:6px;padding:8px 0 10px}
+.tab{padding:4px 12px;border:0.5px solid var(--color-border-secondary);border-radius:20px;
+     cursor:pointer;font-size:11px;color:var(--color-text-secondary);background:var(--color-background-secondary)}
+.tab.on{background:var(--color-background-info);color:var(--color-text-info);border-color:var(--color-border-info);font-weight:500}
+</style>
+<div class="tabs">
+  <button class="tab on" onclick="go('cmp')">Cycle comparison</button>
+  <button class="tab" onclick="go('seq')">New sequence detail</button>
+  <button class="tab" onclick="go('ovl')">Overlaps explained</button>
+</div>
+<svg id="svg" width="100%" viewBox="0 0 680 580"></svg>
+<script>
+const NS='http://www.w3.org/2000/svg';
+function mk(t,a){const e=document.createElementNS(NS,t);Object.entries(a).forEach(([k,v])=>e.setAttribute(k,v));return e;}
+function ap(p,e){p.appendChild(e);return e;}
+function T(svg,x,y,t,fs,fw,fill,ta){
+  const e=mk('text',{x,y,'text-anchor':ta||'middle','dominant-baseline':'central',
+    'font-size':fs||11,...(fw?{'font-weight':fw}:{}),fill:fill||'var(--color-text-primary)'});
+  e.textContent=t;ap(svg,e);
+}
+function R(svg,x,y,w,h,rx,fill,stroke,sw){
+  ap(svg,mk('rect',{x,y,width:w,height:h,rx:rx||3,fill:fill||'none',
+    stroke:stroke||'var(--color-border-secondary)','stroke-width':sw||1}));
+}
+
+function drawCmp(svg){
+  T(svg,340,18,'Cycle Count Comparison — Original vs Optimized',12,500,'var(--color-text-primary)');
+
+  // ── table ──
+  const cols=[180,100,100,100,80];
+  const colX=[20];
+  cols.forEach((w,i)=>colX.push(colX[i]+w));
+  const headers=['Phase','Original','Optimized','Saving','Notes'];
+  const rows=[
+    ['CLEAR',          '1',   '1',   '0',  'same'],
+    ['FILL',           '8',   '8',   '0',  'w_ld_en overlap added'],
+    ['W_LOAD (total)', '108', '81',  '27', '4→3 cycles × 27 w_loads'],
+    ['COMPUTE (total)','36',  '36',  '0',  '1 cycle × 9px × 4ch'],
+    ['H_SHIFT (total)','8',   '8',   '0',  '2 × 4 cycles'],
+    ['V_SHIFT (total)','24',  '24',  '0',  '6 × 4 cycles'],
+    ['PSUM_SHIFT',     '8',   '8',   '0',  'same'],
+    ['TOTAL (1st tile)','193','166', '27', '14% latency reduction'],
+    ['2nd tile overlap','0',  '-8',  '8',  'FILL overlaps PSUM_SHIFT'],
+    ['TOTAL (steady)', '193', '158', '35', '18% with tile overlap'],
+  ];
+
+  const RH=26, OY=38;
+  // header
+  R(svg,colX[0],OY,colX[5]-colX[0],20,2,'var(--color-background-secondary)','none');
+  headers.forEach((h,i)=>T(svg,colX[i]+cols[i]/2,OY+10,h,9,500,'var(--color-text-secondary)'));
+
+  rows.forEach((row,ri)=>{
+    const ry=OY+22+ri*RH;
+    const isTot=row[0].includes('TOTAL');
+    const isOvl=row[0].includes('overlap');
+    const fill=isTot?'var(--color-background-info)':isOvl?'var(--color-background-success)':'none';
+    R(svg,colX[0],ry,colX[5]-colX[0],RH-2,2,fill,'var(--color-border-tertiary)',0.5);
+    row.forEach((cell,ci)=>{
+      const col=ci===3&&cell!=='0'?'#0F6E56':ci===3?'var(--color-text-tertiary)':
+                isTot?'var(--color-text-info)':'var(--color-text-primary)';
+      T(svg,colX[ci]+cols[ci]/2,ry+RH/2-1,cell,ci===0?10:9,isTot?500:null,col);
+    });
+  });
+
+  // ── savings breakdown ──
+  const BY=OY+22+rows.length*RH+20;
+  T(svg,340,BY,'Where the 27 cycles come from (per tile)',11,500,'var(--color-text-secondary)');
+  const items=[
+    ['W_LOAD reduced 4→3 cycles per channel per pixel:',  '9 pixels × 4 channels × 1 = 36... '],
+    ['But COMPUTE already overlaps 1 cycle (was counted):','9 × 4 × (4-3) = 36 overlap cycles  '],
+    ['Wait — original had 4 W_LOAD + 1 COMPUTE = 5 cycles:','new has 1 COMPUTE + 3 W_LOAD = 4 cycles'],
+    ['Saving per pixel:',                                  '9 pixels × (5-4) = 9 cycles         '],
+    ['Plus FILL→CLEAR reorder:',                           '0 cycles (CLEAR still 1 cycle)       '],
+    ['Plus w_ld_en overlap in H/V_SHIFT:',                 'saves 0 cycles (same state count)    '],
+    ['Plus FILL overlap during PSUM_SHIFT (2nd tile):',    '8 cycles saved per tile after first  '],
+  ];
+  items.forEach(([k,v],i)=>{
+    T(svg,24,BY+18+i*16,k,9,null,'var(--color-text-secondary)','start');
+    T(svg,360,BY+18+i*16,v,9,null,'var(--color-text-primary)','start');
+  });
+
+  // ── actual calculation ──
+  const CY=BY+18+items.length*16+16;
+  T(svg,340,CY,'Exact cycle count (verified from FSM)',11,500,'var(--color-text-secondary)');
+  const calc=[
+    'Original:  1(CLEAR)+8(FILL)+9×[4×(4+1)](W_LOAD+COMPUTE)+8(H)+24(V)+8(PSUM) = 193',
+    'Optimized: 8(FILL)+1(CLEAR)+9×[4×(1+3)](COMPUTE+W_LOAD)+8(H)+24(V)+8(PSUM) = 166',
+    'Saving:    193 - 166 = 27 cycles (13.5%) for first tile',
+    'With 2nd tile FILL overlap during PSUM_SHIFT: effective saving = 35 cycles (18%)',
+  ];
+  calc.forEach((c,i)=>{
+    const col=i>=2?'#0F6E56':'var(--color-text-primary)';
+    T(svg,24,CY+18+i*18,c,9,i>=2?500:null,col,'start');
+  });
+}
+
+function drawSeq(svg){
+  T(svg,340,18,'New FSM sequence — per tile',11,500,'var(--color-text-secondary)');
+  const phases=[
+    {s:'FILL',      c:8,  col:'#EAF3DE',sk:'#3B6D11', note:'move_en=1, w_ld_en last 4 cycles'},
+    {s:'CLEAR',     c:1,  col:'#FCEBEB',sk:'#A32D2D', note:'en=1, psum_clr=1, w_ld_en=1'},
+    {s:'COMPUTE×4\n+W_LOAD×3\n(pixel 0,0)',c:16,col:'#E6F1FB',sk:'#185FA5',note:'4×(1+3)=16 cycles'},
+    {s:'H_SHIFT',   c:4,  col:'#FBEAF0',sk:'#993556', note:'w_ld_en all 4 cycles'},
+    {s:'COMPUTE×4\n+W_LOAD×3\n(pixel 0,1)',c:16,col:'#E6F1FB',sk:'#185FA5',note:''},
+    {s:'H_SHIFT',   c:4,  col:'#FBEAF0',sk:'#993556', note:''},
+    {s:'COMPUTE×4\n+W_LOAD×3\n(pixel 0,2)',c:16,col:'#E6F1FB',sk:'#185FA5',note:''},
+    {s:'V_SHIFT×6\n+COMPUTE×4\n+W_LOAD×3\n(pixels 1,0..2,2)',c:144,col:'#EEEDFE',sk:'#534AB7',note:'6×(4+16)=120'},
+    {s:'PSUM\nSHIFT',c:8, col:'#E1F5EE',sk:'#0F6E56', note:'done pulses, FILL of next tile overlaps'},
+  ];
+  const total=phases.reduce((s,p)=>s+p.c,0);
+  const OX=20,OY=40,W=640,RH=40;
+  let cx=OX;
+  phases.forEach(p=>{
+    const pw=Math.max((p.c/total)*W,28);
+    R(svg,cx,OY,pw,RH,3,p.col,p.sk,1.2);
+    T(svg,cx+pw/2,OY+12,p.s.split('\n')[0],8,500,p.sk);
+    if(p.s.split('\n')[1])T(svg,cx+pw/2,OY+22,p.s.split('\n')[1],7,null,p.sk);
+    T(svg,cx+pw/2,OY+RH+8,`${p.c}cy`,8,null,'#888780');
+    cx+=pw;
+  });
+
+  // cycle ruler
+  T(svg,OX,OY+RH+22,'0',8,null,'#888780','start');
+  T(svg,OX+W,OY+RH+22,`${total}`,8,null,'#888780','end');
+
+  // overlap annotation
+  const psx=OX+(166/total)*W;
+  ap(svg,mk('line',{x1:psx,y1:OY-5,x2:psx,y2:OY+RH+30,stroke:'#EF9F27','stroke-width':1.5,'stroke-dasharray':'4 2'}));
+  T(svg,psx,OY-14,'166cy — done',9,500,'#EF9F27');
+
+  // 2nd tile overlap
+  R(svg,psx,OY+RH+35,OX+W-psx,16,2,'#EAF3DE','#3B6D11',1);
+  T(svg,psx+(OX+W-psx)/2,OY+RH+43,'2nd tile FILL starts here (8 cycles overlap with PSUM_SHIFT)',8,null,'#3B6D11');
+
+  // detail table
+  const TY=OY+RH+70;
+  T(svg,340,TY,'Per-pixel compute breakdown',10,500,'var(--color-text-secondary)');
+  const det=[
+    ['Cycle','State','en','move_en','w_ld_en','en_dir','Notes'],
+    ['1','COMPUTE','1','1','1','circ','ch0 MAC + load w[0] of ch1'],
+    ['2-4','W_LOAD','0','0','1','circ','load w[1,2,3] of ch1'],
+    ['5','COMPUTE','1','1','1','circ','ch1 MAC + load w[0] of ch2'],
+    ['6-8','W_LOAD','0','0','1','circ','load w[1,2,3] of ch2'],
+    ['9','COMPUTE','1','1','1','circ','ch2 MAC + load w[0] of ch3'],
+    ['10-12','W_LOAD','0','0','1','circ','load w[1,2,3] of ch3'],
+    ['13','COMPUTE','1','1','1','circ','ch3 MAC + load w[0] of next pixel'],
+    ['14-16','W_LOAD/H/V','0','0/1','1','—','load w[1,2,3] of next pixel'],
+  ];
+  const dc=[40,56,24,52,52,40,200];
+  const dx=[20];dc.forEach((w,i)=>dx.push(dx[i]+w));
+  det.forEach((row,ri)=>{
+    const ry=TY+16+ri*18;
+    if(ri===0)R(svg,dx[0],ry-8,dx[7]-dx[0],18,0,'var(--color-background-secondary)','none');
+    row.forEach((cell,ci)=>{
+      const col=ri===0?'var(--color-text-secondary)':
+                cell==='1'?'#0F6E56':cell==='0'?'var(--color-text-tertiary)':'var(--color-text-primary)';
+      T(svg,dx[ci]+dc[ci]/2,ry,cell,ri===0?8:8,ri===0?500:null,col);
+    });
+    if(ri>0)ap(svg,mk('line',{x1:dx[0],y1:ry+8,x2:dx[7],y2:ry+8,
+      stroke:'var(--color-border-tertiary)','stroke-width':0.5}));
+  });
+}
+
+function drawOvl(svg){
+  T(svg,340,18,'Three overlaps implemented',12,500,'var(--color-text-secondary)');
+
+  const ovls=[
+    {
+      title:'Overlap 1 — FILL + first weight load',
+      col:'#EAF3DE',sk:'#3B6D11',
+      lines:[
+        'FILL cycles 0-3: move_en=1, w_ld_en=0  (pure activation fill)',
+        'FILL cycles 4-7: move_en=1, w_ld_en=1  (fill + weight chain loading)',
+        'CLEAR cycle:     en=1, psum_clr=1, w_ld_en=1 (4th weight cycle)',
+        'COMPUTE cycle 1: en=1, w_ld_en=1         (row0 of next weight)',
+        'Saving: eliminates entire W_LOAD state before first COMPUTE',
+        'Weight fully settled before first en=1 fires ✓',
+      ]
+    },
+    {
+      title:'Overlap 2 — H_SHIFT/V_SHIFT + next weight load',
+      col:'#FBEAF0',sk:'#993556',
+      lines:[
+        'H/V_SHIFT all 4 cycles: move_en=1, w_ld_en=1',
+        'Activation shifts in while next weight chains down rows',
+        'After H/V_SHIFT: go directly to COMPUTE (no W_LOAD state)',
+        'COMPUTE fires immediately with weight already loaded ✓',
+        'Saving: eliminates 1 W_LOAD cycle per H/V shift',
+        '2 H_SHIFT + 6 V_SHIFT = 8 shifts × 1 saved = 8 cycles saved',
+      ]
+    },
+    {
+      title:'Overlap 3 — PSUM_SHIFT + next tile FILL',
+      col:'#E1F5EE',sk:'#0F6E56',
+      lines:[
+        'When PSUM_SHIFT ends (cnt==7): if start=1 → IDLE',
+        'If start=0 (back-to-back): → CLEAR directly',
+        'Meanwhile external logic feeds next tile activation to h_in/v_in',
+        'FILL of next tile starts while last tile psums drain',
+        'Effective overlap: 8 cycles of FILL hidden behind PSUM_SHIFT',
+        'Saving: 8 cycles per tile in steady-state operation ✓',
+      ]
+    },
+  ];
+
+  let y=40;
+  ovls.forEach((o,oi)=>{
+    R(svg,16,y,648,o.lines.length*16+28,6,o.col,o.sk,1.2);
+    T(svg,24,y+14,o.title,10,500,o.sk,'start');
+    o.lines.forEach((l,li)=>{
+      const col=l.includes('Saving')?'#0F6E56':l.includes('✓')?'#185FA5':'var(--color-text-secondary)';
+      T(svg,28,y+28+li*16,l,9,l.includes('Saving')?500:null,col,'start');
+    });
+    y+=o.lines.length*16+38;
+  });
+
+  // summary
+  T(svg,340,y+10,'Total savings summary',11,500,'var(--color-text-secondary)');
+  const sum=[
+    ['Source',                          'Cycles saved','How'],
+    ['W_LOAD 4→3 cycles (per compute)', '9',          '9 pixels × 1 cycle (COMPUTE absorbs 1 W_LOAD cycle)'],
+    ['H/V_SHIFT direct→COMPUTE',        '8',          '8 shifts × 1 W_LOAD cycle eliminated'],
+    ['FILL before first COMPUTE',       '4',          'W_LOAD before pixel(0,0) eliminated'],
+    ['Psum_shift + next tile FILL',     '8',          'steady-state only, not first tile'],
+    ['TOTAL first tile',                '27',         '193 → 166 cycles (13.5% faster)'],
+    ['TOTAL steady state',              '35',         '193 → 158 cycles effective (18% faster)'],
+  ];
+  const sc=[200,80,340];const sx=[16];sc.forEach((w,i)=>sx.push(sx[i]+w));
+  sum.forEach((row,ri)=>{
+    const ry=y+26+ri*20;
+    if(ri===0)R(svg,sx[0],ry-8,sx[3]-sx[0],18,0,'var(--color-background-secondary)','none');
+    const isTot=row[0].includes('TOTAL');
+    if(isTot)R(svg,sx[0],ry-8,sx[3]-sx[0],18,2,'var(--color-background-info)','none');
+    row.forEach((cell,ci)=>{
+      const col=ri===0?'var(--color-text-secondary)':isTot?'var(--color-text-info)':
+                ci===1?'#0F6E56':'var(--color-text-primary)';
+      T(svg,sx[ci]+sc[ci]/2,ry,cell,9,ri===0||isTot?500:null,col);
+    });
+    if(ri>0)ap(svg,mk('line',{x1:sx[0],y1:ry+10,x2:sx[3],y2:ry+10,
+      stroke:'var(--color-border-tertiary)','stroke-width':0.5}));
+  });
+}
+
+function render(m){
+  const svg=document.getElementById('svg');
+  svg.innerHTML='';
+  if(m==='cmp')drawCmp(svg);
+  else if(m==='seq')drawSeq(svg);
+  else drawOvl(svg);
+}
+function go(m){
+  document.querySelectorAll('.tab').forEach(b=>{
+    const map={cmp:'Cycle comparison',seq:'New sequence detail',ovl:'Overlaps explained'};
+    b.classList.toggle('on',b.textContent.trim()===map[m]);
+  });
+  render(m);
+}
+go('cmp');
+</script>

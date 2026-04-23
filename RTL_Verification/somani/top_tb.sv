@@ -1,4 +1,4 @@
-module top_tb #(
+module top_tb_1 #(
     parameter int DATA_W   = 6,
     parameter int WEIGHT_W = 2,
     parameter int ACC_W    = 13,

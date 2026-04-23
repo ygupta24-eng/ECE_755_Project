@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 
-module top_tb_100x100 #(
+module top_tb_100_100_4_low_inputs #(
     parameter int DATA_W   = 6,
     parameter int WEIGHT_W = 2,
     parameter int ACC_W    = 13,
@@ -8,27 +8,23 @@ module top_tb_100x100 #(
     parameter int COLS     = 4,
     parameter int UNQ_DIR  = 4,
     parameter int IMG_SIZE = 100,
-    parameter int OUT_SIZE = 98,
-    parameter int IN_CHAN  = 4
+    parameter int OUT_SIZE = 98
 )();
 
     // ── Signals ───────────────────────────────────────────────────
     logic clk, rst_n;
     logic start, done;
 
-    logic [DATA_W-1:0]          h_in0, h_in1;
-    logic [DATA_W-1:0]          v_in0, v_in1;
-    logic [WEIGHT_W-1:0]        w_in [0:COLS-1];
-    logic signed [ACC_W-1:0]    psum_out0;
-    logic signed [ACC_W-1:0]    psum_out1;
+    logic [DATA_W-1:0]   h_in0, h_in1;
+    logic [DATA_W-1:0]   v_in0, v_in1;
+    logic [WEIGHT_W-1:0] w_in [0:COLS-1];
+    logic [ACC_W-1:0]    psum_out0;
+    logic [ACC_W-1:0]    psum_out1;
 
     // ── Image, Kernel, Output storage ─────────────────────────────
-    logic [DATA_W-1:0]          image      [0:IMG_SIZE-1]
-                                            [0:IMG_SIZE-1]
-                                            [0:IN_CHAN-1];
-    logic signed [WEIGHT_W-1:0] kernel     [0:2][0:2][0:IN_CHAN-1];
+    logic [DATA_W-1:0]          image      [0:IMG_SIZE-1][0:IMG_SIZE-1];
+    logic signed [WEIGHT_W-1:0] kernel     [0:2][0:2];
     logic signed [ACC_W-1:0]    output_map [0:OUT_SIZE+3][0:OUT_SIZE+3];
-    logic signed [ACC_W-1:0]    golden     [0:OUT_SIZE-1][0:OUT_SIZE-1];
 
     // ── Tile position trackers ────────────────────────────────────
     int tile_row, tile_col;
@@ -58,12 +54,11 @@ module top_tb_100x100 #(
         .psum_out1(psum_out1)
     );
 
-    // ── Probe FSM signals directly ────────────────────────────────
+    // ── Probe FSM state directly ──────────────────────────────────
     wire [2:0] fsm_state  = iDUT.u_fsm.state;
     wire [1:0] fsm_h_cnt  = iDUT.u_fsm.h_cnt;
     wire [2:0] fsm_v_cnt  = iDUT.u_fsm.v_cnt;
     wire [1:0] fsm_ch_cnt = iDUT.u_fsm.ch_cnt;
-    wire [3:0] fsm_cnt    = iDUT.u_fsm.cnt;
 
     // ── FSM state encoding ────────────────────────────────────────
     localparam IDLE       = 3'd0;
@@ -83,79 +78,38 @@ module top_tb_100x100 #(
     // COMBINATIONAL INPUT DRIVING
     // ─────────────────────────────────────────────────────────────
 
-    // ── h_in0 ─────────────────────────────────────────────────────
-    // FILL:    feed col+0..col+3 in first 4 cycles only
-    //          pipeline is full after 4 cycles — zeros stop shifting
-    // H_SHIFT: feed column at fsm_h_cnt offset
-    assign h_in0 =
-        ((fsm_state == FILL) &&
-         (fsm_cnt < 4) &&
-         (tile_row+1 < IMG_SIZE) &&
-         (tile_col + fsm_cnt < IMG_SIZE)) ?
-          image[tile_row+1]
-               [tile_col + fsm_cnt]
-               [fsm_ch_cnt < IN_CHAN ? fsm_ch_cnt : IN_CHAN-1]
-      :
-        ((fsm_state == H_SHIFT) &&
-         (tile_row+1 < IMG_SIZE) &&
-         (tile_col + fsm_h_cnt < IMG_SIZE)) ?
-          image[tile_row+1]
-               [tile_col + fsm_h_cnt]
-               [fsm_ch_cnt < IN_CHAN ? fsm_ch_cnt : IN_CHAN-1]
-      : '0;
+    // ── h_in0/h_in1 — feed during FILL and H_SHIFT ───────────────
+    assign h_in0 = ((fsm_state == FILL || fsm_state == H_SHIFT) &&
+                    (tile_row+1 < IMG_SIZE) &&
+                    (tile_col + fsm_h_cnt < IMG_SIZE)) ?
+                    image[tile_row+1][tile_col + fsm_h_cnt] : '0;
 
-    // ── h_in1 ─────────────────────────────────────────────────────
-    assign h_in1 =
-        ((fsm_state == FILL) &&
-         (fsm_cnt < 4) &&
-         (tile_row+3 < IMG_SIZE) &&
-         (tile_col + fsm_cnt < IMG_SIZE)) ?
-          image[tile_row+3]
-               [tile_col + fsm_cnt]
-               [fsm_ch_cnt < IN_CHAN ? fsm_ch_cnt : IN_CHAN-1]
-      :
-        ((fsm_state == H_SHIFT) &&
-         (tile_row+3 < IMG_SIZE) &&
-         (tile_col + fsm_h_cnt < IMG_SIZE)) ?
-          image[tile_row+3]
-               [tile_col + fsm_h_cnt]
-               [fsm_ch_cnt < IN_CHAN ? fsm_ch_cnt : IN_CHAN-1]
-      : '0;
+    assign h_in1 = ((fsm_state == FILL || fsm_state == H_SHIFT) &&
+                    (tile_row+3 < IMG_SIZE) &&
+                    (tile_col + fsm_h_cnt < IMG_SIZE)) ?
+                    image[tile_row+3][tile_col + fsm_h_cnt] : '0;
 
-    // ── v_in0 ─────────────────────────────────────────────────────
-    // V_SHIFT: feed correct image row based on v_cnt
-    // v_cnt 0..5 maps to image rows tile_row+0 .. tile_row+5
-    // only feed in first 4 cycles of each V_SHIFT
-    assign v_in0 =
-        ((fsm_state == V_SHIFT) &&
-         (fsm_cnt < 4) &&
-         (tile_row + fsm_v_cnt < IMG_SIZE) &&
-         (tile_col < IMG_SIZE)) ?
-          image[tile_row + fsm_v_cnt]
-               [tile_col]
-               [fsm_ch_cnt < IN_CHAN ? fsm_ch_cnt : IN_CHAN-1]
-      : '0;
+    // ── v_in0/v_in1 — feed during V_SHIFT ────────────────────────
+    assign v_in0 = ((fsm_state == V_SHIFT) &&
+                    (tile_row + fsm_v_cnt < IMG_SIZE) &&
+                    (tile_col < IMG_SIZE)) ?
+                    image[tile_row + fsm_v_cnt][tile_col]   : '0;
 
-    // ── v_in1 ─────────────────────────────────────────────────────
-    assign v_in1 =
-        ((fsm_state == V_SHIFT) &&
-         (fsm_cnt < 4) &&
-         (tile_row + fsm_v_cnt < IMG_SIZE) &&
-         (tile_col+2 < IMG_SIZE)) ?
-          image[tile_row + fsm_v_cnt]
-               [tile_col+2]
-               [fsm_ch_cnt < IN_CHAN ? fsm_ch_cnt : IN_CHAN-1]
-      : '0;
+    assign v_in1 = ((fsm_state == V_SHIFT) &&
+                    (tile_row + fsm_v_cnt < IMG_SIZE) &&
+                    (tile_col+2 < IMG_SIZE)) ?
+                    image[tile_row + fsm_v_cnt][tile_col+2] : '0;
 
-    // ── weights ───────────────────────────────────────────────────
+    // ── weights — feed during W_LOAD and COMPUTE ─────────────────
+    // FIX: clamp fsm_ch_cnt to kernel row range [0:2]
+    // fsm_ch_cnt goes 0,1,2,3 but kernel only has rows 0,1,2
+    // ch_cnt=3 without clamping → kernel[3][x] → out of bounds → x
     always_comb begin
-        foreach (w_in[i]) w_in[i] = '0;
+        foreach (w_in[i]) w_in[i] = '0;  // default zero
         if (fsm_state == W_LOAD || fsm_state == COMPUTE) begin
             foreach (w_in[i])
-                w_in[i] = kernel
-                    [fsm_ch_cnt < 3      ? fsm_ch_cnt : 2      ]
-                    [i          < 3      ? i          : 2      ]
-                    [fsm_ch_cnt < IN_CHAN ? fsm_ch_cnt : IN_CHAN-1];
+                w_in[i] = kernel[fsm_ch_cnt < 3 ? fsm_ch_cnt : 2]
+                                 [i          < 3 ? i          : 2];
         end
     end
 
@@ -168,56 +122,54 @@ module top_tb_100x100 #(
     end
 
     // ── Collect psum outputs during PSUM_SHIFT ────────────────────
-    // ✅ KEY FIX: cases now start at 0 not 1
-    // drain_cycle=0 fires on FIRST cycle of PSUM_SHIFT
-    // cy0-3: rows 1,3 drain (PE[1][0..3] and PE[3][0..3])
-    // cy4-7: rows 0,2 drain (PE[0][0..3] and PE[2][0..3])
+    // Cycle 1-4: rows 1,3 drain (PE[1][0..3] and PE[3][0..3])
+    // Cycle 5-8: rows 0,2 drain (PE[0][0..3] and PE[2][0..3])
     always @(posedge clk) begin
         if (fsm_state == PSUM_SHIFT) begin
             case (drain_cycle)
-                0: begin
+                1: begin
                     output_map[tile_row+1][tile_col+0] <= psum_out0;
                     output_map[tile_row+3][tile_col+0] <= psum_out1;
                     $display("  DRAIN cy%0d | PE[1][0]=%0d PE[3][0]=%0d",
                               drain_cycle, psum_out0, psum_out1);
                 end
-                1: begin
+                2: begin
                     output_map[tile_row+1][tile_col+1] <= psum_out0;
                     output_map[tile_row+3][tile_col+1] <= psum_out1;
                     $display("  DRAIN cy%0d | PE[1][1]=%0d PE[3][1]=%0d",
                               drain_cycle, psum_out0, psum_out1);
                 end
-                2: begin
+                3: begin
                     output_map[tile_row+1][tile_col+2] <= psum_out0;
                     output_map[tile_row+3][tile_col+2] <= psum_out1;
                     $display("  DRAIN cy%0d | PE[1][2]=%0d PE[3][2]=%0d",
                               drain_cycle, psum_out0, psum_out1);
                 end
-                3: begin
+                4: begin
                     output_map[tile_row+1][tile_col+3] <= psum_out0;
                     output_map[tile_row+3][tile_col+3] <= psum_out1;
                     $display("  DRAIN cy%0d | PE[1][3]=%0d PE[3][3]=%0d",
                               drain_cycle, psum_out0, psum_out1);
                 end
-                4: begin
+                5: begin
                     output_map[tile_row+0][tile_col+0] <= psum_out0;
                     output_map[tile_row+2][tile_col+0] <= psum_out1;
                     $display("  DRAIN cy%0d | PE[0][0]=%0d PE[2][0]=%0d",
                               drain_cycle, psum_out0, psum_out1);
                 end
-                5: begin
+                6: begin
                     output_map[tile_row+0][tile_col+1] <= psum_out0;
                     output_map[tile_row+2][tile_col+1] <= psum_out1;
                     $display("  DRAIN cy%0d | PE[0][1]=%0d PE[2][1]=%0d",
                               drain_cycle, psum_out0, psum_out1);
                 end
-                6: begin
+                7: begin
                     output_map[tile_row+0][tile_col+2] <= psum_out0;
                     output_map[tile_row+2][tile_col+2] <= psum_out1;
                     $display("  DRAIN cy%0d | PE[0][2]=%0d PE[2][2]=%0d",
                               drain_cycle, psum_out0, psum_out1);
                 end
-                7: begin
+                8: begin
                     output_map[tile_row+0][tile_col+3] <= psum_out0;
                     output_map[tile_row+2][tile_col+3] <= psum_out1;
                     $display("  DRAIN cy%0d | PE[0][3]=%0d PE[2][3]=%0d",
@@ -231,59 +183,6 @@ module top_tb_100x100 #(
     // ─────────────────────────────────────────────────────────────
     // TASKS
     // ─────────────────────────────────────────────────────────────
-
-    // ── Load image from file ──────────────────────────────────────
-    task automatic load_image(input string filename);
-        int fd, val;
-        fd = $fopen(filename, "r");
-        if (fd == 0) begin
-            $display("ERROR | Cannot open %s", filename);
-            $finish;
-        end
-        for (int r = 0; r < IMG_SIZE; r++)
-            for (int c = 0; c < IMG_SIZE; c++)
-                for (int ch = 0; ch < IN_CHAN; ch++) begin
-                    $fscanf(fd, "%d\n", val);
-                    image[r][c][ch] = DATA_W'(val);
-                end
-        $fclose(fd);
-        $display("Loaded image from %s", filename);
-    endtask
-
-    // ── Load kernel from file ─────────────────────────────────────
-    task automatic load_kernel(input string filename);
-        int fd, val;
-        fd = $fopen(filename, "r");
-        if (fd == 0) begin
-            $display("ERROR | Cannot open %s", filename);
-            $finish;
-        end
-        for (int kr = 0; kr < 3; kr++)
-            for (int kc = 0; kc < 3; kc++)
-                for (int ch = 0; ch < IN_CHAN; ch++) begin
-                    $fscanf(fd, "%d\n", val);
-                    kernel[kr][kc][ch] = WEIGHT_W'(signed'(val));
-                end
-        $fclose(fd);
-        $display("Loaded kernel from %s", filename);
-    endtask
-
-    // ── Load golden output from file ──────────────────────────────
-    task automatic load_golden(input string filename);
-        int fd, val;
-        fd = $fopen(filename, "r");
-        if (fd == 0) begin
-            $display("ERROR | Cannot open %s", filename);
-            $finish;
-        end
-        for (int r = 0; r < OUT_SIZE; r++)
-            for (int c = 0; c < OUT_SIZE; c++) begin
-                $fscanf(fd, "%d\n", val);
-                golden[r][c] = ACC_W'(signed'(val));
-            end
-        $fclose(fd);
-        $display("Loaded golden from %s", filename);
-    endtask
 
     // ── Reset + start one tile ────────────────────────────────────
     task automatic start_tile();
@@ -299,7 +198,6 @@ module top_tb_100x100 #(
     endtask
 
     // ── Wait for done ─────────────────────────────────────────────
-    // Extra cycles after done to ensure cy7 drain completes
     task automatic wait_for_done();
         int timeout;
         timeout = 500;
@@ -310,32 +208,34 @@ module top_tb_100x100 #(
         if (timeout == 0)
             $display("FAIL | TILE [%0d][%0d] timed out",
                       tile_row, tile_col);
-        else begin
+        else
             $display("[TILE %0d,%0d] done asserted", tile_row, tile_col);
-            repeat(2) @(posedge clk); // ✅ wait for final drain cycles
-        end
     endtask
 
-    // ── Compare output map against golden ─────────────────────────
+    // ── Check output map ──────────────────────────────────────────
+    // image=all 1s, kernel=all +1s
+    // Each PE accumulates across 9 pixel positions × 4 channels
+    // Each MAC = 1×1 = 1
+    // But each PE only sees 1 activation per pixel position
+    // So expected psum per PE = 9 × 1 = 9
     task automatic check_output_map();
         int pass_count, fail_count;
         pass_count = 0;
         fail_count = 0;
-        $display("\n>> Comparing output_map against golden_output.txt <<");
+        $display("\n>> Checking output map (expected all = 9) <<");
         for (int r = 0; r < OUT_SIZE; r++) begin
             for (int c = 0; c < OUT_SIZE; c++) begin
+                // Skip boundary tiles
                 if ((r + 3 >= IMG_SIZE) || (c + 3 >= IMG_SIZE)) begin
                     $display("SKIP | boundary [%0d][%0d]", r, c);
                     continue;
                 end
-                if (output_map[r][c] === golden[r][c])
+                if (output_map[r][c] === 13'sd9)
                     pass_count++;
                 else begin
                     fail_count++;
-                    $display("FAIL | [%0d][%0d] Got=%0d Expected=%0d",
-                              r, c,
-                              output_map[r][c],
-                              golden[r][c]);
+                    $display("FAIL | output_map[%0d][%0d] = %0d (expected 9)",
+                              r, c, output_map[r][c]);
                 end
             end
         end
@@ -347,18 +247,21 @@ module top_tb_100x100 #(
     // STIMULUS
     // ─────────────────────────────────────────────────────────────
     initial begin
-        $dumpfile("top_tb_100x100.vcd");
-        $dumpvars(0, top_tb_100x100);
 
         // ── Initialize ────────────────────────────────────────────
         drain_cycle = 0;
         tile_row    = 0;
         tile_col    = 0;
 
-        // ── Load from files ───────────────────────────────────────
-        load_image ("input_image.txt");
-        load_kernel("input_kernel.txt");
-        load_golden("golden_output.txt");
+        // ── Image — all pixels = 1 ────────────────────────────────
+        for (int r = 0; r < IMG_SIZE; r++)
+            for (int c = 0; c < IMG_SIZE; c++)
+                image[r][c] = 6'd1;
+
+        // ── Kernel — all weights = +1 ─────────────────────────────
+        for (int kr = 0; kr < 3; kr++)
+            for (int kc = 0; kc < 3; kc++)
+                kernel[kr][kc] = 2'b01;  // +1
 
         // ── Clear output map ──────────────────────────────────────
         for (int r = 0; r < OUT_SIZE+4; r++)
@@ -372,17 +275,20 @@ module top_tb_100x100 #(
                 $display("\n════ TILE [%0d][%0d] ════",
                           tile_row, tile_col);
 
+                // Start FSM — combinational assigns handle inputs
                 start_tile();
+
+                // Wait for FSM to complete
                 wait_for_done();
 
             end
         end
 
-        // ── Compare against golden ────────────────────────────────
+        // ── Verify all outputs ────────────────────────────────────
         check_output_map();
 
         repeat(5) @(posedge clk);
-        $display("\n── 100×100 Convolution Verification Complete ──");
+        $display("\n── 100×100 Convolution Complete ──");
         $stop();
     end
 

@@ -1,0 +1,47 @@
+F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/top.sv {2 {vlog -work work -sv -stats=none F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/top.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module top
+** Warning: F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/top.sv(23): (vlog-13314) Defaulting port 'w_in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+
+Top level modules:
+	top
+
+} {} {}} F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/pe_update.sv {1 {vlog -work work -sv -stats=none F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/pe_update.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module pe
+
+Top level modules:
+	pe
+
+} {} {}} F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Verification/somani/top_tb.sv {2 {vlog -work work -sv -stats=none F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Verification/somani/top_tb.sv
+** Warning: (vlog-14) Failed to open "F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/Convolution_Verif.mpf" specified by the MODELSIM environment variable.
+No such file or directory. (errno = ENOENT)
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module top_tb_1
+
+Top level modules:
+	top_tb_1
+
+} {} {}} F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/zigzag.sv {2 {vlog -work work -sv -stats=none F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/zigzag.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module zig_zag_4x4
+** Warning: F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/zigzag.sv(28): (vlog-13314) Defaulting port 'w_in' kind to 'var' rather than 'wire' due to default compile option setting of -svinputport=relaxed.
+
+Top level modules:
+	zig_zag_4x4
+
+} {} {}} F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/fifo9.sv {1 {vlog -work work -sv -stats=none F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/fifo9.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module fifo9
+
+Top level modules:
+	fifo9
+
+} {} {}} F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/control.sv {1 {vlog -work work -sv -stats=none F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/control.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module zigzag_fsm
+
+Top level modules:
+	zigzag_fsm
+
+} {} {}}

@@ -1,0 +1,186 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dF:/ECE_755_Advanced_VLSI_Design
+vfifo9
+Z0 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z1 !s110 1776059930
+!i10b 1
+!s100 O>bY2BJCXeVTII<RofhCk1
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I8kbi@7RaFk7XZQ87__gZi1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+S1
+Z4 dF:/ECE_755_Advanced_VLSI_Design/ECE_755_Project
+w1774119174
+8F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/fifo9.sv
+FF:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/fifo9.sv
+!i122 70
+L0 1 49
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1776059930.000000
+!s107 F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/fifo9.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/fifo9.sv|
+!i113 1
+Z7 o-work work -sv
+Z8 tCvgOpt 0
+vpe
+R0
+R1
+!i10b 1
+!s100 eZ;Hik>eaRSW`iYjaaNIb3
+R2
+I5AVzzXQC38gzCQf41AAGK1
+R3
+S1
+R4
+Z9 w1775409866
+8F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/pe_update.sv
+FF:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/pe_update.sv
+!i122 71
+L0 1 143
+R5
+r1
+!s85 0
+31
+R6
+!s107 F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/pe_update.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/pe_update.sv|
+!i113 1
+R7
+R8
+vtb_top_directed
+R0
+R1
+!i10b 1
+!s100 i?5_1jF9R[=?Z[Eh;[92n3
+R2
+IS^V21Dco:I[Q8>oaW9OOT0
+R3
+S1
+R4
+w1776059831
+8F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Verification/top_tb_directed.sv
+FF:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Verification/top_tb_directed.sv
+!i122 72
+L0 53 788
+R5
+r1
+!s85 0
+31
+R6
+!s107 F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Verification/top_tb_directed.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Verification/top_tb_directed.sv|
+!i113 1
+R7
+R8
+vtop
+R0
+Z10 !s110 1776059929
+!i10b 1
+!s100 Z5@TZjH<@UO3gb59c7j_B1
+R2
+IAMC?Bi7g^7Y>B=ka`^7fa1
+R3
+S1
+R4
+w1774131017
+8F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/top.sv
+FF:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/top.sv
+!i122 66
+L0 1 87
+R5
+r1
+!s85 0
+31
+Z11 !s108 1776059929.000000
+!s107 F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/top.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/top.sv|
+!i113 1
+R7
+R8
+vtop_tb_simple
+R0
+R10
+!i10b 1
+!s100 K<0aYEC`4dSQZBo8QOUW62
+R2
+I>?H_Wm0l<^B]4ilDP?]ik1
+R3
+S1
+R4
+w1776021190
+8F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Verification/Img_Size_6_6_tb.sv
+FF:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Verification/Img_Size_6_6_tb.sv
+!i122 67
+L0 3 336
+R5
+r1
+!s85 0
+31
+R11
+!s107 F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Verification/Img_Size_6_6_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Verification/Img_Size_6_6_tb.sv|
+!i113 1
+R7
+R8
+vzig_zag_4x4
+R0
+R1
+!i10b 1
+!s100 5gACRkSj9SlH6b>hfao=@1
+R2
+IaUz7^]^1:[AfE85_<3Ugd0
+R3
+S1
+R4
+R9
+8F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/zigzag.sv
+FF:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/zigzag.sv
+!i122 68
+L0 1 246
+R5
+r1
+!s85 0
+31
+R6
+!s107 F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/zigzag.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/zigzag.sv|
+!i113 1
+R7
+R8
+vzigzag_fsm
+R0
+R1
+!i10b 1
+!s100 lFQCh]YBVgIVzYT<14G;d0
+R2
+IncDl11=]1LZm[A`T]?Vie2
+R3
+S1
+R4
+R9
+8F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/control.sv
+FF:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/control.sv
+!i122 69
+L0 1 264
+R5
+r1
+!s85 0
+31
+R6
+!s107 F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/control.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/control.sv|
+!i113 1
+R7
+R8

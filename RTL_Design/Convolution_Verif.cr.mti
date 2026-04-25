@@ -30,6 +30,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	zig_zag_4x4
 
+} {} {}} F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Verification/Img_Size_100_100_tb.sv {1 {vlog -work work -sv -stats=none F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Verification/Img_Size_100_100_tb.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module top_tb_golden_1
+
+Top level modules:
+	top_tb_golden_1
+
 } {} {}} F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/fifo9.sv {1 {vlog -work work -sv -stats=none F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/fifo9.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module fifo9

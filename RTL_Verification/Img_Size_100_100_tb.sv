@@ -1,41 +1,5 @@
 // ============================================================================
-//  top_tb_golden.sv  —  ZigZag Systolic Array Golden Model Testbench
-//
-//  CORRECT FSM SCHEDULE (traced by hand from control.sv):
-//     CLEAR      = 1 cy
-//     FILL       = 8 cy
-//     W_LOAD     = 4 cy   (cnt 0→3)
-//     COMPUTE    = 1 cy   (exits immediately unless ch_cnt==3)
-//     H_SHIFT    = 4 cy
-//     V_SHIFT    = 4 cy
-//     PSUM_SHIFT = 8 cy
-//
-//  PER-CHANNEL BLOCK: W_LOAD(4) + COMPUTE(1) = 5 cy
-//  PER-ROUND (4 channels): 20 cy
-//
-//  MACRO SEQUENCE (9 compute rounds, one per kernel position):
-//    CLEAR(1) + FILL(8)
-//      + Round 0 (20)                             ← v_cnt=0,h_cnt=0 → H_SHIFT
-//    + H_SHIFT(4) + Round 1 (20)                  ← v_cnt=0,h_cnt=1 → H_SHIFT
-//    + H_SHIFT(4) + Round 2 (20)                  ← v_cnt=0,h_cnt=2 → V_SHIFT
-//    + V_SHIFT(4) + Round 3 (20)  ← v_cnt=1 → V_SHIFT
-//    + V_SHIFT(4) + Round 4 (20)  ← v_cnt=2 → V_SHIFT
-//    + V_SHIFT(4) + Round 5 (20)  ← v_cnt=3 → V_SHIFT
-//    + V_SHIFT(4) + Round 6 (20)  ← v_cnt=4 → V_SHIFT
-//    + V_SHIFT(4) + Round 7 (20)  ← v_cnt=5 → V_SHIFT
-//    + V_SHIFT(4) + Round 8 (20)  ← v_cnt=6 → PSUM_SHIFT
-//    + PSUM_SHIFT(8)
-//
-//  KERNEL POSITION MAP (9 positions for 3×3 kernel):
-//    Round 0 (post FILL)    → (kr=0, kc=0)
-//    Round 1 (post H_SHIFT) → (kr=0, kc=1)
-//    Round 2 (post H_SHIFT) → (kr=0, kc=2)
-//    Round 3 (post V_SHIFT) → (kr=1, kc=0)
-//    Round 4 (post V_SHIFT) → (kr=1, kc=1)
-//    Round 5 (post V_SHIFT) → (kr=1, kc=2)
-//    Round 6 (post V_SHIFT) → (kr=2, kc=0)
-//    Round 7 (post V_SHIFT) → (kr=2, kc=1)
-//    Round 8 (post V_SHIFT) → (kr=2, kc=2)
+//  top_tb_golden_1.sv  —  ZigZag Systolic Array Golden Model Testbench
 // ============================================================================
 `timescale 1ns/1ps
 
@@ -86,11 +50,21 @@ logic signed [ACC_W-1:0]    gold_p1 [0:N_PAIRS-1];
 int pass_cnt, fail_cnt;
 
 // ─────────────────────────────────────────────────────────────────────────────
+//  Helper Functions & Tasks
+// ─────────────────────────────────────────────────────────────────────────────
+
 task automatic zero_inputs;
     int ci;
     h_in0='0; h_in1='0; v_in0='0; v_in1='0;
     for (ci=0; ci<COLS; ci++) w_in[ci]='0;
 endtask
+
+// Safely fetches a pixel from the image or returns 0 if out of bounds
+function logic [DATA_W-1:0] get_px(int r, int c, int ch);
+    if (r >= 0 && r < IMG_H && c >= 0 && c < IMG_W && ch >= 0 && ch < IN_CH)
+        return image[r][c][ch];
+    return '0;
+endfunction
 
 // One compute round = 4 channels × [W_LOAD(4 cy) + COMPUTE(1 cy)]
 task automatic do_compute_round(input int kr, input int kc);
@@ -111,106 +85,95 @@ task automatic do_compute_round(input int kr, input int kc);
 endtask
 
 // ─────────────────────────────────────────────────────────────────────────────
-//  One full start→done invocation
+//  One full start→done invocation (Decoupled Weights, Acts, & Phases)
 // ─────────────────────────────────────────────────────────────────────────────
 task automatic drive_invocation(
     input int inv_idx,
     input int row_base,
     input int col
 );
-    int i, s, ch, ci;
-    int kc_f, ch_f, ir, ic;
-    int tcnt;
-
-    logic [DATA_W-1:0] h0f [0:7];
-    logic [DATA_W-1:0] h1f [0:7];
-    logic [DATA_W-1:0] h0h1 [0:3];
-    logic [DATA_W-1:0] h1h1 [0:3];
-    logic [DATA_W-1:0] v0v [0:5][0:3];
-    logic [DATA_W-1:0] v1v [0:5][0:3];
-
-    int vsh_kr [0:5];
-    int vsh_kc [0:5];
-
+    int i, s, tcnt;
     logic signed [ACC_W-1:0] cap0, cap1;
 
-    vsh_kr[0]=1; vsh_kc[0]=0;
-    vsh_kr[1]=1; vsh_kc[1]=1;
-    vsh_kr[2]=1; vsh_kc[2]=2;
-    vsh_kr[3]=2; vsh_kc[3]=0;
-    vsh_kr[4]=2; vsh_kc[4]=1;
-    vsh_kr[5]=2; vsh_kc[5]=2;
+    // DECOUPLED INDICES
+    // act_kr forces the correct image rows into the v_in pins
+    int act_kr [0:5] = '{ 2, 2, 2, 3, 3, 3 }; 
+    // wt_kr keeps the kernel safely in bounds (Row 1 and Row 2)
+    int wt_kr  [0:5] = '{ 1, 1, 1, 2, 2, 2 }; 
+    // ZigZag Columns
+    int vsh_kc [0:5] = '{ 2, 1, 0, 0, 1, 2 }; 
 
-    for (i=0; i<8; i++) begin
-        kc_f = (i<4) ? 0 : 1;
-        ch_f = i % IN_CH;
-        h0f[i] = ((col+kc_f)<IMG_W && row_base   <IMG_H) ? image[row_base  ][col+kc_f][ch_f] : '0;
-        h1f[i] = ((col+kc_f)<IMG_W && (row_base+1)<IMG_H) ? image[row_base+1][col+kc_f][ch_f] : '0;
-    end
-
-    for (i=0; i<4; i++) begin
-        h0h1[i] = ((col+2)<IMG_W && row_base   <IMG_H) ? image[row_base  ][col+2][i] : '0;
-        h1h1[i] = ((col+2)<IMG_W && (row_base+1)<IMG_H) ? image[row_base+1][col+2][i] : '0;
-    end
-
-    for (s=0; s<6; s++) begin
-        for (ch=0; ch<4; ch++) begin
-            ir = row_base + vsh_kr[s];
-            ic = col      + vsh_kc[s];
-            if (ir<IMG_H && ic<IMG_W) begin
-                v0v[s][ch] = image[ir][ic][ch];
-                v1v[s][ch] = image[ir][ic][ch];
-            end else begin
-                v0v[s][ch] = '0;
-                v1v[s][ch] = '0;
-            end
-        end
-    end
-
+    // 1. Pulse start
     zero_inputs();
     start = 1;
-    @(posedge clk);
+    @(posedge clk);   // FSM: IDLE → CLEAR
     start = 0;
 
+    // 2. CLEAR (1 cycle)
     zero_inputs();
-    @(posedge clk);
+    @(posedge clk);   // FSM: CLEAR → FILL
 
+    // 3. FILL (8 cycles) - Standard Phase (0, 1, 2, 3)
     for (i=0; i<8; i++) begin
-        h_in0 = h0f[i]; h_in1 = h1f[i];
-        v_in0 = '0; v_in1 = '0;
-        for (ci=0; ci<COLS; ci++) w_in[ci]='0;
+        int kc_f = (i < 4) ? 0 : 1; 
+        int ch_f = i % 4; // RESTORED to standard order
+        
+        h_in0 = get_px(row_base,     col + kc_f, ch_f);
+        h_in1 = get_px(row_base + 1, col + kc_f, ch_f);
+        v_in0 = '0; 
+        v_in1 = '0;
+        for (int ci=0; ci<COLS; ci++) w_in[ci]='0;
         @(posedge clk);
     end
 
+    // 4. Round 0 (kr=0, kc=0)
     do_compute_round(0, 0);
 
+    // 5. H_SHIFT 1 (4 cycles) -> Load col+2 - Standard Phase (0, 1, 2, 3)
     for (i=0; i<4; i++) begin
-        h_in0 = h0h1[i]; h_in1 = h1h1[i];
-        v_in0 = '0; v_in1 = '0;
-        for (ci=0; ci<COLS; ci++) w_in[ci]='0;
+        int ch_f = i % 4; // RESTORED to standard order
+        
+        h_in0 = get_px(row_base,     col + 2, ch_f);
+        h_in1 = get_px(row_base + 1, col + 2, ch_f);
+        v_in0 = '0; 
+        v_in1 = '0;
+        for (int ci=0; ci<COLS; ci++) w_in[ci]='0;
         @(posedge clk);
     end
 
+    // 6. Round 1 (kr=0, kc=1)
     do_compute_round(0, 1);
 
+    // 7. H_SHIFT 2 (4 cycles) -> Bridge pass-through
     for (i=0; i<4; i++) begin
         zero_inputs();
         @(posedge clk);
     end
 
+    // 8. Round 2 (kr=0, kc=2)
     do_compute_round(0, 2);
 
+    // 9. Six V_SHIFT and Compute rounds (Rounds 3..8)
     for (s=0; s<6; s++) begin
+        // V_SHIFT (4 cycles) - Compensated Phase (1, 2, 3, 0)
         for (i=0; i<4; i++) begin
-            h_in0='0; h_in1='0;
-            v_in0 = v0v[s][i];
-            v_in1 = v1v[s][i];
-            for (ci=0; ci<COLS; ci++) w_in[ci]='0;
+            // V_SHIFT uses direct pins, requires phase offset
+            int ch_f = (i + 1) % 4; 
+            
+            h_in0 = '0; 
+            h_in1 = '0;
+            v_in0 = get_px(row_base + act_kr[s],     col + vsh_kc[s], ch_f);
+            v_in1 = get_px(row_base + 1 + act_kr[s], col + vsh_kc[s], ch_f);
+            
+            for (int ci=0; ci<COLS; ci++) w_in[ci]='0;
             @(posedge clk);
         end
-        do_compute_round(vsh_kr[s], vsh_kc[s]);
+
+        // Compute round - USE wt_kr for Kernel data!
+        do_compute_round(wt_kr[s], vsh_kc[s]);
     end
 
+    // 10. PSUM_SHIFT: Wait for done
     zero_inputs();
     tcnt = 0;
     while (done !== 1'b1 && tcnt < 20) begin
@@ -224,6 +187,7 @@ task automatic drive_invocation(
                  inv_idx, row_base, col, tcnt);
     end
 
+    // Capture and Compare
     cap0 = $signed(psum_out0);
     cap1 = $signed(psum_out1);
 
@@ -243,9 +207,9 @@ task automatic drive_invocation(
         end
     end
 
+    // Let FSM return to IDLE before next invocation
     @(posedge clk);
     @(posedge clk);
-
 endtask
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -329,7 +293,6 @@ initial begin
     @(negedge clk);
     rst_n = 1;
     repeat(5) @(posedge clk);
-
     $display("=== Convolution verification: %0d invocations ===", N_PAIRS);
 
     inv_idx = 0;
@@ -353,12 +316,11 @@ initial begin
 end
 
 // ─────────────────────────────────────────────────────────────────────────────
-//  Optional FSM debug monitor — compile with +define+DEBUG_FSM
+//  Optional FSM debug monitor
 // ─────────────────────────────────────────────────────────────────────────────
 `ifdef DEBUG_FSM
 int cycle_cnt;
 initial cycle_cnt = 0;
-
 always @(posedge clk) begin
     if (rst_n) begin
         cycle_cnt <= cycle_cnt + 1;
@@ -378,25 +340,6 @@ end
 
 // =============================================================================
 //  PE VISIBILITY — waveform signals for all 16 PEs
-//  Add these to your wave window to trace activation and weight movement.
-//
-//  Signal naming: pe_XXX[row][col]
-//    pe_move_reg[r][c]  — activation value currently held in that PE
-//    pe_psum    [r][c]  — accumulated partial sum (grows each COMPUTE)
-//    pe_weight  [r][c]  — weight loaded into that PE
-//    pe_act_out [r][c]  — value the PE is currently driving onto its output bus
-//    pe_dst_sel [r][c]  — direction it sends to (00=right,01=left,10=down,11=up)
-//    pe_src_sel [r][c]  — direction it receives from
-//    pe_to_left / pe_to_right / pe_to_up / pe_to_down [r][c] — output buses
-//    pe_from_left / pe_from_right / pe_from_up / pe_from_down [r][c] — input buses
-//
-//  FSM visibility:
-//    fsm_state_str  — readable state name e.g. "FILL", "W_LOAD", "COMPUTE"
-//    fsm_cnt / fsm_ch_cnt / fsm_h_cnt / fsm_v_cnt — all FSM counters
-//
-//  Control signal aliases (convenient for wave window):
-//    ctrl_en / ctrl_move_en / ctrl_w_ld_en / ctrl_fifo_en
-//    ctrl_psum_shift_en / ctrl_psum_clr / ctrl_direction
 // =============================================================================
 
 // ── Per-PE named signals ──────────────────────────────────────────────────────
@@ -404,8 +347,8 @@ logic signed [ACC_W-1:0]    pe_move_reg  [0:ROWS-1][0:COLS-1];
 logic signed [ACC_W-1:0]    pe_psum      [0:ROWS-1][0:COLS-1];
 logic signed [WEIGHT_W-1:0] pe_weight    [0:ROWS-1][0:COLS-1];
 logic signed [ACC_W-1:0]    pe_act_out   [0:ROWS-1][0:COLS-1];
-logic        [1:0]           pe_dst_sel   [0:ROWS-1][0:COLS-1];
-logic        [1:0]           pe_src_sel   [0:ROWS-1][0:COLS-1];
+logic        [1:0]          pe_dst_sel   [0:ROWS-1][0:COLS-1];
+logic        [1:0]          pe_src_sel   [0:ROWS-1][0:COLS-1];
 logic signed [ACC_W-1:0]    pe_to_left   [0:ROWS-1][0:COLS-1];
 logic signed [ACC_W-1:0]    pe_to_right  [0:ROWS-1][0:COLS-1];
 logic signed [ACC_W-1:0]    pe_to_up     [0:ROWS-1][0:COLS-1];
@@ -476,10 +419,10 @@ assign ctrl_direction     = iDUT.direction;
 
 endmodule
 
-
 //TCL Script for adding waves in simulation (e.g. in ModelSim or Questa):
 
-/*# FSM state and counters
+/*
+# FSM state and counters
 add wave -divider "FSM"
 add wave /top_tb_golden_1/fsm_state_str
 add wave /top_tb_golden_1/fsm_cnt
@@ -493,7 +436,9 @@ add wave /top_tb_golden_1/ctrl_en
 add wave /top_tb_golden_1/ctrl_move_en
 add wave /top_tb_golden_1/ctrl_w_ld_en
 add wave /top_tb_golden_1/ctrl_direction
+add wave /top_tb_golden_1/ctrl_fifo_en
 add wave /top_tb_golden_1/ctrl_psum_shift_en
+add wave /top_tb_golden_1/ctrl_psum_clr
 
 # Boundary inputs and outputs
 add wave -divider "Boundary"
@@ -501,17 +446,30 @@ add wave /top_tb_golden_1/h_in0
 add wave /top_tb_golden_1/h_in1
 add wave /top_tb_golden_1/v_in0
 add wave /top_tb_golden_1/v_in1
+add wave /top_tb_golden_1/done
 add wave /top_tb_golden_1/psum_out0
 add wave /top_tb_golden_1/psum_out1
-add wave /top_tb_golden_1/done
 
-# All 16 PEs - move_reg, psum, weight
+# All 16 PEs - State, Routing, and Interconnects
 foreach r {0 1 2 3} {
     foreach c {0 1 2 3} {
         add wave -divider "PE\[$r\]\[$c\]"
+        
+        # 1. Core State
         add wave /top_tb_golden_1/pe_move_reg\[$r\]\[$c\]
         add wave /top_tb_golden_1/pe_psum\[$r\]\[$c\]
         add wave /top_tb_golden_1/pe_weight\[$r\]\[$c\]
         add wave /top_tb_golden_1/pe_act_out\[$r\]\[$c\]
+        
+        # 2. MUX Controls (Crucial for the V_SHIFT bug)
+        add wave /top_tb_golden_1/pe_src_sel\[$r\]\[$c\]
+        add wave /top_tb_golden_1/pe_dst_sel\[$r\]\[$c\]
+        
+        # 3. Physical incoming wires (To trace what the MUX is ignoring)
+        add wave /top_tb_golden_1/pe_from_up\[$r\]\[$c\]
+        add wave /top_tb_golden_1/pe_from_left\[$r\]\[$c\]
+        add wave /top_tb_golden_1/pe_from_right\[$r\]\[$c\]
+        add wave /top_tb_golden_1/pe_from_down\[$r\]\[$c\]
     }
-} */
+}
+*/

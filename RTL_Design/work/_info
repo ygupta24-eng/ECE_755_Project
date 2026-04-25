@@ -36,24 +36,24 @@ Z5 o-work work -sv
 Z6 tCvgOpt 0
 vfifo9
 R0
-Z7 !s110 1776915704
+Z7 !s110 1777136114
 !i10b 1
-!s100 O>bY2BJCXeVTII<RofhCk1
+!s100 BARI^dIbLVUaciBd>63Zh2
 R1
-I8kbi@7RaFk7XZQ87__gZi1
+Ioo0JUgGP@h5mgGUQLLSAj2
 R2
 S1
 R3
-w1774119174
+w1777135942
 8F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/fifo9.sv
 FF:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/fifo9.sv
-!i122 182
-L0 1 49
+!i122 342
+L0 1 55
 R4
 r1
 !s85 0
 31
-Z8 !s108 1776915704.000000
+!s108 1777136114.000000
 !s107 F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/fifo9.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/fifo9.sv|
 !i113 1
@@ -61,7 +61,7 @@ R5
 R6
 vpe
 R0
-R7
+Z8 !s110 1777136115
 !i10b 1
 !s100 eZ;Hik>eaRSW`iYjaaNIb3
 R1
@@ -72,13 +72,13 @@ R3
 Z9 w1775409866
 8F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/pe_update.sv
 FF:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/pe_update.sv
-!i122 183
+!i122 343
 L0 1 143
 R4
 r1
 !s85 0
 31
-R8
+Z10 !s108 1777136115.000000
 !s107 F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/pe_update.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/pe_update.sv|
 !i113 1
@@ -86,7 +86,7 @@ R5
 R6
 vtop
 R0
-R7
+R8
 !i10b 1
 !s100 Z5@TZjH<@UO3gb59c7j_B1
 R1
@@ -97,121 +97,46 @@ R3
 w1774131017
 8F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/top.sv
 FF:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/top.sv
-!i122 184
+!i122 344
 L0 1 87
 R4
 r1
 !s85 0
 31
-R8
+R10
 !s107 F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/top.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/top.sv|
 !i113 1
 R5
 R6
-vtop_tb
-R0
-!s110 1776801359
-!i10b 1
-!s100 9IUiha694W9?RY01co=g[2
-R1
-I8G^FGe[N01eUK>HAYEZAj1
-R2
-S1
-R3
-w1776801350
-Z10 8F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Verification/somani/top_tb.sv
-Z11 FF:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Verification/somani/top_tb.sv
-!i122 78
-Z12 L0 1 684
-R4
-r1
-!s85 0
-31
-!s108 1776801359.000000
-Z13 !s107 F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Verification/somani/top_tb.sv|
-Z14 !s90 -reportprogress|300|-work|work|-sv|-stats=none|F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Verification/somani/top_tb.sv|
-!i113 1
-R5
-R6
-vtop_tb_1
-R0
-!s110 1776803216
-!i10b 1
-!s100 ?[kd8mLgi`6h@8Fz`MWng2
-R1
-IdLgg9;VjYm7HAL[ca3;DD0
-R2
-S1
-R3
-w1776801380
-R10
-R11
-!i122 107
-R12
-R4
-r1
-!s85 0
-31
-!s108 1776803216.000000
-R13
-R14
-!i113 1
-R5
-R6
-vtop_tb_golden
-R0
-!s110 1776832743
-!i10b 1
-!s100 PMa6P^f8naN>nPZ04Cd0`3
-R1
-I`YEbcLL@^3zif5H4^LdCC0
-R2
-S1
-R3
-w1776832719
-Z15 8F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Verification/Img_Size_100_100_tb.sv
-Z16 FF:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Verification/Img_Size_100_100_tb.sv
-!i122 144
-L0 44 372
-R4
-r1
-!s85 0
-31
-!s108 1776832743.000000
-!s107 F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Verification/Img_Size_100_100_tb.sv|
-Z17 !s90 -reportprogress|300|-work|work|-sv|-stats=none|F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Verification/Img_Size_100_100_tb.sv|
-!i113 1
-R5
-R6
 vtop_tb_golden_1
 R0
-R7
+R8
 !i10b 1
-!s100 j6Vi:LTZYV4m@3VH@8D0g3
+!s100 Em<]Q:BI9BZ50Z;RkO6HA1
 R1
-IDSf7Za^JRTBm;URJ_B^CF0
+I9SAJYLM0S_6M>3P3lNQ3c3
 R2
 S1
 R3
-w1776915678
-R15
-R16
-!i122 186
-L0 42 436
+w1777136031
+8F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Verification/Img_Size_100_100_tb.sv
+FF:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Verification/Img_Size_100_100_tb.sv
+!i122 346
+L0 6 411
 R4
 r1
 !s85 0
 31
-R8
-Z18 !s107 F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Verification/Img_Size_100_100_tb.sv|
-R17
+R10
+!s107 F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Verification/Img_Size_100_100_tb.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Verification/Img_Size_100_100_tb.sv|
 !i113 1
 R5
 R6
 vzig_zag_4x4
 R0
-R7
+R8
 !i10b 1
 !s100 5gACRkSj9SlH6b>hfao=@1
 R1
@@ -222,13 +147,13 @@ R3
 R9
 8F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/zigzag.sv
 FF:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/zigzag.sv
-!i122 185
+!i122 345
 L0 1 246
 R4
 r1
 !s85 0
 31
-R8
+R10
 !s107 F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/zigzag.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/zigzag.sv|
 !i113 1
@@ -236,24 +161,24 @@ R5
 R6
 vzigzag_fsm
 R0
-!s110 1776915703
+R7
 !i10b 1
-!s100 lFQCh]YBVgIVzYT<14G;d0
+!s100 ?;@n`R0G_9^Uc_]V:bBe`0
 R1
-IncDl11=]1LZm[A`T]?Vie2
+I?Ai5l_4HR77bAIMW6FhOA2
 R2
 S1
 R3
-R9
+w1777135984
 8F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/control.sv
 FF:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/control.sv
-!i122 181
-L0 1 264
+!i122 341
+L0 1 265
 R4
 r1
 !s85 0
 31
-!s108 1776915702.000000
+!s108 1777136113.000000
 !s107 F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/control.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|F:/ECE_755_Advanced_VLSI_Design/ECE_755_Project/RTL_Design/control.sv|
 !i113 1

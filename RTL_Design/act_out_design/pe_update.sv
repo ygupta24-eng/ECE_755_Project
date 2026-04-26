@@ -78,7 +78,7 @@ module pe #(
     always_ff @(posedge clk_psum_gated or negedge rst_n) begin
         if (!rst_n)
             psum_out <= '0;
-        if (psum_clr)
+        else if (psum_clr)
             psum_out <= '0;
         else
             psum_out <= psum_out + product;

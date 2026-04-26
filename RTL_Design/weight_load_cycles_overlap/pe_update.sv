@@ -93,7 +93,7 @@ module pe #(
         if (!rst_n) begin
             psum_out <= '0;
         end // else if (en) begin not needed — en=1 whenever clk_psum_gated toggles
-        if (psum_clr)
+        else if (psum_clr)
             psum_out <= '0;
         else
             psum_out <= psum_out + product;

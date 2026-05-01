@@ -1,0 +1,110 @@
+********************************************************************************
+Product   : Virtuoso(R) XStream In
+Program   : @(#)$CDS: strmin version IC23.1-64b 04/22/2025 22:31 (cpgbld15) $
+          : sub-version  IC23.1-64b.ISR14.32 
+Started at: 27-Apr-2026  22:29:40
+User Name : vsathishkuma
+Host Name : tux-111
+Directory : /filespace/v/vsathishkuma/ECE755/ECE_755_Project/GDS/asap7_rundir
+CADENCE Design Systems, Inc.
+********************************************************************************
+Info: Cellview Rev Num:99,  Tech Rev Num:59
+
+WARNING (XSTRM-75): Target library 'CNN1' is attached to the technology library 'asap7_TechLib'. Therefore, the technology file is opened in read-only mode. All the undefined layer-purpose pairs will be dropped.
+WARNING (XSTRM-107): Existing cells in the target library will be overwritten if the cell names in the Stream file and the target library are the same. To prevent this, set the '-writeMode' option to 'noOverwrite'.
+INFO (XSTRM-281): The input file '/filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/weight_load_cycle/outputs/top1.gds.gz' will be read as a compressed file because the file name has extension .gz
+INFO (XSTRM-217): Reading the layer map file, /cae/apps/data/asap7PDK-2022/asap7PDK_r1p7/cdslib/asap7_TechLib_10/asap7_TechLib.layermap
+INFO (XSTRM-217): Reading the object map file, /cae/apps/data/asap7PDK-2022/asap7PDK_r1p7/cdslib/asap7_TechLib_10/asap7_TechLib.objectmap
+WARNING (XSTRM-333): The '-enableColoring' option will be ignored during XStream In. This is because there is no color entry in the layer map and the object map file.
+INFO (XSTRM-163): You have not used the '-viaMap' option. If a viaMap file, corresponding technology file or technology library exist, then use the '-viaMap' option for creating oaVia instances in the Streamed-In library. Using the '-viaMap' option improves performance and VM usage of applications using the Streamed-In design.
+
+Summary of Options:
+	library				CNN1
+	strmFile			/filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/weight_load_cycle/outputs/top1.gds.gz
+	logFile				strmIn.log
+	topCell				top
+	view				layout
+	case				Preserve
+	layerMap			/cae/apps/data/asap7PDK-2022/asap7PDK_r1p7/cdslib/asap7_TechLib_10/asap7_TechLib.layermap
+	propSeparator			,
+	attachTechFileOfLib				asap7_TechLib
+	objectMap			 /cae/apps/data/asap7PDK-2022/asap7PDK_r1p7/cdslib/asap7_TechLib_10/asap7_TechLib.objectmap
+
+INFO (XSTRM-220): 1. Translating STRUCTURE top as cellView CNN1/top/layout.
+WARNING (XSTRM-58): Failed to create the new layer-purpose pair 'TEXT:drawing'. It will be skipped and all the shapes on this layer-purpose pair will be dropped.
+INFO (XSTRM-220): 2. Translating STRUCTURE VIA23 as cellView CNN1/VIA23/layout.
+INFO (XSTRM-220): 3. Translating STRUCTURE VIA12 as cellView CNN1/VIA12/layout.
+INFO (XSTRM-220): 4. Translating STRUCTURE AO22x1_ASAP7_75t_R as cellView CNN1/AO22x1_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 5. Translating STRUCTURE OAI222xp33_ASAP7_75t_R as cellView CNN1/OAI222xp33_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 6. Translating STRUCTURE NOR3xp33_ASAP7_75t_R as cellView CNN1/NOR3xp33_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 7. Translating STRUCTURE NOR2x1_ASAP7_75t_R as cellView CNN1/NOR2x1_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 8. Translating STRUCTURE OAI21xp5_ASAP7_75t_R as cellView CNN1/OAI21xp5_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 9. Translating STRUCTURE TIEHIx1_ASAP7_75t_R as cellView CNN1/TIEHIx1_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 10. Translating STRUCTURE OAI211xp5_ASAP7_75t_R as cellView CNN1/OAI211xp5_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 11. Translating STRUCTURE HAxp5_ASAP7_75t_R as cellView CNN1/HAxp5_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 12. Translating STRUCTURE OAI31xp33_ASAP7_75t_R as cellView CNN1/OAI31xp33_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 13. Translating STRUCTURE NAND2x1_ASAP7_75t_R as cellView CNN1/NAND2x1_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 14. Translating STRUCTURE INVx2_ASAP7_75t_R as cellView CNN1/INVx2_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 15. Translating STRUCTURE AOI211xp5_ASAP7_75t_R as cellView CNN1/AOI211xp5_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 16. Translating STRUCTURE OR2x2_ASAP7_75t_R as cellView CNN1/OR2x2_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 17. Translating STRUCTURE NAND2xp5_ASAP7_75t_R as cellView CNN1/NAND2xp5_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 18. Translating STRUCTURE NAND3xp33_ASAP7_75t_R as cellView CNN1/NAND3xp33_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 19. Translating STRUCTURE OAI321xp33_ASAP7_75t_R as cellView CNN1/OAI321xp33_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 20. Translating STRUCTURE BUFx12f_ASAP7_75t_R as cellView CNN1/BUFx12f_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 21. Translating STRUCTURE INVx1_ASAP7_75t_R as cellView CNN1/INVx1_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 22. Translating STRUCTURE AOI311xp33_ASAP7_75t_R as cellView CNN1/AOI311xp33_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 23. Translating STRUCTURE NOR4xp25_ASAP7_75t_R as cellView CNN1/NOR4xp25_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 24. Translating STRUCTURE AND2x2_ASAP7_75t_R as cellView CNN1/AND2x2_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 25. Translating STRUCTURE AOI22xp5_ASAP7_75t_R as cellView CNN1/AOI22xp5_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 26. Translating STRUCTURE DLLx1_ASAP7_75t_R as cellView CNN1/DLLx1_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 27. Translating STRUCTURE XOR2xp5_ASAP7_75t_R as cellView CNN1/XOR2xp5_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 28. Translating STRUCTURE NOR2xp33_ASAP7_75t_R as cellView CNN1/NOR2xp33_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 29. Translating STRUCTURE BUFx3_ASAP7_75t_R as cellView CNN1/BUFx3_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 30. Translating STRUCTURE AOI222xp33_ASAP7_75t_R as cellView CNN1/AOI222xp33_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 31. Translating STRUCTURE NAND4xp25_ASAP7_75t_R as cellView CNN1/NAND4xp25_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 32. Translating STRUCTURE O2A1O1Ixp33_ASAP7_75t_R as cellView CNN1/O2A1O1Ixp33_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 33. Translating STRUCTURE OAI221xp5_ASAP7_75t_R as cellView CNN1/OAI221xp5_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 34. Translating STRUCTURE BUFx2_ASAP7_75t_R as cellView CNN1/BUFx2_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 35. Translating STRUCTURE BUFx12_ASAP7_75t_R as cellView CNN1/BUFx12_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 36. Translating STRUCTURE AOI21xp5_ASAP7_75t_R as cellView CNN1/AOI21xp5_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 37. Translating STRUCTURE OAI32xp33_ASAP7_75t_R as cellView CNN1/OAI32xp33_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 38. Translating STRUCTURE TAPCELL_ASAP7_75t_R as cellView CNN1/TAPCELL_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 39. Translating STRUCTURE AND3x1_ASAP7_75t_R as cellView CNN1/AND3x1_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 40. Translating STRUCTURE DFFHQNx1_ASAP7_75t_R as cellView CNN1/DFFHQNx1_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 41. Translating STRUCTURE AOI221xp5_ASAP7_75t_R as cellView CNN1/AOI221xp5_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 42. Translating STRUCTURE OR4x1_ASAP7_75t_R as cellView CNN1/OR4x1_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 43. Translating STRUCTURE FAx1_ASAP7_75t_R as cellView CNN1/FAx1_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 44. Translating STRUCTURE AOI32xp33_ASAP7_75t_R as cellView CNN1/AOI32xp33_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 45. Translating STRUCTURE AO221x1_ASAP7_75t_R as cellView CNN1/AO221x1_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 46. Translating STRUCTURE NAND5xp2_ASAP7_75t_R as cellView CNN1/NAND5xp2_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 47. Translating STRUCTURE OAI311xp33_ASAP7_75t_R as cellView CNN1/OAI311xp33_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 48. Translating STRUCTURE AO21x1_ASAP7_75t_R as cellView CNN1/AO21x1_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 49. Translating STRUCTURE A2O1A1Ixp33_ASAP7_75t_R as cellView CNN1/A2O1A1Ixp33_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 50. Translating STRUCTURE OAI22xp5_ASAP7_75t_R as cellView CNN1/OAI22xp5_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 51. Translating STRUCTURE HB1xp67_ASAP7_75t_R as cellView CNN1/HB1xp67_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 52. Translating STRUCTURE HB3xp67_ASAP7_75t_R as cellView CNN1/HB3xp67_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 53. Translating STRUCTURE AOI321xp33_ASAP7_75t_R as cellView CNN1/AOI321xp33_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 54. Translating STRUCTURE AND4x1_ASAP7_75t_R as cellView CNN1/AND4x1_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 55. Translating STRUCTURE XNOR2xp5_ASAP7_75t_R as cellView CNN1/XNOR2xp5_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 56. Translating STRUCTURE BUFx6f_ASAP7_75t_R as cellView CNN1/BUFx6f_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 57. Translating STRUCTURE BUFx8_ASAP7_75t_R as cellView CNN1/BUFx8_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 58. Translating STRUCTURE DFFASRHQNx1_ASAP7_75t_R as cellView CNN1/DFFASRHQNx1_ASAP7_75t_R/layout.
+INFO (XSTRM-220): 59. Translating STRUCTURE BUFx16f_ASAP7_75t_R as cellView CNN1/BUFx16f_ASAP7_75t_R/layout.
+
+Summary of Objects Translated:
+	Instances:                              23778
+	CustomVias:                             0
+	StandardVias:                           2086
+	CdsGenVias:                             0
+	Arrays:                                 0
+	Polygons:                               177
+	Paths:                                  17343
+	PathSegs:                               0
+	Rectangles:                             7897
+	Text:                                   532
+	Node:                                   0
+	Line:                                   0
+	Cells:                                  59
+
+Elapsed Time: 6.7s   User Time: 0.3s   CPU Time: 0.3s   Peak VM: 7708KB  CPUs Used: 1
+INFO (XSTRM-234): Translation completed. '0' error(s) and '4' warning(s) found.

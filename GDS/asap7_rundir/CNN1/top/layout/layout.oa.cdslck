@@ -1,0 +1,16 @@
+#
+# Edit Lock-Stake file. CAUTION: Please do not change.
+#
+# Information about current Edit Lock Owner.
+#
+LockStakeVersion               1.1
+LoginName                      vsathishkuma
+HostName                       tux-111.cae.wisc.edu
+ProcessIdentifier              851144
+ProcessCreationTime_UTC        1777345187
+ProcessCreationTime_Readable   Mon Apr 27 21:59:47 2026 CDT
+AppIdentifier                  OA File System Design Manager
+OSType                         unix
+ReasonForPlacingEditLock       OpenAccess edit lock
+FilePathUsedToEditLock         /filespace/v/vsathishkuma/ECE755/ECE_755_Project/GDS/asap7_rundir/CNN1/top/layout/layout.oa.cdslck
+TimeEditLocked                 Mon Apr 27 22:30:01 2026 CDT

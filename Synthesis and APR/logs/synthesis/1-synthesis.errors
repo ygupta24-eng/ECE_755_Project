@@ -1,1 +1,1 @@
-ABC: Error: The network is combinational.
+/openlane/designs/dnn/MS2_Synthesis_sky130/top.sv:23: ERROR: syntax error, unexpected '[', expecting ',' or '=' or ')'

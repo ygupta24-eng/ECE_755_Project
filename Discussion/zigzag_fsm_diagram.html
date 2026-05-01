@@ -1,0 +1,253 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--font-sans);color:var(--color-text-primary)}
+.tabs{display:flex;gap:6px;padding:10px 0 12px;flex-wrap:wrap}
+.tab{padding:5px 14px;border:0.5px solid var(--color-border-secondary);border-radius:20px;
+     cursor:pointer;font-size:12px;color:var(--color-text-secondary);background:var(--color-background-secondary)}
+.tab.on{background:var(--color-background-info);color:var(--color-text-info);
+        border-color:var(--color-border-info);font-weight:500}
+</style>
+<div class="tabs">
+  <button class="tab on" onclick="go('fsm')">FSM diagram</button>
+  <button class="tab" onclick="go('out')">Outputs per state</button>
+</div>
+<svg id="svg" width="100%" viewBox="0 0 680 640"></svg>
+<script>
+const NS='http://www.w3.org/2000/svg';
+function mk(t,a){const e=document.createElementNS(NS,t);Object.entries(a).forEach(([k,v])=>e.setAttribute(k,v));return e;}
+function ap(p,e){p.appendChild(e);return e;}
+
+function mkDefs(svg){
+  const d=ap(svg,mk('defs',{}));
+  [['nb','#378ADD'],['ng','#1D9E75'],['nr','#E24B4A'],
+   ['na','#BA7517'],['np','#7F77DD'],['nm','#D4537E'],
+   ['no','#EF9F27'],['ngy','#888780']].forEach(([id,col])=>{
+    const m=mk('marker',{id,viewBox:'0 0 10 10',refX:'8',refY:'5',
+      markerWidth:'5',markerHeight:'5',orient:'auto-start-reverse'});
+    ap(m,mk('path',{d:'M2 1L8 5L2 9',fill:'none',stroke:col,
+      'stroke-width':'1.8','stroke-linecap':'round','stroke-linejoin':'round'}));
+    ap(d,m);
+  });
+}
+
+function T(svg,x,y,t,fs,fw,fill,ta){
+  const e=mk('text',{x,y,'text-anchor':ta||'middle','dominant-baseline':'central',
+    'font-size':fs||11,...(fw?{'font-weight':fw}:{}),
+    fill:fill||'var(--color-text-primary)'});
+  e.textContent=t; ap(svg,e);
+}
+
+// Draw state circle
+function S(svg,x,y,r,name,fill,stroke){
+  ap(svg,mk('circle',{cx:x,cy:y,r,fill,stroke,'stroke-width':'1.8'}));
+  T(svg,x,y,name,11,500,stroke);
+}
+
+// Straight arrow between two circles
+function LA(svg,x1,y1,x2,y2,col,mid,dash){
+  const dx=x2-x1,dy=y2-y1,L=Math.sqrt(dx*dx+dy*dy)||1,sh=28;
+  const nx=dx/L,ny=dy/L;
+  const a={x1:x1+nx*sh,y1:y1+ny*sh,x2:x2-nx*sh,y2:y2-ny*sh,
+    stroke:col,'stroke-width':1.5,'marker-end':'url(#'+mid+')'};
+  if(dash)a['stroke-dasharray']='4 3';
+  ap(svg,mk('line',a));
+}
+
+// Curved arrow (quadratic bezier)
+function CA(svg,x1,y1,x2,y2,cpx,cpy,col,mid,dash){
+  const a={d:`M${x1} ${y1} Q${cpx} ${cpy} ${x2} ${y2}`,fill:'none',
+    stroke:col,'stroke-width':1.5,'marker-end':'url(#'+mid+')'};
+  if(dash)a['stroke-dasharray']='4 3';
+  ap(svg,mk('path',a));
+}
+
+// Self loop
+function SL(svg,x,y,r,col,mid,topOffset){
+  const to=topOffset||35;
+  ap(svg,mk('path',{
+    d:`M${x-r+4} ${y-r} C${x-r-22} ${y-r-to} ${x+r+22} ${y-r-to} ${x+r-4} ${y-r}`,
+    fill:'none',stroke:col,'stroke-width':1.5,'marker-end':'url(#'+mid+')'}));
+}
+
+// Edge label with white background
+function EL(svg,x,y,t,col){
+  const w=t.length*5.5+8;
+  ap(svg,mk('rect',{x:x-w/2,y:y-8,width:w,height:16,rx:3,
+    fill:'var(--color-background-primary)',stroke:'none'}));
+  T(svg,x,y,t,9,null,col||'var(--color-text-secondary)');
+}
+
+// State definitions
+const ST={
+  IDLE:      {x:340, y:50,  fill:'#F1EFE8', stroke:'#5F5E5A'},
+  CLEAR:     {x:340, y:140, fill:'#FCEBEB', stroke:'#A32D2D'},
+  FILL:      {x:340, y:240, fill:'#EAF3DE', stroke:'#3B6D11'},
+  W_LOAD:    {x:160, y:360, fill:'#FAEEDA', stroke:'#854F0B'},
+  COMPUTE:   {x:340, y:360, fill:'#E6F1FB', stroke:'#185FA5'},
+  H_SHIFT:   {x:520, y:360, fill:'#FBEAF0', stroke:'#993556'},
+  V_SHIFT:   {x:520, y:480, fill:'#EEEDFE', stroke:'#534AB7'},
+  PSUM_SHIFT:{x:340, y:480, fill:'#E1F5EE', stroke:'#0F6E56'},
+};
+
+function drawFSM(svg){
+  mkDefs(svg);
+
+  // ── arrows ────────────────────────────────────────────────────
+
+  // IDLE → CLEAR
+  LA(svg,ST.IDLE.x,ST.IDLE.y,ST.CLEAR.x,ST.CLEAR.y,'#5F5E5A','ngy');
+  EL(svg,360,96,'start','#5F5E5A');
+
+  // CLEAR → FILL (1 cycle, unconditional)
+  LA(svg,ST.CLEAR.x,ST.CLEAR.y,ST.FILL.x,ST.FILL.y,'#A32D2D','nr');
+  EL(svg,360,192,'next cycle','#A32D2D');
+
+  // FILL → W_LOAD
+  CA(svg,ST.FILL.x,ST.FILL.y,ST.W_LOAD.x,ST.W_LOAD.y,220,300,'#3B6D11','ng');
+  EL(svg,250,268,'cnt==7','#3B6D11');
+
+  // W_LOAD self loop (cnt<3)
+  SL(svg,ST.W_LOAD.x,ST.W_LOAD.y,28,'#854F0B','na');
+  EL(svg,ST.W_LOAD.x,ST.W_LOAD.y-66,'cnt<3','#854F0B');
+
+  // W_LOAD → COMPUTE
+  LA(svg,ST.W_LOAD.x,ST.W_LOAD.y,ST.COMPUTE.x,ST.COMPUTE.y,'#854F0B','na');
+  EL(svg,250,360,'cnt==3','#854F0B');
+
+  // COMPUTE self loop (ch_cnt<3)
+  SL(svg,ST.COMPUTE.x,ST.COMPUTE.y,28,'#185FA5','nb');
+  EL(svg,ST.COMPUTE.x,ST.COMPUTE.y-66,'ch<3 →W_LOAD','#185FA5');
+
+  // COMPUTE → H_SHIFT
+  LA(svg,ST.COMPUTE.x,ST.COMPUTE.y,ST.H_SHIFT.x,ST.H_SHIFT.y,'#185FA5','nb');
+  EL(svg,430,348,'ch==3\nv==0,h<2','#185FA5');
+
+  // COMPUTE → V_SHIFT
+  CA(svg,ST.COMPUTE.x,ST.COMPUTE.y,ST.V_SHIFT.x,ST.V_SHIFT.y,460,430,'#534AB7','np',true);
+  EL(svg,460,412,'ch==3\nv<6,h==2','#534AB7');
+
+  // COMPUTE → PSUM_SHIFT
+  LA(svg,ST.COMPUTE.x,ST.COMPUTE.y,ST.PSUM_SHIFT.x,ST.PSUM_SHIFT.y,'#0F6E56','ng');
+  EL(svg,360,422,'ch==3\nv==6','#0F6E56');
+
+  // H_SHIFT self loop (cnt<3)
+  SL(svg,ST.H_SHIFT.x,ST.H_SHIFT.y,28,'#993556','nm');
+  EL(svg,ST.H_SHIFT.x,ST.H_SHIFT.y-66,'cnt<3','#993556');
+
+  // H_SHIFT → W_LOAD
+  CA(svg,ST.H_SHIFT.x,ST.H_SHIFT.y,ST.W_LOAD.x,ST.W_LOAD.y,340,290,'#993556','nm',true);
+  EL(svg,340,308,'cnt==3','#993556');
+
+  // V_SHIFT self loop (cnt<3)
+  SL(svg,ST.V_SHIFT.x,ST.V_SHIFT.y,28,'#534AB7','np');
+  EL(svg,ST.V_SHIFT.x,ST.V_SHIFT.y-66,'cnt<3','#534AB7');
+
+  // V_SHIFT → W_LOAD
+  CA(svg,ST.V_SHIFT.x,ST.V_SHIFT.y,ST.W_LOAD.x,ST.W_LOAD.y,200,530,'#534AB7','np',true);
+  EL(svg,280,530,'cnt==3','#534AB7');
+
+  // PSUM_SHIFT self loop (cnt<7)
+  SL(svg,ST.PSUM_SHIFT.x,ST.PSUM_SHIFT.y,28,'#0F6E56','ng');
+  EL(svg,ST.PSUM_SHIFT.x,ST.PSUM_SHIFT.y-66,'cnt<7','#0F6E56');
+
+  // PSUM_SHIFT → IDLE
+  CA(svg,ST.PSUM_SHIFT.x,ST.PSUM_SHIFT.y,ST.IDLE.x,ST.IDLE.y,80,300,'#0F6E56','ng',true);
+  EL(svg,108,270,'cnt==7\ndone=1','#0F6E56');
+
+  // ── state circles (drawn last, on top) ────────────────────────
+  Object.entries(ST).forEach(([name,s])=>{
+    S(svg,s.x,s.y,28,name,s.fill,s.stroke);
+  });
+
+  // ── counter legend ────────────────────────────────────────────
+  const ly=590;
+  T(svg,10,ly,'Counters:',10,500,'var(--color-text-secondary)','start');
+  [
+    'cnt: cycles within state',
+    'ch_cnt: channels 0→3',
+    'h_cnt: h-shifts 0→1 (row 0 only)',
+    'v_cnt: v-shifts 0→6',
+  ].forEach((s,i)=>{
+    T(svg,10+i*170,ly+14,s,9,null,'var(--color-text-secondary)','start');
+  });
+}
+
+function drawOut(svg){
+  mkDefs(svg);
+  const headers=['State','en','move_en','w_ld_en','fifo_en','psum_sh','psum_clr','done','direction'];
+  const cw=     [84,     28,  44,       44,       40,       44,       52,        32,    62];
+  const rows=[
+    {s:'IDLE',      f:'#F1EFE8',k:'#5F5E5A', v:['0','0','0','0','0','0','0','—']},
+    {s:'CLEAR',     f:'#FCEBEB',k:'#A32D2D', v:['1','0','0','0','0','1','0','—']},
+    {s:'FILL',      f:'#EAF3DE',k:'#3B6D11', v:['0','1','0','0','0','0','0','2\'b10']},
+    {s:'W_LOAD',    f:'#FAEEDA',k:'#854F0B', v:['0','0','1','0','0','0','0','2\'b11']},
+    {s:'COMPUTE',   f:'#E6F1FB',k:'#185FA5', v:['1','1','1','0','0','0','0','2\'b11']},
+    {s:'H_SHIFT',   f:'#FBEAF0',k:'#993556', v:['0','1','0','1','0','0','0','2\'b10']},
+    {s:'V_SHIFT',   f:'#EEEDFE',k:'#534AB7', v:['0','1','0','1','0','0','0','2\'b01']},
+    {s:'PSUM_SHIFT',f:'#E1F5EE',k:'#0F6E56', v:['0','1','0','0','1','0','cnt==7','2\'b10']},
+  ];
+
+  const OX=10, OY=30;
+  const colX=[OX];
+  cw.forEach((w,i)=>colX.push(colX[i]+w));
+  const TW=colX[colX.length-1]-OX;
+
+  // header
+  ap(svg,mk('rect',{x:OX,y:OY,width:TW,height:20,rx:2,
+    fill:'var(--color-background-secondary)',stroke:'none'}));
+  headers.forEach((h,i)=>{
+    T(svg,colX[i]+cw[i]/2,OY+10,h,9,500,'var(--color-text-secondary)');
+  });
+
+  rows.forEach((row,ri)=>{
+    const ry=OY+22+ri*28;
+    ap(svg,mk('rect',{x:OX,y:ry,width:TW,height:26,rx:3,
+      fill:row.f,stroke:'none'}));
+    // state name
+    T(svg,colX[0]+cw[0]/2,ry+13,row.s,10,500,row.k);
+    // values
+    row.v.forEach((v,i)=>{
+      const col=v==='1'?'#0F6E56':v==='0'?'var(--color-text-secondary)':row.k;
+      T(svg,colX[i+1]+cw[i+1]/2,ry+13,v,9,v==='1'?500:null,col);
+    });
+    ap(svg,mk('line',{x1:OX,y1:ry+26,x2:OX+TW,y2:ry+26,
+      stroke:'var(--color-border-tertiary)','stroke-width':0.5}));
+  });
+
+  // transition conditions
+  const TY=OY+22+rows.length*28+16;
+  T(svg,340,TY,'Key transition conditions',11,500,'var(--color-text-secondary)');
+  const conds=[
+    'IDLE→CLEAR      : start==1',
+    'CLEAR→FILL      : unconditional (1 cycle only)',
+    'FILL→W_LOAD     : cnt==7 (8 cycles done)',
+    'W_LOAD→COMPUTE  : cnt==3 (overlap cycle)',
+    'COMPUTE→W_LOAD  : ch_cnt < 3 (more channels)',
+    'COMPUTE→H_SHIFT : ch_cnt==3, v_cnt==0, h_cnt<2',
+    'COMPUTE→V_SHIFT : ch_cnt==3, v_cnt<6, h_cnt==2',
+    'COMPUTE→PSUM    : ch_cnt==3, v_cnt==6',
+    'H/V_SHIFT→W_LOAD: cnt==3 (4 cycles done)',
+    'PSUM_SHIFT→IDLE  : cnt==7 (8 cycles, done pulses)',
+  ];
+  conds.forEach((c,i)=>{
+    T(svg,OX+10,TY+18+i*17,c,9,null,'var(--color-text-secondary)','start');
+  });
+}
+
+function render(mode){
+  const svg=document.getElementById('svg');
+  svg.innerHTML='';
+  if(mode==='fsm') drawFSM(svg);
+  else             drawOut(svg);
+}
+
+function go(m){
+  document.querySelectorAll('.tab').forEach(b=>{
+    const map={fsm:'FSM diagram',out:'Outputs per state'};
+    b.classList.toggle('on',b.textContent.trim()===map[m]);
+  });
+  render(m);
+}
+go('fsm');
+</script>

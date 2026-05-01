@@ -1,0 +1,36 @@
+# Simulation outputs
+*.vcd
+*.wlf
+*.vvp
+
+# Questasim work directories
+RTL_Design/work/
+RTL_Verification/work/
+
+# Editor backups
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Vivado
+.Xil/
+*.jou
+*.log
+
+# Report outputs
+*.rpt
+*.html
+
+# Temporary files
+core
+sample
+*#

@@ -4,9 +4,6 @@ module zigzag_fsm (
     input  logic start,
     output logic done,
 
-    // ----------------------------------------------------------------
-    // Internal control signals → PE array
-    // ----------------------------------------------------------------
     output logic       en,
     output logic       move_en,
     output logic       w_ld_en,
@@ -21,59 +18,24 @@ module zigzag_fsm (
     // ----------------------------------------------------------------
     typedef enum logic [2:0] {
         IDLE       = 3'd0,
-        CLEAR      = 3'd1,   // 1 cycle: en=1, psum_clr=1
-        FILL       = 3'd2,
-        W_LOAD     = 3'd3,
-        COMPUTE    = 3'd4,
-        H_SHIFT    = 3'd5,
-        V_SHIFT    = 3'd6,
-        PSUM_SHIFT = 3'd7
+        CLEAR      = 3'd1,
+        FILL       = 3'd2,   // 8 cycles, w_ld_en=1 for last 4
+        W_LOAD     = 3'd3,   // 3 cycles only (4th cycle overlaps with COMPUTE)
+        COMPUTE    = 3'd4,   // 1 cycle, w_ld_en=1 (loads next weight simultaneously)
+        H_SHIFT    = 3'd5,   // 4 cycles, w_ld_en=1 for last 3 cycles (cnt 1,2,3)
+        V_SHIFT    = 3'd6,   // 4 cycles, w_ld_en=1 for last 3 cycles (cnt 1,2,3)
+        PSUM_SHIFT = 3'd7    // 8 cycles
     } state_t;
 
     state_t state, next_state;
 
-    // ═══════════════════════════════════════════════════════════════════
-    // CLOCK GATING SIGNALS - Priority 1 Optimization
-    // ═══════════════════════════════════════════════════════════════════
-    // Gated clock for ch_cnt counter (created by ICG cell in synthesis)
-    logic clk_ch_cnt_gated;
-    
-    // Gating enable for ch_cnt - only needs clock during COMPUTE transitions
-    logic ch_cnt_en;
-    assign ch_cnt_en = (state == COMPUTE) && 
-                       (next_state inside {W_LOAD, H_SHIFT, V_SHIFT, PSUM_SHIFT});
-    
-    // Pipelined gating enable (1 cycle delay for glitch-free clock gating)
-    logic ch_cnt_en_d;
-    always_ff @(posedge clk or negedge rst_n) begin
-        if (!rst_n)
-            ch_cnt_en_d <= 1'b0;
-        else
-            ch_cnt_en_d <= ch_cnt_en;
-    end
-    
-    // LATCH-BASED ICG: Integrated Clock Gate for ch_cnt
-    // Step 1: Latch - samples enable only when clock is LOW
-    logic ch_cnt_en_latched;
-    always_latch begin
-        if (~clk)
-            ch_cnt_en_latched = ch_cnt_en_d;  // Sample when clk=0
-        // Hold value when clk=1 (no transitions during pulse)
-    end
-    
-    // Step 2: Gated Clock Generator
-    // AND gate produces clean gated clock (no glitches possible)
-    // Gates the ch_cnt counter clock → ~80% power savings on counter (4-5% overall)
-    assign clk_ch_cnt_gated = clk & ch_cnt_en_latched;
-
     // ----------------------------------------------------------------
     // Counters
     // ----------------------------------------------------------------
-    logic [3:0] cnt;      // cycle counter within state (max 8)
-    logic [1:0] ch_cnt;   // channel counter     0..3
-    logic [1:0] h_cnt;    // h-shift counter     0..1 (row 0 only)
-    logic [2:0] v_cnt;    // v-shift counter     0..6
-
+    logic [3:0] cnt;      // cycle counter within state
+    logic [1:0] ch_cnt;   // channel counter 0..3 (per pixel)
+    logic [1:0] h_cnt;    // h-shift counter 0..1 (row 0 only)
+    logic [2:0] v_cnt;    // v-shift counter 0..5 (6 vertical pixels)
 
     // ----------------------------------------------------------------
     // State register
@@ -97,13 +59,11 @@ module zigzag_fsm (
         end
     end
 
-    // ────────────────────────────────────────────────────────────────
-    // ch_cnt — resets for new pixel, increments per channel (GATED CLOCK)
-    // ────────────────────────────────────────────────────────────────
-    // PRIORITY 1: Uses clk_ch_cnt_gated instead of clk
-    // Clock is gated (disabled) in all states except COMPUTE transitions
-    // Expected Power Savings: ~80% of ch_cnt clock cycles (4-5% overall)
-    always_ff @(posedge clk_ch_cnt_gated or negedge rst_n) begin
+    // ----------------------------------------------------------------
+    // ch_cnt — increments each COMPUTE→W_LOAD or COMPUTE→next_pixel
+    // resets when new pixel arrives
+    // ----------------------------------------------------------------
+    always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             ch_cnt <= '0;
         end else begin
@@ -112,14 +72,11 @@ module zigzag_fsm (
                 CLEAR,
                 FILL,
                 H_SHIFT,
-                V_SHIFT:  ch_cnt <= '0;
+                V_SHIFT:  ch_cnt <= '0;    // reset for new pixel
 
                 COMPUTE: begin
-                    if (next_state == W_LOAD     ||
-                        next_state == H_SHIFT    ||
-                        next_state == V_SHIFT    ||
-                        next_state == PSUM_SHIFT)
-                        ch_cnt <= ch_cnt + 1;
+                    // increment after every compute cycle
+                    ch_cnt <= ch_cnt + 1;
                 end
 
                 default: ;
@@ -128,7 +85,7 @@ module zigzag_fsm (
     end
 
     // ----------------------------------------------------------------
-    // h_cnt — row 0 horizontal shifts only
+    // h_cnt — increments each H_SHIFT completes
     // ----------------------------------------------------------------
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
@@ -140,7 +97,7 @@ module zigzag_fsm (
                 FILL:    h_cnt <= '0;
 
                 H_SHIFT: begin
-                    if (next_state == W_LOAD)
+                    if (next_state == COMPUTE)
                         h_cnt <= h_cnt + 1;
                 end
 
@@ -150,7 +107,7 @@ module zigzag_fsm (
     end
 
     // ----------------------------------------------------------------
-    // v_cnt — vertical shift counter
+    // v_cnt — increments each V_SHIFT completes
     // ----------------------------------------------------------------
     always_ff @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
@@ -161,7 +118,7 @@ module zigzag_fsm (
                 CLEAR:   v_cnt <= '0;
 
                 V_SHIFT: begin
-                    if (next_state == W_LOAD)
+                    if (next_state == COMPUTE)
                         v_cnt <= v_cnt + 1;
                 end
 
@@ -179,26 +136,25 @@ module zigzag_fsm (
         case (state)
             IDLE: begin
                 if (start)
+                    next_state = FILL;
+            end
+
+            FILL: begin
+                // 8 cycles total
+                // last 4 cycles: w_ld_en=1 (first weight loading)
+                if (cnt == 4'd7)
                     next_state = CLEAR;
             end
 
             CLEAR: begin
-                // 1 cycle only — immediately move to FILL
-                next_state = FILL;
-            end
-
-            FILL: begin
-                if (cnt == 4'd7)
-                    next_state = W_LOAD;
-            end
-
-            W_LOAD: begin
-                if (cnt == 4'd3)
-                    next_state = COMPUTE;
+                // 1 cycle only
+                next_state = COMPUTE;
             end
 
             COMPUTE: begin
+                // 1 cycle: en=1, move_en=1, w_ld_en=1, direction=circular
                 if (ch_cnt == 2'd3) begin
+                    // all 4 channels done for this pixel
                     if (v_cnt == 3'd6)
                         next_state = PSUM_SHIFT;
                     else if (v_cnt == 3'd0 && h_cnt < 2'd2)
@@ -206,23 +162,40 @@ module zigzag_fsm (
                     else
                         next_state = V_SHIFT;
                 end else begin
+                    // more channels — 3 more weight load cycles needed
                     next_state = W_LOAD;
                 end
             end
 
+            W_LOAD: begin
+                // 3 cycles only (4th cycle is COMPUTE itself)
+                if (cnt == 4'd2)
+                    next_state = COMPUTE;
+            end
+
             H_SHIFT: begin
+                // 4 cycles total
+                // cnt=0: move activation, fifo_en=1, w_ld_en=0
+                // cnt=1,2,3: move activation + w_ld_en=1 (overlap next weight)
+                // after 4 cycles → directly to COMPUTE
                 if (cnt == 4'd3)
-                    next_state = W_LOAD;
+                    next_state = COMPUTE;
             end
 
             V_SHIFT: begin
+                // 4 cycles total
+                // cnt=0: move activation, fifo_en=1, w_ld_en=0
+                // cnt=1,2,3: move activation + w_ld_en=1 (overlap next weight)
+                // after 4 cycles → directly to COMPUTE
                 if (cnt == 4'd3)
-                    next_state = W_LOAD;
+                    next_state = COMPUTE;
             end
 
             PSUM_SHIFT: begin
-                if (cnt == 4'd7)
+                if (cnt == 4'd7 && start == 1'b1)
                     next_state = IDLE;
+                else if (cnt == 4'd7)
+                    next_state = CLEAR; // if start is low, stay active and immediately start next round
             end
 
             default: next_state = IDLE;
@@ -248,49 +221,61 @@ module zigzag_fsm (
             end
 
             CLEAR: begin
-                // 1 cycle: clear all psums before new convolution
-                // en=1 needed to open the psum accumulator FF
-                // psum_clr=1 resets psum_out to 0
-                // move_en=0: activations don't move
+                // 1 cycle: clear all psums
                 en       = 1'b1;
                 psum_clr = 1'b1;
+                w_ld_en  = 1'b1;
             end
 
             FILL: begin
+                // 8 cycles of h-zigzag fill
+                // last 4 cycles (cnt 4,5,6,7): w_ld_en=1 to pre-load first weight
                 move_en   = 1'b1;
-                direction = 2'b10;   // h-zigzag
+                direction = 2'b10;              // h-zigzag
+                w_ld_en   = (cnt >= 4'd4);      // overlap: last 3 fill cycles
             end
 
             W_LOAD: begin
+                // 3 cycles: load weight rows 1,2,3
+                // (row 0 was loaded during COMPUTE's w_ld_en pulse)
                 w_ld_en   = 1'b1;
-                direction = 2'b11;
+                direction = 2'b11;              // circular (ready for compute)
             end
 
             COMPUTE: begin
+                // 1 cycle: circular shift + MAC + start loading next weight (row 0)
                 en        = 1'b1;
                 move_en   = 1'b1;
-                //w_ld_en   = 1'b1;
-                direction = 2'b11;
+                w_ld_en   = 1'b1;              // row 0 of next weight loads now
+                direction = 2'b11;             // circular shift
             end
 
             H_SHIFT: begin
+                // 4 cycles: shift new horizontal pixel in
+                // cnt=0: pure shift (first activation cycle, no weight yet)
+                // cnt=1,2,3: shift + weight loading (rows 1,2,3 of first weight)
                 move_en   = 1'b1;
                 fifo_en   = 1'b1;
-                direction = 2'b10;
+                direction = 2'b10;             // h-zigzag
+                w_ld_en   = 1'b1;     // overlap: cycles 0,1,2
             end
 
             V_SHIFT: begin
+                // 4 cycles: shift new vertical pixel in via FIFO
+                // cnt=0: pure shift (fifo_en=1, no weight yet)
+                // cnt=1,2,3: shift + weight loading (rows 1,2,3)
                 move_en   = 1'b1;
                 fifo_en   = 1'b1;
-                direction = 2'b01;
+                direction = 2'b01;             // v-zigzag
+                w_ld_en   = 1'b1;     // overlap: cycles 0,1,2
             end
 
             PSUM_SHIFT: begin
                 move_en       = 1'b1;
                 psum_shift_en = 1'b1;
                 direction     = 2'b10;
-                done          = (cnt == 4'd7);  // pulse on last cycle
-                // psum_clr removed — clearing now done in CLEAR state
+                done          = (cnt == 4'd7);
+                w_ld_en   = (cnt >= 4'd4);      // overlap: last 3 fill cycles
             end
 
             default: ;
@@ -298,16 +283,3 @@ module zigzag_fsm (
     end
 
 endmodule
-
-/* Notes
-**Updated sequence:**
-```
-IDLE   → start asserted
-CLEAR  → 1 cycle: en=1, psum_clr=1 — all 16 psums zeroed ✓
-FILL   → 8 cycles
-W_LOAD+COMPUTE × 4 channels ...
-...
-PSUM_SHIFT → 8 cycles, done pulses on last cycle
-IDLE   → waits for next start, psums already cleared for next run ✓
-
-*/

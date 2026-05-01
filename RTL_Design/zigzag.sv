@@ -34,6 +34,13 @@ module zig_zag_4x4 #(
     output logic [ACC_W-1:0]  psum_out1   // PE30
 );
 
+    logic en_latched;
+    // Level-sensitive latch: transparent when clk=0, holds when clk=1
+    always_latch begin
+        if (~clk)
+            en_latched = en;   // sample en directly — no pipeline delay needed
+    end
+
     // ── Direction decode ─────────────────────────────────────────
     logic [1:0] dst_sel [0:UNQ_DIR-1];
     logic [1:0] src_sel [0:UNQ_DIR-1];
@@ -213,7 +220,6 @@ module zig_zag_4x4 #(
                 ) u_pe (
                     .clk            (clk),
                     .rst_n          (rst_n),
-                    .en             (en),
                     .move_en        (move_en),
                     .psum_shift_en  (psum_shift_en),
                     .dst_sel        (dst_sel[grp(r,c)]),
@@ -229,7 +235,9 @@ module zig_zag_4x4 #(
                     .w_ld_en        (w_ld_en),
                     .w_in           (w_chain[r][c]),
                     .w_out          (w_chain[r+1][c]),
-                    .psum_clr       (psum_clr)      // fix: no trailing comma
+                    .psum_clr       (psum_clr),      
+                    .en_latched     (en_latched)
+                    //removed en input and en_latched connection to fix clk gating
                 );
             end
         end

@@ -121,6 +121,7 @@ echo "\[ INFO\] Latch-based ICG will be synthesized from RTL"
 #############################################################
 echo "\[ INFO\] Starting synthesis pass 1 (medium effort)..."
 echo "\[ INFO\] Latch-based ICG cells will be inferred and inserted..."
+echo "\[ INFO\] Area optimization enabled for clock gating overhead reduction..."
 
 redirect -tee $reports_dir/synth_p1_cg.log {
     compile -map_effort medium -gate_clock
@@ -149,6 +150,7 @@ set_fix_hold clk
 ## Synthesis - Pass 2 (High effort with latch-based ICG)
 #############################################################
 echo "\[ INFO\] Starting synthesis pass 2 (high effort with hold fixes)..."
+echo "\[ INFO\] Area & power optimization enabled..."
 
 redirect -tee $reports_dir/synth_p2_cg.log {
     compile -map_effort high -gate_clock

@@ -6,13 +6,13 @@ Report : timing
 	-sort_by slack
 Design : top
 Version: X-2025.06
-Date   : Fri Apr 10 16:33:45 2026
+Date   : Mon Apr 27 18:35:59 2026
 ****************************************
 
 
-  Startpoint: u_fsm/ch_cnt_en_d_reg
+  Startpoint: u_fsm/state_reg[1]
                (rising edge-triggered flip-flop clocked by clk)
-  Endpoint: u_fsm/ch_cnt_en_latched_reg
+  Endpoint: u_pe_array/en_latched_reg
                (negative level-sensitive latch clocked by clk)
   Path Group: clk
   Path Type: max
@@ -21,30 +21,33 @@ Date   : Fri Apr 10 16:33:45 2026
   ------------------------------------------------------------------------------
   clock clk (rise edge)                                   0.00       0.00
   clock network delay (ideal)                             0.00       0.00
-  u_fsm/ch_cnt_en_d_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)     0.00       0.00 r
-  u_fsm/ch_cnt_en_d_reg/QN (DFFASRHQNx1_ASAP7_75t_R)     60.57 &    60.57 f
-  u_fsm/ch_cnt_en_latched_reg/D (DLLx1_ASAP7_75t_R)       0.06 &    60.63 f
-  data arrival time                                                 60.63
+  u_fsm/state_reg[1]/CLK (DFFASRHQNx1_ASAP7_75t_R)        0.00       0.00 r
+  u_fsm/state_reg[1]/QN (DFFASRHQNx1_ASAP7_75t_R)        83.61 &    83.61 f
+  U756/Y (INVx1_ASAP7_75t_R)                             34.67 &   118.28 r
+  U1980/Y (NAND3xp33_ASAP7_75t_R)                       167.74 &   286.02 f
+  U691/Y (NAND2xp5_ASAP7_75t_R)                          73.81 &   359.83 r
+  u_pe_array/en_latched_reg/D (DLLx1_ASAP7_75t_R)         0.08 &   359.91 r
+  data arrival time                                                359.91
 
   clock clk (fall edge)                                1000.00    1000.00
   clock network delay (ideal)                             0.00    1000.00
-  u_fsm/ch_cnt_en_latched_reg/CLK (DLLx1_ASAP7_75t_R)             1000.00 f
+  u_pe_array/en_latched_reg/CLK (DLLx1_ASAP7_75t_R)               1000.00 f
   clock reconvergence pessimism                           0.00    1000.00
   clock uncertainty                                      -0.01     999.99
   time borrowed from endpoint                             0.00     999.99
   data required time                                               999.99
   ------------------------------------------------------------------------------
   data required time                                               999.99
-  data arrival time                                                -60.63
+  data arrival time                                               -359.91
   ------------------------------------------------------------------------------
-  slack (MET)                                                      939.36
+  slack (MET)                                                      640.08
 
   Time Borrowing Information
   ------------------------------------------------------------------
   clk nominal pulse width                              1000.00
-  library setup time                                     -1.98
+  library setup time                                    -20.19
   ------------------------------------------------------------------
-  max time borrow                                       998.02
+  max time borrow                                       979.81
   actual time borrow                                      0.00
   ------------------------------------------------------------------
 

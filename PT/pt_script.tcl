@@ -20,7 +20,7 @@ set power_enable_analysis true
 #############################################################
 ## Read design and link
 #############################################################
-redirect -tee ./reports/read_netlist.log { read_verilog outputs/top_apr_cg.v }
+redirect -tee ./reports/read_netlist.log { read_verilog outputs/top_apr.v }
 
 current_design ${top}
 
@@ -44,7 +44,7 @@ if {[catch {
 #############################################################
 ## Read design parasitics (post-route SPEF from APR)
 #############################################################
-redirect -tee ./reports/read_spef.log { read_parasitics -format SPEF outputs/top_apr_cg.spef }
+redirect -tee ./reports/read_spef.log { read_parasitics -format SPEF outputs/top_apr.spef }
 
 #############################################################
 ## Dump reports

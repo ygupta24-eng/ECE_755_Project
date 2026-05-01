@@ -1,0 +1,26 @@
+[ INFO] Loading clock gating-specific constraints...
+[ INFO] Clock gating setup time: 0.06 ns
+[ INFO] Clock gating hold time: 0.02 ns
+[ INFO] Using RTL-defined latch-based ICG cells...
+[ INFO] (always_latch blocks in RTL will be synthesized as ICG latches)
+[ INFO] RTL-based ICG implementation detected
+[ INFO] PE psum_out: 16 latched enable signals + AND gates
+[ INFO] FSM ch_cnt: 1 latched enable signal + AND gate
+[ INFO] Gating enable signals use pipelined architecture
+[ INFO] Timing margins provided by:
+[      ] - FF pipeline stage (delay + setup margin)
+[      ] - Always_latch sampling edge (setup/hold timing)
+[ INFO] Enabling hold time mode fixes...
+[ INFO] Hold time fixing enabled for main clock
+[ INFO] Technology: ASAP7 (asap7sc7p5t_28)
+[ INFO] Max transition constraints applied
+[ ========================================== ]
+[ Clock Gating Constraints Applied          ]
+[ ========================================== ]
+[ - Setup Time (Latch):      0.06 ns        ]
+[ - Hold Time (Latch):       0.02 ns        ]
+[ - Max Transition:          0.08 ns        ]
+[ - Technology:              ASAP7 7nm      ]
+[ - Method:                  RTL Latches    ]
+[ ========================================== ]
+

@@ -1,0 +1,146 @@
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: Design has unannotated primary inputs. (PWR-414)
+Warning: Design has unannotated sequential cell outputs. (PWR-415)
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : top
+Version: X-2025.06
+Date   : Mon Apr 13 16:17:20 2026
+****************************************
+
+
+Library(s) Used:
+
+    asap7sc7p5t_INVBUF_RVT_TT_nldm_211120 (File: /filespace/v/vsathishkuma/ECE755/ECE_755_Project/Synthesis/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_211120.db)
+    asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120 (File: /filespace/v/vsathishkuma/ECE755/ECE_755_Project/Synthesis/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.db)
+    asap7sc7p5t_OA_RVT_TT_nldm_211120 (File: /filespace/v/vsathishkuma/ECE755/ECE_755_Project/Synthesis/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_OA_RVT_TT_nldm_211120.db)
+    asap7sc7p5t_AO_RVT_TT_nldm_211120 (File: /filespace/v/vsathishkuma/ECE755/ECE_755_Project/Synthesis/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_AO_RVT_TT_nldm_211120.db)
+    asap7sc7p5t_SEQ_RVT_TT_nldm_220123 (File: /filespace/v/vsathishkuma/ECE755/ECE_755_Project/Synthesis/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.db)
+
+
+Operating Conditions: PVT_0P7V_25C   Library: asap7sc7p5t_AO_RVT_TT_nldm_211120
+Wire Load Model Mode: segmented
+
+Design        Wire Load Model            Library
+------------------------------------------------
+
+
+Global Operating Voltage = 0.7  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ps
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+top                                    2.10e-02    0.108 7.55e+05    0.130 100.0
+  u_pe_array (zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4)
+                                       1.91e-02 9.80e-02 7.40e+05    0.118  90.9
+    g_pe_row[3].g_pe_col[3].u_pe (pe_DATA_W6_WEIGHT_W2_ACC_W13_1)
+                                       1.20e-03 5.89e-03 3.87e+04 7.12e-03   5.5
+      add_113 (pe_DATA_W6_WEIGHT_W2_ACC_W13_1_DW01_add_0)
+                                       2.17e-05 3.50e-05 4.03e+03 6.07e-05   0.0
+      mult_97 (pe_DATA_W6_WEIGHT_W2_ACC_W13_1_DW02_mult_0)
+                                       2.30e-04 1.75e-04 9.65e+03 4.15e-04   0.3
+    g_pe_row[3].g_pe_col[2].u_pe (pe_DATA_W6_WEIGHT_W2_ACC_W13_2)
+                                       1.17e-03 5.83e-03 3.89e+04 7.04e-03   5.4
+      add_113 (pe_DATA_W6_WEIGHT_W2_ACC_W13_2_DW01_add_0_DW01_add_2)
+                                       2.02e-05 3.24e-05 4.03e+03 5.66e-05   0.0
+      mult_97 (pe_DATA_W6_WEIGHT_W2_ACC_W13_2_DW02_mult_0_DW02_mult_1)
+                                       1.97e-04 1.60e-04 9.62e+03 3.66e-04   0.3
+    g_pe_row[3].g_pe_col[1].u_pe (pe_DATA_W6_WEIGHT_W2_ACC_W13_3)
+                                       1.01e-03 5.67e-03 3.80e+04 6.72e-03   5.2
+      add_113 (pe_DATA_W6_WEIGHT_W2_ACC_W13_3_DW01_add_0_DW01_add_4)
+                                       2.10e-05 3.36e-05 4.03e+03 5.86e-05   0.0
+      mult_97 (pe_DATA_W6_WEIGHT_W2_ACC_W13_3_DW02_mult_0_DW02_mult_2)
+                                       1.96e-04 1.61e-04 9.54e+03 3.67e-04   0.3
+    g_pe_row[3].g_pe_col[0].u_pe (pe_DATA_W6_WEIGHT_W2_ACC_W13_4)
+                                       1.02e-03 5.69e-03 3.77e+04 6.75e-03   5.2
+      add_113 (pe_DATA_W6_WEIGHT_W2_ACC_W13_4_DW01_add_0_DW01_add_6)
+                                       2.14e-05 3.42e-05 4.03e+03 5.97e-05   0.0
+      mult_97 (pe_DATA_W6_WEIGHT_W2_ACC_W13_4_DW02_mult_0_DW02_mult_3)
+                                       1.82e-04 1.57e-04 9.52e+03 3.48e-04   0.3
+    g_pe_row[2].g_pe_col[3].u_pe (pe_DATA_W6_WEIGHT_W2_ACC_W13_5)
+                                       1.00e-03 5.75e-03 3.90e+04 6.79e-03   5.2
+      add_113 (pe_DATA_W6_WEIGHT_W2_ACC_W13_5_DW01_add_0_DW01_add_8)
+                                       2.41e-05 3.88e-05 4.03e+03 6.69e-05   0.1
+      mult_97 (pe_DATA_W6_WEIGHT_W2_ACC_W13_5_DW02_mult_0_DW02_mult_4)
+                                       2.44e-04 1.97e-04 1.02e+04 4.51e-04   0.3
+    g_pe_row[2].g_pe_col[2].u_pe (pe_DATA_W6_WEIGHT_W2_ACC_W13_6)
+                                       9.77e-04 5.72e-03 3.91e+04 6.74e-03   5.2
+      add_113 (pe_DATA_W6_WEIGHT_W2_ACC_W13_6_DW01_add_0_DW01_add_10)
+                                       2.28e-05 3.66e-05 4.03e+03 6.34e-05   0.0
+      mult_97 (pe_DATA_W6_WEIGHT_W2_ACC_W13_6_DW02_mult_0_DW02_mult_5)
+                                       2.28e-04 1.87e-04 1.02e+04 4.25e-04   0.3
+    g_pe_row[2].g_pe_col[1].u_pe (pe_DATA_W6_WEIGHT_W2_ACC_W13_7)
+                                       9.49e-04 5.67e-03 3.88e+04 6.66e-03   5.1
+      add_113 (pe_DATA_W6_WEIGHT_W2_ACC_W13_7_DW01_add_0_DW01_add_12)
+                                       2.33e-05 3.73e-05 4.03e+03 6.46e-05   0.0
+      mult_97 (pe_DATA_W6_WEIGHT_W2_ACC_W13_7_DW02_mult_0_DW02_mult_6)
+                                       2.15e-04 1.85e-04 1.02e+04 4.11e-04   0.3
+    g_pe_row[2].g_pe_col[0].u_pe (pe_DATA_W6_WEIGHT_W2_ACC_W13_8)
+                                       8.94e-04 5.61e-03 3.87e+04 6.54e-03   5.0
+      add_113 (pe_DATA_W6_WEIGHT_W2_ACC_W13_8_DW01_add_0_DW01_add_14)
+                                       2.39e-05 3.82e-05 4.03e+03 6.61e-05   0.1
+      mult_97 (pe_DATA_W6_WEIGHT_W2_ACC_W13_8_DW02_mult_0_DW02_mult_7)
+                                       2.11e-04 1.85e-04 1.01e+04 4.06e-04   0.3
+    g_pe_row[1].g_pe_col[3].u_pe (pe_DATA_W6_WEIGHT_W2_ACC_W13_9)
+                                       1.22e-03 5.93e-03 3.89e+04 7.19e-03   5.5
+      add_113 (pe_DATA_W6_WEIGHT_W2_ACC_W13_9_DW01_add_0_DW01_add_16)
+                                       2.68e-05 4.26e-05 4.03e+03 7.34e-05   0.1
+      mult_97 (pe_DATA_W6_WEIGHT_W2_ACC_W13_9_DW02_mult_0_DW02_mult_8)
+                                       2.76e-04 2.23e-04 1.02e+04 5.09e-04   0.4
+    g_pe_row[1].g_pe_col[2].u_pe (pe_DATA_W6_WEIGHT_W2_ACC_W13_10)
+                                       1.10e-03 5.81e-03 3.85e+04 6.95e-03   5.4
+      add_113 (pe_DATA_W6_WEIGHT_W2_ACC_W13_10_DW01_add_0_DW01_add_18)
+                                       2.59e-05 4.16e-05 4.03e+03 7.15e-05   0.1
+      mult_97 (pe_DATA_W6_WEIGHT_W2_ACC_W13_10_DW02_mult_0_DW02_mult_9)
+                                       2.47e-04 2.10e-04 1.01e+04 4.68e-04   0.4
+    g_pe_row[1].g_pe_col[1].u_pe (pe_DATA_W6_WEIGHT_W2_ACC_W13_11)
+                                       1.08e-03 5.76e-03 3.80e+04 6.88e-03   5.3
+      add_113 (pe_DATA_W6_WEIGHT_W2_ACC_W13_11_DW01_add_0_DW01_add_20)
+                                       2.65e-05 4.25e-05 4.03e+03 7.31e-05   0.1
+      mult_97 (pe_DATA_W6_WEIGHT_W2_ACC_W13_11_DW02_mult_0_DW02_mult_10)
+                                       2.45e-04 2.14e-04 1.01e+04 4.69e-04   0.4
+    g_pe_row[1].g_pe_col[0].u_pe (pe_DATA_W6_WEIGHT_W2_ACC_W13_12)
+                                       1.04e-03 5.73e-03 3.86e+04 6.80e-03   5.2
+      add_113 (pe_DATA_W6_WEIGHT_W2_ACC_W13_12_DW01_add_0_DW01_add_22)
+                                       2.68e-05 4.28e-05 4.03e+03 7.37e-05   0.1
+      mult_97 (pe_DATA_W6_WEIGHT_W2_ACC_W13_12_DW02_mult_0_DW02_mult_11)
+                                       2.29e-04 2.07e-04 1.01e+04 4.46e-04   0.3
+    g_pe_row[0].g_pe_col[3].u_pe (pe_DATA_W6_WEIGHT_W2_ACC_W13_13)
+                                       1.05e-03 5.80e-03 3.73e+04 6.89e-03   5.3
+      add_113 (pe_DATA_W6_WEIGHT_W2_ACC_W13_13_DW01_add_0_DW01_add_24)
+                                       2.98e-05 4.76e-05 4.02e+03 8.14e-05   0.1
+      mult_97 (pe_DATA_W6_WEIGHT_W2_ACC_W13_13_DW02_mult_0_DW02_mult_12)
+                                       2.82e-04 2.24e-04 9.29e+03 5.15e-04   0.4
+    g_pe_row[0].g_pe_col[2].u_pe (pe_DATA_W6_WEIGHT_W2_ACC_W13_14)
+                                       1.07e-03 5.83e-03 3.81e+04 6.93e-03   5.3
+      add_113 (pe_DATA_W6_WEIGHT_W2_ACC_W13_14_DW01_add_0_DW01_add_26)
+                                       2.95e-05 4.75e-05 4.02e+03 8.11e-05   0.1
+      mult_97 (pe_DATA_W6_WEIGHT_W2_ACC_W13_14_DW02_mult_0_DW02_mult_13)
+                                       2.75e-04 2.23e-04 9.36e+03 5.07e-04   0.4
+    g_pe_row[0].g_pe_col[1].u_pe (pe_DATA_W6_WEIGHT_W2_ACC_W13_15)
+                                       9.71e-04 5.70e-03 3.74e+04 6.71e-03   5.2
+      add_113 (pe_DATA_W6_WEIGHT_W2_ACC_W13_15_DW01_add_0_DW01_add_28)
+                                       2.98e-05 4.78e-05 4.02e+03 8.17e-05   0.1
+      mult_97 (pe_DATA_W6_WEIGHT_W2_ACC_W13_15_DW02_mult_0_DW02_mult_14)
+                                       2.60e-04 2.22e-04 9.34e+03 4.92e-04   0.4
+    g_pe_row[0].g_pe_col[0].u_pe (pe_DATA_W6_WEIGHT_W2_ACC_W13_0)
+                                       9.90e-04 5.72e-03 3.80e+04 6.75e-03   5.2
+      add_113 (pe_DATA_W6_WEIGHT_W2_ACC_W13_0_DW01_add_0_DW01_add_30)
+                                       3.12e-05 4.99e-05 4.02e+03 8.52e-05   0.1
+      mult_97 (pe_DATA_W6_WEIGHT_W2_ACC_W13_0_DW02_mult_0_DW02_mult_15)
+                                       2.60e-04 2.23e-04 9.26e+03 4.91e-04   0.4
+    u_fifo2 (fifo9_DATA_W13_1)         1.02e-04 2.37e-03 5.31e+04 2.53e-03   2.0
+    u_fifo1 (fifo9_DATA_W13_0)            0.000 2.08e-03 5.30e+04 2.14e-03   1.6
+  u_fsm (zigzag_fsm)                   1.82e-03 9.91e-03 1.46e+04 1.17e-02   9.1
+1

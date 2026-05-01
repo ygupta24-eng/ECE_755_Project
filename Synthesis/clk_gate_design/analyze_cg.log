@@ -1,0 +1,13 @@
+Running PRESTO HDLC
+Compiling source file /filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/top.sv
+Compiling source file /filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/control.sv
+Compiling source file /filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/pe_update.sv
+Compiling source file /filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/zigzag.sv
+Compiling source file /filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/fifo9.sv
+Presto compilation completed successfully.
+Loading db file '/filespace/v/vsathishkuma/ECE755/ECE_755_Project/Synthesis/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_AO_RVT_TT_nldm_211120.db'
+Loading db file '/filespace/v/vsathishkuma/ECE755/ECE_755_Project/Synthesis/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_OA_RVT_TT_nldm_211120.db'
+Loading db file '/filespace/v/vsathishkuma/ECE755/ECE_755_Project/Synthesis/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.db'
+Loading db file '/filespace/v/vsathishkuma/ECE755/ECE_755_Project/Synthesis/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_211120.db'
+Loading db file '/filespace/v/vsathishkuma/ECE755/ECE_755_Project/Synthesis/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.db'
+1

@@ -1,0 +1,101 @@
+ 
+****************************************
+check_design summary:
+Version:     X-2025.06
+Date:        Wed Apr 22 19:52:43 2026
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      2
+    Unconnected ports (LINT-28)                                     2
+
+Cells                                                              37
+    Cells do not drive (LINT-1)                                     9
+    Connected to power or ground (LINT-32)                         24
+    Nets connected to multiple pins on same cell (LINT-33)          4
+
+Nets                                                               12
+    Unloaded nets (LINT-2)                                         12
+--------------------------------------------------------------------------------
+
+Warning: In design 'zigzag_fsm', cell 'C467' does not drive any nets. (LINT-1)
+Warning: In design 'zigzag_fsm', cell 'C497' does not drive any nets. (LINT-1)
+Warning: In design 'zigzag_fsm', cell 'C517' does not drive any nets. (LINT-1)
+Warning: In design 'zigzag_fsm', cell 'C533' does not drive any nets. (LINT-1)
+Warning: In design 'fifo9_DATA_W13', cell 'C710' does not drive any nets. (LINT-1)
+Warning: In design 'fifo9_DATA_W13', cell 'C715' does not drive any nets. (LINT-1)
+Warning: In design 'fifo9_DATA_W13', cell 'C724' does not drive any nets. (LINT-1)
+Warning: In design 'fifo9_DATA_W13', cell 'C725' does not drive any nets. (LINT-1)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13', cell 'C196' does not drive any nets. (LINT-1)
+Warning: In design 'top', net 'u_pe_array/fifo2_empty' driven by pin 'u_pe_array/u_fifo2/empty' has no loads. (LINT-2)
+Warning: In design 'top', net 'u_pe_array/fifo2_full' driven by pin 'u_pe_array/u_fifo2/full' has no loads. (LINT-2)
+Warning: In design 'top', net 'u_pe_array/w_chain[4][0][0]' driven by pin 'u_pe_array/g_pe_row[3].g_pe_col[0].u_pe/w_out[0]' has no loads. (LINT-2)
+Warning: In design 'top', net 'u_pe_array/w_chain[4][0][1]' driven by pin 'u_pe_array/g_pe_row[3].g_pe_col[0].u_pe/w_out[1]' has no loads. (LINT-2)
+Warning: In design 'top', net 'u_pe_array/w_chain[4][1][0]' driven by pin 'u_pe_array/g_pe_row[3].g_pe_col[1].u_pe/w_out[0]' has no loads. (LINT-2)
+Warning: In design 'top', net 'u_pe_array/w_chain[4][1][1]' driven by pin 'u_pe_array/g_pe_row[3].g_pe_col[1].u_pe/w_out[1]' has no loads. (LINT-2)
+Warning: In design 'top', net 'u_pe_array/w_chain[4][2][0]' driven by pin 'u_pe_array/g_pe_row[3].g_pe_col[2].u_pe/w_out[0]' has no loads. (LINT-2)
+Warning: In design 'top', net 'u_pe_array/w_chain[4][2][1]' driven by pin 'u_pe_array/g_pe_row[3].g_pe_col[2].u_pe/w_out[1]' has no loads. (LINT-2)
+Warning: In design 'top', net 'u_pe_array/w_chain[4][3][0]' driven by pin 'u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/w_out[0]' has no loads. (LINT-2)
+Warning: In design 'top', net 'u_pe_array/w_chain[4][3][1]' driven by pin 'u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/w_out[1]' has no loads. (LINT-2)
+Warning: In design 'top', net 'u_pe_array/fifo1_empty' driven by pin 'u_pe_array/u_fifo1/empty' has no loads. (LINT-2)
+Warning: In design 'top', net 'u_pe_array/fifo1_full' driven by pin 'u_pe_array/u_fifo1/full' has no loads. (LINT-2)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13', port 'src_sel[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13', port 'src_sel[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4', a pin on submodule 'g_pe_row[0].g_pe_col[0].u_pe' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'src_sel[1]' is connected to logic 0. 
+Warning: In design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4', a pin on submodule 'g_pe_row[0].g_pe_col[0].u_pe' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'src_sel[0]' is connected to logic 1. 
+Warning: In design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4', a pin on submodule 'g_pe_row[0].g_pe_col[1].u_pe' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'src_sel[1]' is connected to logic 1. 
+Warning: In design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4', a pin on submodule 'g_pe_row[0].g_pe_col[1].u_pe' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'src_sel[0]' is connected to logic 1. 
+Warning: In design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4', a pin on submodule 'g_pe_row[0].g_pe_col[2].u_pe' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'src_sel[1]' is connected to logic 0. 
+Warning: In design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4', a pin on submodule 'g_pe_row[0].g_pe_col[2].u_pe' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'src_sel[0]' is connected to logic 1. 
+Warning: In design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4', a pin on submodule 'g_pe_row[0].g_pe_col[3].u_pe' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'src_sel[1]' is connected to logic 1. 
+Warning: In design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4', a pin on submodule 'g_pe_row[0].g_pe_col[3].u_pe' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'src_sel[0]' is connected to logic 1. 
+Warning: In design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4', a pin on submodule 'g_pe_row[1].g_pe_col[0].u_pe' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'src_sel[1]' is connected to logic 1. 
+Warning: In design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4', a pin on submodule 'g_pe_row[1].g_pe_col[1].u_pe' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'src_sel[1]' is connected to logic 0. 
+Warning: In design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4', a pin on submodule 'g_pe_row[1].g_pe_col[2].u_pe' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'src_sel[1]' is connected to logic 1. 
+Warning: In design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4', a pin on submodule 'g_pe_row[1].g_pe_col[3].u_pe' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'src_sel[1]' is connected to logic 0. 
+Warning: In design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4', a pin on submodule 'g_pe_row[2].g_pe_col[0].u_pe' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'src_sel[1]' is connected to logic 0. 
+Warning: In design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4', a pin on submodule 'g_pe_row[2].g_pe_col[0].u_pe' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'src_sel[0]' is connected to logic 1. 
+Warning: In design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4', a pin on submodule 'g_pe_row[2].g_pe_col[1].u_pe' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'src_sel[1]' is connected to logic 1. 
+Warning: In design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4', a pin on submodule 'g_pe_row[2].g_pe_col[1].u_pe' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'src_sel[0]' is connected to logic 1. 
+Warning: In design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4', a pin on submodule 'g_pe_row[2].g_pe_col[2].u_pe' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'src_sel[1]' is connected to logic 0. 
+Warning: In design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4', a pin on submodule 'g_pe_row[2].g_pe_col[2].u_pe' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'src_sel[0]' is connected to logic 1. 
+Warning: In design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4', a pin on submodule 'g_pe_row[2].g_pe_col[3].u_pe' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'src_sel[1]' is connected to logic 1. 
+Warning: In design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4', a pin on submodule 'g_pe_row[2].g_pe_col[3].u_pe' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'src_sel[0]' is connected to logic 1. 
+Warning: In design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4', a pin on submodule 'g_pe_row[3].g_pe_col[0].u_pe' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'src_sel[1]' is connected to logic 1. 
+Warning: In design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4', a pin on submodule 'g_pe_row[3].g_pe_col[1].u_pe' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'src_sel[1]' is connected to logic 0. 
+Warning: In design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4', a pin on submodule 'g_pe_row[3].g_pe_col[2].u_pe' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'src_sel[1]' is connected to logic 1. 
+Warning: In design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4', a pin on submodule 'g_pe_row[3].g_pe_col[3].u_pe' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'src_sel[1]' is connected to logic 0. 
+Warning: In design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4', the same net is connected to more than one pin on submodule 'g_pe_row[0].g_pe_col[1].u_pe'. (LINT-33)
+   Net '*Logic1*' is connected to pins 'src_sel[1]', 'src_sel[0]''.
+Warning: In design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4', the same net is connected to more than one pin on submodule 'g_pe_row[0].g_pe_col[3].u_pe'. (LINT-33)
+   Net '*Logic1*' is connected to pins 'src_sel[1]', 'src_sel[0]''.
+Warning: In design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4', the same net is connected to more than one pin on submodule 'g_pe_row[2].g_pe_col[1].u_pe'. (LINT-33)
+   Net '*Logic1*' is connected to pins 'src_sel[1]', 'src_sel[0]''.
+Warning: In design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4', the same net is connected to more than one pin on submodule 'g_pe_row[2].g_pe_col[3].u_pe'. (LINT-33)
+   Net '*Logic1*' is connected to pins 'src_sel[1]', 'src_sel[0]''.
+1

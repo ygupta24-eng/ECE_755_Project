@@ -1,0 +1,265 @@
+ 
+****************************************
+check_design summary:
+Version:     X-2025.06
+Date:        Wed Apr 22 20:23:45 2026
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                    176
+    Unconnected ports (LINT-28)                                   176
+
+Cells                                                              36
+    Nets connected to multiple pins on same cell (LINT-33)         36
+--------------------------------------------------------------------------------
+
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_0', port 'src_sel[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_0', port 'src_sel[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_1', port 'src_sel[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_1', port 'src_sel[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_2', port 'src_sel[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_2', port 'src_sel[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_3', port 'src_sel[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_3', port 'src_sel[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_4', port 'src_sel[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_4', port 'src_sel[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_5', port 'src_sel[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_5', port 'src_sel[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_6', port 'src_sel[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_6', port 'src_sel[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_7', port 'src_sel[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_7', port 'src_sel[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_8', port 'src_sel[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_8', port 'src_sel[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_9', port 'src_sel[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_9', port 'src_sel[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_10', port 'src_sel[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_10', port 'src_sel[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_11', port 'src_sel[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_11', port 'src_sel[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_12', port 'src_sel[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_12', port 'src_sel[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_13', port 'src_sel[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_13', port 'src_sel[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_14', port 'src_sel[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_14', port 'src_sel[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_15', port 'src_sel[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_15', port 'src_sel[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_1_DW01_add_0', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_1_DW01_add_0', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_1_DW02_mult_0', port 'A[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_1_DW02_mult_0', port 'TC' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_1_DW01_add_1', port 'A[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_1_DW01_add_1', port 'A[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_1_DW01_add_1', port 'B[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_1_DW01_add_1', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_1_DW01_add_1', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_2_DW01_add_0_DW01_add_2', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_2_DW01_add_0_DW01_add_2', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_2_DW02_mult_0_DW02_mult_1', port 'A[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_2_DW02_mult_0_DW02_mult_1', port 'TC' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_2_DW01_add_1_DW01_add_3', port 'A[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_2_DW01_add_1_DW01_add_3', port 'A[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_2_DW01_add_1_DW01_add_3', port 'B[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_2_DW01_add_1_DW01_add_3', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_2_DW01_add_1_DW01_add_3', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_3_DW01_add_0_DW01_add_4', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_3_DW01_add_0_DW01_add_4', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_3_DW02_mult_0_DW02_mult_2', port 'A[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_3_DW02_mult_0_DW02_mult_2', port 'TC' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_3_DW01_add_1_DW01_add_5', port 'A[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_3_DW01_add_1_DW01_add_5', port 'A[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_3_DW01_add_1_DW01_add_5', port 'B[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_3_DW01_add_1_DW01_add_5', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_3_DW01_add_1_DW01_add_5', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_4_DW01_add_0_DW01_add_6', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_4_DW01_add_0_DW01_add_6', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_4_DW02_mult_0_DW02_mult_3', port 'A[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_4_DW02_mult_0_DW02_mult_3', port 'TC' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_4_DW01_add_1_DW01_add_7', port 'A[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_4_DW01_add_1_DW01_add_7', port 'A[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_4_DW01_add_1_DW01_add_7', port 'B[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_4_DW01_add_1_DW01_add_7', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_4_DW01_add_1_DW01_add_7', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_5_DW01_add_0_DW01_add_8', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_5_DW01_add_0_DW01_add_8', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_5_DW02_mult_0_DW02_mult_4', port 'A[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_5_DW02_mult_0_DW02_mult_4', port 'TC' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_5_DW01_add_1_DW01_add_9', port 'A[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_5_DW01_add_1_DW01_add_9', port 'A[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_5_DW01_add_1_DW01_add_9', port 'B[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_5_DW01_add_1_DW01_add_9', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_5_DW01_add_1_DW01_add_9', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_6_DW01_add_0_DW01_add_10', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_6_DW01_add_0_DW01_add_10', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_6_DW02_mult_0_DW02_mult_5', port 'A[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_6_DW02_mult_0_DW02_mult_5', port 'TC' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_6_DW01_add_1_DW01_add_11', port 'A[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_6_DW01_add_1_DW01_add_11', port 'A[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_6_DW01_add_1_DW01_add_11', port 'B[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_6_DW01_add_1_DW01_add_11', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_6_DW01_add_1_DW01_add_11', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_7_DW01_add_0_DW01_add_12', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_7_DW01_add_0_DW01_add_12', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_7_DW02_mult_0_DW02_mult_6', port 'A[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_7_DW02_mult_0_DW02_mult_6', port 'TC' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_7_DW01_add_1_DW01_add_13', port 'A[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_7_DW01_add_1_DW01_add_13', port 'A[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_7_DW01_add_1_DW01_add_13', port 'B[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_7_DW01_add_1_DW01_add_13', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_7_DW01_add_1_DW01_add_13', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_8_DW01_add_0_DW01_add_14', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_8_DW01_add_0_DW01_add_14', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_8_DW02_mult_0_DW02_mult_7', port 'A[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_8_DW02_mult_0_DW02_mult_7', port 'TC' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_8_DW01_add_1_DW01_add_15', port 'A[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_8_DW01_add_1_DW01_add_15', port 'A[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_8_DW01_add_1_DW01_add_15', port 'B[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_8_DW01_add_1_DW01_add_15', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_8_DW01_add_1_DW01_add_15', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_9_DW01_add_0_DW01_add_16', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_9_DW01_add_0_DW01_add_16', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_9_DW02_mult_0_DW02_mult_8', port 'A[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_9_DW02_mult_0_DW02_mult_8', port 'TC' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_9_DW01_add_1_DW01_add_17', port 'A[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_9_DW01_add_1_DW01_add_17', port 'A[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_9_DW01_add_1_DW01_add_17', port 'B[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_9_DW01_add_1_DW01_add_17', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_9_DW01_add_1_DW01_add_17', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_10_DW01_add_0_DW01_add_18', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_10_DW01_add_0_DW01_add_18', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_10_DW02_mult_0_DW02_mult_9', port 'A[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_10_DW02_mult_0_DW02_mult_9', port 'TC' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_10_DW01_add_1_DW01_add_19', port 'A[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_10_DW01_add_1_DW01_add_19', port 'A[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_10_DW01_add_1_DW01_add_19', port 'B[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_10_DW01_add_1_DW01_add_19', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_10_DW01_add_1_DW01_add_19', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_11_DW01_add_0_DW01_add_20', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_11_DW01_add_0_DW01_add_20', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_11_DW02_mult_0_DW02_mult_10', port 'A[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_11_DW02_mult_0_DW02_mult_10', port 'TC' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_11_DW01_add_1_DW01_add_21', port 'A[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_11_DW01_add_1_DW01_add_21', port 'A[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_11_DW01_add_1_DW01_add_21', port 'B[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_11_DW01_add_1_DW01_add_21', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_11_DW01_add_1_DW01_add_21', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_12_DW01_add_0_DW01_add_22', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_12_DW01_add_0_DW01_add_22', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_12_DW02_mult_0_DW02_mult_11', port 'A[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_12_DW02_mult_0_DW02_mult_11', port 'TC' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_12_DW01_add_1_DW01_add_23', port 'A[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_12_DW01_add_1_DW01_add_23', port 'A[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_12_DW01_add_1_DW01_add_23', port 'B[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_12_DW01_add_1_DW01_add_23', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_12_DW01_add_1_DW01_add_23', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_13_DW01_add_0_DW01_add_24', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_13_DW01_add_0_DW01_add_24', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_13_DW02_mult_0_DW02_mult_12', port 'A[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_13_DW02_mult_0_DW02_mult_12', port 'TC' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_13_DW01_add_1_DW01_add_25', port 'A[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_13_DW01_add_1_DW01_add_25', port 'A[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_13_DW01_add_1_DW01_add_25', port 'B[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_13_DW01_add_1_DW01_add_25', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_13_DW01_add_1_DW01_add_25', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_14_DW01_add_0_DW01_add_26', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_14_DW01_add_0_DW01_add_26', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_14_DW02_mult_0_DW02_mult_13', port 'A[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_14_DW02_mult_0_DW02_mult_13', port 'TC' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_14_DW01_add_1_DW01_add_27', port 'A[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_14_DW01_add_1_DW01_add_27', port 'A[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_14_DW01_add_1_DW01_add_27', port 'B[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_14_DW01_add_1_DW01_add_27', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_14_DW01_add_1_DW01_add_27', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_15_DW01_add_0_DW01_add_28', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_15_DW01_add_0_DW01_add_28', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_15_DW02_mult_0_DW02_mult_14', port 'A[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_15_DW02_mult_0_DW02_mult_14', port 'TC' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_15_DW01_add_1_DW01_add_29', port 'A[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_15_DW01_add_1_DW01_add_29', port 'A[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_15_DW01_add_1_DW01_add_29', port 'B[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_15_DW01_add_1_DW01_add_29', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_15_DW01_add_1_DW01_add_29', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_0_DW01_add_0_DW01_add_30', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_0_DW01_add_0_DW01_add_30', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_0_DW02_mult_0_DW02_mult_15', port 'A[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_0_DW02_mult_0_DW02_mult_15', port 'TC' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_0_DW01_add_1_DW01_add_31', port 'A[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_0_DW01_add_1_DW01_add_31', port 'A[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_0_DW01_add_1_DW01_add_31', port 'B[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_0_DW01_add_1_DW01_add_31', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_0_DW01_add_1_DW01_add_31', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4', the same net is connected to more than one pin on submodule 'g_pe_row[0].g_pe_col[1].u_pe'. (LINT-33)
+   Net '*Logic1*' is connected to pins 'src_sel[1]', 'src_sel[0]''.
+Warning: In design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4', the same net is connected to more than one pin on submodule 'g_pe_row[0].g_pe_col[3].u_pe'. (LINT-33)
+   Net '*Logic1*' is connected to pins 'src_sel[1]', 'src_sel[0]''.
+Warning: In design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4', the same net is connected to more than one pin on submodule 'g_pe_row[2].g_pe_col[1].u_pe'. (LINT-33)
+   Net '*Logic1*' is connected to pins 'src_sel[1]', 'src_sel[0]''.
+Warning: In design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4', the same net is connected to more than one pin on submodule 'g_pe_row[2].g_pe_col[3].u_pe'. (LINT-33)
+   Net '*Logic1*' is connected to pins 'src_sel[1]', 'src_sel[0]''.
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_0', the same net is connected to more than one pin on submodule 'add_69'. (LINT-33)
+   Net 'product_12' is connected to pins 'B[12]', 'B[11]'', 'B[10]', 'B[9]', 'B[8]'.
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_1', the same net is connected to more than one pin on submodule 'add_69'. (LINT-33)
+   Net 'product_12' is connected to pins 'B[12]', 'B[11]'', 'B[10]', 'B[9]', 'B[8]'.
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_2', the same net is connected to more than one pin on submodule 'add_69'. (LINT-33)
+   Net 'product_12' is connected to pins 'B[12]', 'B[11]'', 'B[10]', 'B[9]', 'B[8]'.
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_3', the same net is connected to more than one pin on submodule 'add_69'. (LINT-33)
+   Net 'product_12' is connected to pins 'B[12]', 'B[11]'', 'B[10]', 'B[9]', 'B[8]'.
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_4', the same net is connected to more than one pin on submodule 'add_69'. (LINT-33)
+   Net 'product_12' is connected to pins 'B[12]', 'B[11]'', 'B[10]', 'B[9]', 'B[8]'.
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_5', the same net is connected to more than one pin on submodule 'add_69'. (LINT-33)
+   Net 'product_12' is connected to pins 'B[12]', 'B[11]'', 'B[10]', 'B[9]', 'B[8]'.
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_6', the same net is connected to more than one pin on submodule 'add_69'. (LINT-33)
+   Net 'product_12' is connected to pins 'B[12]', 'B[11]'', 'B[10]', 'B[9]', 'B[8]'.
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_7', the same net is connected to more than one pin on submodule 'add_69'. (LINT-33)
+   Net 'product_12' is connected to pins 'B[12]', 'B[11]'', 'B[10]', 'B[9]', 'B[8]'.
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_8', the same net is connected to more than one pin on submodule 'add_69'. (LINT-33)
+   Net 'product_12' is connected to pins 'B[12]', 'B[11]'', 'B[10]', 'B[9]', 'B[8]'.
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_9', the same net is connected to more than one pin on submodule 'add_69'. (LINT-33)
+   Net 'product_12' is connected to pins 'B[12]', 'B[11]'', 'B[10]', 'B[9]', 'B[8]'.
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_10', the same net is connected to more than one pin on submodule 'add_69'. (LINT-33)
+   Net 'product_12' is connected to pins 'B[12]', 'B[11]'', 'B[10]', 'B[9]', 'B[8]'.
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_11', the same net is connected to more than one pin on submodule 'add_69'. (LINT-33)
+   Net 'product_12' is connected to pins 'B[12]', 'B[11]'', 'B[10]', 'B[9]', 'B[8]'.
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_12', the same net is connected to more than one pin on submodule 'add_69'. (LINT-33)
+   Net 'product_12' is connected to pins 'B[12]', 'B[11]'', 'B[10]', 'B[9]', 'B[8]'.
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_13', the same net is connected to more than one pin on submodule 'add_69'. (LINT-33)
+   Net 'product_12' is connected to pins 'B[12]', 'B[11]'', 'B[10]', 'B[9]', 'B[8]'.
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_14', the same net is connected to more than one pin on submodule 'add_69'. (LINT-33)
+   Net 'product_12' is connected to pins 'B[12]', 'B[11]'', 'B[10]', 'B[9]', 'B[8]'.
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_15', the same net is connected to more than one pin on submodule 'add_69'. (LINT-33)
+   Net 'product_12' is connected to pins 'B[12]', 'B[11]'', 'B[10]', 'B[9]', 'B[8]'.
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_1_DW02_mult_0', the same net is connected to more than one pin on submodule 'FS_3'. (LINT-33)
+   Net '*cell*9472/net12107' is connected to pins 'A[6]', 'A[5]'', 'B[6]', 'CI'.
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_2_DW02_mult_0_DW02_mult_1', the same net is connected to more than one pin on submodule 'FS_3'. (LINT-33)
+   Net '*cell*9500/net12188' is connected to pins 'A[6]', 'A[5]'', 'B[6]', 'CI'.
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_3_DW02_mult_0_DW02_mult_2', the same net is connected to more than one pin on submodule 'FS_3'. (LINT-33)
+   Net '*cell*9528/net12269' is connected to pins 'A[6]', 'A[5]'', 'B[6]', 'CI'.
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_4_DW02_mult_0_DW02_mult_3', the same net is connected to more than one pin on submodule 'FS_3'. (LINT-33)
+   Net '*cell*9556/net12350' is connected to pins 'A[6]', 'A[5]'', 'B[6]', 'CI'.
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_5_DW02_mult_0_DW02_mult_4', the same net is connected to more than one pin on submodule 'FS_3'. (LINT-33)
+   Net '*cell*9584/net12431' is connected to pins 'A[6]', 'A[5]'', 'B[6]', 'CI'.
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_6_DW02_mult_0_DW02_mult_5', the same net is connected to more than one pin on submodule 'FS_3'. (LINT-33)
+   Net '*cell*9612/net12512' is connected to pins 'A[6]', 'A[5]'', 'B[6]', 'CI'.
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_7_DW02_mult_0_DW02_mult_6', the same net is connected to more than one pin on submodule 'FS_3'. (LINT-33)
+   Net '*cell*9640/net12593' is connected to pins 'A[6]', 'A[5]'', 'B[6]', 'CI'.
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_8_DW02_mult_0_DW02_mult_7', the same net is connected to more than one pin on submodule 'FS_3'. (LINT-33)
+   Net '*cell*9668/net12674' is connected to pins 'A[6]', 'A[5]'', 'B[6]', 'CI'.
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_9_DW02_mult_0_DW02_mult_8', the same net is connected to more than one pin on submodule 'FS_3'. (LINT-33)
+   Net '*cell*9696/net12755' is connected to pins 'A[6]', 'A[5]'', 'B[6]', 'CI'.
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_10_DW02_mult_0_DW02_mult_9', the same net is connected to more than one pin on submodule 'FS_3'. (LINT-33)
+   Net '*cell*9724/net12836' is connected to pins 'A[6]', 'A[5]'', 'B[6]', 'CI'.
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_11_DW02_mult_0_DW02_mult_10', the same net is connected to more than one pin on submodule 'FS_3'. (LINT-33)
+   Net '*cell*9752/net12917' is connected to pins 'A[6]', 'A[5]'', 'B[6]', 'CI'.
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_12_DW02_mult_0_DW02_mult_11', the same net is connected to more than one pin on submodule 'FS_3'. (LINT-33)
+   Net '*cell*9780/net12998' is connected to pins 'A[6]', 'A[5]'', 'B[6]', 'CI'.
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_13_DW02_mult_0_DW02_mult_12', the same net is connected to more than one pin on submodule 'FS_3'. (LINT-33)
+   Net '*cell*9808/net13079' is connected to pins 'A[6]', 'A[5]'', 'B[6]', 'CI'.
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_14_DW02_mult_0_DW02_mult_13', the same net is connected to more than one pin on submodule 'FS_3'. (LINT-33)
+   Net '*cell*9836/net13160' is connected to pins 'A[6]', 'A[5]'', 'B[6]', 'CI'.
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_15_DW02_mult_0_DW02_mult_14', the same net is connected to more than one pin on submodule 'FS_3'. (LINT-33)
+   Net '*cell*9864/net13241' is connected to pins 'A[6]', 'A[5]'', 'B[6]', 'CI'.
+Warning: In design 'pe_DATA_W6_WEIGHT_W2_ACC_W13_0_DW02_mult_0_DW02_mult_15', the same net is connected to more than one pin on submodule 'FS_3'. (LINT-33)
+   Net '*cell*9444/net12026' is connected to pins 'A[6]', 'A[5]'', 'B[6]', 'CI'.
+1

@@ -1,0 +1,1076 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 20
+Design : top
+Version: X-2025.06
+Date   : Mon Apr 13 16:17:20 2026
+****************************************
+
+Operating Conditions: PVT_0P7V_25C   Library: asap7sc7p5t_AO_RVT_TT_nldm_211120
+Wire Load Model Mode: segmented
+
+  Startpoint: u_fsm/ch_cnt_en_d_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_fsm/ch_cnt_en_latched_reg
+            (negative level-sensitive latch clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_fsm/ch_cnt_en_d_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)     0.00       0.00 r
+  u_fsm/ch_cnt_en_d_reg/QN (DFFASRHQNx1_ASAP7_75t_R)     59.47      59.47 f
+  u_fsm/ch_cnt_en_latched_reg/D (DLLx1_ASAP7_75t_R)       0.00      59.47 f
+  data arrival time                                                 59.47
+
+  clock clk (fall edge)                                1000.00    1000.00
+  clock network delay (ideal)                             0.00    1000.00
+  clock uncertainty                                      -0.01     999.99
+  u_fsm/ch_cnt_en_latched_reg/CLK (DLLx1_ASAP7_75t_R)     0.00     999.99 f
+  time borrowed from endpoint                             0.00     999.99
+  data required time                                               999.99
+  --------------------------------------------------------------------------
+  data required time                                               999.99
+  data arrival time                                                -59.47
+  --------------------------------------------------------------------------
+  slack (MET)                                                      940.52
+
+  Time Borrowing Information
+  --------------------------------------------------------------
+  clk nominal pulse width                              1000.00   
+  library setup time                                     -1.76   
+  --------------------------------------------------------------
+  max time borrow                                       998.24   
+  actual time borrow                                      0.00   
+  --------------------------------------------------------------
+
+
+  Startpoint: u_pe_array/g_pe_row[0].g_pe_col[0].u_pe/en_for_gating_d_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[0].g_pe_col[0].u_pe/en_latched_reg
+            (negative level-sensitive latch clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_pe_array/g_pe_row[0].g_pe_col[0].u_pe/en_for_gating_d_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.00 r
+  u_pe_array/g_pe_row[0].g_pe_col[0].u_pe/en_for_gating_d_reg/QN (DFFASRHQNx1_ASAP7_75t_R)
+                                                         59.47      59.47 f
+  u_pe_array/g_pe_row[0].g_pe_col[0].u_pe/en_latched_reg/D (DLLx1_ASAP7_75t_R)
+                                                          0.00      59.47 f
+  data arrival time                                                 59.47
+
+  clock clk (fall edge)                                1000.00    1000.00
+  clock network delay (ideal)                             0.00    1000.00
+  clock uncertainty                                      -0.01     999.99
+  u_pe_array/g_pe_row[0].g_pe_col[0].u_pe/en_latched_reg/CLK (DLLx1_ASAP7_75t_R)
+                                                          0.00     999.99 f
+  time borrowed from endpoint                             0.00     999.99
+  data required time                                               999.99
+  --------------------------------------------------------------------------
+  data required time                                               999.99
+  data arrival time                                                -59.47
+  --------------------------------------------------------------------------
+  slack (MET)                                                      940.52
+
+  Time Borrowing Information
+  --------------------------------------------------------------
+  clk nominal pulse width                              1000.00   
+  library setup time                                     -1.76   
+  --------------------------------------------------------------
+  max time borrow                                       998.24   
+  actual time borrow                                      0.00   
+  --------------------------------------------------------------
+
+
+  Startpoint: u_pe_array/g_pe_row[0].g_pe_col[1].u_pe/en_for_gating_d_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[0].g_pe_col[1].u_pe/en_latched_reg
+            (negative level-sensitive latch clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_pe_array/g_pe_row[0].g_pe_col[1].u_pe/en_for_gating_d_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.00 r
+  u_pe_array/g_pe_row[0].g_pe_col[1].u_pe/en_for_gating_d_reg/QN (DFFASRHQNx1_ASAP7_75t_R)
+                                                         59.47      59.47 f
+  u_pe_array/g_pe_row[0].g_pe_col[1].u_pe/en_latched_reg/D (DLLx1_ASAP7_75t_R)
+                                                          0.00      59.47 f
+  data arrival time                                                 59.47
+
+  clock clk (fall edge)                                1000.00    1000.00
+  clock network delay (ideal)                             0.00    1000.00
+  clock uncertainty                                      -0.01     999.99
+  u_pe_array/g_pe_row[0].g_pe_col[1].u_pe/en_latched_reg/CLK (DLLx1_ASAP7_75t_R)
+                                                          0.00     999.99 f
+  time borrowed from endpoint                             0.00     999.99
+  data required time                                               999.99
+  --------------------------------------------------------------------------
+  data required time                                               999.99
+  data arrival time                                                -59.47
+  --------------------------------------------------------------------------
+  slack (MET)                                                      940.52
+
+  Time Borrowing Information
+  --------------------------------------------------------------
+  clk nominal pulse width                              1000.00   
+  library setup time                                     -1.76   
+  --------------------------------------------------------------
+  max time borrow                                       998.24   
+  actual time borrow                                      0.00   
+  --------------------------------------------------------------
+
+
+  Startpoint: u_pe_array/g_pe_row[0].g_pe_col[2].u_pe/en_for_gating_d_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[0].g_pe_col[2].u_pe/en_latched_reg
+            (negative level-sensitive latch clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_pe_array/g_pe_row[0].g_pe_col[2].u_pe/en_for_gating_d_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.00 r
+  u_pe_array/g_pe_row[0].g_pe_col[2].u_pe/en_for_gating_d_reg/QN (DFFASRHQNx1_ASAP7_75t_R)
+                                                         59.47      59.47 f
+  u_pe_array/g_pe_row[0].g_pe_col[2].u_pe/en_latched_reg/D (DLLx1_ASAP7_75t_R)
+                                                          0.00      59.47 f
+  data arrival time                                                 59.47
+
+  clock clk (fall edge)                                1000.00    1000.00
+  clock network delay (ideal)                             0.00    1000.00
+  clock uncertainty                                      -0.01     999.99
+  u_pe_array/g_pe_row[0].g_pe_col[2].u_pe/en_latched_reg/CLK (DLLx1_ASAP7_75t_R)
+                                                          0.00     999.99 f
+  time borrowed from endpoint                             0.00     999.99
+  data required time                                               999.99
+  --------------------------------------------------------------------------
+  data required time                                               999.99
+  data arrival time                                                -59.47
+  --------------------------------------------------------------------------
+  slack (MET)                                                      940.52
+
+  Time Borrowing Information
+  --------------------------------------------------------------
+  clk nominal pulse width                              1000.00   
+  library setup time                                     -1.76   
+  --------------------------------------------------------------
+  max time borrow                                       998.24   
+  actual time borrow                                      0.00   
+  --------------------------------------------------------------
+
+
+  Startpoint: u_pe_array/g_pe_row[0].g_pe_col[3].u_pe/en_for_gating_d_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[0].g_pe_col[3].u_pe/en_latched_reg
+            (negative level-sensitive latch clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_pe_array/g_pe_row[0].g_pe_col[3].u_pe/en_for_gating_d_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.00 r
+  u_pe_array/g_pe_row[0].g_pe_col[3].u_pe/en_for_gating_d_reg/QN (DFFASRHQNx1_ASAP7_75t_R)
+                                                         59.47      59.47 f
+  u_pe_array/g_pe_row[0].g_pe_col[3].u_pe/en_latched_reg/D (DLLx1_ASAP7_75t_R)
+                                                          0.00      59.47 f
+  data arrival time                                                 59.47
+
+  clock clk (fall edge)                                1000.00    1000.00
+  clock network delay (ideal)                             0.00    1000.00
+  clock uncertainty                                      -0.01     999.99
+  u_pe_array/g_pe_row[0].g_pe_col[3].u_pe/en_latched_reg/CLK (DLLx1_ASAP7_75t_R)
+                                                          0.00     999.99 f
+  time borrowed from endpoint                             0.00     999.99
+  data required time                                               999.99
+  --------------------------------------------------------------------------
+  data required time                                               999.99
+  data arrival time                                                -59.47
+  --------------------------------------------------------------------------
+  slack (MET)                                                      940.52
+
+  Time Borrowing Information
+  --------------------------------------------------------------
+  clk nominal pulse width                              1000.00   
+  library setup time                                     -1.76   
+  --------------------------------------------------------------
+  max time borrow                                       998.24   
+  actual time borrow                                      0.00   
+  --------------------------------------------------------------
+
+
+  Startpoint: u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/en_for_gating_d_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/en_latched_reg
+            (negative level-sensitive latch clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/en_for_gating_d_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.00 r
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/en_for_gating_d_reg/QN (DFFASRHQNx1_ASAP7_75t_R)
+                                                         59.47      59.47 f
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/en_latched_reg/D (DLLx1_ASAP7_75t_R)
+                                                          0.00      59.47 f
+  data arrival time                                                 59.47
+
+  clock clk (fall edge)                                1000.00    1000.00
+  clock network delay (ideal)                             0.00    1000.00
+  clock uncertainty                                      -0.01     999.99
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/en_latched_reg/CLK (DLLx1_ASAP7_75t_R)
+                                                          0.00     999.99 f
+  time borrowed from endpoint                             0.00     999.99
+  data required time                                               999.99
+  --------------------------------------------------------------------------
+  data required time                                               999.99
+  data arrival time                                                -59.47
+  --------------------------------------------------------------------------
+  slack (MET)                                                      940.52
+
+  Time Borrowing Information
+  --------------------------------------------------------------
+  clk nominal pulse width                              1000.00   
+  library setup time                                     -1.76   
+  --------------------------------------------------------------
+  max time borrow                                       998.24   
+  actual time borrow                                      0.00   
+  --------------------------------------------------------------
+
+
+  Startpoint: u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/en_for_gating_d_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/en_latched_reg
+            (negative level-sensitive latch clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/en_for_gating_d_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.00 r
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/en_for_gating_d_reg/QN (DFFASRHQNx1_ASAP7_75t_R)
+                                                         59.47      59.47 f
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/en_latched_reg/D (DLLx1_ASAP7_75t_R)
+                                                          0.00      59.47 f
+  data arrival time                                                 59.47
+
+  clock clk (fall edge)                                1000.00    1000.00
+  clock network delay (ideal)                             0.00    1000.00
+  clock uncertainty                                      -0.01     999.99
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/en_latched_reg/CLK (DLLx1_ASAP7_75t_R)
+                                                          0.00     999.99 f
+  time borrowed from endpoint                             0.00     999.99
+  data required time                                               999.99
+  --------------------------------------------------------------------------
+  data required time                                               999.99
+  data arrival time                                                -59.47
+  --------------------------------------------------------------------------
+  slack (MET)                                                      940.52
+
+  Time Borrowing Information
+  --------------------------------------------------------------
+  clk nominal pulse width                              1000.00   
+  library setup time                                     -1.76   
+  --------------------------------------------------------------
+  max time borrow                                       998.24   
+  actual time borrow                                      0.00   
+  --------------------------------------------------------------
+
+
+  Startpoint: u_pe_array/g_pe_row[1].g_pe_col[2].u_pe/en_for_gating_d_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[1].g_pe_col[2].u_pe/en_latched_reg
+            (negative level-sensitive latch clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_pe_array/g_pe_row[1].g_pe_col[2].u_pe/en_for_gating_d_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.00 r
+  u_pe_array/g_pe_row[1].g_pe_col[2].u_pe/en_for_gating_d_reg/QN (DFFASRHQNx1_ASAP7_75t_R)
+                                                         59.47      59.47 f
+  u_pe_array/g_pe_row[1].g_pe_col[2].u_pe/en_latched_reg/D (DLLx1_ASAP7_75t_R)
+                                                          0.00      59.47 f
+  data arrival time                                                 59.47
+
+  clock clk (fall edge)                                1000.00    1000.00
+  clock network delay (ideal)                             0.00    1000.00
+  clock uncertainty                                      -0.01     999.99
+  u_pe_array/g_pe_row[1].g_pe_col[2].u_pe/en_latched_reg/CLK (DLLx1_ASAP7_75t_R)
+                                                          0.00     999.99 f
+  time borrowed from endpoint                             0.00     999.99
+  data required time                                               999.99
+  --------------------------------------------------------------------------
+  data required time                                               999.99
+  data arrival time                                                -59.47
+  --------------------------------------------------------------------------
+  slack (MET)                                                      940.52
+
+  Time Borrowing Information
+  --------------------------------------------------------------
+  clk nominal pulse width                              1000.00   
+  library setup time                                     -1.76   
+  --------------------------------------------------------------
+  max time borrow                                       998.24   
+  actual time borrow                                      0.00   
+  --------------------------------------------------------------
+
+
+  Startpoint: u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/en_for_gating_d_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/en_latched_reg
+            (negative level-sensitive latch clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/en_for_gating_d_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.00 r
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/en_for_gating_d_reg/QN (DFFASRHQNx1_ASAP7_75t_R)
+                                                         59.47      59.47 f
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/en_latched_reg/D (DLLx1_ASAP7_75t_R)
+                                                          0.00      59.47 f
+  data arrival time                                                 59.47
+
+  clock clk (fall edge)                                1000.00    1000.00
+  clock network delay (ideal)                             0.00    1000.00
+  clock uncertainty                                      -0.01     999.99
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/en_latched_reg/CLK (DLLx1_ASAP7_75t_R)
+                                                          0.00     999.99 f
+  time borrowed from endpoint                             0.00     999.99
+  data required time                                               999.99
+  --------------------------------------------------------------------------
+  data required time                                               999.99
+  data arrival time                                                -59.47
+  --------------------------------------------------------------------------
+  slack (MET)                                                      940.52
+
+  Time Borrowing Information
+  --------------------------------------------------------------
+  clk nominal pulse width                              1000.00   
+  library setup time                                     -1.76   
+  --------------------------------------------------------------
+  max time borrow                                       998.24   
+  actual time borrow                                      0.00   
+  --------------------------------------------------------------
+
+
+  Startpoint: u_pe_array/g_pe_row[2].g_pe_col[0].u_pe/en_for_gating_d_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[2].g_pe_col[0].u_pe/en_latched_reg
+            (negative level-sensitive latch clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_pe_array/g_pe_row[2].g_pe_col[0].u_pe/en_for_gating_d_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.00 r
+  u_pe_array/g_pe_row[2].g_pe_col[0].u_pe/en_for_gating_d_reg/QN (DFFASRHQNx1_ASAP7_75t_R)
+                                                         59.47      59.47 f
+  u_pe_array/g_pe_row[2].g_pe_col[0].u_pe/en_latched_reg/D (DLLx1_ASAP7_75t_R)
+                                                          0.00      59.47 f
+  data arrival time                                                 59.47
+
+  clock clk (fall edge)                                1000.00    1000.00
+  clock network delay (ideal)                             0.00    1000.00
+  clock uncertainty                                      -0.01     999.99
+  u_pe_array/g_pe_row[2].g_pe_col[0].u_pe/en_latched_reg/CLK (DLLx1_ASAP7_75t_R)
+                                                          0.00     999.99 f
+  time borrowed from endpoint                             0.00     999.99
+  data required time                                               999.99
+  --------------------------------------------------------------------------
+  data required time                                               999.99
+  data arrival time                                                -59.47
+  --------------------------------------------------------------------------
+  slack (MET)                                                      940.52
+
+  Time Borrowing Information
+  --------------------------------------------------------------
+  clk nominal pulse width                              1000.00   
+  library setup time                                     -1.76   
+  --------------------------------------------------------------
+  max time borrow                                       998.24   
+  actual time borrow                                      0.00   
+  --------------------------------------------------------------
+
+
+  Startpoint: u_pe_array/g_pe_row[2].g_pe_col[1].u_pe/en_for_gating_d_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[2].g_pe_col[1].u_pe/en_latched_reg
+            (negative level-sensitive latch clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_pe_array/g_pe_row[2].g_pe_col[1].u_pe/en_for_gating_d_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.00 r
+  u_pe_array/g_pe_row[2].g_pe_col[1].u_pe/en_for_gating_d_reg/QN (DFFASRHQNx1_ASAP7_75t_R)
+                                                         59.47      59.47 f
+  u_pe_array/g_pe_row[2].g_pe_col[1].u_pe/en_latched_reg/D (DLLx1_ASAP7_75t_R)
+                                                          0.00      59.47 f
+  data arrival time                                                 59.47
+
+  clock clk (fall edge)                                1000.00    1000.00
+  clock network delay (ideal)                             0.00    1000.00
+  clock uncertainty                                      -0.01     999.99
+  u_pe_array/g_pe_row[2].g_pe_col[1].u_pe/en_latched_reg/CLK (DLLx1_ASAP7_75t_R)
+                                                          0.00     999.99 f
+  time borrowed from endpoint                             0.00     999.99
+  data required time                                               999.99
+  --------------------------------------------------------------------------
+  data required time                                               999.99
+  data arrival time                                                -59.47
+  --------------------------------------------------------------------------
+  slack (MET)                                                      940.52
+
+  Time Borrowing Information
+  --------------------------------------------------------------
+  clk nominal pulse width                              1000.00   
+  library setup time                                     -1.76   
+  --------------------------------------------------------------
+  max time borrow                                       998.24   
+  actual time borrow                                      0.00   
+  --------------------------------------------------------------
+
+
+  Startpoint: u_pe_array/g_pe_row[2].g_pe_col[2].u_pe/en_for_gating_d_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[2].g_pe_col[2].u_pe/en_latched_reg
+            (negative level-sensitive latch clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_pe_array/g_pe_row[2].g_pe_col[2].u_pe/en_for_gating_d_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.00 r
+  u_pe_array/g_pe_row[2].g_pe_col[2].u_pe/en_for_gating_d_reg/QN (DFFASRHQNx1_ASAP7_75t_R)
+                                                         59.47      59.47 f
+  u_pe_array/g_pe_row[2].g_pe_col[2].u_pe/en_latched_reg/D (DLLx1_ASAP7_75t_R)
+                                                          0.00      59.47 f
+  data arrival time                                                 59.47
+
+  clock clk (fall edge)                                1000.00    1000.00
+  clock network delay (ideal)                             0.00    1000.00
+  clock uncertainty                                      -0.01     999.99
+  u_pe_array/g_pe_row[2].g_pe_col[2].u_pe/en_latched_reg/CLK (DLLx1_ASAP7_75t_R)
+                                                          0.00     999.99 f
+  time borrowed from endpoint                             0.00     999.99
+  data required time                                               999.99
+  --------------------------------------------------------------------------
+  data required time                                               999.99
+  data arrival time                                                -59.47
+  --------------------------------------------------------------------------
+  slack (MET)                                                      940.52
+
+  Time Borrowing Information
+  --------------------------------------------------------------
+  clk nominal pulse width                              1000.00   
+  library setup time                                     -1.76   
+  --------------------------------------------------------------
+  max time borrow                                       998.24   
+  actual time borrow                                      0.00   
+  --------------------------------------------------------------
+
+
+  Startpoint: u_pe_array/g_pe_row[2].g_pe_col[3].u_pe/en_for_gating_d_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[2].g_pe_col[3].u_pe/en_latched_reg
+            (negative level-sensitive latch clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_pe_array/g_pe_row[2].g_pe_col[3].u_pe/en_for_gating_d_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.00 r
+  u_pe_array/g_pe_row[2].g_pe_col[3].u_pe/en_for_gating_d_reg/QN (DFFASRHQNx1_ASAP7_75t_R)
+                                                         59.47      59.47 f
+  u_pe_array/g_pe_row[2].g_pe_col[3].u_pe/en_latched_reg/D (DLLx1_ASAP7_75t_R)
+                                                          0.00      59.47 f
+  data arrival time                                                 59.47
+
+  clock clk (fall edge)                                1000.00    1000.00
+  clock network delay (ideal)                             0.00    1000.00
+  clock uncertainty                                      -0.01     999.99
+  u_pe_array/g_pe_row[2].g_pe_col[3].u_pe/en_latched_reg/CLK (DLLx1_ASAP7_75t_R)
+                                                          0.00     999.99 f
+  time borrowed from endpoint                             0.00     999.99
+  data required time                                               999.99
+  --------------------------------------------------------------------------
+  data required time                                               999.99
+  data arrival time                                                -59.47
+  --------------------------------------------------------------------------
+  slack (MET)                                                      940.52
+
+  Time Borrowing Information
+  --------------------------------------------------------------
+  clk nominal pulse width                              1000.00   
+  library setup time                                     -1.76   
+  --------------------------------------------------------------
+  max time borrow                                       998.24   
+  actual time borrow                                      0.00   
+  --------------------------------------------------------------
+
+
+  Startpoint: u_pe_array/g_pe_row[3].g_pe_col[0].u_pe/en_for_gating_d_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[3].g_pe_col[0].u_pe/en_latched_reg
+            (negative level-sensitive latch clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_pe_array/g_pe_row[3].g_pe_col[0].u_pe/en_for_gating_d_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.00 r
+  u_pe_array/g_pe_row[3].g_pe_col[0].u_pe/en_for_gating_d_reg/QN (DFFASRHQNx1_ASAP7_75t_R)
+                                                         59.47      59.47 f
+  u_pe_array/g_pe_row[3].g_pe_col[0].u_pe/en_latched_reg/D (DLLx1_ASAP7_75t_R)
+                                                          0.00      59.47 f
+  data arrival time                                                 59.47
+
+  clock clk (fall edge)                                1000.00    1000.00
+  clock network delay (ideal)                             0.00    1000.00
+  clock uncertainty                                      -0.01     999.99
+  u_pe_array/g_pe_row[3].g_pe_col[0].u_pe/en_latched_reg/CLK (DLLx1_ASAP7_75t_R)
+                                                          0.00     999.99 f
+  time borrowed from endpoint                             0.00     999.99
+  data required time                                               999.99
+  --------------------------------------------------------------------------
+  data required time                                               999.99
+  data arrival time                                                -59.47
+  --------------------------------------------------------------------------
+  slack (MET)                                                      940.52
+
+  Time Borrowing Information
+  --------------------------------------------------------------
+  clk nominal pulse width                              1000.00   
+  library setup time                                     -1.76   
+  --------------------------------------------------------------
+  max time borrow                                       998.24   
+  actual time borrow                                      0.00   
+  --------------------------------------------------------------
+
+
+  Startpoint: u_pe_array/g_pe_row[3].g_pe_col[1].u_pe/en_for_gating_d_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[3].g_pe_col[1].u_pe/en_latched_reg
+            (negative level-sensitive latch clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_pe_array/g_pe_row[3].g_pe_col[1].u_pe/en_for_gating_d_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.00 r
+  u_pe_array/g_pe_row[3].g_pe_col[1].u_pe/en_for_gating_d_reg/QN (DFFASRHQNx1_ASAP7_75t_R)
+                                                         59.47      59.47 f
+  u_pe_array/g_pe_row[3].g_pe_col[1].u_pe/en_latched_reg/D (DLLx1_ASAP7_75t_R)
+                                                          0.00      59.47 f
+  data arrival time                                                 59.47
+
+  clock clk (fall edge)                                1000.00    1000.00
+  clock network delay (ideal)                             0.00    1000.00
+  clock uncertainty                                      -0.01     999.99
+  u_pe_array/g_pe_row[3].g_pe_col[1].u_pe/en_latched_reg/CLK (DLLx1_ASAP7_75t_R)
+                                                          0.00     999.99 f
+  time borrowed from endpoint                             0.00     999.99
+  data required time                                               999.99
+  --------------------------------------------------------------------------
+  data required time                                               999.99
+  data arrival time                                                -59.47
+  --------------------------------------------------------------------------
+  slack (MET)                                                      940.52
+
+  Time Borrowing Information
+  --------------------------------------------------------------
+  clk nominal pulse width                              1000.00   
+  library setup time                                     -1.76   
+  --------------------------------------------------------------
+  max time borrow                                       998.24   
+  actual time borrow                                      0.00   
+  --------------------------------------------------------------
+
+
+  Startpoint: u_pe_array/g_pe_row[3].g_pe_col[2].u_pe/en_for_gating_d_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[3].g_pe_col[2].u_pe/en_latched_reg
+            (negative level-sensitive latch clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_pe_array/g_pe_row[3].g_pe_col[2].u_pe/en_for_gating_d_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.00 r
+  u_pe_array/g_pe_row[3].g_pe_col[2].u_pe/en_for_gating_d_reg/QN (DFFASRHQNx1_ASAP7_75t_R)
+                                                         59.47      59.47 f
+  u_pe_array/g_pe_row[3].g_pe_col[2].u_pe/en_latched_reg/D (DLLx1_ASAP7_75t_R)
+                                                          0.00      59.47 f
+  data arrival time                                                 59.47
+
+  clock clk (fall edge)                                1000.00    1000.00
+  clock network delay (ideal)                             0.00    1000.00
+  clock uncertainty                                      -0.01     999.99
+  u_pe_array/g_pe_row[3].g_pe_col[2].u_pe/en_latched_reg/CLK (DLLx1_ASAP7_75t_R)
+                                                          0.00     999.99 f
+  time borrowed from endpoint                             0.00     999.99
+  data required time                                               999.99
+  --------------------------------------------------------------------------
+  data required time                                               999.99
+  data arrival time                                                -59.47
+  --------------------------------------------------------------------------
+  slack (MET)                                                      940.52
+
+  Time Borrowing Information
+  --------------------------------------------------------------
+  clk nominal pulse width                              1000.00   
+  library setup time                                     -1.76   
+  --------------------------------------------------------------
+  max time borrow                                       998.24   
+  actual time borrow                                      0.00   
+  --------------------------------------------------------------
+
+
+  Startpoint: u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/en_for_gating_d_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/en_latched_reg
+            (negative level-sensitive latch clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/en_for_gating_d_reg/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.00 r
+  u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/en_for_gating_d_reg/QN (DFFASRHQNx1_ASAP7_75t_R)
+                                                         59.47      59.47 f
+  u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/en_latched_reg/D (DLLx1_ASAP7_75t_R)
+                                                          0.00      59.47 f
+  data arrival time                                                 59.47
+
+  clock clk (fall edge)                                1000.00    1000.00
+  clock network delay (ideal)                             0.00    1000.00
+  clock uncertainty                                      -0.01     999.99
+  u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/en_latched_reg/CLK (DLLx1_ASAP7_75t_R)
+                                                          0.00     999.99 f
+  time borrowed from endpoint                             0.00     999.99
+  data required time                                               999.99
+  --------------------------------------------------------------------------
+  data required time                                               999.99
+  data arrival time                                                -59.47
+  --------------------------------------------------------------------------
+  slack (MET)                                                      940.52
+
+  Time Borrowing Information
+  --------------------------------------------------------------
+  clk nominal pulse width                              1000.00   
+  library setup time                                     -1.76   
+  --------------------------------------------------------------
+  max time borrow                                       998.24   
+  actual time borrow                                      0.00   
+  --------------------------------------------------------------
+
+
+  Startpoint: u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/w_reg_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/psum_out_reg[12]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/w_reg_reg[0]/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.00 r
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/w_reg_reg[0]/QN (DFFASRHQNx1_ASAP7_75t_R)
+                                                         67.14      67.14 r
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/mult_97/B[0] (pe_DATA_W6_WEIGHT_W2_ACC_W13_12_DW02_mult_0_DW02_mult_11)
+                                                          0.00      67.14 r
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/mult_97/U17/Y (BUFx2_ASAP7_75t_R)
+                                                         24.27      91.42 r
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/mult_97/U19/Y (INVx2_ASAP7_75t_R)
+                                                         14.11     105.53 f
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/mult_97/U32/Y (AND2x2_ASAP7_75t_R)
+                                                         23.83     129.36 f
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/mult_97/U10/Y (BUFx10_ASAP7_75t_R)
+                                                         22.70     152.06 f
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/mult_97/U2/Y (INVx8_ASAP7_75t_R)
+                                                          8.75     160.81 r
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/mult_97/U14/Y (NOR2x1_ASAP7_75t_R)
+                                                         11.47     172.28 f
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/mult_97/FS_3/B[0] (pe_DATA_W6_WEIGHT_W2_ACC_W13_12_DW01_add_1_DW01_add_23)
+                                                          0.00     172.28 f
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/mult_97/FS_3/U19/Y (NAND2xp5_ASAP7_75t_R)
+                                                         20.61     192.89 r
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/mult_97/FS_3/U25/Y (OA21x2_ASAP7_75t_R)
+                                                         27.16     220.04 r
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/mult_97/FS_3/SUM[0] (pe_DATA_W6_WEIGHT_W2_ACC_W13_12_DW01_add_1_DW01_add_23)
+                                                          0.00     220.04 r
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/mult_97/U45/Y (INVx1_ASAP7_75t_R)
+                                                         10.69     230.73 f
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/mult_97/U37/Y (XNOR2xp5_ASAP7_75t_R)
+                                                         21.78     252.52 f
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/mult_97/U22/Y (AO22x2_ASAP7_75t_R)
+                                                         30.56     283.08 f
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/mult_97/PRODUCT[1] (pe_DATA_W6_WEIGHT_W2_ACC_W13_12_DW02_mult_0_DW02_mult_11)
+                                                          0.00     283.08 f
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/add_113/B[1] (pe_DATA_W6_WEIGHT_W2_ACC_W13_12_DW01_add_0_DW01_add_22)
+                                                          0.00     283.08 f
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/add_113/U1_1/CON (FAx1_ASAP7_75t_R)
+                                                         22.32     305.39 r
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/add_113/U25/Y (INVx1_ASAP7_75t_R)
+                                                         17.10     322.49 f
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/add_113/U1_2/CON (FAx1_ASAP7_75t_R)
+                                                         21.87     344.37 r
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/add_113/U24/Y (INVx1_ASAP7_75t_R)
+                                                         17.10     361.47 f
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/add_113/U1_3/CON (FAx1_ASAP7_75t_R)
+                                                         21.87     383.34 r
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/add_113/U23/Y (INVx1_ASAP7_75t_R)
+                                                         17.10     400.44 f
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/add_113/U1_4/CON (FAx1_ASAP7_75t_R)
+                                                         21.87     422.31 r
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/add_113/U22/Y (INVx1_ASAP7_75t_R)
+                                                         16.74     439.05 f
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/add_113/U1_5/CON (FAx1_ASAP7_75t_R)
+                                                         21.75     460.80 r
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/add_113/U21/Y (INVx1_ASAP7_75t_R)
+                                                         16.72     477.53 f
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/add_113/U1_6/CON (FAx1_ASAP7_75t_R)
+                                                         21.75     499.27 r
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/add_113/U20/Y (INVx1_ASAP7_75t_R)
+                                                         16.72     516.00 f
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/add_113/U1_7/CON (FAx1_ASAP7_75t_R)
+                                                         21.75     537.74 r
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/add_113/U19/Y (INVx1_ASAP7_75t_R)
+                                                         16.72     554.47 f
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/add_113/U1_8/CON (FAx1_ASAP7_75t_R)
+                                                         21.75     576.21 r
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/add_113/U18/Y (INVx1_ASAP7_75t_R)
+                                                         16.72     592.94 f
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/add_113/U1_9/CON (FAx1_ASAP7_75t_R)
+                                                         21.75     614.68 r
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/add_113/U17/Y (INVx1_ASAP7_75t_R)
+                                                         16.72     631.41 f
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/add_113/U1_10/CON (FAx1_ASAP7_75t_R)
+                                                         21.75     653.15 r
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/add_113/U16/Y (INVx1_ASAP7_75t_R)
+                                                         17.10     670.26 f
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/add_113/U1_11/CON (FAx1_ASAP7_75t_R)
+                                                         21.87     692.13 r
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/add_113/U15/Y (INVx1_ASAP7_75t_R)
+                                                         17.10     709.23 f
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/add_113/U1_12/SN (FAx1_ASAP7_75t_R)
+                                                         33.34     742.57 r
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/add_113/U14/Y (INVxp67_ASAP7_75t_R)
+                                                         12.25     754.81 f
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/add_113/SUM[12] (pe_DATA_W6_WEIGHT_W2_ACC_W13_12_DW01_add_0_DW01_add_22)
+                                                          0.00     754.81 f
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/U34/Y (NAND2xp5_ASAP7_75t_R)
+                                                         11.97     766.79 r
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/psum_out_reg[12]/D (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00     766.79 r
+  data arrival time                                                766.79
+
+  clock clk (rise edge)                                2000.00    2000.00
+  clock network delay (ideal)                             0.00    2000.00
+  clock uncertainty                                      -0.01    1999.99
+  u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/psum_out_reg[12]/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00    1999.99 r
+  library setup time                                    -11.97    1988.02
+  data required time                                              1988.02
+  --------------------------------------------------------------------------
+  data required time                                              1988.02
+  data arrival time                                               -766.79
+  --------------------------------------------------------------------------
+  slack (MET)                                                     1221.23
+
+
+  Startpoint: u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/w_reg_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/psum_out_reg[12]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/w_reg_reg[0]/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.00 r
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/w_reg_reg[0]/QN (DFFASRHQNx1_ASAP7_75t_R)
+                                                         67.36      67.36 r
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/mult_97/B[0] (pe_DATA_W6_WEIGHT_W2_ACC_W13_11_DW02_mult_0_DW02_mult_10)
+                                                          0.00      67.36 r
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/mult_97/U17/Y (BUFx2_ASAP7_75t_R)
+                                                         24.36      91.72 r
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/mult_97/U19/Y (INVx2_ASAP7_75t_R)
+                                                         14.12     105.84 f
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/mult_97/U32/Y (AND2x2_ASAP7_75t_R)
+                                                         23.83     129.67 f
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/mult_97/U10/Y (BUFx10_ASAP7_75t_R)
+                                                         22.70     152.37 f
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/mult_97/U2/Y (INVx8_ASAP7_75t_R)
+                                                          8.75     161.12 r
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/mult_97/U14/Y (NOR2x1_ASAP7_75t_R)
+                                                         11.47     172.59 f
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/mult_97/FS_3/B[0] (pe_DATA_W6_WEIGHT_W2_ACC_W13_11_DW01_add_1_DW01_add_21)
+                                                          0.00     172.59 f
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/mult_97/FS_3/U19/Y (NAND2xp5_ASAP7_75t_R)
+                                                         20.61     193.20 r
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/mult_97/FS_3/U25/Y (OA21x2_ASAP7_75t_R)
+                                                         27.16     220.36 r
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/mult_97/FS_3/SUM[0] (pe_DATA_W6_WEIGHT_W2_ACC_W13_11_DW01_add_1_DW01_add_21)
+                                                          0.00     220.36 r
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/mult_97/U45/Y (INVx1_ASAP7_75t_R)
+                                                         10.69     231.05 f
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/mult_97/U37/Y (XNOR2xp5_ASAP7_75t_R)
+                                                         21.78     252.84 f
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/mult_97/U22/Y (AO22x2_ASAP7_75t_R)
+                                                         30.56     283.40 f
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/mult_97/PRODUCT[1] (pe_DATA_W6_WEIGHT_W2_ACC_W13_11_DW02_mult_0_DW02_mult_10)
+                                                          0.00     283.40 f
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/add_113/B[1] (pe_DATA_W6_WEIGHT_W2_ACC_W13_11_DW01_add_0_DW01_add_20)
+                                                          0.00     283.40 f
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/add_113/U1_1/CON (FAx1_ASAP7_75t_R)
+                                                         22.32     305.71 r
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/add_113/U25/Y (INVx1_ASAP7_75t_R)
+                                                         16.47     322.18 f
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/add_113/U1_2/CON (FAx1_ASAP7_75t_R)
+                                                         21.66     343.85 r
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/add_113/U24/Y (INVx1_ASAP7_75t_R)
+                                                         17.10     360.95 f
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/add_113/U1_3/CON (FAx1_ASAP7_75t_R)
+                                                         21.87     382.82 r
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/add_113/U23/Y (INVx1_ASAP7_75t_R)
+                                                         17.10     399.92 f
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/add_113/U1_4/CON (FAx1_ASAP7_75t_R)
+                                                         21.87     421.79 r
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/add_113/U22/Y (INVx1_ASAP7_75t_R)
+                                                         17.10     438.90 f
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/add_113/U1_5/CON (FAx1_ASAP7_75t_R)
+                                                         21.87     460.77 r
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/add_113/U21/Y (INVx1_ASAP7_75t_R)
+                                                         17.10     477.87 f
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/add_113/U1_6/CON (FAx1_ASAP7_75t_R)
+                                                         21.87     499.74 r
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/add_113/U20/Y (INVx1_ASAP7_75t_R)
+                                                         16.74     516.48 f
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/add_113/U1_7/CON (FAx1_ASAP7_75t_R)
+                                                         21.75     538.23 r
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/add_113/U19/Y (INVx1_ASAP7_75t_R)
+                                                         16.72     554.95 f
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/add_113/U1_8/CON (FAx1_ASAP7_75t_R)
+                                                         21.75     576.70 r
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/add_113/U18/Y (INVx1_ASAP7_75t_R)
+                                                         17.10     593.80 f
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/add_113/U1_9/CON (FAx1_ASAP7_75t_R)
+                                                         21.87     615.67 r
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/add_113/U17/Y (INVx1_ASAP7_75t_R)
+                                                         17.10     632.78 f
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/add_113/U1_10/CON (FAx1_ASAP7_75t_R)
+                                                         21.87     654.65 r
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/add_113/U16/Y (INVx1_ASAP7_75t_R)
+                                                         16.74     671.38 f
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/add_113/U1_11/CON (FAx1_ASAP7_75t_R)
+                                                         21.75     693.14 r
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/add_113/U15/Y (INVx1_ASAP7_75t_R)
+                                                         16.72     709.86 f
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/add_113/U1_12/SN (FAx1_ASAP7_75t_R)
+                                                         33.22     743.08 r
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/add_113/U14/Y (INVxp67_ASAP7_75t_R)
+                                                         11.72     754.81 f
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/add_113/SUM[12] (pe_DATA_W6_WEIGHT_W2_ACC_W13_11_DW01_add_0_DW01_add_20)
+                                                          0.00     754.81 f
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/U34/Y (NAND2xp5_ASAP7_75t_R)
+                                                         11.75     766.55 r
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/psum_out_reg[12]/D (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00     766.55 r
+  data arrival time                                                766.55
+
+  clock clk (rise edge)                                2000.00    2000.00
+  clock network delay (ideal)                             0.00    2000.00
+  clock uncertainty                                      -0.01    1999.99
+  u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/psum_out_reg[12]/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00    1999.99 r
+  library setup time                                    -11.91    1988.08
+  data required time                                              1988.08
+  --------------------------------------------------------------------------
+  data required time                                              1988.08
+  data arrival time                                               -766.55
+  --------------------------------------------------------------------------
+  slack (MET)                                                     1221.53
+
+
+  Startpoint: u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/w_reg_reg[0]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/psum_out_reg[12]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/w_reg_reg[0]/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.00 r
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/w_reg_reg[0]/QN (DFFASRHQNx1_ASAP7_75t_R)
+                                                         67.36      67.36 r
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/mult_97/B[0] (pe_DATA_W6_WEIGHT_W2_ACC_W13_9_DW02_mult_0_DW02_mult_8)
+                                                          0.00      67.36 r
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/mult_97/U19/Y (BUFx2_ASAP7_75t_R)
+                                                         24.36      91.72 r
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/mult_97/U20/Y (INVx2_ASAP7_75t_R)
+                                                         14.12     105.84 f
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/mult_97/U35/Y (AND2x2_ASAP7_75t_R)
+                                                         23.83     129.67 f
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/mult_97/U12/Y (BUFx10_ASAP7_75t_R)
+                                                         22.70     152.37 f
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/mult_97/U2/Y (INVx8_ASAP7_75t_R)
+                                                          8.75     161.12 r
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/mult_97/U17/Y (NOR2x1_ASAP7_75t_R)
+                                                         11.47     172.59 f
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/mult_97/FS_3/B[0] (pe_DATA_W6_WEIGHT_W2_ACC_W13_9_DW01_add_1_DW01_add_17)
+                                                          0.00     172.59 f
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/mult_97/FS_3/U19/Y (NAND2xp5_ASAP7_75t_R)
+                                                         20.61     193.20 r
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/mult_97/FS_3/U25/Y (OA21x2_ASAP7_75t_R)
+                                                         27.16     220.36 r
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/mult_97/FS_3/SUM[0] (pe_DATA_W6_WEIGHT_W2_ACC_W13_9_DW01_add_1_DW01_add_17)
+                                                          0.00     220.36 r
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/mult_97/U46/Y (INVx1_ASAP7_75t_R)
+                                                         10.69     231.05 f
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/mult_97/U37/Y (XNOR2xp5_ASAP7_75t_R)
+                                                         21.78     252.84 f
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/mult_97/U24/Y (AO22x2_ASAP7_75t_R)
+                                                         30.56     283.40 f
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/mult_97/PRODUCT[1] (pe_DATA_W6_WEIGHT_W2_ACC_W13_9_DW02_mult_0_DW02_mult_8)
+                                                          0.00     283.40 f
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/add_113/B[1] (pe_DATA_W6_WEIGHT_W2_ACC_W13_9_DW01_add_0_DW01_add_16)
+                                                          0.00     283.40 f
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/add_113/U1_1/CON (FAx1_ASAP7_75t_R)
+                                                         22.32     305.71 r
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/add_113/U25/Y (INVx1_ASAP7_75t_R)
+                                                         16.47     322.18 f
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/add_113/U1_2/CON (FAx1_ASAP7_75t_R)
+                                                         21.66     343.85 r
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/add_113/U24/Y (INVx1_ASAP7_75t_R)
+                                                         16.71     360.56 f
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/add_113/U1_3/CON (FAx1_ASAP7_75t_R)
+                                                         21.74     382.30 r
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/add_113/U23/Y (INVx1_ASAP7_75t_R)
+                                                         16.72     399.03 f
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/add_113/U1_4/CON (FAx1_ASAP7_75t_R)
+                                                         21.75     420.77 r
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/add_113/U22/Y (INVx1_ASAP7_75t_R)
+                                                         17.10     437.88 f
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/add_113/U1_5/CON (FAx1_ASAP7_75t_R)
+                                                         21.87     459.75 r
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/add_113/U21/Y (INVx1_ASAP7_75t_R)
+                                                         17.10     476.85 f
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/add_113/U1_6/CON (FAx1_ASAP7_75t_R)
+                                                         21.87     498.72 r
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/add_113/U20/Y (INVx1_ASAP7_75t_R)
+                                                         17.10     515.82 f
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/add_113/U1_7/CON (FAx1_ASAP7_75t_R)
+                                                         21.87     537.70 r
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/add_113/U19/Y (INVx1_ASAP7_75t_R)
+                                                         17.10     554.80 f
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/add_113/U1_8/CON (FAx1_ASAP7_75t_R)
+                                                         21.87     576.67 r
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/add_113/U18/Y (INVx1_ASAP7_75t_R)
+                                                         17.10     593.77 f
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/add_113/U1_9/CON (FAx1_ASAP7_75t_R)
+                                                         21.87     615.64 r
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/add_113/U17/Y (INVx1_ASAP7_75t_R)
+                                                         17.10     632.74 f
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/add_113/U1_10/CON (FAx1_ASAP7_75t_R)
+                                                         21.87     654.62 r
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/add_113/U16/Y (INVx1_ASAP7_75t_R)
+                                                         16.74     671.35 f
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/add_113/U1_11/CON (FAx1_ASAP7_75t_R)
+                                                         21.75     693.10 r
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/add_113/U15/Y (INVx1_ASAP7_75t_R)
+                                                         16.72     709.83 f
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/add_113/U1_12/SN (FAx1_ASAP7_75t_R)
+                                                         33.22     743.05 r
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/add_113/U14/Y (INVxp67_ASAP7_75t_R)
+                                                         11.72     754.77 f
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/add_113/SUM[12] (pe_DATA_W6_WEIGHT_W2_ACC_W13_9_DW01_add_0_DW01_add_16)
+                                                          0.00     754.77 f
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/U34/Y (NAND2xp5_ASAP7_75t_R)
+                                                         11.75     766.52 r
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/psum_out_reg[12]/D (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00     766.52 r
+  data arrival time                                                766.52
+
+  clock clk (rise edge)                                2000.00    2000.00
+  clock network delay (ideal)                             0.00    2000.00
+  clock uncertainty                                      -0.01    1999.99
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/psum_out_reg[12]/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00    1999.99 r
+  library setup time                                    -11.91    1988.08
+  data required time                                              1988.08
+  --------------------------------------------------------------------------
+  data required time                                              1988.08
+  data arrival time                                               -766.52
+  --------------------------------------------------------------------------
+  slack (MET)                                                     1221.56
+
+
+1

@@ -1,0 +1,133 @@
+Loading db file '/cae/apps/data/synopsys-2025/syn/X-2025.06/libraries/syn/gtech.db'
+Loading db file '/cae/apps/data/synopsys-2025/syn/X-2025.06/libraries/syn/standard.sldb'
+  Loading link library 'asap7sc7p5t_AO_RVT_TT_nldm_211120'
+  Loading link library 'asap7sc7p5t_OA_RVT_TT_nldm_211120'
+  Loading link library 'asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120'
+  Loading link library 'asap7sc7p5t_INVBUF_RVT_TT_nldm_211120'
+  Loading link library 'asap7sc7p5t_SEQ_RVT_TT_nldm_220123'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Presto compilation completed successfully. (top)
+Module: top, Ports: 62, Input: 35, Output: 27, Inout: 0
+Module: top, Registers: 0, Async set/reset: 0, Sync set/reset: 0
+Information: Module top report end. (ELAB-965)
+Elaborated 1 design.
+Current design is now 'top'.
+Information: Building the design 'zigzag_fsm'. (HDL-193)
+Warning:  /filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/control.sv:201: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/control.sv:281: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+
+Statistics for case statements in always block in file
+	'/filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/control.sv'
+============================================================
+|    Line    |  full/ parallel  |      block location      |
+============================================================
+|     70     |    auto/auto     | always block at line 66  |
+|     94     |    auto/auto     | always block at line 90  |
+|    116     |    auto/auto     | always block at line 112 |
+|    136     |    auto/auto     | always block at line 133 |
+|    218     |    auto/auto     | always block at line 208 |
+============================================================
+
+Inferred memory devices in process in routine 'zigzag_fsm' in file
+	 /filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/control.sv'.
+==================================================================================
+|    Register Name    |   Type    | Width | Bus | MB |  Set  | Reset | ST | Line |
+==================================================================================
+|      state_reg      | Flip-flop |   3   |  Y  | N  | None  | Async | N  |  43  |
+|       cnt_reg       | Flip-flop |   4   |  Y  | N  | None  | Async | N  |  51  |
+|     ch_cnt_reg      | Flip-flop |   2   |  Y  | N  | None  | Async | N  |  66  |
+|      h_cnt_reg      | Flip-flop |   2   |  Y  | N  | None  | Async | N  |  90  |
+|      v_cnt_reg      | Flip-flop |   3   |  Y  | N  | None  | Async | N  | 112  |
+==================================================================================
+Presto compilation completed successfully. (zigzag_fsm)
+Module: zigzag_fsm, Ports: 12, Input: 3, Output: 9, Inout: 0
+Module: zigzag_fsm, Registers: 14, Async set/reset: 14, Sync set/reset: 0
+Information: Module zigzag_fsm report end. (ELAB-965)
+Information: Building the design 'zig_zag_4x4' instantiated from design 'top' with
+	the parameters "DATA_W=6,WEIGHT_W=2,ACC_W=13,ROWS=4,COLS=4,UNQ_DIR=4". (HDL-193)
+Warning:  /filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/zigzag.sv:196: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/zigzag.sv:196: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/zigzag.sv:196: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/zigzag.sv:196: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/zigzag.sv:196: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/zigzag.sv:196: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/zigzag.sv:196: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/zigzag.sv:196: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/zigzag.sv:196: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/zigzag.sv:196: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/zigzag.sv:196: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/zigzag.sv:196: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/zigzag.sv:196: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/zigzag.sv:196: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/zigzag.sv:196: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+Warning:  /filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/zigzag.sv:196: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+
+Statistics for case statements in always block in file
+	'/filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/zigzag.sv'
+============================================================
+|    Line    |  full/ parallel  |      block location      |
+============================================================
+|     46     |    user/user     | always block at line 45  |
+|    157     |    auto/auto     | always block at line 156 |
+============================================================
+
+Inferred memory devices in process in routine 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' in file
+	 /filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/zigzag.sv'.
+==============================================================================
+|    Register Name    | Type  | Width | Bus | MB |  Set  | Reset | ST | Line |
+==============================================================================
+|   en_latched_reg    | Latch |   1   |  N  | N  | None  | None  | -  | 207  |
+==============================================================================
+Presto compilation completed successfully. (zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4)
+Module: zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4, Ports: 68, Input: 42, Output: 26, Inout: 0
+Module: zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4, Registers: 1, Async set/reset: 0, Sync set/reset: 0
+Information: Module zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4 report end. (ELAB-965)
+Information: Building the design 'fifo9' instantiated from design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' with
+	the parameters "DATA_W=13". (HDL-193)
+Warning:  /filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/fifo9.sv:36: signed to unsigned conversion occurs. (VER-318)
+Warning:  /filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/fifo9.sv:39: signed to unsigned conversion occurs. (VER-318)
+
+Statistics for case statements in always block in file
+	'/filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/fifo9.sv'
+===========================================================
+|    Line    |  full/ parallel  |      block location     |
+===========================================================
+|     41     |    auto/auto     | always block at line 28 |
+===========================================================
+
+Inferred memory devices in process in routine 'fifo9_DATA_W13' in file
+	 /filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/fifo9.sv'.
+==================================================================================
+|    Register Name    |   Type    | Width | Bus | MB |  Set  | Reset | ST | Line |
+==================================================================================
+|     buffer_reg      | Flip-flop |  117  |  Y  | N  | None  | None  | N  |  28  |
+|     wr_ptr_reg      | Flip-flop |   5   |  Y  | N  | None  | Async | N  |  28  |
+|     rd_ptr_reg      | Flip-flop |   5   |  Y  | N  | None  | Async | N  |  28  |
+|      count_reg      | Flip-flop |   4   |  Y  | N  | None  | Async | N  |  28  |
+==================================================================================
+Presto compilation completed successfully. (fifo9_DATA_W13)
+Module: fifo9_DATA_W13, Ports: 32, Input: 17, Output: 15, Inout: 0
+Module: fifo9_DATA_W13, Registers: 131, Async set/reset: 14, Sync set/reset: 0
+Information: Module fifo9_DATA_W13 report end. (ELAB-965)
+Information: Building the design 'pe' instantiated from design 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' with
+	the parameters "DATA_W=6,WEIGHT_W=2,ACC_W=13". (HDL-193)
+Warning:  /filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/pe_update.sv:48: signed to unsigned assignment occurs. (VER-318)
+Warning:  /filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/pe_update.sv:88: signed to unsigned assignment occurs. (VER-318)
+
+Inferred memory devices in process in routine 'pe_DATA_W6_WEIGHT_W2_ACC_W13' in file
+	 /filespace/v/vsathishkuma/ECE755/ECE_755_Project/RTL_Design/pe_update.sv'.
+==================================================================================
+|    Register Name    |   Type    | Width | Bus | MB |  Set  | Reset | ST | Line |
+==================================================================================
+|    w_buffer_reg     | Flip-flop |   2   |  Y  | N  | None  | Async | N  |  38  |
+|      w_reg_reg      | Flip-flop |   2   |  Y  | N  | None  | Async | N  |  43  |
+|    psum_out_reg     | Flip-flop |  13   |  Y  | N  | None  | Async | N  |  62  |
+| psum_shift_en_d_reg | Flip-flop |   1   |  N  | N  | None  | Async | N  |  74  |
+|    move_reg_reg     | Flip-flop |  13   |  Y  | N  | None  | Async | N  | 100  |
+==================================================================================
+Presto compilation completed successfully. (pe_DATA_W6_WEIGHT_W2_ACC_W13)
+Module: pe_DATA_W6_WEIGHT_W2_ACC_W13, Ports: 39, Input: 24, Output: 15, Inout: 0
+Module: pe_DATA_W6_WEIGHT_W2_ACC_W13, Registers: 31, Async set/reset: 31, Sync set/reset: 0
+Information: Module pe_DATA_W6_WEIGHT_W2_ACC_W13 report end. (ELAB-965)
+1

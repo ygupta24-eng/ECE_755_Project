@@ -1,0 +1,653 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay min
+        -max_paths 20
+Design : top
+Version: X-2025.06
+Date   : Wed Apr 22 19:52:58 2026
+****************************************
+
+Operating Conditions: PVT_0P7V_25C   Library: asap7sc7p5t_AO_RVT_TT_nldm_211120
+Wire Load Model Mode: segmented
+
+  Startpoint: w_in[0][1] (input port clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[0].g_pe_col[0].u_pe/w_reg_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   25.00      25.00 r
+  w_in[0][1] (in)                                         0.00      25.00 r
+  U764/Y (OAI22xp5_ASAP7_75t_R)                           5.44      30.44 f
+  u_pe_array/g_pe_row[0].g_pe_col[0].u_pe/w_reg_reg[1]/D (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00      30.44 f
+  data arrival time                                                 30.44
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  u_pe_array/g_pe_row[0].g_pe_col[0].u_pe/w_reg_reg[1]/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.01 r
+  library hold time                                      19.64      19.65
+  data required time                                                19.65
+  --------------------------------------------------------------------------
+  data required time                                                19.65
+  data arrival time                                                -30.44
+  --------------------------------------------------------------------------
+  slack (MET)                                                       10.79
+
+
+  Startpoint: w_in[0][0] (input port clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[0].g_pe_col[0].u_pe/w_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   25.00      25.00 r
+  w_in[0][0] (in)                                         0.00      25.00 r
+  U765/Y (OAI22xp5_ASAP7_75t_R)                           5.44      30.44 f
+  u_pe_array/g_pe_row[0].g_pe_col[0].u_pe/w_reg_reg[0]/D (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00      30.44 f
+  data arrival time                                                 30.44
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  u_pe_array/g_pe_row[0].g_pe_col[0].u_pe/w_reg_reg[0]/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.01 r
+  library hold time                                      19.64      19.65
+  data required time                                                19.65
+  --------------------------------------------------------------------------
+  data required time                                                19.65
+  data arrival time                                                -30.44
+  --------------------------------------------------------------------------
+  slack (MET)                                                       10.79
+
+
+  Startpoint: w_in[1][1] (input port clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[0].g_pe_col[1].u_pe/w_reg_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   25.00      25.00 r
+  w_in[1][1] (in)                                         0.00      25.00 r
+  U747/Y (OAI22xp5_ASAP7_75t_R)                           5.44      30.44 f
+  u_pe_array/g_pe_row[0].g_pe_col[1].u_pe/w_reg_reg[1]/D (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00      30.44 f
+  data arrival time                                                 30.44
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  u_pe_array/g_pe_row[0].g_pe_col[1].u_pe/w_reg_reg[1]/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.01 r
+  library hold time                                      19.64      19.65
+  data required time                                                19.65
+  --------------------------------------------------------------------------
+  data required time                                                19.65
+  data arrival time                                                -30.44
+  --------------------------------------------------------------------------
+  slack (MET)                                                       10.79
+
+
+  Startpoint: w_in[1][0] (input port clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[0].g_pe_col[1].u_pe/w_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   25.00      25.00 r
+  w_in[1][0] (in)                                         0.00      25.00 r
+  U746/Y (OAI22xp5_ASAP7_75t_R)                           5.44      30.44 f
+  u_pe_array/g_pe_row[0].g_pe_col[1].u_pe/w_reg_reg[0]/D (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00      30.44 f
+  data arrival time                                                 30.44
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  u_pe_array/g_pe_row[0].g_pe_col[1].u_pe/w_reg_reg[0]/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.01 r
+  library hold time                                      19.64      19.65
+  data required time                                                19.65
+  --------------------------------------------------------------------------
+  data required time                                                19.65
+  data arrival time                                                -30.44
+  --------------------------------------------------------------------------
+  slack (MET)                                                       10.79
+
+
+  Startpoint: w_in[2][1] (input port clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[0].g_pe_col[2].u_pe/w_reg_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   25.00      25.00 r
+  w_in[2][1] (in)                                         0.00      25.00 r
+  U710/Y (OAI22xp5_ASAP7_75t_R)                           5.44      30.44 f
+  u_pe_array/g_pe_row[0].g_pe_col[2].u_pe/w_reg_reg[1]/D (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00      30.44 f
+  data arrival time                                                 30.44
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  u_pe_array/g_pe_row[0].g_pe_col[2].u_pe/w_reg_reg[1]/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.01 r
+  library hold time                                      19.64      19.65
+  data required time                                                19.65
+  --------------------------------------------------------------------------
+  data required time                                                19.65
+  data arrival time                                                -30.44
+  --------------------------------------------------------------------------
+  slack (MET)                                                       10.79
+
+
+  Startpoint: w_in[2][0] (input port clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[0].g_pe_col[2].u_pe/w_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   25.00      25.00 r
+  w_in[2][0] (in)                                         0.00      25.00 r
+  U709/Y (OAI22xp5_ASAP7_75t_R)                           5.44      30.44 f
+  u_pe_array/g_pe_row[0].g_pe_col[2].u_pe/w_reg_reg[0]/D (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00      30.44 f
+  data arrival time                                                 30.44
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  u_pe_array/g_pe_row[0].g_pe_col[2].u_pe/w_reg_reg[0]/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.01 r
+  library hold time                                      19.64      19.65
+  data required time                                                19.65
+  --------------------------------------------------------------------------
+  data required time                                                19.65
+  data arrival time                                                -30.44
+  --------------------------------------------------------------------------
+  slack (MET)                                                       10.79
+
+
+  Startpoint: w_in[3][1] (input port clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[0].g_pe_col[3].u_pe/w_reg_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   25.00      25.00 r
+  w_in[3][1] (in)                                         0.00      25.00 r
+  U675/Y (OAI22xp5_ASAP7_75t_R)                           5.44      30.44 f
+  u_pe_array/g_pe_row[0].g_pe_col[3].u_pe/w_reg_reg[1]/D (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00      30.44 f
+  data arrival time                                                 30.44
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  u_pe_array/g_pe_row[0].g_pe_col[3].u_pe/w_reg_reg[1]/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.01 r
+  library hold time                                      19.64      19.65
+  data required time                                                19.65
+  --------------------------------------------------------------------------
+  data required time                                                19.65
+  data arrival time                                                -30.44
+  --------------------------------------------------------------------------
+  slack (MET)                                                       10.79
+
+
+  Startpoint: w_in[3][0] (input port clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[0].g_pe_col[3].u_pe/w_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   25.00      25.00 r
+  w_in[3][0] (in)                                         0.00      25.00 r
+  U674/Y (OAI22xp5_ASAP7_75t_R)                           5.44      30.44 f
+  u_pe_array/g_pe_row[0].g_pe_col[3].u_pe/w_reg_reg[0]/D (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00      30.44 f
+  data arrival time                                                 30.44
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  u_pe_array/g_pe_row[0].g_pe_col[3].u_pe/w_reg_reg[0]/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.01 r
+  library hold time                                      19.64      19.65
+  data required time                                                19.65
+  --------------------------------------------------------------------------
+  data required time                                                19.65
+  data arrival time                                                -30.44
+  --------------------------------------------------------------------------
+  slack (MET)                                                       10.79
+
+
+  Startpoint: h_in1[0] (input port clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/move_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   25.00      25.00 r
+  h_in1[0] (in)                                           0.00      25.00 r
+  U866/Y (INVx1_ASAP7_75t_R)                              2.95      27.95 f
+  U2403/Y (AOI221xp5_ASAP7_75t_R)                        10.56      38.51 r
+  U2402/Y (AOI21xp5_ASAP7_75t_R)                         10.39      48.90 f
+  u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/move_reg_reg[0]/D (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00      48.90 f
+  data arrival time                                                 48.90
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/move_reg_reg[0]/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.01 r
+  library hold time                                      19.03      19.04
+  data required time                                                19.04
+  --------------------------------------------------------------------------
+  data required time                                                19.04
+  data arrival time                                                -48.90
+  --------------------------------------------------------------------------
+  slack (MET)                                                       29.86
+
+
+  Startpoint: h_in1[1] (input port clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/move_reg_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   25.00      25.00 r
+  h_in1[1] (in)                                           0.00      25.00 r
+  U865/Y (INVx1_ASAP7_75t_R)                              2.95      27.95 f
+  U2413/Y (AOI221xp5_ASAP7_75t_R)                        10.56      38.51 r
+  U2412/Y (AOI21xp5_ASAP7_75t_R)                         10.39      48.90 f
+  u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/move_reg_reg[1]/D (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00      48.90 f
+  data arrival time                                                 48.90
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/move_reg_reg[1]/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.01 r
+  library hold time                                      19.03      19.04
+  data required time                                                19.04
+  --------------------------------------------------------------------------
+  data required time                                                19.04
+  data arrival time                                                -48.90
+  --------------------------------------------------------------------------
+  slack (MET)                                                       29.86
+
+
+  Startpoint: h_in1[2] (input port clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/move_reg_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   25.00      25.00 r
+  h_in1[2] (in)                                           0.00      25.00 r
+  U864/Y (INVx1_ASAP7_75t_R)                              2.95      27.95 f
+  U2411/Y (AOI221xp5_ASAP7_75t_R)                        10.56      38.51 r
+  U2410/Y (AOI21xp5_ASAP7_75t_R)                         10.39      48.90 f
+  u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/move_reg_reg[2]/D (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00      48.90 f
+  data arrival time                                                 48.90
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/move_reg_reg[2]/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.01 r
+  library hold time                                      19.03      19.04
+  data required time                                                19.04
+  --------------------------------------------------------------------------
+  data required time                                                19.04
+  data arrival time                                                -48.90
+  --------------------------------------------------------------------------
+  slack (MET)                                                       29.86
+
+
+  Startpoint: h_in1[3] (input port clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/move_reg_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   25.00      25.00 r
+  h_in1[3] (in)                                           0.00      25.00 r
+  U863/Y (INVx1_ASAP7_75t_R)                              2.95      27.95 f
+  U2409/Y (AOI221xp5_ASAP7_75t_R)                        10.56      38.51 r
+  U2408/Y (AOI21xp5_ASAP7_75t_R)                         10.39      48.90 f
+  u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/move_reg_reg[3]/D (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00      48.90 f
+  data arrival time                                                 48.90
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/move_reg_reg[3]/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.01 r
+  library hold time                                      19.03      19.04
+  data required time                                                19.04
+  --------------------------------------------------------------------------
+  data required time                                                19.04
+  data arrival time                                                -48.90
+  --------------------------------------------------------------------------
+  slack (MET)                                                       29.86
+
+
+  Startpoint: h_in1[4] (input port clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/move_reg_reg[4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   25.00      25.00 r
+  h_in1[4] (in)                                           0.00      25.00 r
+  U862/Y (INVx1_ASAP7_75t_R)                              2.95      27.95 f
+  U2407/Y (AOI221xp5_ASAP7_75t_R)                        10.56      38.51 r
+  U2406/Y (AOI21xp5_ASAP7_75t_R)                         10.39      48.90 f
+  u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/move_reg_reg[4]/D (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00      48.90 f
+  data arrival time                                                 48.90
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/move_reg_reg[4]/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.01 r
+  library hold time                                      19.03      19.04
+  data required time                                                19.04
+  --------------------------------------------------------------------------
+  data required time                                                19.04
+  data arrival time                                                -48.90
+  --------------------------------------------------------------------------
+  slack (MET)                                                       29.86
+
+
+  Startpoint: h_in1[5] (input port clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/move_reg_reg[5]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   25.00      25.00 r
+  h_in1[5] (in)                                           0.00      25.00 r
+  U861/Y (INVx1_ASAP7_75t_R)                              2.95      27.95 f
+  U2405/Y (AOI221xp5_ASAP7_75t_R)                        10.56      38.51 r
+  U2404/Y (AOI21xp5_ASAP7_75t_R)                         10.39      48.90 f
+  u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/move_reg_reg[5]/D (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00      48.90 f
+  data arrival time                                                 48.90
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/move_reg_reg[5]/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.01 r
+  library hold time                                      19.03      19.04
+  data required time                                                19.04
+  --------------------------------------------------------------------------
+  data required time                                                19.04
+  data arrival time                                                -48.90
+  --------------------------------------------------------------------------
+  slack (MET)                                                       29.86
+
+
+  Startpoint: h_in0[0] (input port clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/move_reg_reg[0]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   25.00      25.00 r
+  h_in0[0] (in)                                           0.00      25.00 r
+  U1631/Y (AO22x1_ASAP7_75t_R)                           17.61      42.61 r
+  U2401/Y (AOI22xp5_ASAP7_75t_R)                         10.52      53.12 f
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/move_reg_reg[0]/D (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00      53.12 f
+  data arrival time                                                 53.12
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/move_reg_reg[0]/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.01 r
+  library hold time                                      18.69      18.70
+  data required time                                                18.70
+  --------------------------------------------------------------------------
+  data required time                                                18.70
+  data arrival time                                                -53.12
+  --------------------------------------------------------------------------
+  slack (MET)                                                       34.42
+
+
+  Startpoint: h_in0[1] (input port clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/move_reg_reg[1]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   25.00      25.00 r
+  h_in0[1] (in)                                           0.00      25.00 r
+  U1632/Y (AO22x1_ASAP7_75t_R)                           17.61      42.61 r
+  U2400/Y (AOI22xp5_ASAP7_75t_R)                         10.52      53.12 f
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/move_reg_reg[1]/D (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00      53.12 f
+  data arrival time                                                 53.12
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/move_reg_reg[1]/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.01 r
+  library hold time                                      18.69      18.70
+  data required time                                                18.70
+  --------------------------------------------------------------------------
+  data required time                                                18.70
+  data arrival time                                                -53.12
+  --------------------------------------------------------------------------
+  slack (MET)                                                       34.42
+
+
+  Startpoint: h_in0[2] (input port clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/move_reg_reg[2]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   25.00      25.00 r
+  h_in0[2] (in)                                           0.00      25.00 r
+  U1633/Y (AO22x1_ASAP7_75t_R)                           17.61      42.61 r
+  U2399/Y (AOI22xp5_ASAP7_75t_R)                         10.52      53.12 f
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/move_reg_reg[2]/D (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00      53.12 f
+  data arrival time                                                 53.12
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/move_reg_reg[2]/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.01 r
+  library hold time                                      18.69      18.70
+  data required time                                                18.70
+  --------------------------------------------------------------------------
+  data required time                                                18.70
+  data arrival time                                                -53.12
+  --------------------------------------------------------------------------
+  slack (MET)                                                       34.42
+
+
+  Startpoint: h_in0[3] (input port clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/move_reg_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   25.00      25.00 r
+  h_in0[3] (in)                                           0.00      25.00 r
+  U1634/Y (AO22x1_ASAP7_75t_R)                           17.61      42.61 r
+  U2398/Y (AOI22xp5_ASAP7_75t_R)                         10.52      53.12 f
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/move_reg_reg[3]/D (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00      53.12 f
+  data arrival time                                                 53.12
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/move_reg_reg[3]/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.01 r
+  library hold time                                      18.69      18.70
+  data required time                                                18.70
+  --------------------------------------------------------------------------
+  data required time                                                18.70
+  data arrival time                                                -53.12
+  --------------------------------------------------------------------------
+  slack (MET)                                                       34.42
+
+
+  Startpoint: h_in0[4] (input port clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/move_reg_reg[4]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   25.00      25.00 r
+  h_in0[4] (in)                                           0.00      25.00 r
+  U1635/Y (AO22x1_ASAP7_75t_R)                           17.61      42.61 r
+  U2397/Y (AOI22xp5_ASAP7_75t_R)                         10.52      53.12 f
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/move_reg_reg[4]/D (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00      53.12 f
+  data arrival time                                                 53.12
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/move_reg_reg[4]/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.01 r
+  library hold time                                      18.69      18.70
+  data required time                                                18.70
+  --------------------------------------------------------------------------
+  data required time                                                18.70
+  data arrival time                                                -53.12
+  --------------------------------------------------------------------------
+  slack (MET)                                                       34.42
+
+
+  Startpoint: h_in0[5] (input port clocked by clk)
+  Endpoint: u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/move_reg_reg[5]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: min
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                   25.00      25.00 r
+  h_in0[5] (in)                                           0.00      25.00 r
+  U1636/Y (AO22x1_ASAP7_75t_R)                           17.61      42.61 r
+  U2396/Y (AOI22xp5_ASAP7_75t_R)                         10.52      53.12 f
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/move_reg_reg[5]/D (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00      53.12 f
+  data arrival time                                                 53.12
+
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  clock uncertainty                                       0.01       0.01
+  u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/move_reg_reg[5]/CLK (DFFASRHQNx1_ASAP7_75t_R)
+                                                          0.00       0.01 r
+  library hold time                                      18.69      18.70
+  data required time                                                18.70
+  --------------------------------------------------------------------------
+  data required time                                                18.70
+  data arrival time                                                -53.12
+  --------------------------------------------------------------------------
+  slack (MET)                                                       34.42
+
+
+1

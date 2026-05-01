@@ -1,0 +1,377 @@
+CPU Load: 109%, Ram Free: 0 GB, Swap Free: 1 GB, Work Disk Free: 2 GB, Tmp Disk Free: 820 GB
+====================================================================================================
+| Flow Information                                                                                 |
+----------------------------------------------------------------------------------------------------
+| Flow         | Design Compiler                                                                   |
+| Command Line | -gate_clock                                                                       |
+====================================================================================================
+| Design Information                                      | Value                                  |
+====================================================================================================
+| Number of Scenarios                                     | 0                                      |
+| Leaf Cell Count                                         | 6060                                   |
+| Number of User Hierarchies                              | 125                                    |
+| Sequential Cell Count                                   | 831                                    |
+| Macro Count                                             | 0                                      |
+| Pad Count                                               | 0                                      |
+| Number of Power Domains                                 | 0                                      |
+| Number of Path Groups                                   | 2                                      |
+| Number of VT Class                                      | 0                                      |
+| Number of Clocks                                        | 1                                      |
+| Number of Dont Touch Cells                              | 74                                     |
+| Number of Dont Touch Nets                               | 209                                    |
+| Number of Size Only Cells                               | 57                                     |
+| Design with Target Library Subset (with clock_path)     | false  (false )                        |
+| Design with UPF Data                                    | false                                  |
+====================================================================================================
+
+Information: There are 200 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_1_DW01_add_0'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_1_DW01_add_1'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_1_DW02_mult_0'
+  Processing 'SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_1'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_1'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_2_DW01_add_0_DW01_add_2'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_2_DW01_add_1_DW01_add_3'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_2_DW02_mult_0_DW02_mult_1'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_2'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_3_DW01_add_0_DW01_add_4'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_3_DW01_add_1_DW01_add_5'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_3_DW02_mult_0_DW02_mult_2'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_3'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_4_DW01_add_0_DW01_add_6'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_4_DW01_add_1_DW01_add_7'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_4_DW02_mult_0_DW02_mult_3'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_4'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_5_DW01_add_0_DW01_add_8'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_5_DW01_add_1_DW01_add_9'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_5_DW02_mult_0_DW02_mult_4'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_5'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_6_DW01_add_0_DW01_add_10'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_6_DW01_add_1_DW01_add_11'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_6_DW02_mult_0_DW02_mult_5'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_6'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_7_DW01_add_0_DW01_add_12'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_7_DW01_add_1_DW01_add_13'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_7_DW02_mult_0_DW02_mult_6'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_7'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_8_DW01_add_0_DW01_add_14'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_8_DW01_add_1_DW01_add_15'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_8_DW02_mult_0_DW02_mult_7'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_8'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_9_DW01_add_0_DW01_add_16'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_9_DW01_add_1_DW01_add_17'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_9_DW02_mult_0_DW02_mult_8'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_9'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_10_DW01_add_0_DW01_add_18'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_10_DW01_add_1_DW01_add_19'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_10_DW02_mult_0_DW02_mult_9'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_10'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_11_DW01_add_0_DW01_add_20'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_11_DW01_add_1_DW01_add_21'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_11_DW02_mult_0_DW02_mult_10'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_11'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_12_DW01_add_0_DW01_add_22'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_12_DW01_add_1_DW01_add_23'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_12_DW02_mult_0_DW02_mult_11'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_12'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_13_DW01_add_0_DW01_add_24'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_13_DW01_add_1_DW01_add_25'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_13_DW02_mult_0_DW02_mult_12'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_13'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_14_DW01_add_0_DW01_add_26'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_14_DW01_add_1_DW01_add_27'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_14_DW02_mult_0_DW02_mult_13'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_14'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_15_DW01_add_0_DW01_add_28'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_15_DW01_add_1_DW01_add_29'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_15_DW02_mult_0_DW02_mult_14'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_15'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_0_DW01_add_0_DW01_add_30'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_0_DW01_add_1_DW01_add_31'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_0_DW02_mult_0_DW02_mult_15'
+  Processing 'SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_0'
+  Processing 'pe_DATA_W6_WEIGHT_W2_ACC_W13_0'
+  Processing 'SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_1'
+  Processing 'fifo9_DATA_W13_1'
+  Processing 'SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_0'
+  Processing 'fifo9_DATA_W13_0'
+  Processing 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4'
+  Processing 'SNPS_CLOCK_GATE_HIGH_zigzag_fsm'
+  Processing 'zigzag_fsm'
+  Processing 'top'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+Information: Skipping clock gating on design top, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_zigzag_fsm, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_23, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_31, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_0_DW02_mult_0_DW02_mult_15, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_0_DW01_add_0_DW01_add_30, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_15_DW02_mult_0_DW02_mult_14, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_15_DW01_add_0_DW01_add_28, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_14_DW02_mult_0_DW02_mult_13, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_14_DW01_add_0_DW01_add_26, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_13_DW02_mult_0_DW02_mult_12, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_13_DW01_add_0_DW01_add_24, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_12_DW02_mult_0_DW02_mult_11, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_12_DW01_add_0_DW01_add_22, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_11_DW02_mult_0_DW02_mult_10, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_11_DW01_add_0_DW01_add_20, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_10_DW02_mult_0_DW02_mult_9, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_10_DW01_add_0_DW01_add_18, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_9_DW02_mult_0_DW02_mult_8, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_9_DW01_add_0_DW01_add_16, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_8_DW02_mult_0_DW02_mult_7, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_8_DW01_add_0_DW01_add_14, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_7_DW02_mult_0_DW02_mult_6, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_7_DW01_add_0_DW01_add_12, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_6_DW02_mult_0_DW02_mult_5, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_6_DW01_add_0_DW01_add_10, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_5_DW02_mult_0_DW02_mult_4, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_5_DW01_add_0_DW01_add_8, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_4_DW02_mult_0_DW02_mult_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_4_DW01_add_0_DW01_add_6, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_3_DW02_mult_0_DW02_mult_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_3_DW01_add_0_DW01_add_4, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_2_DW02_mult_0_DW02_mult_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_2_DW01_add_0_DW01_add_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_1_DW02_mult_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_1_DW01_add_0, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_0_DW01_add_1_DW01_add_31, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_15_DW01_add_1_DW01_add_29, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_14_DW01_add_1_DW01_add_27, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_13_DW01_add_1_DW01_add_25, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_12_DW01_add_1_DW01_add_23, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_11_DW01_add_1_DW01_add_21, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_10_DW01_add_1_DW01_add_19, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_9_DW01_add_1_DW01_add_17, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_8_DW01_add_1_DW01_add_15, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_7_DW01_add_1_DW01_add_13, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_6_DW01_add_1_DW01_add_11, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_5_DW01_add_1_DW01_add_9, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_4_DW01_add_1_DW01_add_7, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_3_DW01_add_1_DW01_add_5, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_2_DW01_add_1_DW01_add_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_1_DW01_add_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_4, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_5, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_6, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_7, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_8, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_9, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_10, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_11, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_12, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_13, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_14, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_15, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_16, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_17, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_18, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_19, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_20, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_21, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_22, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_23, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_24, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_25, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_26, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_27, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_28, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_29, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_pe_DATA_W6_WEIGHT_W2_ACC_W13_30, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_1, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_2, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_3, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_4, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_5, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_6, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_7, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_8, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_9, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_10, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_11, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_12, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_13, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_14, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_15, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_16, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_17, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_18, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_19, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_20, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_21, since there are no registers. (PWR-806)
+Information: Skipping clock gating on design SNPS_CLOCK_GATE_HIGH_fifo9_DATA_W13_22, since there are no registers. (PWR-806)
+Information: Performing clock-gating on design zigzag_fsm. (PWR-730)
+Information: Performing clock-gating on design fifo9_DATA_W13_0. (PWR-730)
+Information: Performing clock-gating on design fifo9_DATA_W13_1. (PWR-730)
+Information: Performing clock-gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_0. (PWR-730)
+Information: Performing clock-gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_15. (PWR-730)
+Information: Performing clock-gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_14. (PWR-730)
+Information: Performing clock-gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_13. (PWR-730)
+Information: Performing clock-gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_12. (PWR-730)
+Information: Performing clock-gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_11. (PWR-730)
+Information: Performing clock-gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_10. (PWR-730)
+Information: Performing clock-gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_9. (PWR-730)
+Information: Performing clock-gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_8. (PWR-730)
+Information: Performing clock-gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_7. (PWR-730)
+Information: Performing clock-gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_6. (PWR-730)
+Information: Performing clock-gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_5. (PWR-730)
+Information: Performing clock-gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_4. (PWR-730)
+Information: Performing clock-gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_3. (PWR-730)
+Information: Performing clock-gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_2. (PWR-730)
+Information: Performing clock-gating on design pe_DATA_W6_WEIGHT_W2_ACC_W13_1. (PWR-730)
+
+  Beginning Mapping Optimizations  (High effort)
+  -------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:00:08     825.2      0.00       0.0   10866.0                                0.00  
+    0:00:08     825.2      0.00       0.0   10866.0                                0.00  
+    0:00:08     825.2      0.00       0.0   10866.0                                0.00  
+    0:00:08     825.2      0.00       0.0   10866.0                                0.00  
+    0:00:08     825.2      0.00       0.0   10866.0                                0.00  
+    0:00:10     728.2      0.00       0.0   10193.3                                0.00  
+    0:00:10     716.6      0.00       0.0   10175.4                                0.00  
+    0:00:11     716.6      0.00       0.0   10116.6                                0.00  
+    0:00:11     716.6      0.00       0.0   10116.6                                0.00  
+    0:00:11     716.6      0.00       0.0   10116.6                                0.00  
+    0:00:11     716.6      0.00       0.0   10116.6                                0.00  
+    0:00:11     716.6      0.00       0.0   10116.6                                0.00  
+    0:00:45     715.5      0.00       0.0    9791.9                                0.00  
+    0:01:29     715.8      0.00       0.0    9735.5                                0.00  
+    0:01:41     716.1      0.00       0.0    9692.2                                0.00  
+    0:01:44     716.4      0.00       0.0    9678.6                                0.00  
+    0:01:49     716.5      0.00       0.0    9667.0                                0.00  
+    0:01:52     716.5      0.00       0.0    9664.4                                0.00  
+    0:01:54     716.4      0.00       0.0    9662.2                                0.00  
+    0:01:55     716.4      0.00       0.0    9660.7                                0.00  
+    0:01:56     716.4      0.00       0.0    9659.8                                0.00  
+    0:01:56     716.4      0.00       0.0    9658.9                                0.00  
+    0:01:56     716.4      0.00       0.0    9658.2                                0.00  
+    0:01:57     716.4      0.00       0.0    9657.5                                0.00  
+    0:01:57     716.4      0.00       0.0    9656.9                                0.00  
+    0:01:58     716.4      0.00       0.0    9656.5                                0.00  
+    0:01:58     716.4      0.00       0.0    9656.5                                0.00  
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:01:58     716.4      0.00       0.0    9656.5                                0.00  
+    0:01:58     716.4      0.00       0.0    9656.5                                0.00  
+    0:01:58     716.4      0.00       0.0    9656.5                                0.00  
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_fanout)
+  ----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:01:58     716.4      0.00       0.0    9656.5                                0.00  
+    0:01:59     733.2      0.00       0.0    9573.4 u_fsm/state[2]                 0.00  
+    0:01:59     741.5      0.00       0.0    9570.4 u_pe_array/g_pe_row[3].g_pe_col[0].u_pe/n30      0.00  
+    0:01:59     747.8      0.00       0.0    9580.9 u_pe_array/g_pe_row[1].g_pe_col[2].u_pe/n76      0.00  
+    0:01:59     757.6      0.00       0.0    9570.0 u_pe_array/g_pe_row[2].g_pe_col[2].u_pe/n61      0.00  
+    0:01:59     766.4      0.00       0.0    9562.8 u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/n62      0.00  
+    0:02:00     771.8      0.00       0.0    9513.3 u_pe_array/g_pe_row[0].g_pe_col[1].u_pe/n47      0.00  
+    0:02:00     776.8      0.00       0.0    9469.3 u_pe_array/u_fifo2/wr_ptr[1]      0.00  
+    0:02:00     783.3      0.00       0.0    9460.9 u_pe_array/g_pe_row[3].g_pe_col[1].u_pe/n33      0.00  
+    0:02:01     798.9      0.00       0.0    9438.0 u_pe_array/g_pe_row[2].g_pe_col[3].u_pe/net36519      0.00  
+    0:02:01     808.2      0.00       0.0    9391.2 u_pe_array/g_pe_row[2].g_pe_col[2].u_pe/mult_97/net37044      0.00  
+    0:02:01     822.5      0.00       0.0    9405.0 u_pe_array/u_fifo1/net36214      0.00  
+    0:02:02     838.6      0.00       0.0    9436.4 u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/n34      0.00  
+    0:02:02     845.5      0.00       0.0    9420.1 u_pe_array/g_pe_row[0].g_pe_col[3].u_pe/net36334      0.00  
+    0:02:02     849.6      0.00       0.0    9412.3 u_pe_array/g_pe_row[3].g_pe_col[0].u_pe/net41055      0.00  
+    0:02:03     852.9      0.00       0.0    9375.6 u_fsm/n54                      0.00  
+    0:02:03     855.2      0.00       0.0    9314.2 u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/psum_out[2]      0.00  
+    0:02:03     856.9      0.00       0.0    9293.8 u_pe_array/g_pe_row[2].g_pe_col[3].u_pe/psum_out[1]      0.00  
+    0:02:04     858.7      0.00       0.0    9273.2 u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/psum_out[1]      0.00  
+    0:02:04     860.5      0.00       0.0    9252.1 u_pe_array/g_pe_row[0].g_pe_col[3].u_pe/psum_out[1]      0.00  
+    0:02:04     862.4      0.00       0.0    9228.7 u_pe_array/g_pe_row[3].g_pe_col[1].u_pe/psum_out[6]      0.00  
+    0:02:05     863.8      0.00       0.0    9209.2 u_pe_array/g_pe_row[2].g_pe_col[1].u_pe/psum_out[6]      0.00  
+    0:02:05     865.7      0.00       0.0    9183.4 u_pe_array/u_fifo2/_cse_4      0.00  
+    0:02:05     868.1      0.00       0.0    9145.0 u_pe_array/g_pe_row[3].g_pe_col[2].u_pe/n65      0.00  
+    0:02:05     869.5      0.00       0.0    9118.3 u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/n67      0.00  
+    0:02:06     870.9      0.00       0.0    9091.5 u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/n71      0.00  
+    0:02:06     872.9      0.00       0.0    9055.8 u_pe_array/g_pe_row[0].g_pe_col[0].u_pe/mult_97/PRODUCT[0]      0.00  
+    0:02:06     873.9      0.00       0.0    9036.7 u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/add_113/n25      0.00  
+    0:02:09     874.0      0.00       0.0    9034.8 u_pe_array/g_pe_row[0].g_pe_col[1].u_pe/add_113/n25      0.00  
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                                  
+   ELAPSED            WORST NEG   SETUP    DESIGN                              MIN DELAY 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT             COST    
+  --------- --------- --------- --------- --------- ------------------------- -----------
+    0:02:11     874.0      0.00       0.0    9034.8                                0.00  
+    0:02:12     874.0      0.00       0.0    9034.8                                0.00  
+    0:02:13     808.0      0.00       0.0    8933.0                                0.00  
+    0:02:13     784.7      0.00       0.0    8894.4                                0.00  
+    0:02:13     765.1      0.00       0.0    8873.6                                0.00  
+    0:02:13     759.0      0.00       0.0    8858.9                                0.00  
+    0:02:13     757.4      0.00       0.0    8852.4                                0.00  
+    0:02:13     757.4      0.00       0.0    8852.4                                0.00  
+    0:02:14     757.3      0.00       0.0    8852.1                                0.00  
+    0:02:14     744.0      0.00       0.0    8868.5                                0.00  
+    0:02:14     744.0      0.00       0.0    8868.5                                0.00  
+    0:02:14     744.0      0.00       0.0    8868.5                                0.00  
+    0:02:14     744.0      0.00       0.0    8868.5                                0.00  
+    0:02:14     744.0      0.00       0.0    8868.5                                0.00  
+    0:02:14     744.0      0.00       0.0    8868.5                                0.00  
+    0:02:14     742.6      0.00       0.0    8868.5                                0.00  
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+CPU Load: 108%, Ram Free: 0 GB, Swap Free: 1 GB, Work Disk Free: 2 GB, Tmp Disk Free: 820 GB
+Information: Total number of MV cells in the design.
+----------------------------------------------------------------------------------------------------
+ MV Cells                                           Total Number                                   
+----------------------------------------------------------------------------------------------------
+ Level Shifter:                                     0                                             
+ Enable Level Shifter:                              0                                             
+ Isolation Cell:                                    0                                             
+ Retention Cell:                                    0                                             
+ Retention Clamp Cell:                              0                                             
+ Switch Cell:                                       0                                             
+ Always-On Cell:                                    0                                             
+ Repeater Cell:                                     0                                             
+
+----------------------------------------------------------------------------------------------------
+Unmapped MV Cells 
+----------------------------------------------------------------------------------------------------
+0 Isolation Cells are unmapped 
+0 Retention Clamp Cells are unmapped 
+----------------------------------------------------------------------------------------------------
+1

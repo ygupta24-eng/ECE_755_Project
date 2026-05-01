@@ -525,6 +525,52 @@ if {[catch {
     puts "Warning: DRC verification skipped"
 }
 
+##############################################################################
+# GDS Export and LVS Preparation
+##############################################################################
+puts "Preparing GDS and netlist for LVS verification..."
+
+# Export GDS for LVS
+if {[catch {
+    catch { file mkdir outputs/gds }
+    setStreamOutMode -reset
+    streamOut outputs/gds/top_apr_cg.gds \
+        -mapFile {./asap7sc7p5t_28/GDS/gds2.map} \
+        -libName DesignLib \
+        -uniquifyCellNames \
+        -outputMacros
+    puts "✓ GDS exported: ./outputs/gds/top_apr_cg.gds"
+} msg]} {
+    puts "Warning: GDS export skipped: $msg"
+}
+
+# Export netlist for LVS comparison
+if {[catch {
+    defOut -netlist ./outputs/top_apr_cg_lvs.v
+    puts "✓ Netlist exported for LVS: ./outputs/top_apr_cg_lvs.v"
+} msg]} {
+    puts "Warning: LVS netlist export skipped: $msg"
+}
+
+# LVS Verification (external tool required)
+if {[catch {
+    puts "Launching LVS verification..."
+    puts "  Note: LVS requires Cadence Pegasus or Mentor Calibre"
+    puts "  GDS file: ./outputs/gds/top_apr_cg.gds"
+    puts "  Netlist file: ./outputs/top_apr_cg_lvs.v"
+    
+    # Uncomment below if Pegasus is available in your environment
+    # verifyLVS -layerFile ./asap7sc7p5t_28/LEF/asap7_tech_4x_201209.lef \
+    #           -layoutFile ./outputs/gds/top_apr_cg.gds \
+    #           -schematicFile ./outputs/top_apr_cg_lvs.v \
+    #           -outDir ./reports/ \
+    #           -reportFile ./reports/lvs_cg_final.rpt
+    
+    puts "  To run LVS: Configure Pegasus/Calibre and uncomment verifyLVS command"
+} msg]} {
+    puts "Note: External LVS tool not configured in flow"
+}
+
 # Timing reports (wrapped for safety)
 if {[catch {
     report_timing -max_paths 10 > ./timingReports/top_postRoute_setup.summary
@@ -656,12 +702,15 @@ puts ""
 puts "Output Files (if generated):"
 puts "  Gate-level Verilog (no PG): ./outputs/top_apr_cg.v"
 puts "  Gate-level Verilog (with PG): ./outputs/top_apr_cg_pg.v"
+puts "  LVS Netlist: ./outputs/top_apr_cg_lvs.v"
+puts "  GDS (LVS): ./outputs/gds/top_apr_cg.gds"
 puts "  DEF File: ./outputs/top_apr_cg_v${VERSION}.def"
 puts "  Constraints (SDC): ./outputs/top_apr_cg.sdc"
 puts "  Parasitics (SPEF): ./outputs/top_apr_cg.spef"
 puts ""
 puts "Reports & Timing (if generated):"
 puts "  DRC Report: ./reports/drc_final.rpt"
+puts "  LVS Report: ./reports/lvs_cg_final.rpt (requires Pegasus/Calibre)"
 puts "  Timing Setup: ./timingReports/top_postRoute_setup.summary"
 puts "  Timing All Paths: ./timingReports/top_postRoute_all_paths.summary"
 puts "  ICG Timing: ./timingReports/icg_timing.rpt"

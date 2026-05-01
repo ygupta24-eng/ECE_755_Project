@@ -1,12 +1,19 @@
 Design Name: top
-Run Directory: /openlane/designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_06.22.25
-Source not found.
+Run Directory: /openlane/designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_07.07.32
+----------------------------------------
+
+Magic DRC Summary:
+Source: /openlane/designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_07.07.32/reports/signoff/drc.rpt
+Total Magic DRC violations is 0
 ----------------------------------------
 
 LVS Summary:
-Source: /openlane/designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_06.22.25/logs/signoff/top.lef.lvs.log
-Source not found.
+Source: /openlane/designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_07.07.32/logs/signoff/43-top.lef.lvs.log
+Number of nets: 5197                       |Number of nets: 5197                       
+Design is LVS clean.
 ----------------------------------------
 
 Antenna Summary:
-No antenna report found.
+Source: /openlane/designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_07.07.32/logs/signoff/45-arc.log
+Pin violations: 3
+Net violations: 3

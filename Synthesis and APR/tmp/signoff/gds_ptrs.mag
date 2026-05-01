@@ -1,6 +1,6 @@
 << properties >>
-string FIXED_BBOX 0 0 67429 69573
-string GDS_END 13540418
-string GDS_FILE /openlane/designs/dnn/runs/MS2/results/signoff/top.magic.gds
-string GDS_START 722104
+string FIXED_BBOX 0 0 64809 66953
+string GDS_END 13989710
+string GDS_FILE /openlane/designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_07.07.32/results/signoff/top.magic.gds
+string GDS_START 749622
 << end >>

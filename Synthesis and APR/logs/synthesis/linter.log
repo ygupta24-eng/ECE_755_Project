@@ -1,54 +1,30 @@
-%Warning-EOFNEWLINE: /openlane/designs/dnn/MS2_Synthesis_sky130/top.sv:87:10: Missing newline at end of file (POSIX 3.206).
-                                                                            : ... Suggest add newline.
-   87 | endmodule
-      |          ^
-                     ... For warning description see https://verilator.org/warn/EOFNEWLINE?v=5.009
-                     ... Use "/* verilator lint_off EOFNEWLINE */" and lint_on around source to disable this message.
-%Warning-EOFNEWLINE: /openlane/designs/dnn/MS2_Synthesis_sky130/zigzag.sv:254:10: Missing newline at end of file (POSIX 3.206).
-                                                                                : ... Suggest add newline.
-  254 | endmodule
-      |          ^
-%Warning-EOFNEWLINE: /openlane/designs/dnn/MS2_Synthesis_sky130/control.sv:285:10: Missing newline at end of file (POSIX 3.206).
-                                                                                 : ... Suggest add newline.
-  285 | endmodule
-      |          ^
-%Warning-EOFNEWLINE: /openlane/designs/dnn/MS2_Synthesis_sky130/fifo9.sv:49:10: Missing newline at end of file (POSIX 3.206).
-                                                                              : ... Suggest add newline.
-   49 | endmodule
-      |          ^
-%Warning-WIDTHEXPAND: /openlane/designs/dnn/MS2_Synthesis_sky130/fifo9.sv:24:29: Operator EQ expects 32 bits on the LHS, but LHS's VARREF 'count' generates 4 bits.
+%Warning-WIDTHEXPAND: /openlane/designs/dnn/MS2_Synthesis_sky130/fifo9.sv:37:35: Operator EQ expects 32 bits on the LHS, but LHS's VARREF 'wr_ptr' generates 4 bits.
                                                                                : ... In instance top.u_pe_array.u_fifo2
-   24 |     assign full    = (count == DEPTH);
-      |                             ^~
-%Warning-WIDTHTRUNC: /openlane/designs/dnn/MS2_Synthesis_sky130/fifo9.sv:26:28: Bit extraction of array[8:0] requires 4 bit index, not 5 bits.
-                                                                              : ... In instance top.u_pe_array.u_fifo2
-   26 |     assign rd_data = buffer[rd_ptr];   
-      |                            ^
-%Warning-WIDTHTRUNC: /openlane/designs/dnn/MS2_Synthesis_sky130/fifo9.sv:35:23: Bit extraction of array[8:0] requires 4 bit index, not 5 bits.
-                                                                              : ... In instance top.u_pe_array.u_fifo2
-   35 |                 buffer[wr_ptr] <= wr_data;
-      |                       ^
-%Warning-WIDTHEXPAND: /openlane/designs/dnn/MS2_Synthesis_sky130/fifo9.sv:36:43: Operator EQ expects 32 bits on the LHS, but LHS's VARREF 'wr_ptr' generates 5 bits.
+   37 |                 wr_ptr <= (wr_ptr == DEPTH-1) ? {PTR_W{1'b0}} : wr_ptr + {{PTR_W-1{1'b0}}, 1'b1};
+      |                                   ^~
+                      ... For warning description see https://verilator.org/warn/WIDTHEXPAND?v=5.009
+                      ... Use "/* verilator lint_off WIDTHEXPAND */" and lint_on around source to disable this message.
+%Warning-WIDTHEXPAND: /openlane/designs/dnn/MS2_Synthesis_sky130/fifo9.sv:40:35: Operator EQ expects 32 bits on the LHS, but LHS's VARREF 'rd_ptr' generates 4 bits.
                                                                                : ... In instance top.u_pe_array.u_fifo2
-   36 |                 wr_ptr         <= (wr_ptr == DEPTH-1) ? '0 : wr_ptr + 1;
-      |                                           ^~
-%Warning-WIDTHEXPAND: /openlane/designs/dnn/MS2_Synthesis_sky130/fifo9.sv:39:43: Operator EQ expects 32 bits on the LHS, but LHS's VARREF 'rd_ptr' generates 5 bits.
-                                                                               : ... In instance top.u_pe_array.u_fifo2
-   39 |                 rd_ptr         <= (rd_ptr == DEPTH-1) ? '0 : rd_ptr + 1;
-      |                                           ^~
-%Warning-UNUSEDSIGNAL: /openlane/designs/dnn/MS2_Synthesis_sky130/zigzag.sv:150:23: Signal is not used: 'fifo1_full'
+   40 |                 rd_ptr <= (rd_ptr == DEPTH-1) ? {PTR_W{1'b0}} : rd_ptr + {{PTR_W-1{1'b0}}, 1'b1};
+      |                                   ^~
+%Warning-UNUSEDPARAM: /openlane/designs/dnn/MS2_Synthesis_sky130/zigzag.sv:7:23: Parameter is not used: 'UNQ_DIR'
+                                                                               : ... In instance top.u_pe_array
+    7 |     parameter integer UNQ_DIR  = 4
+      |                       ^~~~~~~
+%Warning-UNUSEDSIGNAL: /openlane/designs/dnn/MS2_Synthesis_sky130/zigzag.sv:124:22: Signal is not used: 'fifo1_full'
                                                                                   : ... In instance top.u_pe_array
-  150 |     logic             fifo1_full, fifo1_empty;
-      |                       ^~~~~~~~~~
-%Warning-UNUSEDSIGNAL: /openlane/designs/dnn/MS2_Synthesis_sky130/zigzag.sv:150:35: Signal is not used: 'fifo1_empty'
+  124 |     wire             fifo1_full, fifo1_empty;
+      |                      ^~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /openlane/designs/dnn/MS2_Synthesis_sky130/zigzag.sv:124:34: Signal is not used: 'fifo1_empty'
                                                                                   : ... In instance top.u_pe_array
-  150 |     logic             fifo1_full, fifo1_empty;
-      |                                   ^~~~~~~~~~~
-%Warning-UNUSEDSIGNAL: /openlane/designs/dnn/MS2_Synthesis_sky130/zigzag.sv:151:23: Signal is not used: 'fifo2_full'
+  124 |     wire             fifo1_full, fifo1_empty;
+      |                                  ^~~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /openlane/designs/dnn/MS2_Synthesis_sky130/zigzag.sv:125:22: Signal is not used: 'fifo2_full'
                                                                                   : ... In instance top.u_pe_array
-  151 |     logic             fifo2_full, fifo2_empty;
-      |                       ^~~~~~~~~~
-%Warning-UNUSEDSIGNAL: /openlane/designs/dnn/MS2_Synthesis_sky130/zigzag.sv:151:35: Signal is not used: 'fifo2_empty'
+  125 |     wire             fifo2_full, fifo2_empty;
+      |                      ^~~~~~~~~~
+%Warning-UNUSEDSIGNAL: /openlane/designs/dnn/MS2_Synthesis_sky130/zigzag.sv:125:34: Signal is not used: 'fifo2_empty'
                                                                                   : ... In instance top.u_pe_array
-  151 |     logic             fifo2_full, fifo2_empty;
-      |                                   ^~~~~~~~~~~
+  125 |     wire             fifo2_full, fifo2_empty;
+      |                                  ^~~~~~~~~~~

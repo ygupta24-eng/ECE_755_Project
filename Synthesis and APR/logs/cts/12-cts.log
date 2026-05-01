@@ -1,11 +1,11 @@
 OpenROAD 41a51eaf4ca2171c92ff38afb91eb37bbd3f36da 
 This program is licensed under the BSD-3 license. See the LICENSE file for details.
 Components of this program may be licensed under more restrictive licenses which must be honored.
-[INFO]: Reading ODB at '/openlane/designs/dnn/runs/MS2/results/placement/top.odb'…
+[INFO]: Reading ODB at '/openlane/designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_07.07.32/results/placement/top.odb'…
 define_corners Slowest Typical Fastest
-read_liberty -corner Slowest /openlane/designs/dnn/runs/MS2/tmp/cts/cts-slowest.lib
-read_liberty -corner Typical /openlane/designs/dnn/runs/MS2/tmp/cts/cts.lib
-read_liberty -corner Fastest /openlane/designs/dnn/runs/MS2/tmp/cts/cts-fastest.lib
+read_liberty -corner Slowest /openlane/designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_07.07.32/tmp/cts/cts-slowest.lib
+read_liberty -corner Typical /openlane/designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_07.07.32/tmp/cts/cts.lib
+read_liberty -corner Fastest /openlane/designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_07.07.32/tmp/cts/cts-fastest.lib
 Using 1e-12 for capacitance...
 Using 1e+03 for resistance...
 Using 1e-09 for time...
@@ -13,7 +13,7 @@ Using 1e+00 for voltage...
 Using 1e-03 for current...
 Using 1e-09 for power...
 Using 1e-06 for distance...
-Reading design constraints file at '/openlane/designs/dnn/runs/MS2/tmp/placement/9-resizer.sdc'…
+Reading design constraints file at '/openlane/designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_07.07.32/tmp/placement/9-resizer.sdc'…
 [INFO]: Setting RC values...
 [INFO]: Configuring cts characterization...
 [INFO]: Performing clock tree synthesis...
@@ -32,76 +32,76 @@ TritonCTS forced slew degradation on these wires.
 [INFO CTS-0047]     Number of keys in characterization LUT: 1624.
 [INFO CTS-0048]     Actual min input cap: 1.
 [INFO CTS-0007] Net "clk" found for clock "clk".
-[INFO CTS-0010]  Clock net "clk" has 855 sinks.
+[INFO CTS-0010]  Clock net "clk" has 754 sinks.
 [INFO CTS-0008] TritonCTS found 1 clock nets.
 [INFO CTS-0097] Characterization used 2 buffer(s) types.
 [INFO CTS-0027] Generating H-Tree topology for net clk.
-[INFO CTS-0028]  Total number of sinks: 855.
+[INFO CTS-0028]  Total number of sinks: 754.
 [INFO CTS-0029]  Sinks will be clustered in groups of up to 25 and with maximum cluster diameter of 50.0 um.
 [INFO CTS-0030]  Number of static layers: 0.
 [INFO CTS-0020]  Wire segment unit: 13000  dbu (13 um).
-[INFO CTS-0019]  Total number of sinks after clustering: 109.
-[INFO CTS-0024]  Normalized sink region: [(0.551154, 1.43962), (24.7073, 25.4262)].
-[INFO CTS-0025]     Width:  24.1562.
-[INFO CTS-0026]     Height: 23.9865.
+[INFO CTS-0019]  Total number of sinks after clustering: 94.
+[INFO CTS-0024]  Normalized sink region: [(1.12615, 1.92989), (23.7481, 23.775)].
+[INFO CTS-0025]     Width:  22.6219.
+[INFO CTS-0026]     Height: 21.8451.
  Level 1
     Direction: Horizontal
-    Sinks per sub-region: 55
-    Sub-region size: 12.0781 X 23.9865
+    Sinks per sub-region: 47
+    Sub-region size: 11.3110 X 21.8451
 [INFO CTS-0034]     Segment length (rounded): 6.
     Key: 1029 inSlew: 1 inCap: 1 outSlew: 2 load: 1 length: 6 delay: 1
  Level 2
     Direction: Vertical
-    Sinks per sub-region: 28
-    Sub-region size: 12.0781 X 11.9933
+    Sinks per sub-region: 24
+    Sub-region size: 11.3110 X 10.9226
 [INFO CTS-0034]     Segment length (rounded): 6.
     Key: 1029 inSlew: 1 inCap: 1 outSlew: 2 load: 1 length: 6 delay: 1
  Level 3
     Direction: Horizontal
-    Sinks per sub-region: 14
-    Sub-region size: 6.0390 X 11.9933
-[INFO CTS-0034]     Segment length (rounded): 4.
-    Key: 255 inSlew: 2 inCap: 1 outSlew: 3 load: 1 length: 4 delay: 1
+    Sinks per sub-region: 12
+    Sub-region size: 5.6555 X 10.9226
+[INFO CTS-0034]     Segment length (rounded): 2.
+    Key: 39 inSlew: 2 inCap: 1 outSlew: 3 load: 1 length: 2 delay: 1
 [INFO CTS-0032]  Stop criterion found. Max number of sinks is 15.
-[INFO CTS-0035]  Number of sinks covered: 109.
-[INFO CTS-0018]     Created 117 clock buffers.
+[INFO CTS-0035]  Number of sinks covered: 94.
+[INFO CTS-0018]     Created 102 clock buffers.
 [INFO CTS-0012]     Minimum number of buffers in the clock path: 2.
 [INFO CTS-0013]     Maximum number of buffers in the clock path: 3.
-[INFO CTS-0015]     Created 117 clock nets.
-[INFO CTS-0016]     Fanout distribution for the current clock = 2:2, 3:4, 4:11, 5:11, 6:13, 7:11, 8:8, 9:11, 10:15, 11:8, 12:6, 13:6, 14:8, 15:2..
+[INFO CTS-0015]     Created 102 clock nets.
+[INFO CTS-0016]     Fanout distribution for the current clock = 2:3, 3:2, 4:9, 5:7, 6:10, 7:14, 8:15, 9:8, 10:5, 11:9, 12:7, 13:2, 14:2, 15:6, 17:1, 20:1..
 [INFO CTS-0017]     Max level of the clock tree: 3.
 [INFO CTS-0098] Clock net "clk"
-[INFO CTS-0099]  Sinks 855
-[INFO CTS-0100]  Leaf buffers 108
-[INFO CTS-0101]  Average sink wire length 536.31 um
+[INFO CTS-0099]  Sinks 754
+[INFO CTS-0100]  Leaf buffers 93
+[INFO CTS-0101]  Average sink wire length 536.19 um
 [INFO CTS-0102]  Path depth 2 - 3
 [INFO]: Repairing long wires on clock nets...
 [INFO RSZ-0058] Using max wire length 4508um.
 Setting global connections for newly added cells…
-Writing OpenROAD database to '/openlane/designs/dnn/runs/MS2/results/cts/top.odb'…
-Writing layout to '/openlane/designs/dnn/runs/MS2/results/cts/top.def'…
-Writing timing constraints to '/openlane/designs/dnn/runs/MS2/results/cts/top.sdc'…
+Writing OpenROAD database to '/openlane/designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_07.07.32/results/cts/top.odb'…
+Writing layout to '/openlane/designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_07.07.32/results/cts/top.def'…
+Writing timing constraints to '/openlane/designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_07.07.32/results/cts/top.sdc'…
 [INFO]: Legalizing...
 Placement Analysis
 ---------------------------------
-total displacement       1131.5 u
+total displacement       1013.7 u
 average displacement        0.2 u
-max displacement            7.8 u
-original HPWL          107858.9 u
-legalized HPWL         111765.9 u
+max displacement            8.7 u
+original HPWL           95598.2 u
+legalized HPWL          99051.8 u
 delta HPWL                    4 %
 
-[INFO DPL-0020] Mirrored 1689 instances
-[INFO DPL-0021] HPWL before          111765.9 u
-[INFO DPL-0022] HPWL after           108579.8 u
+[INFO DPL-0020] Mirrored 1467 instances
+[INFO DPL-0021] HPWL before           99051.8 u
+[INFO DPL-0022] HPWL after            96146.1 u
 [INFO DPL-0023] HPWL delta               -2.9 %
 Setting global connections for newly added cells…
-Writing OpenROAD database to '/openlane/designs/dnn/runs/MS2/results/cts/top.odb'…
-Writing layout to '/openlane/designs/dnn/runs/MS2/results/cts/top.def'…
-Writing timing constraints to '/openlane/designs/dnn/runs/MS2/results/cts/top.sdc'…
+Writing OpenROAD database to '/openlane/designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_07.07.32/results/cts/top.odb'…
+Writing layout to '/openlane/designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_07.07.32/results/cts/top.def'…
+Writing timing constraints to '/openlane/designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_07.07.32/results/cts/top.sdc'…
 cts_report
 [INFO CTS-0003] Total number of Clock Roots: 1.
-[INFO CTS-0004] Total number of Buffers Inserted: 117.
-[INFO CTS-0005] Total number of Clock Subnets: 117.
-[INFO CTS-0006] Total number of Sinks: 855.
+[INFO CTS-0004] Total number of Buffers Inserted: 102.
+[INFO CTS-0005] Total number of Clock Subnets: 102.
+[INFO CTS-0006] Total number of Sinks: 754.
 cts_report_end

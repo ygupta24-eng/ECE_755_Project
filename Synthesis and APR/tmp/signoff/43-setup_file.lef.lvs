@@ -1,0 +1,1 @@
+lvs {/openlane/designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_07.07.32/results/signoff/top.spice top} {/openlane/designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_07.07.32/tmp/signoff/40-top.pnl.v top} /home/vidhya/.ciel/sky130A/libs.tech/netgen/sky130A_setup.tcl /openlane/designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_07.07.32/logs/signoff/43-top.lef.lvs.log -json

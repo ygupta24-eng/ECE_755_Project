@@ -1,0 +1,31 @@
+Warning: Replacing memory \buffer with list of registers. See /openlane/designs/dnn/MS2_Synthesis_sky130/fifo9.sv:36
+Warning: Replacing memory \buffer with list of registers. See /openlane/designs/dnn/MS2_Synthesis_sky130/fifo9.sv:36
+ABC: Warning: Detected 2 multi-output gates (for example, "sky130_fd_sc_hd__fa_1").
+Warning: Wire top.\psum_out1 [12] is used but has no driver.
+Warning: Wire top.\psum_out1 [11] is used but has no driver.
+Warning: Wire top.\psum_out1 [10] is used but has no driver.
+Warning: Wire top.\psum_out1 [9] is used but has no driver.
+Warning: Wire top.\psum_out1 [8] is used but has no driver.
+Warning: Wire top.\psum_out1 [7] is used but has no driver.
+Warning: Wire top.\psum_out1 [6] is used but has no driver.
+Warning: Wire top.\psum_out1 [5] is used but has no driver.
+Warning: Wire top.\psum_out1 [4] is used but has no driver.
+Warning: Wire top.\psum_out1 [3] is used but has no driver.
+Warning: Wire top.\psum_out1 [2] is used but has no driver.
+Warning: Wire top.\psum_out1 [1] is used but has no driver.
+Warning: Wire top.\psum_out1 [0] is used but has no driver.
+Warning: Wire top.\psum_out0 [12] is used but has no driver.
+Warning: Wire top.\psum_out0 [11] is used but has no driver.
+Warning: Wire top.\psum_out0 [10] is used but has no driver.
+Warning: Wire top.\psum_out0 [9] is used but has no driver.
+Warning: Wire top.\psum_out0 [8] is used but has no driver.
+Warning: Wire top.\psum_out0 [7] is used but has no driver.
+Warning: Wire top.\psum_out0 [6] is used but has no driver.
+Warning: Wire top.\psum_out0 [5] is used but has no driver.
+Warning: Wire top.\psum_out0 [4] is used but has no driver.
+Warning: Wire top.\psum_out0 [3] is used but has no driver.
+Warning: Wire top.\psum_out0 [2] is used but has no driver.
+Warning: Wire top.\psum_out0 [1] is used but has no driver.
+Warning: Wire top.\psum_out0 [0] is used but has no driver.
+Warning: Wire top.\done is used but has no driver.
+Warnings: 28 unique messages, 29 total

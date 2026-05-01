@@ -3,26 +3,25 @@
 
 === top ===
 
-   Number of wires:               3883
-   Number of wire bits:           4905
-   Number of public wires:         127
-   Number of public wire bits:    1143
+   Number of wires:               4141
+   Number of wire bits:           4963
+   Number of public wires:         128
+   Number of public wire bits:     944
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:               4634
-     $_ANDNOT_                    1492
-     $_AND_                        246
-     $_DFFE_PN0N_                  240
-     $_DFFE_PN0P_                  499
-     $_DFFE_PP_                    108
-     $_DFF_PN0_                      8
-     $_MUX_                        299
-     $_NAND_                       160
-     $_NOR_                        154
-     $_NOT_                         88
-     $_ORNOT_                      282
-     $_OR_                         318
-     $_XNOR_                       189
-     $_XOR_                        551
+   Number of cells:               4832
+     $_ANDNOT_                    1412
+     $_AND_                        197
+     $_DFFE_PN0P_                  479
+     $_DFFE_PP_                    234
+     $_DFF_PN0_                     41
+     $_MUX_                        350
+     $_NAND_                       206
+     $_NOR_                        182
+     $_NOT_                        277
+     $_ORNOT_                      283
+     $_OR_                         431
+     $_XNOR_                       195
+     $_XOR_                        545
 

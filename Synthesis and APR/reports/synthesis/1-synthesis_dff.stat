@@ -3,24 +3,24 @@
 
 === top ===
 
-   Number of wires:               4730
-   Number of wire bits:           5752
-   Number of public wires:         127
-   Number of public wire bits:    1143
+   Number of wires:               4854
+   Number of wire bits:           5676
+   Number of public wires:         128
+   Number of public wire bits:     944
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
-   Number of cells:               5481
-     $_ANDNOT_                    1492
-     $_AND_                        246
-     $_MUX_                       1146
-     $_NAND_                       160
-     $_NOR_                        154
-     $_NOT_                         88
-     $_ORNOT_                      282
-     $_OR_                         318
-     $_XNOR_                       189
-     $_XOR_                        551
-     sky130_fd_sc_hd__dfrtp_2      747
-     sky130_fd_sc_hd__dfxtp_2      108
+   Number of cells:               5545
+     $_ANDNOT_                    1412
+     $_AND_                        197
+     $_MUX_                       1063
+     $_NAND_                       206
+     $_NOR_                        182
+     $_NOT_                        277
+     $_ORNOT_                      283
+     $_OR_                         431
+     $_XNOR_                       195
+     $_XOR_                        545
+     sky130_fd_sc_hd__dfrtp_2      520
+     sky130_fd_sc_hd__dfxtp_2      234
 

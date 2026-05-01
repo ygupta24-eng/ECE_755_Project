@@ -1,17 +1,17 @@
-CVC: Log output to /openlane/designs/dnn/runs/MS2/reports/signoff/top.rpt
-CVC: Error output to /openlane/designs/dnn/runs/MS2/reports/signoff/top.rpt.error.gz
-CVC: Debug output to /openlane/designs/dnn/runs/MS2/reports/signoff/top.rpt.debug.gz
+CVC: Log output to /openlane/designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_07.07.32/reports/signoff/top.rpt
+CVC: Error output to /openlane/designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_07.07.32/reports/signoff/top.rpt.error.gz
+CVC: Debug output to /openlane/designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_07.07.32/reports/signoff/top.rpt.debug.gz
 CVC: Circuit Validation Check  Version 1.1.4
-CVC: Start: Mon Mar 23 04:07:42 2026
+CVC: Start: Sun Apr 26 07:12:58 2026
 
 Using the following parameters for CVC (Circuit Validation Check) from /home/vidhya/.ciel/sky130A/libs.tech/openlane/cvc/cvcrc
 CVC_TOP = 'top'
-CVC_NETLIST = '/openlane/designs/dnn/runs/MS2/tmp/signoff/top.cdl'
+CVC_NETLIST = '/openlane/designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_07.07.32/tmp/signoff/top.cdl'
 CVC_MODE = 'top'
 CVC_MODEL_FILE = '/home/vidhya/.ciel/sky130A/libs.tech/openlane/cvc/models'
-CVC_POWER_FILE = '/openlane/designs/dnn/runs/MS2/tmp/signoff/top.power'
+CVC_POWER_FILE = '/openlane/designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_07.07.32/tmp/signoff/top.power'
 CVC_FUSE_FILE = ''
-CVC_REPORT_FILE = '/openlane/designs/dnn/runs/MS2/reports/signoff/top.rpt'
+CVC_REPORT_FILE = '/openlane/designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_07.07.32/reports/signoff/top.rpt'
 CVC_REPORT_TITLE = 'CVC $CVC_TOP'
 CVC_CIRCUIT_ERROR_LIMIT = '100'
 CVC_SEARCH_LIMIT = '100'
@@ -45,7 +45,7 @@ End of parameters
 
 CVC: Reading device model settings...
 CVC: Reading power settings...
-CVC: Parsing netlist /openlane/designs/dnn/runs/MS2/tmp/signoff/top.cdl
-Cdl fixed data size 255999
-Usage CDL: Time: 0  Memory: 60388  I/O: 4328  Swap: 0
+CVC: Parsing netlist /openlane/designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_07.07.32/tmp/signoff/top.cdl
+Cdl fixed data size 316456
+Usage CDL: Time: 0  Memory: 61588  I/O: 8  Swap: 0
 CVC: Counting and linking...

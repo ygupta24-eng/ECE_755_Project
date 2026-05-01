@@ -1,1 +1,11 @@
+[WARNING GRT-0026] Missing route to pin _6644_/X.
+[WARNING GRT-0026] Missing route to pin _5511_/B2.
+[WARNING GRT-0026] Missing route to pin _4067_/B1.
+[WARNING GRT-0026] Missing route to pin _4067_/Y.
+[WARNING GRT-0026] Missing route to pin _5511_/A1_N.
+[WARNING GRT-0026] Missing route to pin _6182_/Y.
+[WARNING GRT-0026] Missing route to pin _6645_/X.
+[WARNING GRT-0026] Missing route to pin hold747/A.
+[WARNING GRT-0026] Missing route to pin hold739/A.
+[WARNING GRT-0026] Missing route to pin _3749_/A.
 [WARNING] Did not save OpenROAD database!

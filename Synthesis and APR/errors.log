@@ -1,5 +1,5 @@
 [ERROR]: during executing yosys script /openlane/scripts/yosys/synth.tcl
-[ERROR]: Log: designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_06.22.01/logs/synthesis/1-synthesis.log
+[ERROR]: Log: designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_06.22.25/logs/synthesis/1-synthesis.log
 [ERROR]: Last 10 lines:
 
 [TCL: yosys -import] Command name collision: found pre-existing command `cd' -> skip.

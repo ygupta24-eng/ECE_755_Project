@@ -1,10 +1,10 @@
 Design Name: top
-Run Directory: /openlane/designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_06.22.01
+Run Directory: /openlane/designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_06.22.25
 Source not found.
 ----------------------------------------
 
 LVS Summary:
-Source: /openlane/designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_06.22.01/logs/signoff/top.lef.lvs.log
+Source: /openlane/designs/dnn/MS2_Synthesis_sky130/runs/RUN_2026.04.26_06.22.25/logs/signoff/top.lef.lvs.log
 Source not found.
 ----------------------------------------
 

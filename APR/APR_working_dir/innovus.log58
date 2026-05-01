@@ -1,0 +1,40 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.19-s058_1, built Thu Apr 4 09:59:17 PDT 2024
+Options:	-files apr_systolic.tcl 
+Date:		Mon Apr 27 17:08:51 2026
+Host:		tux-105 (x86_64 w/Linux 2.6.70-39-amd64) (6cores*12cpus*11th Gen Intel(R) Core(TM) i5-11600 @ 2.80GHz 12288KB)
+OS:		AlmaLinux 8.10 (Cerulean Leopard)
+
+License:
+		[17:08:51.007602] Configured Lic search path (21.01-s002): 5280@cadence.license.cae.wisc.edu:1717@mentor.license.cae.wisc.edu
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+**WARN: (IMPOPT-801):	Genus executable not found in PATH. Install Genus, add the path to the genus executable in the PATH variable and rerun Innovus.
+Change the soft stacksize limit to 0.2%RAM (63 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+Sourcing file "apr_systolic.tcl" ...
+<CMD> set init_design_uniquify 1
+<CMD> set init_verilog ../Synthesis/outputs/cnn_uart_fpga_top.vg
+<CMD> set init_design_netlisttype Verilog
+<CMD> set init_design_settop 1
+<CMD> set init_top_cell cnn_uart_fpga_top
+<CMD> set init_mmmc_file ./cnn_uart_fpga_top.mmmc
+<CMD> set init_pwr_net VDD
+<CMD> set init_gnd_net VSS
+<CMD> set init_lef_file {./asap7sc7p5t_28/techlef_misc/asap7_tech_4x_201209.lef ./asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_R_4x_220121a.lef}
+<CMD> init_design
+#% Begin Load MMMC data ... (date=04/27 17:09:04, mem=943.9M)
+**ERROR: (TCLCMD-989):	cannot open SDC file '../Synthesis/outputs/cnn_uart_fpga_top.sdc' for mode 'sdc_uart'
+
+*** Memory Usage v#1 (Current mem = 987.629M, initial mem = 487.000M) ***
+*** Message Summary: 1 warning(s), 1 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:10.4, real=0:00:13.0, mem=987.6M) ---

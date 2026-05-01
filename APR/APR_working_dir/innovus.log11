@@ -1,0 +1,65 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.19-s058_1, built Thu Apr 4 09:59:17 PDT 2024
+Options:	-no_gui -files apr_reference.tcl 
+Date:		Fri Apr 10 13:42:57 2026
+Host:		tux-113 (x86_64 w/Linux 2.6.70-39-amd64) (6cores*12cpus*11th Gen Intel(R) Core(TM) i5-11600 @ 2.80GHz 12288KB)
+OS:		AlmaLinux 8.10 (Cerulean Leopard)
+
+License:
+		[13:42:57.007602] Configured Lic search path (21.01-s002): 5280@cadence.license.cae.wisc.edu:1717@mentor.license.cae.wisc.edu
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+**WARN: (IMPOPT-801):	Genus executable not found in PATH. Install Genus, add the path to the genus executable in the PATH variable and rerun Innovus.
+Change the soft stacksize limit to 0.2%RAM (63 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+Sourcing file "apr_reference.tcl" ...
+<CMD> set init_design_uniquify 1
+<CMD> set init_verilog ../Synthesis/cg_outputs/top_cg.vg
+<CMD> set init_design_netlisttype Verilog
+<CMD> set init_design_settop 1
+<CMD> set init_top_cell top
+<CMD> set init_mmmc_file ./top.mmmc
+<CMD> set init_pwr_net VDD
+<CMD> set init_gnd_net VSS
+<CMD> set init_lef_file {./asap7sc7p5t_28/techlef_misc//asap7_tech_4x_201209.lef ./asap7sc7p5t_28/LEF/scaled//asap7sc7p5t_28_R_4x_220121a.lef}
+<CMD> init_design
+#% Begin Load MMMC data ... (date=04/10 13:43:09, mem=881.7M)
+**ERROR: (TCLCMD-995):	Can not open file './asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_220123.lib' for library set
+**ERROR: (IMPSYT-6692):	Invalid return code while executing 'apr_reference.tcl' was returned and script processing was stopped. Review the following error in 'apr_reference.tcl' then restart.
+Error info: apr_reference.tcl: 
+    while executing
+"error "$ret""
+    (procedure "::init_design::process_view_def" line 89)
+    invoked from within
+"::init_design::process_view_def $::init_mmmc_file"
+    (procedure "init_design" line 224)
+    invoked from within
+"init_design"
+    (file "apr_reference.tcl" line 67)
+    invoked from within
+"::se_source_orig apr_reference.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel [concat ::se_source_orig $args]"
+    (procedure "source" line 194)
+    invoked from within
+"source apr_reference.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel #0 source apr_reference.tcl"
+    ("eval" body line 1)
+    invoked from within
+"eval {uplevel #0 source apr_reference.tcl}"
+    (in namespace inscope "::" script line 1)
+    invoked from within
+"namespace inscope :: eval "uplevel #0 source $fileName"".
+**INFO (INTERRUPT): The current script will stop before next command.
+**INFO (INTERRUPT): One more Ctrl-C to exit Innovus ...

@@ -1,0 +1,308 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.19-s058_1, built Thu Apr 4 09:59:17 PDT 2024
+Options:	-init apr_optimized_floorplan.tcl -log apr_reference.log 
+Date:		Sun Apr 26 21:49:44 2026
+Host:		tux-115 (x86_64 w/Linux 2.6.70-39-amd64) (6cores*12cpus*11th Gen Intel(R) Core(TM) i5-11600 @ 2.80GHz 12288KB)
+OS:		AlmaLinux 8.10 (Cerulean Leopard)
+
+License:
+		[21:49:44.007618] Configured Lic search path (21.01-s002): 5280@cadence.license.cae.wisc.edu:1717@mentor.license.cae.wisc.edu
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+**WARN: (IMPOPT-801):	Genus executable not found in PATH. Install Genus, add the path to the genus executable in the PATH variable and rerun Innovus.
+Change the soft stacksize limit to 0.2%RAM (63 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+Sourcing file "apr_optimized_floorplan.tcl" ...
+<CMD> set init_design_uniquify 1
+<CMD> set init_verilog ./top_cg.vg
+<CMD> set init_design_netlisttype Verilog
+<CMD> set init_design_settop 1
+<CMD> set init_top_cell top
+<CMD> set init_mmmc_file ./top.mmmc
+<CMD> set init_pwr_net VDD
+<CMD> set init_gnd_net VSS
+<CMD> set init_lef_file {./asap7sc7p5t_28/techlef_misc//asap7_tech_4x_201209.lef ./asap7sc7p5t_28/LEF/scaled//asap7sc7p5t_28_R_4x_220121a.lef}
+<CMD> init_design
+#% Begin Load MMMC data ... (date=04/26 21:49:57, mem=934.2M)
+#% End Load MMMC data ... (date=04/26 21:49:57, total cpu=0:00:00.0, real=0:00:00.0, peak res=935.4M, current mem=935.4M)
+rc_typ_25
+
+Loading LEF file ./asap7sc7p5t_28/techlef_misc/asap7_tech_4x_201209.lef ...
+
+Loading LEF file ./asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_R_4x_220121a.lef ...
+Set DBUPerIGU to M1 pitch 576.
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+Loading view definition file from ./top.mmmc
+Reading tc timing library '/filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_AO_RVT_TT_nldm_211120.lib' ...
+Read 42 cells in library 'asap7sc7p5t_AO_RVT_TT_nldm_211120' 
+Reading tc timing library '/filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib' ...
+Read 37 cells in library 'asap7sc7p5t_INVBUF_RVT_TT_nldm_211120' 
+Reading tc timing library '/filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_OA_RVT_TT_nldm_211120.lib' ...
+Read 34 cells in library 'asap7sc7p5t_OA_RVT_TT_nldm_211120' 
+Reading tc timing library '/filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.lib' ...
+Read 33 cells in library 'asap7sc7p5t_SEQ_RVT_TT_nldm_220123' 
+Reading tc timing library '/filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib' ...
+**WARN: (TECHLIB-1277):	The attribute 'input_signal_level' has been defined for output pin 'CON'. 'input_signal_level' cannot be defined at this level and is being ignored. (File /filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib, Line 11387)
+**WARN: (TECHLIB-1277):	The attribute 'input_signal_level' has been defined for output pin 'CON'. 'input_signal_level' cannot be defined at this level and is being ignored. (File /filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib, Line 14287)
+Read 56 cells in library 'asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120' 
+*** End library_loading (cpu=0.02min, real=0.02min, mem=52.0M, fe_cpu=0.19min, fe_real=0.25min, fe_mem=1034.0M) ***
+#% Begin Load netlist data ... (date=04/26 21:49:59, mem=960.5M)
+*** Begin netlist parsing (mem=1034.0M) ***
+Created 202 new cells from 5 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilog netlist './top_cg.vg'
+
+*** Memory Usage v#1 (Current mem = 1034.023M, initial mem = 487.000M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=1034.0M) ***
+#% End Load netlist data ... (date=04/26 21:49:59, total cpu=0:00:00.0, real=0:00:00.0, peak res=978.1M, current mem=978.1M)
+Set top cell to top.
+Hooked 202 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell top ...
+*** Netlist is unique.
+Set DBUPerIGU to techSite asap7sc7p5t width 864.
+** info: there are 213 modules.
+** info: there are 2753 stdCell insts.
+
+*** Memory Usage v#1 (Current mem = 1093.938M, initial mem = 487.000M) ***
+Start create_tracks
+Extraction setup Started 
+Initializing multi-corner RC extraction with 1 active RC Corners ...
+Captable file(s) not specified in multi-corner setup. PreRoute extraction will use technology file. For postRoute extraction, default value for effort level would be 'medium' and effort level 'low' would not be allowed.
+Generating auto layer map file.
+Importing multi-corner technology file(s) for preRoute extraction...
+./asap7sc7p5t_28/qrc/qrcTechFile_typ03_scaled4xV06
+Generating auto layer map file.
+Completed (cpu: 0:00:01.7 real: 0:00:02.0)
+Set Shrink Factor to 1.00000
+Summary of Active RC-Corners : 
+ 
+ Analysis View: view_tc
+    RC-Corner Name        : rc_typ_25
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: './asap7sc7p5t_28/qrc/qrcTechFile_typ03_scaled4xV06'
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner resistance tables ...
+Default value for postRoute extraction mode's effortLevel (-effortLevel option of setExtractRCMode) changed to 'medium'.
+*Info: initialize multi-corner CTS.
+Reading timing constraints file './top_cg.sdc' ...
+Current (total cpu=0:00:13.6, real=0:00:17.0, peak res=1340.2M, current mem=1340.2M)
+**WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ./top_cg.sdc, Line 8).
+
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'w_in[0][1]' (File ./top_cg.sdc, Line 70).
+
+**ERROR: (TCLCMD-917):	Cannot find 'ports' that match 'w_in[0][1]' (File ./top_cg.sdc, Line 70).
+
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern '' (File ./top_cg.sdc, Line 70).
+
+**ERROR: (TCLNL-312):	set_input_delay: Invalid list of pins: '' (File ./top_cg.sdc, Line 70).
+
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'w_in[0][0]' (File ./top_cg.sdc, Line 71).
+
+**ERROR: (TCLCMD-917):	Cannot find 'ports' that match 'w_in[0][0]' (File ./top_cg.sdc, Line 71).
+
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern '' (File ./top_cg.sdc, Line 71).
+
+**ERROR: (TCLNL-312):	set_input_delay: Invalid list of pins: '' (File ./top_cg.sdc, Line 71).
+
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'w_in[1][1]' (File ./top_cg.sdc, Line 72).
+
+**ERROR: (TCLCMD-917):	Cannot find 'ports' that match 'w_in[1][1]' (File ./top_cg.sdc, Line 72).
+
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern '' (File ./top_cg.sdc, Line 72).
+
+**ERROR: (TCLNL-312):	set_input_delay: Invalid list of pins: '' (File ./top_cg.sdc, Line 72).
+
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'w_in[1][0]' (File ./top_cg.sdc, Line 73).
+
+**ERROR: (TCLCMD-917):	Cannot find 'ports' that match 'w_in[1][0]' (File ./top_cg.sdc, Line 73).
+
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern '' (File ./top_cg.sdc, Line 73).
+
+**ERROR: (TCLNL-312):	set_input_delay: Invalid list of pins: '' (File ./top_cg.sdc, Line 73).
+
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'w_in[2][1]' (File ./top_cg.sdc, Line 74).
+
+**ERROR: (TCLCMD-917):	Cannot find 'ports' that match 'w_in[2][1]' (File ./top_cg.sdc, Line 74).
+
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern '' (File ./top_cg.sdc, Line 74).
+
+**ERROR: (TCLNL-312):	set_input_delay: Invalid list of pins: '' (File ./top_cg.sdc, Line 74).
+
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'w_in[2][0]' (File ./top_cg.sdc, Line 75).
+
+**ERROR: (TCLCMD-917):	Cannot find 'ports' that match 'w_in[2][0]' (File ./top_cg.sdc, Line 75).
+
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern '' (File ./top_cg.sdc, Line 75).
+
+**ERROR: (TCLNL-312):	set_input_delay: Invalid list of pins: '' (File ./top_cg.sdc, Line 75).
+
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'w_in[3][1]' (File ./top_cg.sdc, Line 76).
+
+**ERROR: (TCLCMD-917):	Cannot find 'ports' that match 'w_in[3][1]' (File ./top_cg.sdc, Line 76).
+
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern '' (File ./top_cg.sdc, Line 76).
+
+**ERROR: (TCLNL-312):	set_input_delay: Invalid list of pins: '' (File ./top_cg.sdc, Line 76).
+
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'w_in[3][0]' (File ./top_cg.sdc, Line 77).
+
+**ERROR: (TCLCMD-917):	Cannot find 'ports' that match 'w_in[3][0]' (File ./top_cg.sdc, Line 77).
+
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern '' (File ./top_cg.sdc, Line 77).
+
+**ERROR: (TCLNL-312):	set_input_delay: Invalid list of pins: '' (File ./top_cg.sdc, Line 77).
+
+INFO (CTE): Reading of timing constraints file ./top_cg.sdc completed, with 17 Warnings and 16 Errors.
+Ending "Constraint file reading stats" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1359.9M, current mem=1359.9M)
+Current (total cpu=0:00:13.7, real=0:00:17.0, peak res=1359.9M, current mem=1359.9M)
+Total number of combinational cells: 169
+Total number of sequential cells: 33
+Total number of tristate cells: 0
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+Total number of physical cells: 0
+List of usable buffers: BUFx10_ASAP7_75t_R BUFx12_ASAP7_75t_R BUFx12f_ASAP7_75t_R BUFx16f_ASAP7_75t_R BUFx24_ASAP7_75t_R BUFx2_ASAP7_75t_R BUFx3_ASAP7_75t_R BUFx4_ASAP7_75t_R BUFx5_ASAP7_75t_R BUFx4f_ASAP7_75t_R BUFx6f_ASAP7_75t_R BUFx8_ASAP7_75t_R HB1xp67_ASAP7_75t_R HB2xp67_ASAP7_75t_R
+Total number of usable buffers: 14
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: CKINVDCx10_ASAP7_75t_R CKINVDCx12_ASAP7_75t_R CKINVDCx11_ASAP7_75t_R CKINVDCx14_ASAP7_75t_R CKINVDCx16_ASAP7_75t_R CKINVDCx20_ASAP7_75t_R CKINVDCx8_ASAP7_75t_R CKINVDCx5p33_ASAP7_75t_R CKINVDCx6p67_ASAP7_75t_R CKINVDCx9p33_ASAP7_75t_R INVx11_ASAP7_75t_R INVx13_ASAP7_75t_R INVx1_ASAP7_75t_R INVx2_ASAP7_75t_R INVx3_ASAP7_75t_R INVx4_ASAP7_75t_R INVx5_ASAP7_75t_R INVx6_ASAP7_75t_R INVx8_ASAP7_75t_R INVxp67_ASAP7_75t_R INVxp33_ASAP7_75t_R
+Total number of usable inverters: 21
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: HB3xp67_ASAP7_75t_R HB4xp67_ASAP7_75t_R
+Total number of identified usable delay cells: 2
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+#% Begin Load MMMC data post ... (date=04/26 21:50:01, mem=1382.1M)
+#% End Load MMMC data post ... (date=04/26 21:50:01, total cpu=0:00:00.0, real=0:00:00.0, peak res=1382.1M, current mem=1382.1M)
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   TCLCMD-513          16  The software could not find a matching o...
+ERROR     TCLCMD-917           8  Cannot find '%s' that match '%s'         
+WARNING   TCLCMD-1461          1  Skipped unsupported command: %s          
+ERROR     TCLNL-312            8  %s: Invalid list of pins: '%s'           
+WARNING   TECHLIB-1277         2  The %s '%s' has been defined for %s %s '...
+*** Message Summary: 19 warning(s), 16 error(s)
+
+<CMD> setDesignMode -process 7 -node N7
+##  Process: 7             (User Set)               
+##     Node: N7            (User Set)           
+Applying the recommended capacitance filtering threshold values for 7nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.1.
+	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+	Capacitance filtering mode(-capFilterMode option of the setExtractRCMode) is 'relAndCoup' for all engines.
+	The accuracy mode for postRoute effortLevel low extraction will be set to 'high'.
+	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode is 'medium'.
+Process node set using 'setDesignMode' is less than or equal to 32nm, for which captable file(s) would be ignored as preRoute extraction would instead use technology file. For postRoute extraction, default value for effort level would be 'medium' and effort level 'low' would not be allowed.
+<CMD> setMultiCpuUsage -localCpu 8
+<CMD> globalNetConnect VDD -type pgpin -pin VDD -inst *
+<CMD> globalNetConnect VSS -type pgpin -pin VSS -inst *
+<CMD> floorPlan -site asap7sc7p5t -s 130.0 85.0 6.836 6.836 6.836 6.836 -noSnap
+Start create_tracks
+**WARN: (IMPFP-325):	Floorplan of the design is resized. All current floorplan objects are automatically derived based on specified new floorplan. This may change blocks, fixed standard cells, existing routes and blockages.
+<CMD> addWellTap -cell TAPCELL_ASAP7_75t_R -cellInterval 12.960 -inRowOffset 1.296
+Multithreaded Timing Analysis is initialized with 8 threads
+
+Estimated cell power/ground rail width = 0.135 um
+**WARN: (IMPSP-378):	Center of Cell XOR2x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell XOR2x1_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell XNOR2x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell XNOR2x1_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell TIELOx1_ASAP7_75t_R's M1(1) Pin 'L' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFLx4_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFLx3_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFLx2_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFLx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFHx4_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFHx3_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFHx2_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFHx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR5x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR5x1_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR4x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR3x4_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR3x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR3x1_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR2x6_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (EMS-27):	Message (IMPSP-378) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+WARNING (IMPSP-382): Found 153 cells with pin-to-track misalignment. All floorplan's track offset and cell's pin-offsets did not allow any alignment.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (EMS-27):	Message (IMPSP-377) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+For 858 new insts, Inserted 858 well-taps <TAPCELL_ASAP7_75t_R> cells (prefix WELLTAP).
+<CMD> setPinAssignMode -pinEditInBatch true
+**ERROR: (IMPDBTCL-206):	'die' is not a recognized object or attribute. Run 'dbGet <object>.?' to get a list of all supported objects and attributes.
+**ERROR: (IMPSYT-6692):	Invalid return code while executing 'apr_optimized_floorplan.tcl' was returned and script processing was stopped. Review the following error in 'apr_optimized_floorplan.tcl' then restart.
+**ERROR: (IMPSYT-6693):	Error message: apr_optimized_floorplan.tcl: 0x0.
+<CMD> win

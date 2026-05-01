@@ -1,0 +1,42 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Tue Apr  7 17:30:54 2026                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v21.19-s058_1 (64bit) 04/04/2024 09:59 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: NanoRoute 21.19-s058_1 NR231113-0413/21_19-UB (database version 18.20.605) {superthreading v2.17}
+#@(#)CDS: AAE 21.19-s004 (64bit) 04/04/2024 (Linux 3.10.0-693.el7.x86_64)
+#@(#)CDS: CTE 21.19-s010_1 () Mar 27 2024 01:55:37 ( )
+#@(#)CDS: SYNTECH 21.19-s002_1 () Sep  6 2023 22:17:00 ( )
+#@(#)CDS: CPE v21.19-s026
+#@(#)CDS: IQuantus/TQuantus 21.1.1-s966 (64bit) Wed Mar 8 10:22:20 PST 2023 (Linux 3.10.0-693.el7.x86_64)
+
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+set init_design_uniquify 1
+set init_verilog ./top.vg
+set init_design_netlisttype Verilog
+set init_design_settop 1
+set init_top_cell top
+set init_mmmc_file ./top.mmmc
+set init_pwr_net VDD
+set init_gnd_net VSS
+set init_lef_file {./asap7sc7p5t_28/techlef_misc//asap7_tech_4x_201209.lef ./asap7sc7p5t_28/LEF/scaled//asap7sc7p5t_28_R_4x_220121a.lef}
+init_design
+setDesignMode -process 7 -node N7
+setMultiCpuUsage -localCpu 8
+setDesignMode -bottomRoutingLayer 2
+setDesignMode -topRoutingLayer 7
+globalNetConnect VDD -type pgpin -pin VDD -inst *
+globalNetConnect VSS -type pgpin -pin VSS -inst *
+floorPlan -site asap7sc7p5t -s 302.4 302.4 6.22 6.22 6.22 6.22 -noSnap
+addWellTap -cell TAPCELL_ASAP7_75t_R -cellInterval 12.960 -inRowOffset 1.296
+add_tracks -snap_m1_track_to_cell_pins
+add_tracks -mode replace -offsets {M5 vertical 0}
+deleteAllFPObjects
+addWellTap -cell TAPCELL_ASAP7_75t_R -cellInterval 12.960 -inRowOffset 1.296
+setPinAssignMode -pinEditInBatch true
+editPin -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side LEFT -layer 3 -spreadType center -spacing 2.016 -pin {clk in_ready {x0[4]} {x0[3]} {x0[2]} {x0[1]} {x0[0]}  {x1[4]} {x1[3]} {x1[2]} {x1[1]} {x1[0]}  {x2[4]} {x2[3]} {x2[2]} {x2[1]} {x2[0]}  {x3[4]} {x3[3]} {x3[2]} {x3[1]} {x3[0]}}
+editPin -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side RIGHT -layer 3 -spreadType center -spacing 2.016 -pin {{w04[4]} {w04[3]} {w04[2]} {w04[1]} {w04[0]}  {w14[4]} {w14[3]} {w14[2]} {w14[1]} {w14[0]}  {w24[4]} {w24[3]} {w24[2]} {w24[1]} {w24[0]}  {w34[4]} {w34[3]} {w34[2]} {w34[1]} {w34[0]}  {w05[4]} {w05[3]} {w05[2]} {w05[1]} {w05[0]}  {w15[4]} {w15[3]} {w15[2]} {w15[1]} {w15[0]}  {w25[4]} {w25[3]} {w25[2]} {w25[1]} {w25[0]}  {w35[4]} {w35[3]} {w35[2]} {w35[1]} {w35[0]}  {w06[4]} {w06[3]} {w06[2]} {w06[1]} {w06[0]}  {w16[4]} {w16[3]} {w16[2]} {w16[1]} {w16[0]}  {w26[4]} {w26[3]} {w26[2]} {w26[1]} {w26[0]}  {w36[4]} {w36[3]} {w36[2]} {w36[1]} {w36[0]}  {w07[4]} {w07[3]} {w07[2]} {w07[1]} {w07[0]}  {w17[4]} {w17[3]} {w17[2]} {w17[1]} {w17[0]}  {w27[4]} {w27[3]} {w27[2]} {w27[1]} {w27[0]}  {w37[4]} {w37[3]} {w37[2]} {w37[1]} {w37[0]}  {w48[4]} {w48[3]} {w48[2]} {w48[1]} {w48[0]}  {w58[4]} {w58[3]} {w58[2]} {w58[1]} {w58[0]}  {w68[4]} {w68[3]} {w68[2]} {w68[1]} {w68[0]}  {w78[4]} {w78[3]} {w78[2]} {w78[1]} {w78[0]}  {w49[4]} {w49[3]} {w49[2]} {w49[1]} {w49[0]}  {w59[4]} {w59[3]} {w59[2]} {w59[1]} {w59[0]}  {w69[4]} {w69[3]} {w69[2]} {w69[1]} {w69[0]}  {w79[4]} {w79[3]} {w79[2]} {w79[1]} {w79[0]}}

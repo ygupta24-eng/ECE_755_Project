@@ -1,0 +1,2586 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.19-s058_1, built Thu Apr 4 09:59:17 PDT 2024
+Options:	-files apr.tcl 
+Date:		Mon Apr 27 16:56:06 2026
+Host:		tux-105 (x86_64 w/Linux 2.6.70-39-amd64) (6cores*12cpus*11th Gen Intel(R) Core(TM) i5-11600 @ 2.80GHz 12288KB)
+OS:		AlmaLinux 8.10 (Cerulean Leopard)
+
+License:
+		[16:56:06.007618] Configured Lic search path (21.01-s002): 5280@cadence.license.cae.wisc.edu:1717@mentor.license.cae.wisc.edu
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+**WARN: (IMPOPT-801):	Genus executable not found in PATH. Install Genus, add the path to the genus executable in the PATH variable and rerun Innovus.
+Change the soft stacksize limit to 0.2%RAM (63 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+Sourcing file "apr.tcl" ...
+<CMD> set init_design_uniquify 1
+<CMD> set init_verilog ../Synthesis/outputs/cnn_uart_fpga_top.vg
+<CMD> set init_design_netlisttype Verilog
+<CMD> set init_design_settop 1
+<CMD> set init_top_cell cnn_uart_fpga_top
+<CMD> set init_mmmc_file ./cnn_uart_fpga_top.mmmc
+<CMD> set init_pwr_net VDD
+<CMD> set init_gnd_net VSS
+<CMD> set init_lef_file {./asap7sc7p5t_28/techlef_misc/asap7_tech_4x_201209.lef ./asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_R_4x_220121a.lef}
+<CMD> init_design
+#% Begin Load MMMC data ... (date=04/27 16:56:18, mem=939.6M)
+#% End Load MMMC data ... (date=04/27 16:56:19, total cpu=0:00:00.0, real=0:00:01.0, peak res=940.5M, current mem=940.5M)
+rc_typ_25
+
+Loading LEF file ./asap7sc7p5t_28/techlef_misc/asap7_tech_4x_201209.lef ...
+
+Loading LEF file ./asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_R_4x_220121a.lef ...
+Set DBUPerIGU to M1 pitch 576.
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+Loading view definition file from ./cnn_uart_fpga_top.mmmc
+Reading tc timing library '/filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_AO_RVT_TT_nldm_211120.lib' ...
+Read 42 cells in library 'asap7sc7p5t_AO_RVT_TT_nldm_211120' 
+Reading tc timing library '/filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib' ...
+Read 37 cells in library 'asap7sc7p5t_INVBUF_RVT_TT_nldm_211120' 
+Reading tc timing library '/filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_OA_RVT_TT_nldm_211120.lib' ...
+Read 34 cells in library 'asap7sc7p5t_OA_RVT_TT_nldm_211120' 
+Reading tc timing library '/filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.lib' ...
+Read 33 cells in library 'asap7sc7p5t_SEQ_RVT_TT_nldm_220123' 
+Reading tc timing library '/filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib' ...
+**WARN: (TECHLIB-1277):	The attribute 'input_signal_level' has been defined for output pin 'CON'. 'input_signal_level' cannot be defined at this level and is being ignored. (File /filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib, Line 11387)
+**WARN: (TECHLIB-1277):	The attribute 'input_signal_level' has been defined for output pin 'CON'. 'input_signal_level' cannot be defined at this level and is being ignored. (File /filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib, Line 14287)
+Read 56 cells in library 'asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120' 
+*** End library_loading (cpu=0.02min, real=0.02min, mem=50.0M, fe_cpu=0.19min, fe_real=0.25min, fe_mem=1042.2M) ***
+#% Begin Load netlist data ... (date=04/27 16:56:20, mem=964.1M)
+*** Begin netlist parsing (mem=1042.2M) ***
+Created 202 new cells from 5 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilog netlist '../Synthesis/outputs/cnn_uart_fpga_top.vg'
+
+*** Memory Usage v#1 (Current mem = 1042.211M, initial mem = 487.000M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=1042.2M) ***
+#% End Load netlist data ... (date=04/27 16:56:20, total cpu=0:00:00.0, real=0:00:00.0, peak res=982.4M, current mem=982.4M)
+Set top cell to cnn_uart_fpga_top.
+Hooked 202 DB cells to tlib cells.
+Starting recursive module instantiation check.
+No recursion found.
+Building hierarchical netlist for Cell cnn_uart_fpga_top ...
+*** Netlist is unique.
+Set DBUPerIGU to techSite asap7sc7p5t width 864.
+** info: there are 213 modules.
+** info: there are 415 stdCell insts.
+
+*** Memory Usage v#1 (Current mem = 1101.125M, initial mem = 487.000M) ***
+Start create_tracks
+Extraction setup Started 
+Initializing multi-corner RC extraction with 1 active RC Corners ...
+Captable file(s) not specified in multi-corner setup. PreRoute extraction will use technology file. For postRoute extraction, default value for effort level would be 'medium' and effort level 'low' would not be allowed.
+Generating auto layer map file.
+Importing multi-corner technology file(s) for preRoute extraction...
+./asap7sc7p5t_28/qrc/qrcTechFile_typ03_scaled4xV06
+Generating auto layer map file.
+Completed (cpu: 0:00:01.7 real: 0:00:02.0)
+Set Shrink Factor to 1.00000
+Summary of Active RC-Corners : 
+ 
+ Analysis View: view_tc
+    RC-Corner Name        : rc_typ_25
+    RC-Corner Index       : 0
+    RC-Corner Temperature : 25 Celsius
+    RC-Corner Cap Table   : ''
+    RC-Corner PreRoute Res Factor         : 1
+    RC-Corner PreRoute Cap Factor         : 1
+    RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+    RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+    RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+    RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+    RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+    RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+    RC-Corner Technology file: './asap7sc7p5t_28/qrc/qrcTechFile_typ03_scaled4xV06'
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner resistance tables ...
+Default value for postRoute extraction mode's effortLevel (-effortLevel option of setExtractRCMode) changed to 'medium'.
+*Info: initialize multi-corner CTS.
+Reading timing constraints file '../Synthesis/outputs/cnn_uart_fpga_top.sdc' ...
+Current (total cpu=0:00:13.6, real=0:00:16.0, peak res=1340.5M, current mem=1340.5M)
+**WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ../Synthesis/outputs/cnn_uart_fpga_top.sdc, Line 8).
+
+INFO (CTE): Reading of timing constraints file ../Synthesis/outputs/cnn_uart_fpga_top.sdc completed, with 1 WARNING
+Ending "Constraint file reading stats" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1347.9M, current mem=1347.9M)
+Current (total cpu=0:00:13.7, real=0:00:16.0, peak res=1347.9M, current mem=1347.9M)
+Total number of combinational cells: 169
+Total number of sequential cells: 33
+Total number of tristate cells: 0
+Total number of level shifter cells: 0
+Total number of power gating cells: 0
+Total number of isolation cells: 0
+Total number of power switch cells: 0
+Total number of pulse generator cells: 0
+Total number of always on buffers: 0
+Total number of retention cells: 0
+Total number of physical cells: 0
+List of usable buffers: BUFx10_ASAP7_75t_R BUFx12_ASAP7_75t_R BUFx12f_ASAP7_75t_R BUFx16f_ASAP7_75t_R BUFx24_ASAP7_75t_R BUFx2_ASAP7_75t_R BUFx3_ASAP7_75t_R BUFx4_ASAP7_75t_R BUFx5_ASAP7_75t_R BUFx4f_ASAP7_75t_R BUFx6f_ASAP7_75t_R BUFx8_ASAP7_75t_R HB1xp67_ASAP7_75t_R HB2xp67_ASAP7_75t_R
+Total number of usable buffers: 14
+List of unusable buffers:
+Total number of unusable buffers: 0
+List of usable inverters: CKINVDCx10_ASAP7_75t_R CKINVDCx12_ASAP7_75t_R CKINVDCx11_ASAP7_75t_R CKINVDCx14_ASAP7_75t_R CKINVDCx16_ASAP7_75t_R CKINVDCx20_ASAP7_75t_R CKINVDCx8_ASAP7_75t_R CKINVDCx5p33_ASAP7_75t_R CKINVDCx6p67_ASAP7_75t_R CKINVDCx9p33_ASAP7_75t_R INVx11_ASAP7_75t_R INVx13_ASAP7_75t_R INVx1_ASAP7_75t_R INVx2_ASAP7_75t_R INVx3_ASAP7_75t_R INVx4_ASAP7_75t_R INVx5_ASAP7_75t_R INVx6_ASAP7_75t_R INVx8_ASAP7_75t_R INVxp67_ASAP7_75t_R INVxp33_ASAP7_75t_R
+Total number of usable inverters: 21
+List of unusable inverters:
+Total number of unusable inverters: 0
+List of identified usable delay cells: HB3xp67_ASAP7_75t_R HB4xp67_ASAP7_75t_R
+Total number of identified usable delay cells: 2
+List of identified unusable delay cells:
+Total number of identified unusable delay cells: 0
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   TCLCMD-1461          1  Skipped unsupported command: %s          
+WARNING   TECHLIB-1277         2  The %s '%s' has been defined for %s %s '...
+*** Message Summary: 3 warning(s), 0 error(s)
+
+<CMD> setDesignMode -process 7 -node N7
+##  Process: 7             (User Set)               
+##     Node: N7            (User Set)           
+Applying the recommended capacitance filtering threshold values for 7nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.1.
+	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+	Capacitance filtering mode(-capFilterMode option of the setExtractRCMode) is 'relAndCoup' for all engines.
+	The accuracy mode for postRoute effortLevel low extraction will be set to 'high'.
+	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode is 'medium'.
+Process node set using 'setDesignMode' is less than or equal to 32nm, for which captable file(s) would be ignored as preRoute extraction would instead use technology file. For postRoute extraction, default value for effort level would be 'medium' and effort level 'low' would not be allowed.
+<CMD> setMultiCpuUsage -localCpu 8
+<CMD> setDesignMode -bottomRoutingLayer 2
+<CMD> setDesignMode -topRoutingLayer 7
+<CMD> globalNetConnect VDD -type pgpin -pin VDD -inst *
+<CMD> globalNetConnect VSS -type pgpin -pin VSS -inst *
+<CMD> floorPlan -s 130.0 85.0 2.0 2.0 2.0 2.0 -noSnap
+Start create_tracks
+**WARN: (IMPFP-325):	Floorplan of the design is resized. All current floorplan objects are automatically derived based on specified new floorplan. This may change blocks, fixed standard cells, existing routes and blockages.
+<CMD> addWellTap -cell TAPCELL_ASAP7_75t_R -cellInterval 12.960 -inRowOffset 1.296
+Multithreaded Timing Analysis is initialized with 8 threads
+
+Estimated cell power/ground rail width = 0.135 um
+**WARN: (IMPSP-378):	Center of Cell XOR2x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell XOR2x1_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell XNOR2x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell XNOR2x1_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFLx4_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFLx3_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFLx2_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFLx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFHx4_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFHx3_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFHx2_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFHx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR5x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR5x1_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR4x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR3x4_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR3x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR2x6_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR2x4_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OAI33xp33_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (EMS-27):	Message (IMPSP-378) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+WARNING (IMPSP-382): Found 162 cells with pin-to-track misalignment. All floorplan's track offset and cell's pin-offsets did not allow any alignment.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (EMS-27):	Message (IMPSP-377) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+For 858 new insts, Inserted 858 well-taps <TAPCELL_ASAP7_75t_R> cells (prefix WELLTAP).
+<CMD> setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer Pad -stacked_via_bottom_layer M1 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin standardcell -skip_via_on_wire_shape noshape
+The ring targets are set to core/block ring wires.
+addRing command will consider rows while creating rings.
+addRing command will disallow rings to go over rows.
+addRing command will ignore shorts while creating rings.
+<CMD> addRing -nets {VDD VSS} -type core_rings -follow core -layer {top M7 bottom M7 left M6 right M6} -width 2.176 -spacing 0.384 -offset 0.384 -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+#% Begin addRing (date=04/27 16:56:22, mem=1488.6M)
+
+viaInitial starts at Mon Apr 27 16:56:22 2026
+viaInitial ends at Mon Apr 27 16:56:22 2026
+setAddStripeMode -use_exact_spacing true is set by default for this design under 20nm node. 
+Setting -use_cce to 1. ViaGen will call CCE to colorize via and may re-colorize surrounding vias to resolve color conflict within the local range.
+Setting -optimize_cross_via to 1. ViaGen will try to generate vias with the minimum enclosure.
+setViaGenMode -optimize_cross_via true is set by default for this design of 12nm node or under. 
+Setting -disable_via_merging to 1. ViaGen disables via merging with the via created earlier.
+setViaGenMode -disable_via_merging true is set by default for this design of 12nm node or under. 
+Setting -keep_existing_via to 1. ViaGen will keep the existing vias.
+setViaGenMode -keep_existing_via 1 is set by default for this design of 12nm node or under. 
+
+Loading cell geometries (cpu: 0:00:00.0, real: 0:00:00.0, peak mem: 1782.8M)
+**WARN: (IMPPP-220):	The power planner does not create core rings outside the design boundary. Check the design boundary, or specify valid offsets.
+**WARN: (IMPPP-4051):	Failed to add rings, because the IO cells might contain gaps. Run the 'addIoFiller' command to fill gaps between the cells and try again.
+Type 'man IMPPP-4051' for more detail.
+setAddStripeMode -use_exact_spacing is reset to default value: false.
+setViaGenMode -disable_via_merging is reset to default value: false.
+setViaGenMode -keep_existing_via is reset to default value: 0.
+setViaGenMode -optimize_cross_via is reset to default value: false.
+#% End addRing (date=04/27 16:56:22, total cpu=0:00:00.0, real=0:00:00.0, peak res=1490.5M, current mem=1490.5M)
+<CMD> setSrouteMode -reset
+<CMD> setSrouteMode -viaConnectToShape noshape
+<CMD> sroute -connect corePin -layerChangeRange {M1(1) M7(1)} -blockPinTarget nearestTarget -floatingStripeTarget {blockring padring ring stripe ringpin blockpin followpin} -deleteExistingRoutes -allowJogging 0 -crossoverViaLayerRange {M1(1) Pad(10)} -nets {VDD VSS} -allowLayerChange 0 -targetViaLayerRange {M1(1) Pad(10)}
+#% Begin sroute (date=04/27 16:56:22, mem=1490.6M)
+**WARN: (IMPSR-4058):	Sroute option: blockPinTarget should be used in conjunction with option: -connect blockPin. 
+**WARN: (IMPSR-4058):	Sroute option: floatingStripeTarget should be used in conjunction with option: -connect floatingStripe. 
+Setting -use_cce to 1. ViaGen will call CCE to colorize via and may re-colorize surrounding vias to resolve color conflict within the local range.
+Setting -optimize_cross_via to 1. ViaGen will try to generate vias with the minimum enclosure.
+setViaGenMode -optimize_cross_via true is set by default for this design of 12nm node or under. 
+Setting -disable_via_merging to 1. ViaGen disables via merging with the via created earlier.
+setViaGenMode -disable_via_merging true is set by default for this design of 12nm node or under. 
+Setting -keep_existing_via to 1. ViaGen will keep the existing vias.
+setViaGenMode -keep_existing_via 1 is set by default for this design of 12nm node or under. 
+*** Begin SPECIAL ROUTE on Mon Apr 27 16:56:22 2026 ***
+SPECIAL ROUTE ran on directory: /filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR
+SPECIAL ROUTE ran on machine: tux-105 (Linux 2.6.70-39-amd64 x86_64 3.94Ghz)
+
+Begin option processing ...
+srouteConnectPowerBump set to false
+routeSelectNet set to "VDD VSS"
+routeSpecial set to true
+srouteBottomLayerLimit set to 1
+srouteBottomTargetLayerLimit set to 1
+srouteConnectBlockPin set to false
+srouteConnectConverterPin set to false
+srouteConnectPadPin set to false
+srouteConnectStripe set to false
+srouteCrossoverViaBottomLayer set to 1
+srouteCrossoverViaTopLayer set to 10
+srouteFloatingStripeTarget set to "blockring padring ring stripe ringpin blockpin followpin"
+srouteFollowCorePinEnd set to 3
+srouteFollowPadPin set to false
+srouteNoLayerChangeRoute set to true
+srouteNoViaOnWireShape set to "padring ring stripe blockring blockpin coverpin blockwire corewire followpin iowire"
+sroutePadPinAllPorts set to true
+srouteRoutePowerBarPortOnBothDir set to true
+srouteStopBlockPin set to "nearestTarget"
+srouteStraightConnections set to "straightWithDrcClean"
+srouteTopLayerLimit set to 7
+srouteTopTargetLayerLimit set to 10
+End option processing: cpu: 0:00:00, real: 0:00:00, peak: 3163.00 megs.
+
+Reading DB technology information...
+Finished reading DB technology information.
+Reading floorplan and netlist information...
+Finished reading floorplan and netlist information.
+**WARN: (IMPSR-4302):	Cap-table/qrcTechFile is found in the design, so the same information from the technology file will be ignored.
+Read in 21 layers, 10 routing layers, 1 overlap layer
+Read in 1 nondefault rule, 0 used
+Read in 212 macros, 37 used
+Read in 894 components
+  894 core components: 36 unplaced, 0 placed, 858 fixed
+Read in 8 logical pins
+Read in 8 nets
+Read in 2 special nets
+Read in 1788 terminals
+2 nets selected.
+
+Begin power routing ...
+**WARN: (IMPSR-554):	The specified top target layer is beyond top routing layer. Set top target layer to 7.
+CPU time for VDD FollowPin 0 seconds
+CPU time for VSS FollowPin 0 seconds
+  Number of Core ports routed: 0  open: 158
+  Number of Followpin connections: 79
+End power routing: cpu: 0:00:00, real: 0:00:00, peak: 3167.00 megs.
+
+
+
+ Begin updating DB with routing results ...
+ Updating DB with 0 via definition ...Extracting standard cell pins and blockage ...... 
+**WARN: (IMPTR-2108):	For layer M10, the gaps of 6 out of 6 tracks are narrower than 16.000um (space 8.000 + width 8.000).
+Type 'man IMPTR-2108' for more detail.
+ As a result, your trialRoute congestion could be incorrect.
+Pin and blockage extraction finished
+
+setViaGenMode -disable_via_merging is reset to default value: false.
+setViaGenMode -keep_existing_via is reset to default value: 0.
+setViaGenMode -optimize_cross_via is reset to default value: false.
+setAddStripeMode -use_exact_spacing true is set by default for this design under 20nm node. 
+Setting -use_cce to 1. ViaGen will call CCE to colorize via and may re-colorize surrounding vias to resolve color conflict within the local range.
+Setting -optimize_cross_via to 1. ViaGen will try to generate vias with the minimum enclosure.
+setViaGenMode -optimize_cross_via true is set by default for this design of 12nm node or under. 
+Setting -disable_via_merging to 1. ViaGen disables via merging with the via created earlier.
+setViaGenMode -disable_via_merging true is set by default for this design of 12nm node or under. 
+Setting -keep_existing_via to 1. ViaGen will keep the existing vias.
+setViaGenMode -keep_existing_via 1 is set by default for this design of 12nm node or under. 
+sroute created 79 wires.
+ViaGen created 0 via, deleted 0 via to avoid violation.
++--------+----------------+----------------+
+|  Layer |     Created    |     Deleted    |
++--------+----------------+----------------+
+|   M1   |       79       |       NA       |
++--------+----------------+----------------+
+setAddStripeMode -use_exact_spacing is reset to default value: false.
+setViaGenMode -disable_via_merging is reset to default value: false.
+setViaGenMode -keep_existing_via is reset to default value: 0.
+setViaGenMode -optimize_cross_via is reset to default value: false.
+#% End sroute (date=04/27 16:56:22, total cpu=0:00:00.0, real=0:00:00.0, peak res=1508.9M, current mem=1503.4M)
+<CMD> createInstGroup -name FSM_GROUP
+
+Description:
+...
+
+Usage: createInstGroup [-help] <group name> [-isPhyHier] [-guide <box> | -region <box> | -fence <box> | -softGuide ] [[-ar <num>] -density <num>] [ -softGuide ]  [ -guide <box>]
+
+**ERROR: (IMPTCM-48):	"-name" is not a legal option for command "createInstGroup". Either the current option or an option prior to it is not specified correctly.
+<CMD> createInstGroup -name PE_ARRAY_GROUP
+
+Description:
+...
+
+Usage: createInstGroup [-help] <group name> [-isPhyHier] [-guide <box> | -region <box> | -fence <box> | -softGuide ] [[-ar <num>] -density <num>] [ -softGuide ]  [ -guide <box>]
+
+**ERROR: (IMPTCM-48):	"-name" is not a legal option for command "createInstGroup". Either the current option or an option prior to it is not specified correctly.
+<CMD> setPinAssignMode -pinEditInBatch true
+<CMD> editPin -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side LEFT -layer 3 -spreadType center -spacing 2.016 -pin {clk_sys rst_n_sys uart_rx}
+Successfully spread [3] pins.
+editPin : finished (cpu = 0:00:00.0 real = 0:00:00.0, mem = 1784.1M).
+<CMD> editPin -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side RIGHT -layer 3 -spreadType center -spacing 2.016 -pin {uart_tx led_running led_done led_uart_rx led_uart_tx}
+Successfully spread [5] pins.
+editPin : finished (cpu = 0:00:00.0 real = 0:00:00.0, mem = 1784.1M).
+<CMD> editPin -snap TRACK -pin *
+Updated attributes of 8 pin(s) of partition cnn_uart_fpga_top
+editPin : finished (cpu = 0:00:00.0 real = 0:00:00.0, mem = 1784.1M).
+<CMD> setPinAssignMode -pinEditInBatch false
+<CMD> place_design
+*** placeDesign #1 [begin] : totSession cpu/real = 0:00:14.2/0:00:15.2 (0.9), mem = 1784.1M
+*** Starting placeDesign default flow ***
+*** Start deleteBufferTree ***
+Info: Detect buffers to remove automatically.
+Analyzing netlist ...
+Updating netlist
+
+*summary: 4 instances (buffers/inverters) removed
+*** Finish deleteBufferTree (0:00:00.1) ***
+**INFO: Enable pre-place timing setting for timing analysis
+Set Using Default Delay Limit as 101.
+**WARN: (IMPDC-1629):	The default delay limit was set to 101. This is less than the default of 1000 and may result in inaccurate delay calculation for nets with a fanout higher than the setting.  If needed, the default delay limit may be adjusted by running the command 'set delaycal_use_default_delay_limit'.
+Set Default Net Delay as 0 ps.
+Set Default Net Load as 0 pF. 
+Set Default Input Pin Transition as 1 ps.
+**INFO: Analyzing IO path groups for slack adjustment
+**INFO: Disable pre-place timing setting for timing analysis
+Set Using Default Delay Limit as 1000.
+Set Default Net Delay as 1000 ps.
+Set Default Input Pin Transition as 0.1 ps.
+Set Default Net Load as 0.5 pF. 
+**INFO: Pre-place timing setting for timing analysis already disabled
+Deleted 0 physical inst  (cell - / prefix -).
+Did not delete 858 physical insts as they were marked preplaced.
+INFO: #ExclusiveGroups=0
+INFO: There are no Exclusive Groups.
+*** Starting "NanoPlace(TM) placement v#2 (mem=1845.0M)" ...
+*** Build Buffered Sizing Timing Model
+(cpu=0:00:01.2 mem=1897.0M) ***
+*** Build Virtual Sizing Timing Model
+(cpu=0:00:01.3 mem=1927.0M) ***
+No user-set net weight.
+Net fanout histogram:
+2		: 293 (63.0%) nets
+3		: 100 (21.5%) nets
+4     -	14	: 67 (14.4%) nets
+15    -	39	: 2 (0.4%) nets
+40    -	79	: 0 (0.0%) nets
+80    -	159	: 3 (0.6%) nets
+160   -	319	: 0 (0.0%) nets
+320   -	639	: 0 (0.0%) nets
+640   -	1279	: 0 (0.0%) nets
+1280  -	2559	: 0 (0.0%) nets
+2560  -	5119	: 0 (0.0%) nets
+5120+		: 0 (0.0%) nets
+Options: timingDriven clkGateAware ignoreScan pinGuide congEffort=auto gpeffort=medium 
+Scan chains were not defined.
+#std cell=1270 (858 fixed + 412 movable) #buf cell=0 #inv cell=89 #block=0 (0 floating + 0 preplaced)
+#ioInst=0 #net=465 #term=1605 #term/net=3.45, #fixedIo=0, #floatIo=0, #fixedPin=0, #floatPin=8
+stdCell: 1270 single + 0 double + 0 multi
+Total standard cell length = 1.3215 (mm), area = 0.0014 (mm^2)
+**WARN: (IMPSP-378):	Center of Cell XOR2x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell XOR2x1_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell XNOR2x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell XNOR2x1_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFLx4_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFLx3_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFLx2_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFLx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFHx4_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFHx3_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFHx2_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFHx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR5x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR5x1_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR4x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR3x4_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR3x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR2x6_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR2x4_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OAI33xp33_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (EMS-27):	Message (IMPSP-378) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+WARNING (IMPSP-382): Found 162 cells with pin-to-track misalignment. All floorplan's track offset and cell's pin-offsets did not allow any alignment.
+**WARN: (IMPSP-377):	Center of Cell INVx1_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.1080 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (EMS-27):	Message (IMPSP-377) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+Average module density = 0.097.
+Density for the design = 0.097.
+       = stdcell_area 4402 sites (1027 um^2) / alloc_area 45162 sites (10535 um^2).
+Pin Density = 0.03424.
+            = total # of pins 1605 / total area 46878.
+Enabling multi-CPU acceleration with 8 CPU(s) for placement
+=== lastAutoLevel = 8 
+Clock gating cells determined by native netlist tracing.
+Iteration  1: Total net bbox = 6.291e+02 (6.10e+02 1.88e+01)
+              Est.  stn bbox = 8.950e+02 (8.71e+02 2.42e+01)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 2259.9M
+Iteration  2: Total net bbox = 6.291e+02 (6.10e+02 1.88e+01)
+              Est.  stn bbox = 8.950e+02 (8.71e+02 2.42e+01)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 2259.9M
+Iteration  3: Total net bbox = 7.440e+02 (7.23e+02 2.12e+01)
+              Est.  stn bbox = 1.202e+03 (1.16e+03 3.88e+01)
+              cpu = 0:00:00.1 real = 0:00:00.0 mem = 2487.3M
+Active setup views:
+    view_tc
+Iteration  4: Total net bbox = 6.965e+02 (6.75e+02 2.12e+01)
+              Est.  stn bbox = 1.130e+03 (1.09e+03 3.87e+01)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 2487.3M
+Iteration  5: Total net bbox = 8.827e+02 (7.54e+02 1.29e+02)
+              Est.  stn bbox = 1.406e+03 (1.20e+03 2.02e+02)
+              cpu = 0:00:00.2 real = 0:00:00.0 mem = 2487.3M
+Iteration  6: Total net bbox = 1.437e+03 (8.88e+02 5.49e+02)
+              Est.  stn bbox = 2.041e+03 (1.33e+03 7.15e+02)
+              cpu = 0:00:00.2 real = 0:00:00.0 mem = 2617.3M
+[NR-eGR] Running Early Global Route on this N7 design with N7 settings
+Iteration  7: Total net bbox = 1.887e+03 (1.33e+03 5.60e+02)
+              Est.  stn bbox = 2.497e+03 (1.77e+03 7.28e+02)
+              cpu = 0:00:00.1 real = 0:00:00.0 mem = 2395.3M
+Iteration  8: Total net bbox = 1.887e+03 (1.33e+03 5.60e+02)
+              Est.  stn bbox = 2.497e+03 (1.77e+03 7.28e+02)
+              cpu = 0:00:00.5 real = 0:00:01.0 mem = 2363.3M
+Iteration  9: Total net bbox = 2.469e+03 (1.39e+03 1.08e+03)
+              Est.  stn bbox = 3.163e+03 (1.83e+03 1.33e+03)
+              cpu = 0:00:00.7 real = 0:00:00.0 mem = 2397.7M
+Iteration 10: Total net bbox = 2.469e+03 (1.39e+03 1.08e+03)
+              Est.  stn bbox = 3.163e+03 (1.83e+03 1.33e+03)
+              cpu = 0:00:00.5 real = 0:00:00.0 mem = 2365.7M
+Iteration 11: Total net bbox = 2.883e+03 (1.59e+03 1.29e+03)
+              Est.  stn bbox = 3.572e+03 (2.00e+03 1.57e+03)
+              cpu = 0:00:01.2 real = 0:00:01.0 mem = 2402.7M
+Iteration 12: Total net bbox = 2.883e+03 (1.59e+03 1.29e+03)
+              Est.  stn bbox = 3.572e+03 (2.00e+03 1.57e+03)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 2402.7M
+Iteration 13: Total net bbox = 2.883e+03 (1.59e+03 1.29e+03)
+              Est.  stn bbox = 3.572e+03 (2.00e+03 1.57e+03)
+              cpu = 0:00:00.0 real = 0:00:00.0 mem = 2402.7M
+*** cost = 2.883e+03 (1.59e+03 1.29e+03) (cpu for global=0:00:03.7) real=0:00:03.0***
+Placement multithread real runtime: 0:00:03.0 with 8 threads.
+Info: 0 clock gating cells identified, 0 (on average) moved 0/3
+Solver runtime cpu: 0:00:02.2 real: 0:00:00.5
+Core Placement runtime cpu: 0:00:02.4 real: 0:00:02.0
+**WARN: (IMPSP-9025):	No scan chain specified/traced.
+Type 'man IMPSP-9025' for more detail.
+WARNING (IMPSP-382): Found 162 cells with pin-to-track misalignment. All floorplan's track offset and cell's pin-offsets did not allow any alignment.
+*** Starting refinePlace (0:00:20.0 mem=2346.7M) ***
+Total net bbox length = 2.883e+03 (1.591e+03 1.292e+03) (ext = 2.574e+02)
+**WARN: (IMPSP-2041):	Found 1716 fixed insts that could not be colored.
+Type 'man IMPSP-2041' for more detail.
+Move report: Detail placement moves 412 insts, mean move: 0.29 um, max move: 7.07 um 
+	Max move on inst (led_counter_reg[22]): (80.02, 41.97) --> (82.78, 46.28)
+	Runtime: CPU: 0:00:00.1 REAL: 0:00:00.0 MEM: 2314.7MB
+Summary Report:
+Instances move: 412 (out of 412 movable)
+Instances flipped: 0
+Mean displacement: 0.29 um
+Max displacement: 7.07 um (Instance: led_counter_reg[22]) (80.0235, 41.969) -> (82.784, 46.28)
+	Length: 26 sites, height: 1 rows, site name: asap7sc7p5t, cell type: DFFASRHQNx1_ASAP7_75t_R
+Total net bbox length = 2.689e+03 (1.391e+03 1.298e+03) (ext = 2.603e+02)
+Runtime: CPU: 0:00:00.1 REAL: 0:00:00.0 MEM: 2314.7MB
+*** Finished refinePlace (0:00:20.1 mem=2314.7M) ***
+*** End of Placement (cpu=0:00:05.7, real=0:00:05.0, mem=2314.7M) ***
+WARNING (IMPSP-382): Found 162 cells with pin-to-track misalignment. All floorplan's track offset and cell's pin-offsets did not allow any alignment.
+default core: bins with density > 0.750 =  0.00 % ( 0 / 104 )
+Density distribution unevenness ratio = 52.544%
+*** Free Virtual Timing Model ...(mem=2338.7M)
+**INFO: Enable pre-place timing setting for timing analysis
+Set Using Default Delay Limit as 101.
+**WARN: (IMPDC-1629):	The default delay limit was set to 101. This is less than the default of 1000 and may result in inaccurate delay calculation for nets with a fanout higher than the setting.  If needed, the default delay limit may be adjusted by running the command 'set delaycal_use_default_delay_limit'.
+Set Default Net Delay as 0 ps.
+Set Default Net Load as 0 pF. 
+**INFO: Analyzing IO path groups for slack adjustment
+**INFO: Disable pre-place timing setting for timing analysis
+Set Using Default Delay Limit as 1000.
+Set Default Net Delay as 1000 ps.
+Set Default Net Load as 0.5 pF. 
+Info: Disable timing driven in postCTS congRepair.
+
+Starting congRepair ...
+[NR-eGR] Track table information for default rule: 
+[NR-eGR] M1 has single uniform track structure
+[NR-eGR] M2 has non-uniform track structures
+[NR-eGR] M3 has single uniform track structure
+[NR-eGR] M4 has single uniform track structure
+[NR-eGR] M5 has single uniform track structure
+[NR-eGR] M6 has single uniform track structure
+[NR-eGR] M7 has single uniform track structure
+[NR-eGR] M8 has single uniform track structure
+[NR-eGR] M9 has single uniform track structure
+[NR-eGR] Pad has single uniform track structure
+[NR-eGR] Read 0 PG shapes
+[NR-eGR] Read 0 clock shapes
+[NR-eGR] Read 0 other shapes
+[NR-eGR] #Routing Blockages  : 0
+[NR-eGR] #Instance Blockages : 832
+[NR-eGR] #PG Blockages       : 0
+[NR-eGR] #Halo Blockages     : 0
+[NR-eGR] #Boundary Blockages : 0
+[NR-eGR] #Clock Blockages    : 0
+[NR-eGR] #Other Blockages    : 0
+[NR-eGR] Num Prerouted Nets = 0  Num Prerouted Wires = 0
+[NR-eGR] Read 465 nets ( ignored 0 )
+[NR-eGR] #standard cell terms   : 1597
+[NR-eGR] #moved terms           : 1538
+[NR-eGR] #off-track terms       : 897
+[NR-eGR] #off-cross-track terms : 0
+[NR-eGR] ============ Routing rule table ============
+[NR-eGR] Rule id: 0  Nets: 465
+[NR-eGR] ========================================
+[NR-eGR] 
+[NR-eGR] Layer group 1: route 465 net(s) in layer range [2, 7]
+[NR-eGR] Early Global Route overflow of layer group 1: 0.00% H + 0.00% V. EstWL: 3.499200e+03um
+[NR-eGR] Congestion Analysis By layer: (blocked Gcells are excluded) 
+[NR-eGR]                        OverCon            
+[NR-eGR]                         #Gcell     %Gcell
+[NR-eGR]        Layer               (1)    OverCon
+[NR-eGR] ----------------------------------------------
+[NR-eGR]      M1 ( 1)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]      M2 ( 2)         2( 0.08%)   ( 0.08%) 
+[NR-eGR]      M3 ( 3)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]      M4 ( 4)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]      M5 ( 5)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]      M6 ( 6)         0( 0.00%)   ( 0.00%) 
+[NR-eGR]      M7 ( 7)         0( 0.00%)   ( 0.00%) 
+[NR-eGR] ----------------------------------------------
+[NR-eGR]        Total         2( 0.01%)   ( 0.01%) 
+[NR-eGR] 
+[NR-eGR] Overflow after Early Global Route 0.00% H + 0.00% V
+Early Global Route congestion estimation runtime: 0.03 seconds, mem = 2329.2M
+Local HotSpot Analysis: normalized max congestion hotspot area = 1.00, normalized total congestion hotspot area = 1.00 (area is in unit of 4 std-cell row bins)
+Skipped repairing congestion.
+[NR-eGR]              Length (um)  Vias 
+[NR-eGR] -------------------------------
+[NR-eGR]  M1   (1V)             0  1389 
+[NR-eGR]  M2   (2H)          1648  2193 
+[NR-eGR]  M3   (3V)          1922   139 
+[NR-eGR]  M4   (4H)           167     0 
+[NR-eGR]  M5   (5V)             0     0 
+[NR-eGR]  M6   (6H)             0     0 
+[NR-eGR]  M7   (7V)             0     0 
+[NR-eGR]  M8   (8H)             0     0 
+[NR-eGR]  M9   (9V)             0     0 
+[NR-eGR]  Pad  (10H)            0     0 
+[NR-eGR] -------------------------------
+[NR-eGR]       Total         3737  3721 
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Total half perimeter of net bounding box: 2689um
+[NR-eGR] Total length: 3737um, number of vias: 3721
+[NR-eGR] --------------------------------------------------------------------------
+[NR-eGR] Total eGR-routed clock nets wire length: 0um, number of vias: 0
+[NR-eGR] --------------------------------------------------------------------------
+Early Global Route wiring runtime: 0.01 seconds, mem = 2248.2M
+Tdgp not successfully inited but do clear! skip clearing
+End of congRepair (cpu=0:00:00.1, real=0:00:00.0)
+*** Finishing placeDesign default flow ***
+**placeDesign ... cpu = 0: 0: 6, real = 0: 0: 5, mem = 2248.2M **
+Tdgp not successfully inited but do clear! skip clearing
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPDC-1629           2  The default delay limit was set to %d. T...
+WARNING   IMPSP-9025           1  No scan chain specified/traced.          
+WARNING   IMPSP-377         1227  Center of Cell %s's %s(%d) %s does not f...
+WARNING   IMPSP-378          486  Center of Cell %s's %s(%d) %s does not f...
+WARNING   IMPSP-2041           1  Found %d fixed insts that could not be c...
+*** Message Summary: 1717 warning(s), 0 error(s)
+
+*** placeDesign #1 [finish] : cpu/real = 0:00:06.0/0:00:04.6 (1.3), totSession cpu/real = 0:00:20.3/0:00:19.8 (1.0), mem = 2248.2M
+<CMD> setTieHiLoMode -maxFanout 5
+<CMD> addTieHiLo -prefix TIE -cell {TIELOx1_ASAP7_75t_R TIEHIx1_ASAP7_75t_R}
+**WARN: (IMPSP-378):	Center of Cell XOR2x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell XOR2x1_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell XNOR2x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell XNOR2x1_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFLx4_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFLx3_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFLx2_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFLx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFHx4_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFHx3_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFHx2_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFHx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR5x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR5x1_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR4x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR3x4_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR3x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR2x6_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR2x4_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OAI33xp33_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (EMS-27):	Message (IMPSP-378) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+WARNING (IMPSP-382): Found 162 cells with pin-to-track misalignment. All floorplan's track offset and cell's pin-offsets did not allow any alignment.
+**WARN: (IMPSP-377):	Center of Cell INVx1_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.1080 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (EMS-27):	Message (IMPSP-377) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+Options: No distance constraint, Max Fan-out = 5.
+INFO: Total Number of Tie Cells (TIELOx1_ASAP7_75t_R) placed: 0  
+INFO: Total Number of Tie Cells (TIEHIx1_ASAP7_75t_R) placed: 0  
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern '*'
+**ERROR: (TCLCMD-917):	Cannot find 'clocks' that match '*'
+<CMD> routeDesign
+#% Begin routeDesign (date=04/27 16:56:27, mem=1712.6M)
+#routeDesign: cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1712.56 (MB), peak = 1850.36 (MB)
+AAE_INFO: Pre Route call back at the beginning of routeDesign
+#**INFO: setDesignMode -flowEffort standard
+#**INFO: setDesignMode -powerEffort none
+**INFO: User settings:
+setNanoRouteMode -extractThirdPartyCompatible  false
+setDesignMode -bottomRoutingLayer              2
+setDesignMode -node                            N7
+setDesignMode -process                         7
+setDesignMode -topRoutingLayer                 7
+setExtractRCMode -coupling_c_th                0.1
+setExtractRCMode -engine                       preRoute
+setExtractRCMode -relative_c_th                1
+setExtractRCMode -total_c_th                   0
+setDelayCalMode -engine                        aae
+setDelayCalMode -ignoreNetLoad                 false
+
+#**INFO: multi-cut via swapping will be performed after routing.
+#**INFO: All auto set options tuned by routeDesign will be restored to their original settings on command completion.
+**WARN: (IMPSP-378):	Center of Cell XOR2x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell XOR2x1_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell XNOR2x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell XNOR2x1_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFLx4_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFLx3_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFLx2_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFLx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFHx4_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFHx3_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFHx2_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFHx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR5x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR5x1_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR4x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR3x4_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR3x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR2x6_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR2x4_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OAI33xp33_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (EMS-27):	Message (IMPSP-378) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+WARNING (IMPSP-382): Found 162 cells with pin-to-track misalignment. All floorplan's track offset and cell's pin-offsets did not allow any alignment.
+**WARN: (IMPSP-377):	Center of Cell INVx1_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.1080 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+Type 'man IMPSP-377' for more detail.
+**WARN: (EMS-27):	Message (IMPSP-377) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+Begin checking placement ... (start mem=2240.2M, init mem=2256.2M)
+Vertical Pin-Track Alignment Violation:	409
+*info: Placed = 1270           (Fixed = 858)
+*info: Unplaced = 0           
+Placement Density:9.75%(1027/10535)
+Placement Density (including fixed std cells):13.05%(1427/10936)
+Finished checkPlace (total: cpu=0:00:00.0, real=0:00:00.0; vio checks: cpu=0:00:00.0, real=0:00:00.0; mem=2224.2M)
+#WARNING (NRIG-77) Found placement violations. Please investigate and correct before routing. Routing with placement violations can cause long runtime and may be irresolvable.
+#Use routeDesign -placementCheck to stop on violations. Use routeDesign -noPlacementCheck to skip the check.
+
+changeUseClockNetStatus Option :  -noFixedNetWires 
+*** Changed status on (0) nets in Clock.
+*** End changeUseClockNetStatus (cpu=0:00:00.0, real=0:00:00.0, mem=2224.2M) ***
+#**INFO: auto set of droutePostRouteSwapVia to multiCut
+% Begin globalDetailRoute (date=04/27 16:56:27, mem=1712.8M)
+
+globalDetailRoute
+
+#Start globalDetailRoute on Mon Apr 27 16:56:27 2026
+#
+#Generating timing data, please wait...
+#465 total nets, 465 already routed, 465 will ignore in trialRoute
+#Reporting timing...
+**WARN: (GLOBAL-100):	Global 'timing_report_backward_compatible_max_paths_reporting' has become obsolete. It will be removed in the next release.
+#Normalized TNS: 0.000 -> -nan, r2r 0.000 -> -nan, unit 1.000, clk period 0.000 (ns)
+#Stage 1: cpu time = 00:00:01, elapsed time = 00:00:00, memory = 1896.85 (MB), peak = 1941.43 (MB)
+#Library Standard Delay: 7.80ps
+#Slack threshold: 15.60ps
+#*** Analyzed 0 timing critical paths, and collected 0.
+#Stage 2: cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1897.03 (MB), peak = 1941.43 (MB)
+#Stage 3: cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1903.40 (MB), peak = 1941.43 (MB)
+#Default setup view is reset to view_tc.
+#Stage 4: cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1903.40 (MB), peak = 1941.43 (MB)
+#Current view: view_tc 
+#Current enabled view: view_tc 
+#Generating timing data took: cpu time = 00:00:01, elapsed time = 00:00:01, memory = 1901.90 (MB), peak = 1941.43 (MB)
+#Done generating timing data.
+#WARNING (NRIG-1303) The congestion map does not match the GCELL grid. Clearing the map.
+#num needed restored net=0
+#need_extraction net=0 (total=469)
+#NanoRoute Version 21.19-s058_1 NR231113-0413/21_19-UB
+#Start routing data preparation on Mon Apr 27 16:56:28 2026
+#
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 0.700.
+#Voltage range [0.000 - 0.700] has 467 nets.
+#Voltage range [0.700 - 0.700] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#Build and mark too close pins for the same net.
+#Rebuild pin access data for design.
+#Initial pin access analysis.
+#Detail pin access analysis.
+# M1           V   Track-Pitch = 0.14400    Line-2-Via Pitch = 0.14400
+# M2           H   Track-Pitch = 0.14400    Line-2-Via Pitch = 0.14400
+# M3           V   Track-Pitch = 0.14400    Line-2-Via Pitch = 0.14400
+# M4           H   Track-Pitch = 0.19200    Line-2-Via Pitch = 0.19200
+# M5           V   Track-Pitch = 0.21600    Line-2-Via Pitch = 0.19200
+# M6           H   Track-Pitch = 0.28800    Line-2-Via Pitch = 0.41600
+#WARNING (NRAG-44) Track pitch is too small compared with line-2-via pitch.
+# M7           V   Track-Pitch = 0.28800    Line-2-Via Pitch = 0.41600
+#WARNING (NRAG-44) Track pitch is too small compared with line-2-via pitch.
+# M8           H   Track-Pitch = 0.38400    Line-2-Via Pitch = 0.32000
+# M9           V   Track-Pitch = 0.36000    Line-2-Via Pitch = 0.32000
+# Pad          H   Track-Pitch = 12.20000    Line-2-Via Pitch = 16.00000
+#WARNING (NRAG-44) Track pitch is too small compared with line-2-via pitch.
+#WARNING (NRDB-2322) There are no valid layer for shielding.
+#Unexpected stripe layer range. Bottom =8(M8), top =7(M7)
+#Bottom routing layer index=2(M2), bottom routing layer for shielding=7(M7), bottom shield layer=7(M7)
+#shield_bottom_stripe_layer=7(M7), shield_top_stripe_layer=7(M7)
+#pin_access_rlayer=2(M2)
+#shield_top_dpt_rlayer=7 top_rlayer=7 top_trim_metal_rlayer=-1 rlayer_lowest=8 bottom_rlayer=4
+#enable_trim_layer_shield=F enable_dpt_layer_shield=F has_line_end_grid=F
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1899.96 (MB), peak = 2169.79 (MB)
+#Regenerating Ggrids automatically.
+#Auto generating G-grids with size=15 tracks, using layer M3's pitch = 0.14400.
+#Using automatically generated G-grids.
+#Done routing data preparation.
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1903.35 (MB), peak = 2169.79 (MB)
+#Start instance access analysis using 8 threads...
+#Set layer M2 to be advanced pin access layer.
+#409 out of 1271 (32.18%) instances are not legally placed.
+#
+#Summary of active signal nets routing constraints set by OPT:
+#	preferred routing layers      : 0
+#	preferred routing layer effort: 0
+#	preferred extra space         : 0
+#	preferred multi-cut via       : 0
+#	avoid detour                  : 0
+#	expansion ratio               : 0
+#	net priority                  : 0
+#	s2s control                   : 0
+#	avoid chaining                : 0
+#	inst-based stacking via       : 0
+#
+#Summary of active signal nets routing constraints set by USER:
+#	preferred routing layers      : 0
+#	preferred routing layer effort     : 0
+#	preferred extra space              : 0
+#	preferred multi-cut via            : 0
+#	avoid detour                       : 0
+#	net weight                         : 0
+#	avoid chaining                     : 0
+#	cell-based stacking via (required) : 0
+#	cell-based stacking via (optional) : 0
+#
+#Start timing driven prevention iteration...
+#
+#----------------------------------------------------
+# Summary of active signal nets routing constraints
+#+--------------------------+-----------+
+#+--------------------------+-----------+
+#
+#----------------------------------------------------
+#Done timing-driven prevention
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1903.35 (MB), peak = 2169.79 (MB)
+#Total number of trivial nets (e.g. < 2 pins) = 4 (skipped).
+#Total number of routable nets = 465.
+#Total number of nets in the design = 469.
+#465 routable nets do not have any wires.
+#465 nets will be global routed.
+#Using multithreading with 8 threads.
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 0.700.
+#Voltage range [0.000 - 0.700] has 467 nets.
+#Voltage range [0.700 - 0.700] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 0.700.
+#Voltage range [0.000 - 0.700] has 467 nets.
+#Voltage range [0.700 - 0.700] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#
+#Finished routing data preparation on Mon Apr 27 16:56:28 2026
+#
+#Cpu time = 00:00:00
+#Elapsed time = 00:00:00
+#Increased memory = 0.00 (MB)
+#Total memory = 1903.35 (MB)
+#Peak memory = 2169.79 (MB)
+#
+#
+#Start global routing on Mon Apr 27 16:56:28 2026
+#
+#
+#Start global routing initialization on Mon Apr 27 16:56:28 2026
+#
+#Number of eco nets is 0
+#
+#Start global routing data preparation on Mon Apr 27 16:56:28 2026
+#
+#Start routing resource analysis on Mon Apr 27 16:56:28 2026
+#
+#Routing resource analysis is done on Mon Apr 27 16:56:28 2026
+#
+#  Resource Analysis:
+#
+#               Routing  #Avail      #Track     #Total     %Gcell
+#  Layer      Direction   Track     Blocked      Gcell    Blocked
+#  --------------------------------------------------------------
+#  M2             H         555          22        2542     0.00%
+#  M3             V         929           1        2542     0.00%
+#  M4             H         453           0        2542     0.00%
+#  M5             V         620           0        2542     0.00%
+#  M6             H         206           0        2542     0.00%
+#  M7             V         310           0        2542     0.00%
+#  --------------------------------------------------------------
+#  Total                   3074       0.63%       15252     0.00%
+#
+#
+#
+#
+#Global routing data preparation is done on Mon Apr 27 16:56:28 2026
+#
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1906.86 (MB), peak = 2169.79 (MB)
+#
+#
+#Global routing initialization is done on Mon Apr 27 16:56:28 2026
+#
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1907.30 (MB), peak = 2169.79 (MB)
+#
+#start global routing iteration 1...
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1911.63 (MB), peak = 2169.79 (MB)
+#
+#Skip 1/2 round for no nets in the round...
+#Route nets in 2/2 round...
+#start global routing iteration 2...
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1911.61 (MB), peak = 2169.79 (MB)
+#
+#start global routing iteration 3...
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1911.61 (MB), peak = 2169.79 (MB)
+#
+#
+#Total number of trivial nets (e.g. < 2 pins) = 4 (skipped).
+#Total number of routable nets = 465.
+#Total number of nets in the design = 469.
+#
+#465 routable nets have routed wires.
+#
+#Routed nets constraints summary:
+#-----------------------------
+#        Rules   Unconstrained  
+#-----------------------------
+#      Default             465  
+#-----------------------------
+#        Total             465  
+#-----------------------------
+#
+#Routing constraints summary of the whole design:
+#-----------------------------
+#        Rules   Unconstrained  
+#-----------------------------
+#      Default             465  
+#-----------------------------
+#        Total             465  
+#-----------------------------
+#
+#
+#  Congestion Analysis: (blocked Gcells are excluded)
+#
+#                 OverCon          
+#                  #Gcell    %Gcell
+#     Layer           (1)   OverCon
+#  --------------------------------
+#  M2            0(0.00%)   (0.00%)
+#  M3            0(0.00%)   (0.00%)
+#  M4            0(0.00%)   (0.00%)
+#  M5            0(0.00%)   (0.00%)
+#  M6            0(0.00%)   (0.00%)
+#  M7            0(0.00%)   (0.00%)
+#  --------------------------------
+#     Total      0(0.00%)   (0.00%)
+#
+#  The worst congested Gcell overcon (routing demand over resource in number of tracks) = 1
+#  Overflow after GR: 0.00% H + 0.00% V
+#
+#Hotspot report including placement blocked areas
+[hotspot] +------------+---------------+---------------+-------------------------------------+
+[hotspot] |   layer    |  max hotspot  | total hotspot |            hotspot bbox             |
+[hotspot] +------------+---------------+---------------+-------------------------------------+
+[hotspot] |   M2(H)    |          0.00 |          0.00 |   (none)                            |
+[hotspot] |   M3(V)    |          0.00 |          0.00 |   (none)                            |
+[hotspot] |   M4(H)    |          0.00 |          0.00 |   (none)                            |
+[hotspot] |   M5(V)    |          0.00 |          0.00 |   (none)                            |
+[hotspot] |   M6(H)    |          0.00 |          0.00 |   (none)                            |
+[hotspot] |   M7(V)    |          0.00 |          0.00 |   (none)                            |
+[hotspot] +------------+---------------+---------------+-------------------------------------+
+[hotspot] |   worst    |          0.00 |          0.00 |                                     |
+[hotspot] +------------+---------------+---------------+-------------------------------------+
+[hotspot] | all layers |          0.00 |          0.00 |                                     |
+[hotspot] +------------+---------------+---------------+-------------------------------------+
+Local HotSpot Analysis (blockage included) (3d): normalized congestion max/total hotspot area = 0.00/0.00 (area is in unit of 4 std-cell row bins)
+#Complete Global Routing.
+#Total wire length = 3545 um.
+#Total half perimeter of net bounding box = 3259 um.
+#Total wire length on LAYER M1 = 0 um.
+#Total wire length on LAYER M2 = 1458 um.
+#Total wire length on LAYER M3 = 1683 um.
+#Total wire length on LAYER M4 = 382 um.
+#Total wire length on LAYER M5 = 22 um.
+#Total wire length on LAYER M6 = 0 um.
+#Total wire length on LAYER M7 = 0 um.
+#Total wire length on LAYER M8 = 0 um.
+#Total wire length on LAYER M9 = 0 um.
+#Total wire length on LAYER Pad = 0 um.
+#Total number of vias = 2470
+#Up-Via Summary (total 2470):
+#           
+#-----------------------
+# M1               1331
+# M2               1083
+# M3                 52
+# M4                  4
+#-----------------------
+#                  2470 
+#
+#Total number of involved regular nets 72
+#Maximum src to sink distance  140.8
+#Average of max src_to_sink distance  17.9
+#Average of ave src_to_sink distance  12.5
+#Max overcon = 0 track.
+#Total overcon = 0.00%.
+#Worst layer Gcell overcon rate = 0.00%.
+#
+#Global routing statistics:
+#Cpu time = 00:00:00
+#Elapsed time = 00:00:00
+#Increased memory = 7.49 (MB)
+#Total memory = 1910.84 (MB)
+#Peak memory = 2169.79 (MB)
+#
+#Finished global routing on Mon Apr 27 16:56:28 2026
+#
+#
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 0.700.
+#Voltage range [0.000 - 0.700] has 467 nets.
+#Voltage range [0.700 - 0.700] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 0.700.
+#Voltage range [0.000 - 0.700] has 467 nets.
+#Voltage range [0.700 - 0.700] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1910.48 (MB), peak = 2169.79 (MB)
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 0.700.
+#Voltage range [0.000 - 0.700] has 467 nets.
+#Voltage range [0.700 - 0.700] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#Start Track Assignment.
+#Done with 598 horizontal wires in 2 hboxes and 730 vertical wires in 2 hboxes.
+#Done with 95 horizontal wires in 2 hboxes and 90 vertical wires in 2 hboxes.
+#Done with 2 horizontal wires in 2 hboxes and 2 vertical wires in 2 hboxes.
+#
+#Track assignment summary:
+# layer   (wire length)   (overlap)     (long ovlp)	(with obs/pg/clk)  
+#------------------------------------------------------------------------
+# M2          1448.52 	  0.03%  	  0.00% 	  0.00%
+# M3          1651.26 	  0.03%  	  0.00% 	  0.00%
+# M4           378.72 	  0.00%  	  0.00% 	  0.00%
+# M5            21.58 	  0.00%  	  0.00% 	  0.00%
+# M6             0.00 	  0.00%  	  0.00% 	  0.00%
+# M7             0.00 	  0.00%  	  0.00% 	  0.00%
+#------------------------------------------------------------------------
+# All        3500.08  	  0.03% 	  0.00% 	  0.00%
+#Complete Track Assignment.
+#Total wire length = 3468 um.
+#Total half perimeter of net bounding box = 3259 um.
+#Total wire length on LAYER M1 = 0 um.
+#Total wire length on LAYER M2 = 1432 um.
+#Total wire length on LAYER M3 = 1638 um.
+#Total wire length on LAYER M4 = 376 um.
+#Total wire length on LAYER M5 = 21 um.
+#Total wire length on LAYER M6 = 0 um.
+#Total wire length on LAYER M7 = 0 um.
+#Total wire length on LAYER M8 = 0 um.
+#Total wire length on LAYER M9 = 0 um.
+#Total wire length on LAYER Pad = 0 um.
+#Total number of vias = 2470
+#Up-Via Summary (total 2470):
+#           
+#-----------------------
+# M1               1331
+# M2               1083
+# M3                 52
+# M4                  4
+#-----------------------
+#                  2470 
+#
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1910.62 (MB), peak = 2169.79 (MB)
+#
+#Start post global route fixing for timing critical nets ...
+#
+#* Updating design timing data...
+#Extracting RC...
+Un-suppress "**WARN ..." messages.
+#
+#Start tQuantus RC extraction...
+#Finish check_net_pin_list step Enter extract_rc_after_routing
+#Extract in track assign mode
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 0.700.
+#Voltage range [0.000 - 0.700] has 467 nets.
+#Voltage range [0.700 - 0.700] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#Start building rc corner(s)...
+#Number of RC Corner = 1
+#Corner rc_typ_25 /filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/asap7sc7p5t_28/qrc/qrcTechFile_typ03_scaled4xV06 25.000000 (real) 
+#(i=10, n=10 4000)
+#LISD -> M1 (1)
+#M1 -> M2 (2)
+#M2 -> M3 (3)
+#M3 -> M4 (4)
+#M4 -> M5 (5)
+#M5 -> M6 (6)
+#M6 -> M7 (7)
+#M7 -> M8 (8)
+#M8 -> M9 (9)
+#M9 -> Pad (10)
+#SADV_On
+# Corner(s) : 
+#rc_typ_25 [25.00]
+# Corner id: 0
+# Layout Scale: 1.000000
+# Has Metal Fill model: yes
+# Temperature was set
+# Temperature : 25.000000
+# Ref. Temp   : 25.000000
+#
+#layer[1] tech width 288 != ict width 400.0
+#
+#layer[1] tech spc 288 != ict spc 464.0
+#
+#layer[4] tech width 384 != ict width 288.0
+#
+#layer[4] tech spc 384 != ict spc 288.0
+#
+#layer[6] tech width 512 != ict width 384.0
+#
+#layer[7] tech spc 384 != ict spc 512.0
+#
+#layer[8] tech width 640 != ict width 512.0
+#
+#layer[8] tech spc 640 != ict spc 512.0
+#
+#layer[10] tech width 32000 != ict width 640.0
+#
+#layer[10] tech spc 32000 != ict spc 640.0
+#total pattern=220 [10, 605]
+#Reading previously stored rc_model file ( rc_model.bin ) ...
+#found CAPMODEL /filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/asap7sc7p5t_28/qrc/qrcTechFile_typ03_scaled4xV06
+#found RESMODEL /filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/asap7sc7p5t_28/qrc/qrcTechFile_typ03_scaled4xV06 25.000000 
+#number model r/c [1,1] [10,605] read
+#Build RC corners: cpu time = 00:00:00, elapsed time = 00:00:01, memory = 1909.35 (MB), peak = 2169.79 (MB)
+#Finish check_net_pin_list step Enter extract
+#Start init net ripin tree building
+#Finish init net ripin tree building
+#Cpu time = 00:00:00
+#Elapsed time = 00:00:00
+#Increased memory = 0.00 (MB)
+#Total memory = 1913.47 (MB)
+#Peak memory = 2169.79 (MB)
+#Using multithreading with 8 threads.
+#begin processing metal fill model file
+#end processing metal fill model file
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 0.700.
+#Voltage range [0.000 - 0.700] has 467 nets.
+#Voltage range [0.700 - 0.700] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 0.700.
+#Voltage range [0.000 - 0.700] has 467 nets.
+#Voltage range [0.700 - 0.700] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 0.700.
+#Voltage range [0.000 - 0.700] has 467 nets.
+#Voltage range [0.700 - 0.700] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#
+#Start Post Track Assignment Wire Spread.
+#Done with 89 horizontal wires in 2 hboxes and 115 vertical wires in 2 hboxes.
+#Complete Post Track Assignment Wire Spread.
+#
+#Length limit = 200 pitches
+#opt mode = 2
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 0.700.
+#Voltage range [0.000 - 0.700] has 467 nets.
+#Voltage range [0.700 - 0.700] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 0.700.
+#Voltage range [0.000 - 0.700] has 467 nets.
+#Voltage range [0.700 - 0.700] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#Finish check_net_pin_list step Fix net pin list
+#Start generate extraction boxes.
+#
+#Extract using 30 x 30 Hboxes
+#4x3 initial hboxes
+#Use area based hbox pruning.
+#0/0 hboxes pruned.
+#Complete generating extraction boxes.
+#Extract 5 hboxes with 8 threads on machine with  Core_i5 2.80GHz 12288KB Cache 12CPU...
+#Process 0 special clock nets for rc extraction
+#Total 465 nets were built. 5 nodes added to break long wires. 0 net(s) have incomplete routes.
+#Run Statistics for Extraction:
+#   Cpu time = 00:00:00, elapsed time = 00:00:00 .
+#   Increased memory =    26.58 (MB), total memory =  1941.48 (MB), peak memory =  2169.79 (MB)
+#
+#Scale RC for track assignment: res 1.000000; cap 1.000000; clk res 1.000000; clk cap 1.000000, xcap 1.000000
+#Simplify RC tree: cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1926.37 (MB), peak = 2169.79 (MB)
+#RC Statistics: 1845 Res, 1217 Ground Cap, 0 XCap (Edge to Edge)
+#RC V/H edge ratio: 0.45, Avg V/H Edge Length: 3788.58 (1129), Avg L-Edge Length: 14158.55 (363)
+#Register nets and terms for rcdb /tmp/innovus_temp_641884_tux-105_vsathishkuma_z0MeIk/nr641884_p5X1to.rcdb.d
+#Finish registering nets and terms for rcdb.
+#Start writing RC data.
+#Finish writing RC data
+#Finish writing rcdb with 2822 nodes, 2357 edges, and 0 xcaps
+#5 inserted nodes are removed
+#Restored 0 tie nets, 0 tie snets, 0 partial nets
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 0.700.
+#Voltage range [0.000 - 0.700] has 467 nets.
+#Voltage range [0.700 - 0.700] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 0.700.
+#Voltage range [0.000 - 0.700] has 467 nets.
+#Voltage range [0.700 - 0.700] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 0.700.
+#Voltage range [0.000 - 0.700] has 467 nets.
+#Voltage range [0.700 - 0.700] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#Remove Post Track Assignment Wire Spread
+Restoring parasitic data from file '/tmp/innovus_temp_641884_tux-105_vsathishkuma_z0MeIk/nr641884_p5X1to.rcdb.d' ...
+Reading RCDB with compressed RC data.
+Reading RCDB with compressed RC data.
+Begin read_parasitics... (cpu: 0:00:00.0 real: 0:00:00.0 mem: 2666.352M)
+Following multi-corner parasitics specified:
+	/tmp/innovus_temp_641884_tux-105_vsathishkuma_z0MeIk/nr641884_p5X1to.rcdb.d (rcdb)
+Reading RCDB with compressed RC data.
+		Cell cnn_uart_fpga_top has rcdb /tmp/innovus_temp_641884_tux-105_vsathishkuma_z0MeIk/nr641884_p5X1to.rcdb.d specified
+Cell cnn_uart_fpga_top, hinst 
+Reading RCDB with compressed RC data.
+Done read_parasitics... (cpu: 0:00:00.2 real: 0:00:01.0 mem: 2666.352M)
+#
+#Restore RCDB.
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 0.700.
+#Voltage range [0.000 - 0.700] has 467 nets.
+#Voltage range [0.700 - 0.700] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 0.700.
+#Voltage range [0.000 - 0.700] has 467 nets.
+#Voltage range [0.700 - 0.700] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 0.700.
+#Voltage range [0.000 - 0.700] has 467 nets.
+#Voltage range [0.700 - 0.700] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#Remove Post Track Assignment Wire Spread
+#
+#Complete tQuantus RC extraction.
+#Cpu time = 00:00:01
+#Elapsed time = 00:00:02
+#Increased memory = 14.47 (MB)
+#Total memory = 1925.09 (MB)
+#Peak memory = 2169.79 (MB)
+#
+Un-suppress "**WARN ..." messages.
+#RC Extraction Completed...
+AAE_INFO: switching -siAware from false to true ...
+AAE_INFO: The setting is changed from false to true in setDelayCalMode -SIAware
+#Reporting timing...
+**WARN: (GLOBAL-100):	Global 'timing_report_backward_compatible_max_paths_reporting' has become obsolete. It will be removed in the next release.
+#Normalized TNS: 0.000 -> -nan, r2r 0.000 -> -nan, unit 1.000, clk period 0.000 (ns)
+#Stage 1: cpu time = 00:00:01, elapsed time = 00:00:00, memory = 1952.65 (MB), peak = 2169.79 (MB)
+#Library Standard Delay: 7.80ps
+#Slack threshold: 0.00ps
+#*** Analyzed 0 timing critical paths, and collected 0.
+#Stage 2: cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1952.65 (MB), peak = 2169.79 (MB)
+#Stage 3: cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1954.33 (MB), peak = 2169.79 (MB)
+**WARN: (TCLCMD-1403):	'The -tcl_list output format of report_timing will not be supported in future releases of the software.   Path collections generated by 'report_timing -collection'  can be used instead for programmatic access to timing report data. The  report_timing -tcl_list will continue to work in this release - but, you should update your scripts to use path collections so that they are compatible with future releases.'
+Worst slack reported in the design = 9999999562023526247432192.000000 (early)
+*** writeDesignTiming (0:00:00.0) ***
+#Stage 4: cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1954.53 (MB), peak = 2169.79 (MB)
+Un-suppress "**WARN ..." messages.
+#Number of victim nets: 0
+#Number of aggressor nets: 0
+#Number of weak nets: 0
+#Number of critical nets: 0
+#	level 1 [   0.0, -1000.0]: 0 nets
+#	level 2 [   0.0, -1000.0]: 0 nets
+#	level 3 [   0.0, -1000.0]: 0 nets
+#Total number of nets: 465
+#Total number of significant detoured timing critical nets is 0
+#Total number of selected detoured timing critical nets is 0
+#
+#----------------------------------------------------
+# Summary of active signal nets routing constraints
+#+--------------------------+-----------+
+#+--------------------------+-----------+
+#
+#----------------------------------------------------
+Current (total cpu=0:00:24.1, real=0:00:24.0, peak res=2169.8M, current mem=1720.9M)
+Ending "Constraint file reading stats" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1721.4M, current mem=1721.4M)
+Current (total cpu=0:00:24.1, real=0:00:24.0, peak res=2169.8M, current mem=1721.4M)
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 0.700.
+#Voltage range [0.000 - 0.700] has 467 nets.
+#Voltage range [0.700 - 0.700] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 0.700.
+#Voltage range [0.000 - 0.700] has 467 nets.
+#Voltage range [0.700 - 0.700] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1729.95 (MB), peak = 2169.79 (MB)
+#* Importing design timing data...
+#Number of victim nets: 0
+#Number of aggressor nets: 0
+#Number of weak nets: 0
+#Number of critical nets: 0
+#	level 1 [   0.0, -1000.0]: 0 nets
+#	level 2 [   0.0, -1000.0]: 0 nets
+#	level 3 [   0.0, -1000.0]: 0 nets
+#Total number of nets: 465
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 0.700.
+#Voltage range [0.000 - 0.700] has 467 nets.
+#Voltage range [0.700 - 0.700] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#
+#timing driven effort level: 3
+#Start Track Assignment With Timing Driven.
+#Done with 14 horizontal wires in 2 hboxes and 11 vertical wires in 2 hboxes.
+#Done with 5 horizontal wires in 2 hboxes and 1 vertical wires in 2 hboxes.
+#Done with 2 horizontal wires in 2 hboxes and 2 vertical wires in 2 hboxes.
+#
+#Track assignment summary:
+# layer   (wire length)   (overlap)     (long ovlp)	(with obs/pg/clk)  
+#------------------------------------------------------------------------
+# M2          1448.66 	  0.03%  	  0.00% 	  0.00%
+# M3          1651.13 	  0.03%  	  0.00% 	  0.00%
+# M4           378.87 	  0.00%  	  0.00% 	  0.00%
+# M5            21.58 	  0.00%  	  0.00% 	  0.00%
+# M6             0.00 	  0.00%  	  0.00% 	  0.00%
+# M7             0.00 	  0.00%  	  0.00% 	  0.00%
+#------------------------------------------------------------------------
+# All        3500.24  	  0.03% 	  0.00% 	  0.00%
+#Complete Track Assignment With Timing Driven.
+#Total wire length = 3468 um.
+#Total half perimeter of net bounding box = 3259 um.
+#Total wire length on LAYER M1 = 0 um.
+#Total wire length on LAYER M2 = 1432 um.
+#Total wire length on LAYER M3 = 1639 um.
+#Total wire length on LAYER M4 = 376 um.
+#Total wire length on LAYER M5 = 21 um.
+#Total wire length on LAYER M6 = 0 um.
+#Total wire length on LAYER M7 = 0 um.
+#Total wire length on LAYER M8 = 0 um.
+#Total wire length on LAYER M9 = 0 um.
+#Total wire length on LAYER Pad = 0 um.
+#Total number of vias = 2470
+#Up-Via Summary (total 2470):
+#           
+#-----------------------
+# M1               1331
+# M2               1083
+# M3                 52
+# M4                  4
+#-----------------------
+#                  2470 
+#
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1731.73 (MB), peak = 2169.79 (MB)
+#
+#Routing data preparation, pin analysis, global routing and track assignment statistics:
+#Cpu time = 00:00:03
+#Elapsed time = 00:00:03
+#Increased memory = -177.66 (MB)
+#Total memory = 1731.73 (MB)
+#Peak memory = 2169.79 (MB)
+#Using multithreading with 8 threads.
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 0.700.
+#Voltage range [0.000 - 0.700] has 467 nets.
+#Voltage range [0.700 - 0.700] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 0.700.
+#Voltage range [0.000 - 0.700] has 467 nets.
+#Voltage range [0.700 - 0.700] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 0.700.
+#Voltage range [0.000 - 0.700] has 467 nets.
+#Voltage range [0.700 - 0.700] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 0.700.
+#Voltage range [0.000 - 0.700] has 467 nets.
+#Voltage range [0.700 - 0.700] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#Start reading timing information from file .timing_file_641884.tif.gz ...
+#WARNING (NRDB-194) 
+#No setup time constraints read in
+#Read in timing information for 8 ports, 412 instances from timing file .timing_file_641884.tif.gz.
+#
+#Start Detail Routing...
+#start initial detail routing ...
+#   number of violations = 51
+#
+#    By Layer and Type :
+#	         MetSpc    Short    EolKO   WidTbl     Rect   OffGrd   Others   Totals
+#	M1            0        0        1        0        0        0        0        1
+#	M2            2       11        1        0        0        0        3       17
+#	M3            2        2        1        8        4       10        0       27
+#	M4            0        6        0        0        0        0        0        6
+#	Totals        4       19        3        8        4       10        3       51
+#cpu time = 00:00:02, elapsed time = 00:00:01, memory = 1763.92 (MB), peak = 2169.79 (MB)
+#start 1st optimization iteration ...
+#   number of violations = 23
+#
+#    By Layer and Type :
+#	         MetSpc    Short    EolKO   WidTbl   OffGrd   Totals
+#	M1            0        0        0        0        0        0
+#	M2            0        0        0        0        0        0
+#	M3            2        0        4        8        7       21
+#	M4            0        2        0        0        0        2
+#	Totals        2        2        4        8        7       23
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1761.22 (MB), peak = 2169.79 (MB)
+#start 2nd optimization iteration ...
+#   number of violations = 22
+#
+#    By Layer and Type :
+#	         MetSpc    Short   WidTbl   OffGrd   Totals
+#	M1            0        0        0        0        0
+#	M2            0        0        0        0        0
+#	M3            4        0        8        8       20
+#	M4            0        2        0        0        2
+#	Totals        4        2        8        8       22
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1759.80 (MB), peak = 2169.79 (MB)
+#start 3rd optimization iteration ...
+#   number of violations = 23
+#
+#    By Layer and Type :
+#	         MetSpc    Short    EolKO   WidTbl   OffGrd   Totals
+#	M1            0        0        0        0        0        0
+#	M2            0        0        0        0        0        0
+#	M3            3        0        2        8        8       21
+#	M4            0        2        0        0        0        2
+#	Totals        3        2        2        8        8       23
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1759.68 (MB), peak = 2169.79 (MB)
+#start 4th optimization iteration ...
+#   number of violations = 20
+#
+#    By Layer and Type :
+#	         MetSpc    Short   WidTbl   OffGrd   Totals
+#	M1            0        0        0        0        0
+#	M2            0        0        0        0        0
+#	M3            2        0        8        8       18
+#	M4            0        2        0        0        2
+#	Totals        2        2        8        8       20
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1759.99 (MB), peak = 2169.79 (MB)
+#start 5th optimization iteration ...
+#   number of violations = 20
+#
+#    By Layer and Type :
+#	         MetSpc    Short   WidTbl   OffGrd   Totals
+#	M1            0        0        0        0        0
+#	M2            0        0        0        0        0
+#	M3            2        0        8        8       18
+#	M4            0        2        0        0        2
+#	Totals        2        2        8        8       20
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1760.09 (MB), peak = 2169.79 (MB)
+#start 6th optimization iteration ...
+#   number of violations = 22
+#
+#    By Layer and Type :
+#	         MetSpc    Short    EolKO   WidTbl   OffGrd   Totals
+#	M1            0        0        0        0        0        0
+#	M2            0        0        0        0        0        0
+#	M3            3        0        1        8        8       20
+#	M4            0        2        0        0        0        2
+#	Totals        3        2        1        8        8       22
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1760.28 (MB), peak = 2169.79 (MB)
+#start 7th optimization iteration ...
+#   number of violations = 24
+#
+#    By Layer and Type :
+#	         MetSpc    Short    EolKO   WidTbl   OffGrd   Totals
+#	M1            0        0        0        0        0        0
+#	M2            0        0        0        0        0        0
+#	M3            4        0        2        8        8       22
+#	M4            0        2        0        0        0        2
+#	Totals        4        2        2        8        8       24
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1761.05 (MB), peak = 2169.79 (MB)
+#start 8th optimization iteration ...
+#   number of violations = 22
+#
+#    By Layer and Type :
+#	         MetSpc    Short    EolKO   WidTbl   OffGrd   Totals
+#	M1            0        0        0        0        0        0
+#	M2            0        0        0        0        0        0
+#	M3            3        0        1        8        8       20
+#	M4            0        2        0        0        0        2
+#	Totals        3        2        1        8        8       22
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1761.10 (MB), peak = 2169.79 (MB)
+#start 9th optimization iteration ...
+#   number of violations = 21
+#
+#    By Layer and Type :
+#	         MetSpc    Short    EolKO   WidTbl   OffGrd   Totals
+#	M1            0        0        0        0        0        0
+#	M2            0        0        0        0        0        0
+#	M3            2        0        1        8        8       19
+#	M4            0        2        0        0        0        2
+#	Totals        2        2        1        8        8       21
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1761.01 (MB), peak = 2169.79 (MB)
+#start 10th optimization iteration ...
+#   number of violations = 20
+#
+#    By Layer and Type :
+#	         MetSpc    Short   WidTbl   OffGrd   Totals
+#	M1            0        0        0        0        0
+#	M2            0        0        0        0        0
+#	M3            2        0        8        8       18
+#	M4            0        2        0        0        2
+#	Totals        2        2        8        8       20
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1761.41 (MB), peak = 2169.79 (MB)
+#start 11th optimization iteration ...
+#   number of violations = 22
+#
+#    By Layer and Type :
+#	         MetSpc    Short    EolKO   WidTbl   OffGrd   Totals
+#	M1            0        0        0        0        0        0
+#	M2            0        0        0        0        0        0
+#	M3            3        0        1        8        8       20
+#	M4            0        2        0        0        0        2
+#	Totals        3        2        1        8        8       22
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1761.29 (MB), peak = 2169.79 (MB)
+#start 12th optimization iteration ...
+#   number of violations = 19
+#
+#    By Layer and Type :
+#	         MetSpc    Short   WidTbl   OffGrd   Totals
+#	M1            0        0        0        0        0
+#	M2            0        0        0        0        0
+#	M3            1        0        8        8       17
+#	M4            0        2        0        0        2
+#	Totals        1        2        8        8       19
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1761.47 (MB), peak = 2169.79 (MB)
+#start 13th optimization iteration ...
+#   number of violations = 20
+#
+#    By Layer and Type :
+#	         MetSpc    Short   WidTbl   OffGrd   Totals
+#	M1            0        0        0        0        0
+#	M2            0        0        0        0        0
+#	M3            2        0        8        8       18
+#	M4            0        2        0        0        2
+#	Totals        2        2        8        8       20
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1761.41 (MB), peak = 2169.79 (MB)
+#start 14th optimization iteration ...
+#   number of violations = 24
+#
+#    By Layer and Type :
+#	         MetSpc    Short    EolKO   WidTbl   OffGrd   Totals
+#	M1            0        0        0        0        0        0
+#	M2            0        0        0        0        0        0
+#	M3            4        0        2        8        8       22
+#	M4            0        2        0        0        0        2
+#	Totals        4        2        2        8        8       24
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1761.10 (MB), peak = 2169.79 (MB)
+#start 15th optimization iteration ...
+#   number of violations = 18
+#
+#    By Layer and Type :
+#	         MetSpc    Short   WidTbl   OffGrd   Totals
+#	M1            0        0        0        0        0
+#	M2            0        0        0        0        0
+#	M3            1        0        8        7       16
+#	M4            0        2        0        0        2
+#	Totals        1        2        8        7       18
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1760.38 (MB), peak = 2169.79 (MB)
+#start 16th optimization iteration ...
+#   number of violations = 19
+#
+#    By Layer and Type :
+#	         MetSpc    Short    EolKO   WidTbl   OffGrd   Totals
+#	M1            0        0        0        0        0        0
+#	M2            0        0        0        0        0        0
+#	M3            3        0        1        8        6       18
+#	M4            0        1        0        0        0        1
+#	Totals        3        1        1        8        6       19
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1760.07 (MB), peak = 2169.79 (MB)
+#start 17th optimization iteration ...
+#   number of violations = 23
+#
+#    By Layer and Type :
+#	         MetSpc    Short    EolKO   WidTbl   OffGrd   Totals
+#	M1            0        0        0        0        0        0
+#	M2            0        0        0        0        0        0
+#	M3            3        0        2        8        8       21
+#	M4            0        2        0        0        0        2
+#	Totals        3        2        2        8        8       23
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1759.86 (MB), peak = 2169.79 (MB)
+#start 18th optimization iteration ...
+#   number of violations = 20
+#
+#    By Layer and Type :
+#	         MetSpc    Short   WidTbl   OffGrd   Totals
+#	M1            0        0        0        0        0
+#	M2            0        0        0        0        0
+#	M3            2        0        8        8       18
+#	M4            0        2        0        0        2
+#	Totals        2        2        8        8       20
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1759.53 (MB), peak = 2169.79 (MB)
+#start 19th optimization iteration ...
+#   number of violations = 21
+#
+#    By Layer and Type :
+#	         MetSpc    Short    EolKO   WidTbl   OffGrd   Totals
+#	M1            0        0        0        0        0        0
+#	M2            0        0        0        0        0        0
+#	M3            3        0        1        8        8       20
+#	M4            0        1        0        0        0        1
+#	Totals        3        1        1        8        8       21
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1759.03 (MB), peak = 2169.79 (MB)
+#start 20th optimization iteration ...
+#   number of violations = 23
+#
+#    By Layer and Type :
+#	         MetSpc    Short    EolKO   WidTbl   OffGrd   Totals
+#	M1            0        0        0        0        0        0
+#	M2            0        0        0        0        0        0
+#	M3            4        0        1        8        8       21
+#	M4            0        2        0        0        0        2
+#	Totals        4        2        1        8        8       23
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1758.91 (MB), peak = 2169.79 (MB)
+#start 21th optimization iteration ...
+#   number of violations = 20
+#
+#    By Layer and Type :
+#	         MetSpc    Short    EolKO   WidTbl   OffGrd   Totals
+#	M1            0        0        0        0        0        0
+#	M2            0        0        0        0        0        0
+#	M3            3        0        1        8        7       19
+#	M4            0        1        0        0        0        1
+#	Totals        3        1        1        8        7       20
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1759.08 (MB), peak = 2169.79 (MB)
+#Complete Detail Routing.
+#Total wire length = 3646 um.
+#Total half perimeter of net bounding box = 3259 um.
+#Total wire length on LAYER M1 = 0 um.
+#Total wire length on LAYER M2 = 1616 um.
+#Total wire length on LAYER M3 = 1686 um.
+#Total wire length on LAYER M4 = 330 um.
+#Total wire length on LAYER M5 = 15 um.
+#Total wire length on LAYER M6 = 0 um.
+#Total wire length on LAYER M7 = 0 um.
+#Total wire length on LAYER M8 = 0 um.
+#Total wire length on LAYER M9 = 0 um.
+#Total wire length on LAYER Pad = 0 um.
+#Total number of vias = 3072
+#Up-Via Summary (total 3072):
+#           
+#-----------------------
+# M1               1397
+# M2               1621
+# M3                 50
+# M4                  4
+#-----------------------
+#                  3072 
+#
+#Total number of DRC violations = 20
+#Total number of violations on LAYER M1 = 0
+#Total number of violations on LAYER M2 = 0
+#Total number of violations on LAYER M3 = 19
+#Total number of violations on LAYER M4 = 1
+#Total number of violations on LAYER M5 = 0
+#Total number of violations on LAYER M6 = 0
+#Total number of violations on LAYER M7 = 0
+#Total number of violations on LAYER M8 = 0
+#Total number of violations on LAYER M9 = 0
+#Total number of violations on LAYER Pad = 0
+#Cpu time = 00:00:03
+#Elapsed time = 00:00:01
+#Increased memory = 27.36 (MB)
+#Total memory = 1759.08 (MB)
+#Peak memory = 2169.79 (MB)
+#
+#Start Fix Iteration ...
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 0.700.
+#Voltage range [0.000 - 0.700] has 467 nets.
+#Voltage range [0.700 - 0.700] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 0.700.
+#Voltage range [0.000 - 0.700] has 467 nets.
+#Voltage range [0.700 - 0.700] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 0.700.
+#Voltage range [0.000 - 0.700] has 467 nets.
+#Voltage range [0.700 - 0.700] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#
+#   number of violations = 20
+#
+#    By Layer and Type :
+#	         MetSpc    Short    EolKO   WidTbl   OffGrd   Totals
+#	M1            0        0        0        0        0        0
+#	M2            0        0        0        0        0        0
+#	M3            3        0        1        8        7       19
+#	M4            0        1        0        0        0        1
+#	Totals        3        1        1        8        7       20
+#Complete Detail Routing.
+#Total wire length = 3646 um.
+#Total half perimeter of net bounding box = 3259 um.
+#Total wire length on LAYER M1 = 0 um.
+#Total wire length on LAYER M2 = 1616 um.
+#Total wire length on LAYER M3 = 1686 um.
+#Total wire length on LAYER M4 = 330 um.
+#Total wire length on LAYER M5 = 15 um.
+#Total wire length on LAYER M6 = 0 um.
+#Total wire length on LAYER M7 = 0 um.
+#Total wire length on LAYER M8 = 0 um.
+#Total wire length on LAYER M9 = 0 um.
+#Total wire length on LAYER Pad = 0 um.
+#Total number of vias = 3072
+#Up-Via Summary (total 3072):
+#           
+#-----------------------
+# M1               1397
+# M2               1621
+# M3                 50
+# M4                  4
+#-----------------------
+#                  3072 
+#
+#Total number of DRC violations = 20
+#Total number of violations on LAYER M1 = 0
+#Total number of violations on LAYER M2 = 0
+#Total number of violations on LAYER M3 = 19
+#Total number of violations on LAYER M4 = 1
+#Total number of violations on LAYER M5 = 0
+#Total number of violations on LAYER M6 = 0
+#Total number of violations on LAYER M7 = 0
+#Total number of violations on LAYER M8 = 0
+#Total number of violations on LAYER M9 = 0
+#Total number of violations on LAYER Pad = 0
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1759.09 (MB), peak = 2169.79 (MB)
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 0.700.
+#Voltage range [0.000 - 0.700] has 467 nets.
+#Voltage range [0.700 - 0.700] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#Minimum voltage of a net in the design = 0.000.
+#Maximum voltage of a net in the design = 0.700.
+#Voltage range [0.000 - 0.700] has 467 nets.
+#Voltage range [0.700 - 0.700] has 1 net.
+#Voltage range [0.000 - 0.000] has 1 net.
+#
+#Start Post Route via swapping...
+#43.73% of area are rerouted by ECO routing.
+#   number of violations = 20
+#
+#    By Layer and Type :
+#	         MetSpc    Short    EolKO   WidTbl   OffGrd   Totals
+#	M1            0        0        0        0        0        0
+#	M2            0        0        0        0        0        0
+#	M3            3        0        1        8        7       19
+#	M4            0        1        0        0        0        1
+#	Totals        3        1        1        8        7       20
+#cpu time = 00:00:00, elapsed time = 00:00:00, memory = 1758.39 (MB), peak = 2169.79 (MB)
+#CELL_VIEW cnn_uart_fpga_top,init has 20 DRC violations
+#Total number of DRC violations = 20
+#Total number of violations on LAYER M1 = 0
+#Total number of violations on LAYER M2 = 0
+#Total number of violations on LAYER M3 = 19
+#Total number of violations on LAYER M4 = 1
+#Total number of violations on LAYER M5 = 0
+#Total number of violations on LAYER M6 = 0
+#Total number of violations on LAYER M7 = 0
+#Total number of violations on LAYER M8 = 0
+#Total number of violations on LAYER M9 = 0
+#Total number of violations on LAYER Pad = 0
+#No via is swapped.
+#Post Route via swapping is done.
+#Total wire length = 3646 um.
+#Total half perimeter of net bounding box = 3259 um.
+#Total wire length on LAYER M1 = 0 um.
+#Total wire length on LAYER M2 = 1616 um.
+#Total wire length on LAYER M3 = 1686 um.
+#Total wire length on LAYER M4 = 330 um.
+#Total wire length on LAYER M5 = 15 um.
+#Total wire length on LAYER M6 = 0 um.
+#Total wire length on LAYER M7 = 0 um.
+#Total wire length on LAYER M8 = 0 um.
+#Total wire length on LAYER M9 = 0 um.
+#Total wire length on LAYER Pad = 0 um.
+#Total number of vias = 3072
+#Up-Via Summary (total 3072):
+#           
+#-----------------------
+# M1               1397
+# M2               1621
+# M3                 50
+# M4                  4
+#-----------------------
+#                  3072 
+#
+#detailRoute Statistics:
+#Cpu time = 00:00:03
+#Elapsed time = 00:00:02
+#Increased memory = 24.73 (MB)
+#Total memory = 1756.45 (MB)
+#Peak memory = 2169.79 (MB)
+#
+#globalDetailRoute statistics:
+#Cpu time = 00:00:07
+#Elapsed time = 00:00:05
+#Increased memory = 47.70 (MB)
+#Total memory = 1760.46 (MB)
+#Peak memory = 2169.79 (MB)
+#Number of warnings = 7
+#Total number of warnings = 17
+#Number of fails = 0
+#Total number of fails = 0
+#Complete globalDetailRoute on Mon Apr 27 16:56:32 2026
+#
+% End globalDetailRoute (date=04/27 16:56:32, total cpu=0:00:07.1, real=0:00:05.0, peak res=2169.8M, current mem=1755.3M)
+#Default setup view is reset to view_tc.
+#Default setup view is reset to view_tc.
+AAE_INFO: Post Route call back at the end of routeDesign
+#routeDesign: cpu time = 00:00:07, elapsed time = 00:00:05, memory = 1748.03 (MB), peak = 2169.79 (MB)
+
+*** Summary of all messages that are not suppressed in this session:
+Severity  ID               Count  Summary                                  
+WARNING   IMPESI-2017          2  There is no coupling capacitance found i...
+WARNING   IMPSP-377          409  Center of Cell %s's %s(%d) %s does not f...
+WARNING   IMPSP-378          162  Center of Cell %s's %s(%d) %s does not f...
+WARNING   NRAG-44              3  Track pitch is too small compared with l...
+WARNING   NRDB-2138            1  Ignore %s %s for %s %s in RULE %s. It vi...
+WARNING   NRDB-194             1   No setup time constraints read in       
+WARNING   NRDB-2322            1  There are no valid layer for shielding.  
+WARNING   NRDB-405             9  width for %s %s in %s %s is not defined....
+WARNING   NRDB-972             1  Invalid %s %s for %s %s in RULE %s. It v...
+WARNING   NRIG-1303            1  The congestion map does not match the GC...
+WARNING   NRIF-38              1  Option %s%s is not a Boolean option.     
+WARNING   GLOBAL-100           2  Global '%s' has become obsolete. It will...
+WARNING   TCLCMD-1403          1  '%s'                                     
+*** Message Summary: 594 warning(s), 0 error(s)
+
+#% End routeDesign (date=04/27 16:56:32, total cpu=0:00:07.3, real=0:00:05.0, peak res=2169.8M, current mem=1748.0M)
+<CMD> timeDesign -reportOnly
+AAE DB initialization (MEM=2386.82 CPU=0:00:00.0 REAL=0:00:00.0) 
+*** timeDesign #1 [begin] : totSession cpu/real = 0:00:27.6/0:00:25.2 (1.1), mem = 2386.8M
+Setting timing_disable_library_data_to_data_checks to 'true'.
+Setting timing_disable_user_data_to_data_checks to 'true'.
+**WARN: (IMPSP-378):	Center of Cell XOR2x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell XOR2x1_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell XNOR2x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell XNOR2x1_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFLx4_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFLx3_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFLx2_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFLx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFHx4_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFHx3_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFHx2_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell SDFHx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR5x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR5x1_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR4x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR3x4_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR3x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR2x6_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OR2x4_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (IMPSP-378):	Center of Cell OAI33xp33_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+**WARN: (EMS-27):	Message (IMPSP-378) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+**WARN: (IMPSP-377):	Center of Cell INVx1_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.1080 micron.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+**WARN: (IMPSP-377):	Center of Cell DFFASRHQNx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  The expected track offset is 0.0360 micron.
+**WARN: (EMS-27):	Message (IMPSP-377) has exceeded the current message display limit of 20.
+To increase the message display limit, refer to the product command reference manual.
+Extraction called for design 'cnn_uart_fpga_top' of instances=1270 and nets=469 using extraction engine 'preRoute' .
+PreRoute RC Extraction called for design cnn_uart_fpga_top.
+RC Extraction called in multi-corner(1) mode.
+RCMode: PreRoute
+      RC Corner Indexes            0   
+Capacitance Scaling Factor   : 1.00000 
+Resistance Scaling Factor    : 1.00000 
+Clock Cap. Scaling Factor    : 1.00000 
+Clock Res. Scaling Factor    : 1.00000 
+Shrink Factor                : 1.00000
+PreRoute extraction is honoring NDR/Shielding/ExtraSpace for clock nets.
+Using Quantus QRC technology file ...
+Updating RC grid for preRoute extraction ...
+Initializing multi-corner resistance tables ...
+PreRoute RC Extraction DONE (CPU Time: 0:00:00.0  Real Time: 0:00:00.0  MEM: 2478.953M)
+Starting delay calculation for Setup views
+AAE_INFO: opIsDesignInPostRouteState() is 1
+AAE_INFO: deleting AAE DB due to opIsDesignInPostRouteState() is changed ...
+AAE DB initialization (MEM=2470.95 CPU=0:00:00.0 REAL=0:00:00.0) 
+#################################################################################
+# Design Stage: PostRoute
+# Design Name: cnn_uart_fpga_top
+# Design Mode: 7nm
+# Analysis Mode: MMMC Non-OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI Off 
+#################################################################################
+Calculate delays in Single mode...
+Start delay calculation (fullDC) (8 T). (MEM=2540.02)
+siFlow : Timing analysis mode is single, using late cdB files
+Total number of fetched objects 465
+End delay calculation. (MEM=3045.95 CPU=0:00:00.1 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=3045.95 CPU=0:00:00.2 REAL=0:00:00.0)
+*** Done Building Timing Graph (cpu=0:00:00.4 real=0:00:01.0 totSessionCpu=0:00:28.1 mem=2982.0M)
+
+------------------------------------------------------------------
+          timeDesign Summary
+------------------------------------------------------------------
+
+Setup views included:
+ view_tc 
+
++--------------------+---------+---------+---------+
+|     Setup mode     |   all   | reg2reg | default |
++--------------------+---------+---------+---------+
+|           WNS (ns):|  0.000  |   N/A   |  0.000  |
+|           TNS (ns):|  0.000  |   N/A   |  0.000  |
+|    Violating Paths:|    0    |   N/A   |    0    |
+|          All Paths:|    0    |   N/A   |    0    |
++--------------------+---------+---------+---------+
+
++----------------+-------------------------------+------------------+
+|                |              Real             |       Total      |
+|    DRVs        +------------------+------------+------------------|
+|                |  Nr nets(terms)  | Worst Vio  |  Nr nets(terms)  |
++----------------+------------------+------------+------------------+
+|   max_cap      |      0 (0)       |   0.000    |      0 (0)       |
+|   max_tran     |      0 (0)       |   0.000    |      0 (0)       |
+|   max_fanout   |      0 (0)       |     0      |      0 (0)       |
+|   max_length   |      0 (0)       |     0      |      0 (0)       |
++----------------+------------------+------------+------------------+
+
+Density: 9.747%
+------------------------------------------------------------------
+Reported timing to dir ./timingReports
+Total CPU time: 0.63 sec
+Total Real time: 1.0 sec
+Total Memory Usage: 2679.65625 Mbytes
+*** timeDesign #1 [finish] : cpu/real = 0:00:00.6/0:00:01.1 (0.6), totSession cpu/real = 0:00:28.2/0:00:26.3 (1.1), mem = 2679.7M
+<CMD> report_power > ./reports/power_report.rpt
+env CDS_WORKAREA is set to /filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR
+
+Power Net Detected:
+        Voltage	    Name
+             0V	    VSS
+           0.7V	    VDD
+Using Power View: view_tc.
+Set Default Frequency 100MHz.
+
+Begin Power Analysis
+
+             0V	    VSS
+           0.7V	    VDD
+
+Begin Processing Timing Library for Power Calculation
+
+Ended Processing Timing Library for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1959.85MB/4032.36MB/1959.85MB)
+
+
+
+Begin Processing Power Net/Grid for Power Calculation
+
+Ended Processing Power Net/Grid for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1959.85MB/4032.36MB/1959.85MB)
+
+Begin Processing Timing Window Data for Power Calculation
+
+Ended Processing Timing Window Data for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1959.85MB/4032.36MB/1959.85MB)
+
+Begin Processing User Attributes
+
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1959.85MB/4032.36MB/1959.85MB)
+
+Begin Processing Signal Activity
+
+
+Starting Levelizing
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT)
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT): 10%
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT): 20%
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT): 30%
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT): 40%
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT): 50%
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT): 60%
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT): 70%
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT): 80%
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT): 90%
+
+Finished Levelizing
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT)
+
+Starting Activity Propagation
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT)
+** INFO:  (VOLTUS_POWR-1356): No default input activity has been set. Defaulting to 0.2.
+Use 'set_default_switching_activity -input_activity' command to change the default activity value.
+
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT): 10%
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT): 20%
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT): 30%
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT): 40%
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT): 50%
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT): 60%
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT): 70%
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT): 80%
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT): 90%
+
+Finished Activity Propagation
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT)
+Ended Processing Signal Activity: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1960.91MB/4032.36MB/1960.91MB)
+
+Begin Power Computation
+
+      ----------------------------------------------------------
+      # of cell(s) missing both power/leakage table: 0
+      # of cell(s) missing power table: 2
+      # of cell(s) missing leakage table: 0
+      ----------------------------------------------------------
+CellName                                  Missing Table(s)
+TIEHIx1_ASAP7_75t_R                       internal power, 
+TIELOx1_ASAP7_75t_R                       internal power, 
+
+
+
+Starting Calculating power
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT)
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT): 10%
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT): 20%
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT): 30%
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT): 40%
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT): 50%
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT): 60%
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT): 70%
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT): 80%
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT): 90%
+
+Finished Calculating power
+2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT)
+      # of MSMV cell(s) missing power_level: 0
+Ended Power Computation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1968.80MB/4120.40MB/1968.80MB)
+
+Begin Processing User Attributes
+
+Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1968.80MB/4120.40MB/1968.80MB)
+
+Ended Power Analysis: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1968.80MB/4120.40MB/1968.80MB)
+
+Begin Boundary Leakage Calculation
+Ended Boundary Leakage Calculation: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=1968.80MB/4120.40MB/1968.80MB)
+Begin Static Power Report Generation
+*----------------------------------------------------------------------------------------
+*	Innovus 21.19-s058_1 (64bit) 04/04/2024 09:59 (Linux 3.10.0-693.el7.x86_64)
+*	
+*
+* 	Date & Time:	2026-Apr-27 16:56:33 (2026-Apr-27 21:56:33 GMT)
+*
+*----------------------------------------------------------------------------------------
+*
+*	Design: cnn_uart_fpga_top
+*
+*	Liberty Libraries used:
+*	        view_tc: ./asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_AO_RVT_TT_nldm_211120.lib
+*	        view_tc: ./asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib
+*	        view_tc: ./asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_OA_RVT_TT_nldm_211120.lib
+*	        view_tc: ./asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.lib
+*	        view_tc: ./asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib
+*
+*	Parasitic Files used:
+*
+*	Power Units = 1mW
+*
+*	Time Units = 1e-12 secs
+*
+*       report_power
+*
+-----------------------------------------------------------------------------------------
+*
+
+
+
+Total Power
+-----------------------------------------------------------------------------------------
+Total Internal Power:        0.00137577 	   86.0339%
+Total Switching Power:       0.00016947 	   10.5977%
+Total Leakage Power:         0.00005387 	    3.3685%
+Total Power:                 0.00159911
+-----------------------------------------------------------------------------------------
+
+
+Group                           Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+Sequential                      0.001288   7.679e-05   3.004e-05    0.001395       87.25
+Macro                                  0           0           0           0           0
+IO                                     0           0   4.188e-09   4.188e-09   0.0002619
+Combinational                  8.736e-05   9.268e-05   2.382e-05   0.0002039       12.75
+Clock (Combinational)                  0           0           0           0           0
+Clock (Sequential)                     0           0           0           0           0
+-----------------------------------------------------------------------------------------
+Total                           0.001376   0.0001695   5.387e-05    0.001599         100
+-----------------------------------------------------------------------------------------
+
+
+Rail                  Voltage   Internal   Switching     Leakage       Total  Percentage 
+                                Power      Power         Power         Power  (%)        
+-----------------------------------------------------------------------------------------
+VDD                       0.7   0.001376   0.0001695   5.387e-05    0.001599         100
+ 
+ 
+-----------------------------------------------------------------------------------------
+*	Power Distribution Summary: 
+*              Highest Average Power: uart_wrapper_inst/uart_rx_inst/rx_d1_reg (DFFASRHQNx1_ASAP7_75t_R):        2.411e-05
+*              Highest Leakage Power: uart_wrapper_inst/uart_rx_inst/rx_d2_reg (DFFASRHQNx1_ASAP7_75t_R):        2.959e-07
+*                Total Cap:      6.05161e-13 F
+*                Total instances in design:   412
+*                Total instances in design with no power:     0
+*                Total instances in design with no activty:     0
+
+*                Total Fillers and Decap:     0
+-----------------------------------------------------------------------------------------
+ 
+** INFO:  (VOLTUS_POWR-3465): There are 0 decaps and 0 fillers in the design
+
+Ended Static Power Report Generation: (cpu=0:00:00, real=0:00:00,
+mem(process/total/peak)=1969.55MB/4120.40MB/1969.55MB)
+
+<CMD> report_area > ./reports/area_report.rpt
+<CMD> defOut ./outputs/top.def
+Writing DEF file './outputs/top.def', current time is Mon Apr 27 16:56:33 2026 ...
+unitPerMicron=4000, dbgMicronPerDBU=0.000250, unitPerDBU=1.000000
+DEF file './outputs/top.def' is written, current time is Mon Apr 27 16:56:33 2026 ...
+<CMD> saveNetlist ./outputs/top_apr.v
+Writing Netlist "./outputs/top_apr.v" ...
+<CMD> rcOut -spef ./outputs/top_apr.spef
+<CMD> write_sdf ./outputs/top_apr.sdf
+**WARN: (SDF-808):	The software is currently operating in a high performance mode which optimizes the handling of multiple timing arcs between input and output pin pairs. With the current settings, the SDF file generated will contain the same delay information for all of these arcs. To have the SDF recalculated with explicit pin pair data, you should use the option '-recompute_delay_calc'. This setting is recommended for generating SDF for functional  simulation applications.
+AAE_INFO: opIsDesignInPostRouteState() is 1
+#################################################################################
+# Design Stage: PostRoute
+# Design Name: cnn_uart_fpga_top
+# Design Mode: 7nm
+# Analysis Mode: MMMC Non-OCV 
+# Parasitics Mode: No SPEF/RCDB 
+# Signoff Settings: SI Off 
+#################################################################################
+Start delay calculation (fullDC) (8 T). (MEM=2661.15)
+Total number of fetched objects 465
+End delay calculation. (MEM=2940.58 CPU=0:00:00.1 REAL=0:00:00.0)
+End delay calculation (fullDC). (MEM=2940.58 CPU=0:00:00.2 REAL=0:00:00.0)
+<CMD> streamOut -format stream ./outputs/top_apr.gds -mode ALL
+Parse flat map file...
+Writing GDSII file ...
+	****** db unit per micron = 4000 ******
+	****** output gds2 file unit per micron = 4000 ******
+	****** unit scaling factor = 1 ******
+Output for instance
+Output for bump
+Output for physical terminals
+Output for logical terminals
+Output for regular nets
+Output for special nets and metal fills
+Output for via structure generation total number 4
+Statistics for GDS generated (version 3)
+----------------------------------------
+Stream Out Layer Mapping Information:
+GDS Layer Number          GDS Layer Name
+----------------------------------------
+    212                             COMP
+    213                          DIEAREA
+    202                              Pad
+    200                              Pad
+    199                              Pad
+    198                              Pad
+    197                              Pad
+    196                               V9
+    195                               V9
+    191                               V9
+    181                               M9
+    179                               M9
+    178                               M9
+    177                               M9
+    176                               M9
+    175                               V8
+    174                               V8
+    170                               V8
+    160                               M8
+    158                               M8
+    157                               M8
+    156                               M8
+    155                               M8
+    154                               V7
+    153                               V7
+    149                               V7
+    139                               M7
+    137                               M7
+    136                               M7
+    135                               M7
+    134                               M7
+    133                               V6
+    132                               V6
+    131                               V6
+    130                               V6
+    129                               V6
+    128                               V6
+    127                               V6
+    122                               M6
+    121                               M6
+    120                               M6
+    119                               M6
+    118                               M6
+    53                                M3
+    52                                M3
+    185                               M9
+    48                                V2
+    29                                M2
+    180                               M9
+    47                                V2
+    182                               M9
+    44                                V2
+    43                                V2
+    172                               V8
+    38                                M2
+    95                                M5
+    36                                M2
+    93                                M5
+    112                               V5
+    194                               V9
+    55                                M3
+    113                               M6
+    32                                M2
+    54                                M3
+    31                                M2
+    107                               V5
+    30                                M2
+    49                                V2
+    106                               V5
+    33                                M2
+    109                               V5
+    10                                M1
+    86                                V4
+    50                                M3
+    206                              Pad
+    69                                V3
+    143                               M7
+    6                                 V0
+    169                               V8
+    35                                M2
+    8                                 M1
+    164                               M8
+    27                                V1
+    141                               M7
+    3                                 V0
+    51                                M3
+    70                                V3
+    7                                 V0
+    64                                V3
+    173                               V8
+    34                                M2
+    92                                M5
+    111                               V5
+    11                                M1
+    142                               M7
+    4                                 V0
+    9                                 M1
+    28                                V1
+    85                                V4
+    138                               M7
+    5                                 V0
+    12                                M1
+    88                                V4
+    183                               M9
+    45                                V2
+    22                                V1
+    152                               V7
+    13                                M1
+    71                                M4
+    90                                V4
+    184                               M9
+    46                                V2
+    161                               M8
+    23                                V1
+    171                               V8
+    37                                M2
+    94                                M5
+    148                               V7
+    14                                M1
+    15                                M1
+    72                                M4
+    91                                V4
+    150                               V7
+    16                                M1
+    73                                M4
+    159                               M8
+    26                                V1
+    151                               V7
+    17                                M1
+    74                                M4
+    1                                 V0
+    162                               M8
+    24                                V1
+    140                               M7
+    2                                 V0
+    163                               M8
+    25                                V1
+    190                               V9
+    56                                M3
+    57                                M3
+    114                               M6
+    192                               V9
+    58                                M3
+    115                               M6
+    193                               V9
+    59                                M3
+    116                               M6
+    203                              Pad
+    65                                V3
+    204                              Pad
+    66                                V3
+    205                              Pad
+    67                                V3
+    201                              Pad
+    68                                V3
+    75                                M4
+    76                                M4
+    77                                M4
+    78                                M4
+    79                                M4
+    80                                M4
+    87                                V4
+    89                                V4
+    96                                M5
+    97                                M5
+    98                                M5
+    99                                M5
+    100                               M5
+    101                               M5
+    108                               V5
+    110                               V5
+    117                               M6
+    210                              Pad
+    209                              Pad
+    208                              Pad
+    207                              Pad
+    189                               M9
+    188                               M9
+    187                               M9
+    186                               M9
+    168                               M8
+    167                               M8
+    166                               M8
+    165                               M8
+    147                               M7
+    146                               M7
+    145                               M7
+    144                               M7
+    63                                M3
+    62                                M3
+    39                                M2
+    105                               M5
+    103                               M5
+    123                               M6
+    42                                M2
+    41                                M2
+    40                                M2
+    20                                M1
+    60                                M3
+    18                                M1
+    61                                M3
+    102                               M5
+    21                                M1
+    19                                M1
+    81                                M4
+    104                               M5
+    82                                M4
+    83                                M4
+    84                                M4
+    124                               M6
+    125                               M6
+    126                               M6
+
+
+Stream Out Information Processed for GDS version 3:
+Units: 4000 DBU
+
+Object                             Count
+----------------------------------------
+Instances                           1270
+
+Ports/Pins                             8
+    metal layer M3                     8
+
+Nets                                2715
+    metal layer M2                  1611
+    metal layer M3                  1072
+    metal layer M4                    30
+    metal layer M5                     2
+
+    Via Instances                   3072
+
+Special Nets                          79
+    metal layer M1                    79
+
+    Via Instances                      0
+
+Metal Fills                            0
+
+    Via Instances                      0
+
+Metal FillOPCs                         0
+
+    Via Instances                      0
+
+Metal FillDRCs                         0
+
+    Via Instances                      0
+
+Text                                 475
+    metal layer M1                     2
+    metal layer M2                   331
+    metal layer M3                   141
+    metal layer M4                     1
+
+
+Blockages                              0
+
+
+Custom Text                            0
+
+
+Custom Box                             0
+
+Trim Metal                             0
+
+######Streamout is finished!
+
+*** Memory Usage v#1 (Current mem = 2610.367M, initial mem = 487.000M) ***
+*** Message Summary: 5191 warning(s), 3 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:28.7, real=0:00:28.0, mem=2610.4M) ---

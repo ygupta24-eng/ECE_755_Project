@@ -1,0 +1,15 @@
+[04/27 16:05:54      0s] 
+[04/27 16:05:54      0s] Cadence Innovus(TM) Implementation System.
+[04/27 16:05:54      0s] Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+[04/27 16:05:54      0s] 
+[04/27 16:05:54      0s] Version:	v21.19-s058_1, built Thu Apr 4 09:59:17 PDT 2024
+[04/27 16:05:54      0s] Options:	-no_gui -files apr_systolic1.tcl 
+[04/27 16:05:54      0s] Date:		Mon Apr 27 16:05:54 2026
+[04/27 16:05:54      0s] Host:		tux-129 (x86_64 w/Linux 2.6.70-39-amd64) (6cores*12cpus*11th Gen Intel(R) Core(TM) i5-11600 @ 2.80GHz 12288KB)
+[04/27 16:05:54      0s] OS:		AlmaLinux 8.10 (Cerulean Leopard)
+[04/27 16:05:54      0s] 
+[04/27 16:05:54      0s] License:
+[04/27 16:05:54      0s] 		[16:05:54.007594] Configured Lic search path (21.01-s002): 5280@cadence.license.cae.wisc.edu:1717@mentor.license.cae.wisc.edu
+
+[04/27 16:05:54      0s] 		invs	Innovus Implementation System	21.1	checkout succeeded
+[04/27 16:05:54      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.

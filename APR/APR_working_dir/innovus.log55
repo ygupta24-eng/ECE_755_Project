@@ -1,0 +1,76 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v21.19-s058_1, built Thu Apr 4 09:59:17 PDT 2024
+Options:	-files apr_systolic.tcl 
+Date:		Mon Apr 27 16:54:23 2026
+Host:		tux-105 (x86_64 w/Linux 2.6.70-39-amd64) (6cores*12cpus*11th Gen Intel(R) Core(TM) i5-11600 @ 2.80GHz 12288KB)
+OS:		AlmaLinux 8.10 (Cerulean Leopard)
+
+License:
+		[16:54:23.007594] Configured Lic search path (21.01-s002): 5280@cadence.license.cae.wisc.edu:1717@mentor.license.cae.wisc.edu
+
+		invs	Innovus Implementation System	21.1	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+**WARN: (IMPOPT-801):	Genus executable not found in PATH. Install Genus, add the path to the genus executable in the PATH variable and rerun Innovus.
+Change the soft stacksize limit to 0.2%RAM (63 mbytes). Set global soft_stack_size_limit to change the value.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+Sourcing file "apr_systolic.tcl" ...
+<CMD> set init_design_uniquify 1
+<CMD> set init_verilog ./top_cg.vg
+<CMD> set init_design_netlisttype Verilog
+<CMD> set init_design_settop 1
+<CMD> set init_top_cell top
+<CMD> set init_mmmc_file ./top.mmmc
+<CMD> set init_pwr_net VDD
+<CMD> set init_gnd_net VSS
+<CMD> set init_lef_file {./asap7sc7p5t_28/techlef_misc/asap7_tech_4x_201209.lef ./asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_R_4x_220121a.lef}
+<CMD> init_design
+#% Begin Load MMMC data ... (date=04/27 16:54:37, mem=944.5M)
+#% End Load MMMC data ... (date=04/27 16:54:37, total cpu=0:00:00.0, real=0:00:00.0, peak res=945.5M, current mem=945.5M)
+rc_typ_25
+
+Loading LEF file ./asap7sc7p5t_28/techlef_misc/asap7_tech_4x_201209.lef ...
+
+Loading LEF file ./asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_R_4x_220121a.lef ...
+Set DBUPerIGU to M1 pitch 576.
+
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+Loading view definition file from ./top.mmmc
+Reading tc timing library '/filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_AO_RVT_TT_nldm_211120.lib' ...
+Read 42 cells in library 'asap7sc7p5t_AO_RVT_TT_nldm_211120' 
+Reading tc timing library '/filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib' ...
+Read 37 cells in library 'asap7sc7p5t_INVBUF_RVT_TT_nldm_211120' 
+Reading tc timing library '/filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_OA_RVT_TT_nldm_211120.lib' ...
+Read 34 cells in library 'asap7sc7p5t_OA_RVT_TT_nldm_211120' 
+Reading tc timing library '/filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.lib' ...
+Read 33 cells in library 'asap7sc7p5t_SEQ_RVT_TT_nldm_220123' 
+Reading tc timing library '/filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib' ...
+**WARN: (TECHLIB-1277):	The attribute 'input_signal_level' has been defined for output pin 'CON'. 'input_signal_level' cannot be defined at this level and is being ignored. (File /filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib, Line 11387)
+**WARN: (TECHLIB-1277):	The attribute 'input_signal_level' has been defined for output pin 'CON'. 'input_signal_level' cannot be defined at this level and is being ignored. (File /filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib, Line 14287)
+Read 56 cells in library 'asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120' 
+*** End library_loading (cpu=0.02min, real=0.02min, mem=48.0M, fe_cpu=0.19min, fe_real=0.25min, fe_mem=1037.9M) ***
+#% Begin Load netlist data ... (date=04/27 16:54:38, mem=970.6M)
+*** Begin netlist parsing (mem=1037.9M) ***
+Created 202 new cells from 5 timing libraries.
+Reading netlist ...
+Backslashed names will retain backslash and a trailing blank character.
+Reading verilog netlist './top_cg.vg'
+
+*** Memory Usage v#1 (Current mem = 1039.891M, initial mem = 487.000M) ***
+*** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=1039.9M) ***
+#% End Load netlist data ... (date=04/27 16:54:38, total cpu=0:00:00.0, real=0:00:00.0, peak res=988.9M, current mem=988.9M)
+**ERROR: (IMPSYC-300):	Cell top not found.
+**ERROR: (IMPVL-904):	Can't set top cell to "top" because it does not exist.  Exiting!
+
+*** Memory Usage v#1 (Current mem = 1040.898M, initial mem = 487.000M) ***
+*** Message Summary: 3 warning(s), 3 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:12.1, real=0:00:19.0, mem=1040.9M) ---

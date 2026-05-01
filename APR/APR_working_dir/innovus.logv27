@@ -1,0 +1,44 @@
+[04/26 22:47:00      0s] 
+[04/26 22:47:00      0s] Cadence Innovus(TM) Implementation System.
+[04/26 22:47:00      0s] Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+[04/26 22:47:00      0s] 
+[04/26 22:47:00      0s] Version:	v21.19-s058_1, built Thu Apr 4 09:59:17 PDT 2024
+[04/26 22:47:00      0s] Options:	
+[04/26 22:47:00      0s] Date:		Sun Apr 26 22:47:00 2026
+[04/26 22:47:00      0s] Host:		linux-2619 (x86_64 w/Linux 2.6.61-44-amd64) (14cores*20cpus*Intel(R) Core(TM) i5-14600 24576KB)
+[04/26 22:47:00      0s] OS:		AlmaLinux 8.10 (Cerulean Leopard)
+[04/26 22:47:00      0s] 
+[04/26 22:47:00      0s] License:
+[04/26 22:47:00      0s] 		[22:47:00.007546] Configured Lic search path (21.01-s002): 5280@cadence.license.cae.wisc.edu:1717@mentor.license.cae.wisc.edu
+
+[04/26 22:47:00      0s] 		invs	Innovus Implementation System	21.1	checkout succeeded
+[04/26 22:47:00      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[04/26 22:47:13      6s] Reset Parastics called with the command setExtractRCMode -reset**WARN: (IMPOPT-801):	Genus executable not found in PATH. Install Genus, add the path to the genus executable in the PATH variable and rerun Innovus.
+[04/26 22:47:16      8s] @(#)CDS: Innovus v21.19-s058_1 (64bit) 04/04/2024 09:59 (Linux 3.10.0-693.el7.x86_64)
+[04/26 22:47:16      8s] @(#)CDS: NanoRoute 21.19-s058_1 NR231113-0413/21_19-UB (database version 18.20.605) {superthreading v2.17}
+[04/26 22:47:16      8s] @(#)CDS: AAE 21.19-s004 (64bit) 04/04/2024 (Linux 3.10.0-693.el7.x86_64)
+[04/26 22:47:16      8s] @(#)CDS: CTE 21.19-s010_1 () Mar 27 2024 01:55:37 ( )
+[04/26 22:47:16      8s] @(#)CDS: SYNTECH 21.19-s002_1 () Sep  6 2023 22:17:00 ( )
+[04/26 22:47:16      8s] @(#)CDS: CPE v21.19-s026
+[04/26 22:47:16      8s] @(#)CDS: IQuantus/TQuantus 21.1.1-s966 (64bit) Wed Mar 8 10:22:20 PST 2023 (Linux 3.10.0-693.el7.x86_64)
+[04/26 22:47:16      8s] @(#)CDS: OA 22.60-p087 Thu Feb  9 09:35:26 2023
+[04/26 22:47:16      8s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[04/26 22:47:16      8s] @(#)CDS: RCDB 11.15.0
+[04/26 22:47:16      8s] @(#)CDS: STYLUS 21.12-s019_1 (12/20/2022 05:13 PST)
+[04/26 22:47:16      8s] @(#)CDS: SystemPlanner-21.18-10439 (21.18) (2023-03-01 15:40:03+0800)
+[04/26 22:47:16      8s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_2348941_linux-2619_vsathishkuma_JqWwRk.
+
+[04/26 22:47:16      8s] Change the soft stacksize limit to 0.2%RAM (63 mbytes). Set global soft_stack_size_limit to change the value.
+[04/26 22:47:17      8s] 
+[04/26 22:47:17      8s] **INFO:  MMMC transition support version v31-84 
+[04/26 22:47:17      8s] 
+[04/26 22:47:17      8s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[04/26 22:47:17      8s] <CMD> suppressMessage ENCEXT-2799
+[04/26 22:47:18      8s] <CMD> win
+[04/26 22:50:51     19s] <CMD> encMessage warning 0
+[04/26 22:50:51     19s] Suppress "**WARN ..." messages.
+[04/26 22:50:51     19s] <CMD> encMessage debug 0
+[04/26 22:50:51     19s] **ERROR: (IMPSYT-6300):	Failed to execute command 'source'. For more details, refer to error message: invalid command name "VERSION"
+[04/26 22:50:53     19s] <CMD> encMessage warning 1
+[04/26 22:50:53     19s] Un-suppress "**WARN ..." messages.
+[04/26 22:50:53     19s] <CMD> encMessage debug 0

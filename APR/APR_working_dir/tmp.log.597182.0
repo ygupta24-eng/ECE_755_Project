@@ -1,0 +1,19 @@
+
+INFO (EXTIQUANTUS-101) : 
+  Integrated Quantus - 64-bit Parasitic Extractor - Version 21.1.1-s966
+-------------------------------------------------------------------------
+               Copyright 2023 Cadence Design Systems, Inc.
+
+
+INFO (EXTIQUANTUS-103) : Starting at 2026-Apr-27 15:56:19 (2026-Apr-27 20:56:19 GMT).
+
+INFO (EXTIQUANTUS-104) : Starting extraction session...
+
+ERROR (Plx-6) : 
+----------------------   FATAL   ----------------------
+Failed to decrypt the file
+"tmp.cce_cache.597182.0/.qrctemp/CceRCGEN0tch597182".
+It contains binary characters after applying the decryption algorithm. If
+it were a valid encrypted file, it would not contain binary characters.
+[SimplexCADUtils::FileIsNotEncryptedMsg]
+-------------------------------------------------------

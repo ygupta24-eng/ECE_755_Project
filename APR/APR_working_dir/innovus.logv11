@@ -1,0 +1,79 @@
+[04/10 13:42:57      0s] 
+[04/10 13:42:57      0s] Cadence Innovus(TM) Implementation System.
+[04/10 13:42:57      0s] Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+[04/10 13:42:57      0s] 
+[04/10 13:42:57      0s] Version:	v21.19-s058_1, built Thu Apr 4 09:59:17 PDT 2024
+[04/10 13:42:57      0s] Options:	-no_gui -files apr_reference.tcl 
+[04/10 13:42:57      0s] Date:		Fri Apr 10 13:42:57 2026
+[04/10 13:42:57      0s] Host:		tux-113 (x86_64 w/Linux 2.6.70-39-amd64) (6cores*12cpus*11th Gen Intel(R) Core(TM) i5-11600 @ 2.80GHz 12288KB)
+[04/10 13:42:57      0s] OS:		AlmaLinux 8.10 (Cerulean Leopard)
+[04/10 13:42:57      0s] 
+[04/10 13:42:57      0s] License:
+[04/10 13:42:57      0s] 		[13:42:57.007602] Configured Lic search path (21.01-s002): 5280@cadence.license.cae.wisc.edu:1717@mentor.license.cae.wisc.edu
+
+[04/10 13:42:57      0s] 		invs	Innovus Implementation System	21.1	checkout succeeded
+[04/10 13:42:57      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[04/10 13:43:06      8s] Reset Parastics called with the command setExtractRCMode -reset**WARN: (IMPOPT-801):	Genus executable not found in PATH. Install Genus, add the path to the genus executable in the PATH variable and rerun Innovus.
+[04/10 13:43:08      9s] @(#)CDS: Innovus v21.19-s058_1 (64bit) 04/04/2024 09:59 (Linux 3.10.0-693.el7.x86_64)
+[04/10 13:43:08      9s] @(#)CDS: NanoRoute 21.19-s058_1 NR231113-0413/21_19-UB (database version 18.20.605) {superthreading v2.17}
+[04/10 13:43:08      9s] @(#)CDS: AAE 21.19-s004 (64bit) 04/04/2024 (Linux 3.10.0-693.el7.x86_64)
+[04/10 13:43:08      9s] @(#)CDS: CTE 21.19-s010_1 () Mar 27 2024 01:55:37 ( )
+[04/10 13:43:08      9s] @(#)CDS: SYNTECH 21.19-s002_1 () Sep  6 2023 22:17:00 ( )
+[04/10 13:43:08      9s] @(#)CDS: CPE v21.19-s026
+[04/10 13:43:08      9s] @(#)CDS: IQuantus/TQuantus 21.1.1-s966 (64bit) Wed Mar 8 10:22:20 PST 2023 (Linux 3.10.0-693.el7.x86_64)
+[04/10 13:43:08      9s] @(#)CDS: OA 22.60-p087 Thu Feb  9 09:35:26 2023
+[04/10 13:43:08      9s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[04/10 13:43:08      9s] @(#)CDS: RCDB 11.15.0
+[04/10 13:43:08      9s] @(#)CDS: STYLUS 21.12-s019_1 (12/20/2022 05:13 PST)
+[04/10 13:43:08      9s] @(#)CDS: SystemPlanner-21.18-10439 (21.18) (2023-03-01 15:40:03+0800)
+[04/10 13:43:08      9s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_3902342_tux-113_vsathishkuma_zdM6Uo.
+
+[04/10 13:43:08      9s] Change the soft stacksize limit to 0.2%RAM (63 mbytes). Set global soft_stack_size_limit to change the value.
+[04/10 13:43:09     10s] 
+[04/10 13:43:09     10s] **INFO:  MMMC transition support version v31-84 
+[04/10 13:43:09     10s] 
+[04/10 13:43:09     10s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[04/10 13:43:09     10s] <CMD> suppressMessage ENCEXT-2799
+[04/10 13:43:09     10s] Sourcing file "apr_reference.tcl" ...
+[04/10 13:43:09     10s] <CMD> set init_design_uniquify 1
+[04/10 13:43:09     10s] <CMD> set init_verilog ../Synthesis/cg_outputs/top_cg.vg
+[04/10 13:43:09     10s] <CMD> set init_design_netlisttype Verilog
+[04/10 13:43:09     10s] <CMD> set init_design_settop 1
+[04/10 13:43:09     10s] <CMD> set init_top_cell top
+[04/10 13:43:09     10s] <CMD> set init_mmmc_file ./top.mmmc
+[04/10 13:43:09     10s] <CMD> set init_pwr_net VDD
+[04/10 13:43:09     10s] <CMD> set init_gnd_net VSS
+[04/10 13:43:09     10s] <CMD> set init_lef_file {./asap7sc7p5t_28/techlef_misc//asap7_tech_4x_201209.lef ./asap7sc7p5t_28/LEF/scaled//asap7sc7p5t_28_R_4x_220121a.lef}
+[04/10 13:43:09     10s] <CMD> init_design
+[04/10 13:43:09     10s] #% Begin Load MMMC data ... (date=04/10 13:43:09, mem=881.7M)
+[04/10 13:43:09     10s] **ERROR: (TCLCMD-995):	Can not open file './asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_220123.lib' for library set
+**ERROR: (IMPSYT-6692):	Invalid return code while executing 'apr_reference.tcl' was returned and script processing was stopped. Review the following error in 'apr_reference.tcl' then restart.
+[04/10 13:43:09     10s] Error info: apr_reference.tcl: 
+[04/10 13:43:09     10s]     while executing
+[04/10 13:43:09     10s] "error "$ret""
+[04/10 13:43:09     10s]     (procedure "::init_design::process_view_def" line 89)
+[04/10 13:43:09     10s]     invoked from within
+[04/10 13:43:09     10s] "::init_design::process_view_def $::init_mmmc_file"
+[04/10 13:43:09     10s]     (procedure "init_design" line 224)
+[04/10 13:43:09     10s]     invoked from within
+[04/10 13:43:09     10s] "init_design"
+[04/10 13:43:09     10s]     (file "apr_reference.tcl" line 67)
+[04/10 13:43:09     10s]     invoked from within
+[04/10 13:43:09     10s] "::se_source_orig apr_reference.tcl"
+[04/10 13:43:09     10s]     ("uplevel" body line 1)
+[04/10 13:43:09     10s]     invoked from within
+[04/10 13:43:09     10s] "uplevel [concat ::se_source_orig $args]"
+[04/10 13:43:09     10s]     (procedure "source" line 194)
+[04/10 13:43:09     10s]     invoked from within
+[04/10 13:43:09     10s] "source apr_reference.tcl"
+[04/10 13:43:09     10s]     ("uplevel" body line 1)
+[04/10 13:43:09     10s]     invoked from within
+[04/10 13:43:09     10s] "uplevel #0 source apr_reference.tcl"
+[04/10 13:43:09     10s]     ("eval" body line 1)
+[04/10 13:43:09     10s]     invoked from within
+[04/10 13:43:09     10s] "eval {uplevel #0 source apr_reference.tcl}"
+[04/10 13:43:09     10s]     (in namespace inscope "::" script line 1)
+[04/10 13:43:09     10s]     invoked from within
+[04/10 13:43:09     10s] "namespace inscope :: eval "uplevel #0 source $fileName"".
+[04/10 13:43:14     10s] **INFO (INTERRUPT): The current script will stop before next command.
+[04/10 13:43:14     10s] **INFO (INTERRUPT): One more Ctrl-C to exit Innovus ...

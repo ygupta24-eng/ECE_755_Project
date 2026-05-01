@@ -1,0 +1,808 @@
+[04/07 17:30:43      0s] 
+[04/07 17:30:43      0s] Cadence Innovus(TM) Implementation System.
+[04/07 17:30:43      0s] Copyright 2021 Cadence Design Systems, Inc. All rights reserved worldwide.
+[04/07 17:30:43      0s] 
+[04/07 17:30:43      0s] Version:	v21.19-s058_1, built Thu Apr 4 09:59:17 PDT 2024
+[04/07 17:30:43      0s] Options:	-no_gui -files apr_reference.tcl 
+[04/07 17:30:43      0s] Date:		Tue Apr  7 17:30:43 2026
+[04/07 17:30:43      0s] Host:		tux-113 (x86_64 w/Linux 2.6.70-39-amd64) (6cores*12cpus*11th Gen Intel(R) Core(TM) i5-11600 @ 2.80GHz 12288KB)
+[04/07 17:30:43      0s] OS:		AlmaLinux 8.10 (Cerulean Leopard)
+[04/07 17:30:43      0s] 
+[04/07 17:30:43      0s] License:
+[04/07 17:30:43      0s] 		[17:30:43.007570] Configured Lic search path (21.01-s002): 5280@cadence.license.cae.wisc.edu:1717@mentor.license.cae.wisc.edu
+
+[04/07 17:30:43      0s] 		invs	Innovus Implementation System	21.1	checkout succeeded
+[04/07 17:30:43      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[04/07 17:30:52      7s] Reset Parastics called with the command setExtractRCMode -reset**WARN: (IMPOPT-801):	Genus executable not found in PATH. Install Genus, add the path to the genus executable in the PATH variable and rerun Innovus.
+[04/07 17:30:54      8s] @(#)CDS: Innovus v21.19-s058_1 (64bit) 04/04/2024 09:59 (Linux 3.10.0-693.el7.x86_64)
+[04/07 17:30:54      8s] @(#)CDS: NanoRoute 21.19-s058_1 NR231113-0413/21_19-UB (database version 18.20.605) {superthreading v2.17}
+[04/07 17:30:54      8s] @(#)CDS: AAE 21.19-s004 (64bit) 04/04/2024 (Linux 3.10.0-693.el7.x86_64)
+[04/07 17:30:54      8s] @(#)CDS: CTE 21.19-s010_1 () Mar 27 2024 01:55:37 ( )
+[04/07 17:30:54      8s] @(#)CDS: SYNTECH 21.19-s002_1 () Sep  6 2023 22:17:00 ( )
+[04/07 17:30:54      8s] @(#)CDS: CPE v21.19-s026
+[04/07 17:30:54      8s] @(#)CDS: IQuantus/TQuantus 21.1.1-s966 (64bit) Wed Mar 8 10:22:20 PST 2023 (Linux 3.10.0-693.el7.x86_64)
+[04/07 17:30:54      8s] @(#)CDS: OA 22.60-p087 Thu Feb  9 09:35:26 2023
+[04/07 17:30:54      8s] @(#)CDS: SGN 20.10-d001 (01-Jun-2020) (64 bit executable, Qt5.9.0)
+[04/07 17:30:54      8s] @(#)CDS: RCDB 11.15.0
+[04/07 17:30:54      8s] @(#)CDS: STYLUS 21.12-s019_1 (12/20/2022 05:13 PST)
+[04/07 17:30:54      8s] @(#)CDS: SystemPlanner-21.18-10439 (21.18) (2023-03-01 15:40:03+0800)
+[04/07 17:30:54      8s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_1447134_tux-113_vsathishkuma_Z1h90S.
+
+[04/07 17:30:54      8s] Change the soft stacksize limit to 0.2%RAM (63 mbytes). Set global soft_stack_size_limit to change the value.
+[04/07 17:30:54      9s] 
+[04/07 17:30:54      9s] **INFO:  MMMC transition support version v31-84 
+[04/07 17:30:54      9s] 
+[04/07 17:30:54      9s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[04/07 17:30:54      9s] <CMD> suppressMessage ENCEXT-2799
+[04/07 17:30:54      9s] Sourcing file "apr_reference.tcl" ...
+[04/07 17:30:54      9s] <CMD> set init_design_uniquify 1
+[04/07 17:30:54      9s] <CMD> set init_verilog ./top.vg
+[04/07 17:30:54      9s] <CMD> set init_design_netlisttype Verilog
+[04/07 17:30:54      9s] <CMD> set init_design_settop 1
+[04/07 17:30:54      9s] <CMD> set init_top_cell top
+[04/07 17:30:54      9s] <CMD> set init_mmmc_file ./top.mmmc
+[04/07 17:30:54      9s] <CMD> set init_pwr_net VDD
+[04/07 17:30:54      9s] <CMD> set init_gnd_net VSS
+[04/07 17:30:54      9s] <CMD> set init_lef_file {./asap7sc7p5t_28/techlef_misc//asap7_tech_4x_201209.lef ./asap7sc7p5t_28/LEF/scaled//asap7sc7p5t_28_R_4x_220121a.lef}
+[04/07 17:30:54      9s] <CMD> init_design
+[04/07 17:30:54      9s] #% Begin Load MMMC data ... (date=04/07 17:30:54, mem=870.1M)
+[04/07 17:30:55      9s] #% End Load MMMC data ... (date=04/07 17:30:55, total cpu=0:00:00.0, real=0:00:01.0, peak res=870.8M, current mem=870.8M)
+[04/07 17:30:55      9s] 
+[04/07 17:30:55      9s] Loading LEF file ./asap7sc7p5t_28/techlef_misc/asap7_tech_4x_201209.lef ...
+[04/07 17:30:55      9s] 
+[04/07 17:30:55      9s] Loading LEF file ./asap7sc7p5t_28/LEF/scaled/asap7sc7p5t_28_R_4x_220121a.lef ...
+[04/07 17:30:55      9s] Set DBUPerIGU to M1 pitch 576.
+[04/07 17:30:55      9s] 
+##  Check design process and node:  
+##  Both design process and tech node are not set.
+
+[04/07 17:30:55      9s] Loading view definition file from ./top.mmmc
+[04/07 17:30:55      9s] Reading tc timing library '/filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_AO_RVT_TT_nldm_211120.lib' ...
+[04/07 17:30:55     10s] Read 42 cells in library 'asap7sc7p5t_AO_RVT_TT_nldm_211120' 
+[04/07 17:30:55     10s] Reading tc timing library '/filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_INVBUF_RVT_TT_nldm_220122.lib' ...
+[04/07 17:30:55     10s] Read 37 cells in library 'asap7sc7p5t_INVBUF_RVT_TT_nldm_211120' 
+[04/07 17:30:55     10s] Reading tc timing library '/filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_OA_RVT_TT_nldm_211120.lib' ...
+[04/07 17:30:56     10s] Read 34 cells in library 'asap7sc7p5t_OA_RVT_TT_nldm_211120' 
+[04/07 17:30:56     10s] Reading tc timing library '/filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SEQ_RVT_TT_nldm_220123.lib' ...
+[04/07 17:30:56     10s] Read 33 cells in library 'asap7sc7p5t_SEQ_RVT_TT_nldm_220123' 
+[04/07 17:30:56     10s] Reading tc timing library '/filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib' ...
+[04/07 17:30:56     10s] **WARN: (TECHLIB-1277):	The attribute 'input_signal_level' has been defined for output pin 'CON'. 'input_signal_level' cannot be defined at this level and is being ignored. (File /filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib, Line 11387)
+[04/07 17:30:56     10s] **WARN: (TECHLIB-1277):	The attribute 'input_signal_level' has been defined for output pin 'CON'. 'input_signal_level' cannot be defined at this level and is being ignored. (File /filespace/v/vsathishkuma/ECE755/ECE_755_Project/APR/asap7sc7p5t_28/LIB/NLDM/asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120.lib, Line 14287)
+[04/07 17:30:56     10s] Read 56 cells in library 'asap7sc7p5t_SIMPLE_RVT_TT_nldm_211120' 
+[04/07 17:30:56     10s] Ending "PreSetAnalysisView" (total cpu=0:00:01.2, real=0:00:01.0, peak res=1019.1M, current mem=895.6M)
+[04/07 17:30:56     10s] *** End library_loading (cpu=0.02min, real=0.02min, mem=50.0M, fe_cpu=0.18min, fe_real=0.22min, fe_mem=989.5M) ***
+[04/07 17:30:56     10s] #% Begin Load netlist data ... (date=04/07 17:30:56, mem=895.6M)
+[04/07 17:30:56     10s] *** Begin netlist parsing (mem=989.5M) ***
+[04/07 17:30:56     10s] Created 202 new cells from 5 timing libraries.
+[04/07 17:30:56     10s] Reading netlist ...
+[04/07 17:30:56     10s] Backslashed names will retain backslash and a trailing blank character.
+[04/07 17:30:56     10s] Reading verilog netlist './top.vg'
+[04/07 17:30:56     10s] **WARN: (IMPVL-346):	Module 'zigzag_fsm' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
+[04/07 17:30:56     10s] Type 'man IMPVL-346' for more detail.
+[04/07 17:30:56     10s] Undeclared bus direction in module zigzag_fsm ... created as [1:0].
+[04/07 17:30:56     10s] **WARN: (IMPVL-346):	Module 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is instantiated in the netlist, but is not defined in the LEF files.  Since there is no real cell definition for such a cell, it will be treated as an empty module.
+[04/07 17:30:56     10s] Type 'man IMPVL-346' for more detail.
+[04/07 17:30:56     10s] Undeclared bus h_in0 in module zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4 ... created as [5:0].
+[04/07 17:30:56     10s] Undeclared bus h_in1 in module zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4 ... created as [5:0].
+[04/07 17:30:56     10s] Undeclared bus v_in0 in module zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4 ... created as [5:0].
+[04/07 17:30:56     10s] Undeclared bus v_in1 in module zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4 ... created as [5:0].
+[04/07 17:30:56     10s] Undeclared bus w_in in module zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4 ... created as [7:0].
+[04/07 17:30:56     10s] Undeclared bus direction in module zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4 ... created as [1:0].
+[04/07 17:30:56     10s] Undeclared bus psum_out0 in module zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4 ... created as [12:0].
+[04/07 17:30:56     10s] Undeclared bus psum_out1 in module zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4 ... created as [12:0].
+[04/07 17:30:56     10s] 
+[04/07 17:30:56     10s] *** Memory Usage v#1 (Current mem = 989.492M, initial mem = 487.000M) ***
+[04/07 17:30:56     10s] *** End netlist parsing (cpu=0:00:00.0, real=0:00:00.0, mem=989.5M) ***
+[04/07 17:30:56     10s] #% End Load netlist data ... (date=04/07 17:30:56, total cpu=0:00:00.0, real=0:00:00.0, peak res=913.1M, current mem=913.1M)
+[04/07 17:30:56     10s] Set top cell to top.
+[04/07 17:30:56     10s] Hooked 202 DB cells to tlib cells.
+[04/07 17:30:56     10s] Ending "BindLib:" (total cpu=0:00:00.1, real=0:00:00.0, peak res=932.0M, current mem=932.0M)
+[04/07 17:30:56     10s] **WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
+[04/07 17:30:56     10s] Type 'man IMPDB-2504' for more detail.
+[04/07 17:30:56     10s] **WARN: (IMPDB-2504):	Unable to find netlist cell in the design data of the library or LEF. The 'zigzag_fsm' cell is instantiated in the Verilog netlist, but not defined in the library or design data.  Its pin directions might be derived incorrectly. Include the cell definition or its pin information in the library or design data and reload the design to avoid potential issues.
+[04/07 17:30:56     10s] Type 'man IMPDB-2504' for more detail.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'psum_out0[12]' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'psum_out0[12]' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'psum_out0[11]' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'psum_out0[11]' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'psum_out0[10]' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'psum_out0[10]' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'psum_out0[9]' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'psum_out0[9]' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'psum_out0[8]' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'psum_out0[8]' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'psum_out0[7]' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'psum_out0[7]' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'psum_out0[6]' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'psum_out0[6]' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'psum_out0[5]' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'psum_out0[5]' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'psum_out0[4]' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'psum_out0[4]' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'psum_out0[3]' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'psum_out0[3]' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'psum_out0[2]' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'psum_out0[2]' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'psum_out0[1]' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'psum_out0[1]' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'psum_out0[0]' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'psum_out0[0]' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'psum_out1[12]' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'psum_out1[12]' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'psum_out1[11]' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'psum_out1[11]' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'psum_out1[10]' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'psum_out1[10]' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'psum_out1[9]' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'psum_out1[9]' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'psum_out1[8]' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'psum_out1[8]' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'psum_out1[7]' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'psum_out1[7]' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'psum_out1[6]' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'psum_out1[6]' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'psum_out1[5]' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'psum_out1[5]' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'psum_out1[4]' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'psum_out1[4]' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'psum_out1[3]' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'psum_out1[3]' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'psum_out1[2]' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'psum_out1[2]' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'psum_out1[1]' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'psum_out1[1]' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'psum_out1[0]' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'psum_out1[0]' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zigzag_fsm' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'done' of cell 'zigzag_fsm' as output for net 'done' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'en' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'en' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'move_en' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'move_en' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'w_ld_en' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'w_ld_en' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'fifo_en' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'fifo_en' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'psum_shift_en' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'psum_shift_en' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'psum_clr' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'psum_clr' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'direction[1]' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'direction[1]' in module 'top'.
+[04/07 17:30:56     10s] Cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' is referenced in the netlist but not defined in netlist, lef or timing library. Using the net connection data to mark the pin 'direction[0]' of cell 'zig_zag_4x4_DATA_W6_WEIGHT_W2_ACC_W13_ROWS4_COLS4_UNQ_DIR4' as output for net 'direction[0]' in module 'top'.
+[04/07 17:30:56     10s] 2 empty module found.
+[04/07 17:30:56     10s] Starting recursive module instantiation check.
+[04/07 17:30:56     10s] No recursion found.
+[04/07 17:30:56     10s] Term dir updated for 0 vinsts of 2 cells.
+[04/07 17:30:56     10s] Building hierarchical netlist for Cell top ...
+[04/07 17:30:56     10s] *** Netlist is unique.
+[04/07 17:30:56     10s] Setting Std. cell height to 4320 DBU (smallest ABS library cell).
+[04/07 17:30:56     10s] ** info: there are 215 modules.
+[04/07 17:30:56     10s] ** info: there are 0 stdCell insts.
+[04/07 17:30:56     10s] 
+[04/07 17:30:56     10s] *** Memory Usage v#1 (Current mem = 1036.406M, initial mem = 487.000M) ***
+[04/07 17:30:56     10s] Start create_tracks
+[04/07 17:30:56     11s] Extraction setup Started 
+[04/07 17:30:56     11s] 
+[04/07 17:30:56     11s] Trim Metal Layers:
+[04/07 17:30:56     11s] Initializing multi-corner RC extraction with 1 active RC Corners ...
+[04/07 17:30:56     11s] Captable file(s) not specified in multi-corner setup. PreRoute extraction will use technology file. For postRoute extraction, default value for effort level would be 'medium' and effort level 'low' would not be allowed.
+[04/07 17:30:56     11s] __QRC_SADV_USE_LE__ is set 0
+[04/07 17:30:57     11s] Metal Layer Id 1 is M1 
+[04/07 17:30:57     11s] Metal Layer Id 2 is M2 
+[04/07 17:30:57     11s] Metal Layer Id 3 is M3 
+[04/07 17:30:57     11s] Metal Layer Id 4 is M4 
+[04/07 17:30:57     11s] Metal Layer Id 5 is M5 
+[04/07 17:30:57     11s] Metal Layer Id 6 is M6 
+[04/07 17:30:57     11s] Metal Layer Id 7 is M7 
+[04/07 17:30:57     11s] Metal Layer Id 8 is M8 
+[04/07 17:30:57     11s] Metal Layer Id 9 is M9 
+[04/07 17:30:57     11s] Metal Layer Id 10 is Pad 
+[04/07 17:30:57     11s] Via Layer Id 33 is V0 
+[04/07 17:30:57     11s] Via Layer Id 34 is V1 
+[04/07 17:30:57     11s] Via Layer Id 35 is V2 
+[04/07 17:30:57     11s] Via Layer Id 36 is V3 
+[04/07 17:30:57     11s] Via Layer Id 37 is V4 
+[04/07 17:30:57     11s] Via Layer Id 38 is V5 
+[04/07 17:30:57     11s] Via Layer Id 39 is V6 
+[04/07 17:30:57     11s] Via Layer Id 40 is V7 
+[04/07 17:30:57     11s] Via Layer Id 41 is V8 
+[04/07 17:30:57     11s] Via Layer Id 42 is V9 
+[04/07 17:30:57     11s] 
+[04/07 17:30:57     11s] Trim Metal Layers:
+[04/07 17:30:57     11s] Generating auto layer map file.
+[04/07 17:30:57     11s]  lef metal Layer Id 1 mapped to tech Id 2 of Layer lisd 
+[04/07 17:30:57     11s]  lef via Layer Id 1 mapped to tech Id 3 of Layer v0 
+[04/07 17:30:57     11s]  lef metal Layer Id 2 mapped to tech Id 4 of Layer m1 
+[04/07 17:30:57     11s]  lef via Layer Id 2 mapped to tech Id 5 of Layer v1 
+[04/07 17:30:57     11s]  lef metal Layer Id 3 mapped to tech Id 6 of Layer m2 
+[04/07 17:30:57     11s]  lef via Layer Id 3 mapped to tech Id 7 of Layer v2 
+[04/07 17:30:57     11s]  lef metal Layer Id 4 mapped to tech Id 8 of Layer m3 
+[04/07 17:30:57     11s]  lef via Layer Id 4 mapped to tech Id 9 of Layer v3 
+[04/07 17:30:57     11s]  lef metal Layer Id 5 mapped to tech Id 10 of Layer m4 
+[04/07 17:30:57     11s]  lef via Layer Id 5 mapped to tech Id 11 of Layer v4 
+[04/07 17:30:57     11s]  lef metal Layer Id 6 mapped to tech Id 12 of Layer m5 
+[04/07 17:30:57     11s]  lef via Layer Id 6 mapped to tech Id 13 of Layer v5 
+[04/07 17:30:57     11s]  lef metal Layer Id 7 mapped to tech Id 14 of Layer m6 
+[04/07 17:30:57     11s]  lef via Layer Id 7 mapped to tech Id 15 of Layer v6 
+[04/07 17:30:57     11s]  lef metal Layer Id 8 mapped to tech Id 16 of Layer m7 
+[04/07 17:30:57     11s]  lef via Layer Id 8 mapped to tech Id 17 of Layer v7 
+[04/07 17:30:57     11s]  lef metal Layer Id 9 mapped to tech Id 18 of Layer m8 
+[04/07 17:30:57     11s]  lef via Layer Id 9 mapped to tech Id 19 of Layer v8 
+[04/07 17:30:57     11s]  lef metal Layer Id 10 mapped to tech Id 20 of Layer m9 
+[04/07 17:30:57     11s] Metal Layer Id 1 mapped to 2 
+[04/07 17:30:57     11s] Via Layer Id 1 mapped to 3 
+[04/07 17:30:57     11s] Metal Layer Id 2 mapped to 4 
+[04/07 17:30:57     11s] Via Layer Id 2 mapped to 5 
+[04/07 17:30:57     11s] Metal Layer Id 3 mapped to 6 
+[04/07 17:30:57     11s] Via Layer Id 3 mapped to 7 
+[04/07 17:30:57     11s] Metal Layer Id 4 mapped to 8 
+[04/07 17:30:57     11s] Via Layer Id 4 mapped to 9 
+[04/07 17:30:57     11s] Metal Layer Id 5 mapped to 10 
+[04/07 17:30:57     11s] Via Layer Id 5 mapped to 11 
+[04/07 17:30:57     11s] Metal Layer Id 6 mapped to 12 
+[04/07 17:30:57     11s] Via Layer Id 6 mapped to 13 
+[04/07 17:30:57     11s] Metal Layer Id 7 mapped to 14 
+[04/07 17:30:57     11s] Via Layer Id 7 mapped to 15 
+[04/07 17:30:57     11s] Metal Layer Id 8 mapped to 16 
+[04/07 17:30:57     11s] Via Layer Id 8 mapped to 17 
+[04/07 17:30:57     11s] Metal Layer Id 9 mapped to 18 
+[04/07 17:30:57     11s] Via Layer Id 9 mapped to 19 
+[04/07 17:30:57     11s] Metal Layer Id 10 mapped to 20 
+[04/07 17:30:57     11s] eee: pegPreRouteEnableSaveRestoreRCPatterns:1, retVal:1, doesAnyTechFileNeedExtraction1
+[04/07 17:30:57     11s] eee: Reading patterns meta data.
+[04/07 17:30:57     11s] eee: PatternAvail:0, PreRoutePatternReadFailed:1
+[04/07 17:30:57     11s] Restore PreRoute Pattern Extraction data failed.
+[04/07 17:30:57     11s] Importing multi-corner technology file(s) for preRoute extraction...
+[04/07 17:30:57     11s] ./asap7sc7p5t_28/qrc/qrcTechFile_typ03_scaled4xV06
+[04/07 17:30:57     11s] Metal Layer Id 1 is M1 
+[04/07 17:30:57     11s] Metal Layer Id 2 is M2 
+[04/07 17:30:57     11s] Metal Layer Id 3 is M3 
+[04/07 17:30:57     11s] Metal Layer Id 4 is M4 
+[04/07 17:30:57     11s] Metal Layer Id 5 is M5 
+[04/07 17:30:57     11s] Metal Layer Id 6 is M6 
+[04/07 17:30:57     11s] Metal Layer Id 7 is M7 
+[04/07 17:30:57     11s] Metal Layer Id 8 is M8 
+[04/07 17:30:57     11s] Metal Layer Id 9 is M9 
+[04/07 17:30:57     11s] Metal Layer Id 10 is Pad 
+[04/07 17:30:57     11s] Via Layer Id 33 is V0 
+[04/07 17:30:57     11s] Via Layer Id 34 is V1 
+[04/07 17:30:57     11s] Via Layer Id 35 is V2 
+[04/07 17:30:57     11s] Via Layer Id 36 is V3 
+[04/07 17:30:57     11s] Via Layer Id 37 is V4 
+[04/07 17:30:57     11s] Via Layer Id 38 is V5 
+[04/07 17:30:57     11s] Via Layer Id 39 is V6 
+[04/07 17:30:57     11s] Via Layer Id 40 is V7 
+[04/07 17:30:57     11s] Via Layer Id 41 is V8 
+[04/07 17:30:57     11s] Via Layer Id 42 is V9 
+[04/07 17:30:57     11s] 
+[04/07 17:30:57     11s] Trim Metal Layers:
+[04/07 17:30:57     11s] Generating auto layer map file.
+[04/07 17:30:57     11s]  lef metal Layer Id 1 mapped to tech Id 2 of Layer lisd 
+[04/07 17:30:57     11s]  lef via Layer Id 1 mapped to tech Id 3 of Layer v0 
+[04/07 17:30:57     11s]  lef metal Layer Id 2 mapped to tech Id 4 of Layer m1 
+[04/07 17:30:57     11s]  lef via Layer Id 2 mapped to tech Id 5 of Layer v1 
+[04/07 17:30:57     11s]  lef metal Layer Id 3 mapped to tech Id 6 of Layer m2 
+[04/07 17:30:57     11s]  lef via Layer Id 3 mapped to tech Id 7 of Layer v2 
+[04/07 17:30:57     11s]  lef metal Layer Id 4 mapped to tech Id 8 of Layer m3 
+[04/07 17:30:57     11s]  lef via Layer Id 4 mapped to tech Id 9 of Layer v3 
+[04/07 17:30:57     11s]  lef metal Layer Id 5 mapped to tech Id 10 of Layer m4 
+[04/07 17:30:57     11s]  lef via Layer Id 5 mapped to tech Id 11 of Layer v4 
+[04/07 17:30:57     11s]  lef metal Layer Id 6 mapped to tech Id 12 of Layer m5 
+[04/07 17:30:57     11s]  lef via Layer Id 6 mapped to tech Id 13 of Layer v5 
+[04/07 17:30:57     11s]  lef metal Layer Id 7 mapped to tech Id 14 of Layer m6 
+[04/07 17:30:57     11s]  lef via Layer Id 7 mapped to tech Id 15 of Layer v6 
+[04/07 17:30:57     11s]  lef metal Layer Id 8 mapped to tech Id 16 of Layer m7 
+[04/07 17:30:57     11s]  lef via Layer Id 8 mapped to tech Id 17 of Layer v7 
+[04/07 17:30:57     11s]  lef metal Layer Id 9 mapped to tech Id 18 of Layer m8 
+[04/07 17:30:57     11s]  lef via Layer Id 9 mapped to tech Id 19 of Layer v8 
+[04/07 17:30:57     11s]  lef metal Layer Id 10 mapped to tech Id 20 of Layer m9 
+[04/07 17:30:57     11s] Metal Layer Id 1 mapped to 2 
+[04/07 17:30:57     11s] Via Layer Id 1 mapped to 3 
+[04/07 17:30:57     11s] Metal Layer Id 2 mapped to 4 
+[04/07 17:30:57     11s] Via Layer Id 2 mapped to 5 
+[04/07 17:30:57     11s] Metal Layer Id 3 mapped to 6 
+[04/07 17:30:57     11s] Via Layer Id 3 mapped to 7 
+[04/07 17:30:57     11s] Metal Layer Id 4 mapped to 8 
+[04/07 17:30:57     11s] Via Layer Id 4 mapped to 9 
+[04/07 17:30:57     11s] Metal Layer Id 5 mapped to 10 
+[04/07 17:30:57     11s] Via Layer Id 5 mapped to 11 
+[04/07 17:30:57     11s] Metal Layer Id 6 mapped to 12 
+[04/07 17:30:57     11s] Via Layer Id 6 mapped to 13 
+[04/07 17:30:57     11s] Metal Layer Id 7 mapped to 14 
+[04/07 17:30:57     11s] Via Layer Id 7 mapped to 15 
+[04/07 17:30:57     11s] Metal Layer Id 8 mapped to 16 
+[04/07 17:30:57     11s] Via Layer Id 8 mapped to 17 
+[04/07 17:30:57     11s] Metal Layer Id 9 mapped to 18 
+[04/07 17:30:57     11s] Via Layer Id 9 mapped to 19 
+[04/07 17:30:57     11s] Metal Layer Id 10 mapped to 20 
+[04/07 17:30:58     12s] Completed (cpu: 0:00:01.7 real: 0:00:02.0)
+[04/07 17:30:58     12s] Set Shrink Factor to 1.00000
+[04/07 17:30:58     12s] Summary of Active RC-Corners : 
+[04/07 17:30:58     12s]  
+[04/07 17:30:58     12s]  Analysis View: view_tc
+[04/07 17:30:58     12s]     RC-Corner Name        : rc_typ_25
+[04/07 17:30:58     12s]     RC-Corner Index       : 0
+[04/07 17:30:58     12s]     RC-Corner Temperature : 25 Celsius
+[04/07 17:30:58     12s]     RC-Corner Cap Table   : ''
+[04/07 17:30:58     12s]     RC-Corner PreRoute Res Factor         : 1
+[04/07 17:30:58     12s]     RC-Corner PreRoute Cap Factor         : 1
+[04/07 17:30:58     12s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[04/07 17:30:58     12s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[04/07 17:30:58     12s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[04/07 17:30:58     12s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[04/07 17:30:58     12s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[04/07 17:30:58     12s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[04/07 17:30:58     12s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[04/07 17:30:58     12s]     RC-Corner PostRoute Clock coupling capacitance Factor : 1 {1 1 1} 
+[04/07 17:30:58     12s]     RC-Corner Technology file: './asap7sc7p5t_28/qrc/qrcTechFile_typ03_scaled4xV06'
+[04/07 17:30:58     12s] 
+[04/07 17:30:58     12s] Trim Metal Layers:
+[04/07 17:30:58     12s] LayerId::1 widthSet size::1
+[04/07 17:30:58     12s] LayerId::2 widthSet size::1
+[04/07 17:30:58     12s] LayerId::3 widthSet size::1
+[04/07 17:30:58     12s] LayerId::4 widthSet size::1
+[04/07 17:30:58     12s] LayerId::5 widthSet size::1
+[04/07 17:30:58     12s] LayerId::6 widthSet size::1
+[04/07 17:30:58     12s] LayerId::7 widthSet size::1
+[04/07 17:30:58     12s] LayerId::8 widthSet size::1
+[04/07 17:30:58     12s] LayerId::9 widthSet size::1
+[04/07 17:30:58     12s] LayerId::10 widthSet size::1
+[04/07 17:30:58     12s] Updating RC grid for preRoute extraction ...
+[04/07 17:30:58     12s] eee: pegSigSF::1.070000
+[04/07 17:30:58     12s] Initializing multi-corner resistance tables ...
+[04/07 17:30:58     12s] eee: l::1 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[04/07 17:30:58     12s] eee: l::2 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[04/07 17:30:58     12s] eee: l::3 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[04/07 17:30:58     12s] eee: l::4 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[04/07 17:30:58     12s] eee: l::5 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[04/07 17:30:58     12s] eee: l::6 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[04/07 17:30:58     12s] eee: l::7 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[04/07 17:30:58     12s] eee: l::8 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[04/07 17:30:58     12s] eee: l::9 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[04/07 17:30:58     12s] eee: l::10 avDens::0.000000 usedTrk::0.000000 availTrk::0.000000 sigTrk::0.000000
+[04/07 17:30:58     12s] {RT rc_typ_25 0 10 10 {4 1} {6 0} {8 0} {9 0} 4}
+[04/07 17:30:58     12s] eee: LAM: n=40 LLS=2-3 HLS=3-5 rDens=0.000000 uaWl=0.000000 uaWlH=0.000000 aWlH=0.000000 lMod=0 pMax=0.850000 pMod=82 wcR=0.615600 newSi=0.000000 wHLS=1.539000 siPrev=0 viaL=0.000000 crit=0.000000 shortMod=0.000000 fMod=0.000000 
+[04/07 17:30:58     12s] Default value for postRoute extraction mode's effortLevel (-effortLevel option of setExtractRCMode) changed to 'medium'.
+[04/07 17:30:58     12s] *Info: initialize multi-corner CTS.
+[04/07 17:30:58     12s] Ending "SetAnalysisView" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1206.9M, current mem=986.8M)
+[04/07 17:30:58     12s] Reading timing constraints file './top.sdc' ...
+[04/07 17:30:58     12s] Current (total cpu=0:00:12.9, real=0:00:15.0, peak res=1256.7M, current mem=1256.7M)
+[04/07 17:30:58     12s] **WARN: (TCLCMD-1461):	Skipped unsupported command: set_units (File ./top.sdc, Line 8).
+[04/07 17:30:58     12s] 
+[04/07 17:30:58     12s] **WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'w_in[0][1]' (File ./top.sdc, Line 71).
+[04/07 17:30:58     12s] 
+[04/07 17:30:58     12s] **ERROR: (TCLCMD-917):	Cannot find 'ports' that match 'w_in[0][1]' (File ./top.sdc, Line 71).
+
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern '' (File ./top.sdc, Line 71).
+[04/07 17:30:58     12s] 
+[04/07 17:30:58     12s] **ERROR: (TCLNL-312):	set_input_delay: Invalid list of pins: '' (File ./top.sdc, Line 71).
+
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'w_in[0][0]' (File ./top.sdc, Line 72).
+[04/07 17:30:58     12s] 
+[04/07 17:30:58     12s] **ERROR: (TCLCMD-917):	Cannot find 'ports' that match 'w_in[0][0]' (File ./top.sdc, Line 72).
+
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern '' (File ./top.sdc, Line 72).
+[04/07 17:30:58     12s] 
+[04/07 17:30:58     12s] **ERROR: (TCLNL-312):	set_input_delay: Invalid list of pins: '' (File ./top.sdc, Line 72).
+
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'w_in[1][1]' (File ./top.sdc, Line 73).
+[04/07 17:30:58     12s] 
+[04/07 17:30:58     12s] **ERROR: (TCLCMD-917):	Cannot find 'ports' that match 'w_in[1][1]' (File ./top.sdc, Line 73).
+
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern '' (File ./top.sdc, Line 73).
+[04/07 17:30:58     12s] 
+[04/07 17:30:58     12s] **ERROR: (TCLNL-312):	set_input_delay: Invalid list of pins: '' (File ./top.sdc, Line 73).
+
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'w_in[1][0]' (File ./top.sdc, Line 74).
+[04/07 17:30:58     12s] 
+[04/07 17:30:58     12s] **ERROR: (TCLCMD-917):	Cannot find 'ports' that match 'w_in[1][0]' (File ./top.sdc, Line 74).
+
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern '' (File ./top.sdc, Line 74).
+[04/07 17:30:58     12s] 
+[04/07 17:30:58     12s] **ERROR: (TCLNL-312):	set_input_delay: Invalid list of pins: '' (File ./top.sdc, Line 74).
+
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'w_in[2][1]' (File ./top.sdc, Line 75).
+[04/07 17:30:58     12s] 
+[04/07 17:30:58     12s] **ERROR: (TCLCMD-917):	Cannot find 'ports' that match 'w_in[2][1]' (File ./top.sdc, Line 75).
+
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern '' (File ./top.sdc, Line 75).
+[04/07 17:30:58     12s] 
+[04/07 17:30:58     12s] **ERROR: (TCLNL-312):	set_input_delay: Invalid list of pins: '' (File ./top.sdc, Line 75).
+
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'w_in[2][0]' (File ./top.sdc, Line 76).
+[04/07 17:30:58     12s] 
+[04/07 17:30:58     12s] **ERROR: (TCLCMD-917):	Cannot find 'ports' that match 'w_in[2][0]' (File ./top.sdc, Line 76).
+
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern '' (File ./top.sdc, Line 76).
+[04/07 17:30:58     12s] 
+[04/07 17:30:58     12s] **ERROR: (TCLNL-312):	set_input_delay: Invalid list of pins: '' (File ./top.sdc, Line 76).
+
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'w_in[3][1]' (File ./top.sdc, Line 77).
+[04/07 17:30:58     12s] 
+[04/07 17:30:58     12s] **ERROR: (TCLCMD-917):	Cannot find 'ports' that match 'w_in[3][1]' (File ./top.sdc, Line 77).
+
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern '' (File ./top.sdc, Line 77).
+[04/07 17:30:58     12s] 
+[04/07 17:30:58     12s] **ERROR: (TCLNL-312):	set_input_delay: Invalid list of pins: '' (File ./top.sdc, Line 77).
+
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern 'w_in[3][0]' (File ./top.sdc, Line 78).
+[04/07 17:30:58     12s] 
+[04/07 17:30:58     12s] **ERROR: (TCLCMD-917):	Cannot find 'ports' that match 'w_in[3][0]' (File ./top.sdc, Line 78).
+
+**WARN: (TCLCMD-513):	The software could not find a matching object of the specified type for the pattern '' (File ./top.sdc, Line 78).
+[04/07 17:30:58     12s] 
+[04/07 17:30:58     12s] **ERROR: (TCLNL-312):	set_input_delay: Invalid list of pins: '' (File ./top.sdc, Line 78).
+
+INFO (CTE): Reading of timing constraints file ./top.sdc completed, with 17 Warnings and 16 Errors.
+[04/07 17:30:58     12s] Ending "Constraint file reading stats" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1274.2M, current mem=1274.2M)
+[04/07 17:30:58     12s] Current (total cpu=0:00:12.9, real=0:00:15.0, peak res=1274.2M, current mem=1274.2M)
+[04/07 17:30:58     12s] Tech dependent Parameter, Build TLibAnalyzer for: cellAreaConsiderPadding
+[04/07 17:30:58     12s] 
+[04/07 17:30:58     12s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) Begin ...
+[04/07 17:30:58     12s] Summary for sequential cells identification: 
+[04/07 17:30:58     12s]   Identified SBFF number: 17
+[04/07 17:30:58     12s]   Identified MBFF number: 0
+[04/07 17:30:58     12s]   Identified SB Latch number: 0
+[04/07 17:30:58     12s]   Identified MB Latch number: 0
+[04/07 17:30:58     12s]   Not identified SBFF number: 0
+[04/07 17:30:58     12s]   Not identified MBFF number: 0
+[04/07 17:30:58     12s]   Not identified SB Latch number: 0
+[04/07 17:30:58     12s]   Not identified MB Latch number: 0
+[04/07 17:30:58     12s]   Number of sequential cells which are not FFs: 16
+[04/07 17:30:58     12s] Total number of combinational cells: 169
+[04/07 17:30:58     12s] Total number of sequential cells: 33
+[04/07 17:30:58     12s] Total number of tristate cells: 0
+[04/07 17:30:58     12s] Total number of level shifter cells: 0
+[04/07 17:30:58     12s] Total number of power gating cells: 0
+[04/07 17:30:58     12s] Total number of isolation cells: 0
+[04/07 17:30:58     12s] Total number of power switch cells: 0
+[04/07 17:30:58     12s] Total number of pulse generator cells: 0
+[04/07 17:30:58     12s] Total number of always on buffers: 0
+[04/07 17:30:58     12s] Total number of retention cells: 0
+[04/07 17:30:58     12s] Total number of physical cells: 0
+[04/07 17:30:58     12s] List of usable buffers: BUFx10_ASAP7_75t_R BUFx12_ASAP7_75t_R BUFx12f_ASAP7_75t_R BUFx16f_ASAP7_75t_R BUFx24_ASAP7_75t_R BUFx2_ASAP7_75t_R BUFx3_ASAP7_75t_R BUFx4_ASAP7_75t_R BUFx5_ASAP7_75t_R BUFx4f_ASAP7_75t_R BUFx6f_ASAP7_75t_R BUFx8_ASAP7_75t_R HB1xp67_ASAP7_75t_R HB2xp67_ASAP7_75t_R
+[04/07 17:30:58     12s] Total number of usable buffers: 14
+[04/07 17:30:58     12s] List of unusable buffers:
+[04/07 17:30:58     12s] Total number of unusable buffers: 0
+[04/07 17:30:58     12s] List of usable inverters: CKINVDCx10_ASAP7_75t_R CKINVDCx12_ASAP7_75t_R CKINVDCx11_ASAP7_75t_R CKINVDCx14_ASAP7_75t_R CKINVDCx16_ASAP7_75t_R CKINVDCx20_ASAP7_75t_R CKINVDCx8_ASAP7_75t_R CKINVDCx5p33_ASAP7_75t_R CKINVDCx6p67_ASAP7_75t_R CKINVDCx9p33_ASAP7_75t_R INVx11_ASAP7_75t_R INVx13_ASAP7_75t_R INVx1_ASAP7_75t_R INVx2_ASAP7_75t_R INVx3_ASAP7_75t_R INVx4_ASAP7_75t_R INVx5_ASAP7_75t_R INVx6_ASAP7_75t_R INVx8_ASAP7_75t_R INVxp67_ASAP7_75t_R INVxp33_ASAP7_75t_R
+[04/07 17:30:58     12s] Total number of usable inverters: 21
+[04/07 17:30:58     12s] List of unusable inverters:
+[04/07 17:30:58     12s] Total number of unusable inverters: 0
+[04/07 17:30:58     12s] List of identified usable delay cells: HB3xp67_ASAP7_75t_R HB4xp67_ASAP7_75t_R
+[04/07 17:30:58     12s] Total number of identified usable delay cells: 2
+[04/07 17:30:58     12s] List of identified unusable delay cells:
+[04/07 17:30:58     12s] Total number of identified unusable delay cells: 0
+[04/07 17:30:58     12s] 
+[04/07 17:30:58     12s] TimeStamp Creating Cell Server ...(0, 1, 1, 1) End ...
+[04/07 17:30:58     12s] 
+[04/07 17:30:58     12s] TimeStamp Deleting Cell Server Begin ...
+[04/07 17:30:58     12s] 
+[04/07 17:30:58     12s] TimeStamp Deleting Cell Server End ...
+[04/07 17:30:58     12s] Ending "Cell type marking" (total cpu=0:00:00.0, real=0:00:00.0, peak res=1295.9M, current mem=1295.9M)
+[04/07 17:30:58     12s] 
+[04/07 17:30:58     12s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) Begin ...
+[04/07 17:30:58     12s] Summary for sequential cells identification: 
+[04/07 17:30:58     12s]   Identified SBFF number: 17
+[04/07 17:30:58     12s]   Identified MBFF number: 0
+[04/07 17:30:58     12s]   Identified SB Latch number: 0
+[04/07 17:30:58     12s]   Identified MB Latch number: 0
+[04/07 17:30:58     12s]   Not identified SBFF number: 0
+[04/07 17:30:58     12s]   Not identified MBFF number: 0
+[04/07 17:30:58     12s]   Not identified SB Latch number: 0
+[04/07 17:30:58     12s]   Not identified MB Latch number: 0
+[04/07 17:30:58     12s]   Number of sequential cells which are not FFs: 16
+[04/07 17:30:58     12s]  Visiting view : view_tc
+[04/07 17:30:58     12s]    : PowerDomain = none : Weighted F : unweighted  = 7.80 (1.000) with rcCorner = 0
+[04/07 17:30:58     12s]    : PowerDomain = none : Weighted F : unweighted  = 5.10 (1.000) with rcCorner = -1
+[04/07 17:30:58     12s]  Visiting view : view_tc
+[04/07 17:30:58     12s]    : PowerDomain = none : Weighted F : unweighted  = 7.80 (1.000) with rcCorner = 0
+[04/07 17:30:58     12s]    : PowerDomain = none : Weighted F : unweighted  = 5.10 (1.000) with rcCorner = -1
+[04/07 17:30:58     12s] TLC MultiMap info (StdDelay):
+[04/07 17:30:58     12s]   : delay_tc + tc + 1 + no RcCorner := 5.1ps
+[04/07 17:30:58     12s]   : delay_tc + tc + 1 + rc_typ_25 := 7.8ps
+[04/07 17:30:58     12s]  Setting StdDelay to: 7.8ps
+[04/07 17:30:58     12s] 
+[04/07 17:30:58     12s] TimeStamp Creating Cell Server ...(0, 0, 0, 0) End ...
+[04/07 17:30:58     12s] 
+[04/07 17:30:58     12s] TimeStamp Deleting Cell Server Begin ...
+[04/07 17:30:58     12s] 
+[04/07 17:30:58     12s] TimeStamp Deleting Cell Server End ...
+[04/07 17:30:58     12s] #% Begin Load MMMC data post ... (date=04/07 17:30:58, mem=1296.5M)
+[04/07 17:30:58     13s] #% End Load MMMC data post ... (date=04/07 17:30:58, total cpu=0:00:00.0, real=0:00:00.0, peak res=1296.5M, current mem=1296.5M)
+[04/07 17:30:58     13s] 
+[04/07 17:30:58     13s] *** Summary of all messages that are not suppressed in this session:
+[04/07 17:30:58     13s] Severity  ID               Count  Summary                                  
+[04/07 17:30:58     13s] WARNING   IMPVL-346            2  Module '%s' is instantiated in the netli...
+[04/07 17:30:58     13s] WARNING   IMPDB-2504           2  Unable to find netlist cell in the desig...
+[04/07 17:30:58     13s] WARNING   TCLCMD-513          16  The software could not find a matching o...
+[04/07 17:30:58     13s] ERROR     TCLCMD-917           8  Cannot find '%s' that match '%s'         
+[04/07 17:30:58     13s] WARNING   TCLCMD-1461          1  Skipped unsupported command: %s          
+[04/07 17:30:58     13s] ERROR     TCLNL-312            8  %s: Invalid list of pins: '%s'           
+[04/07 17:30:58     13s] WARNING   TECHLIB-1277         2  The %s '%s' has been defined for %s %s '...
+[04/07 17:30:58     13s] *** Message Summary: 23 warning(s), 16 error(s)
+[04/07 17:30:58     13s] 
+[04/07 17:30:58     13s] <CMD> setDesignMode -process 7 -node N7
+[04/07 17:30:58     13s] ##  Process: 7             (User Set)               
+[04/07 17:30:58     13s] ##     Node: N7            (User Set)           
+[04/07 17:30:58     13s] Applying the recommended capacitance filtering threshold values for 7nm process node: total_c_th=0, relative_c_th=1 and coupling_c_th=0.1.
+[04/07 17:30:58     13s] 	These values will be used by all post-route extraction engines, including TQuantus, IQuantus and Quantus QRC extraction.
+[04/07 17:30:58     13s] 	Capacitance filtering mode(-capFilterMode option of the setExtractRCMode) is 'relAndCoup' for all engines.
+[04/07 17:30:58     13s] 	The accuracy mode for postRoute effortLevel low extraction will be set to 'high'.
+[04/07 17:30:58     13s] 	Default value for EffortLevel(-effortLevel option of the setExtractRCMode) in postRoute extraction mode is 'medium'.
+[04/07 17:30:58     13s] Process node set using 'setDesignMode' is less than or equal to 32nm, for which captable file(s) would be ignored as preRoute extraction would instead use technology file. For postRoute extraction, default value for effort level would be 'medium' and effort level 'low' would not be allowed.
+[04/07 17:30:58     13s] <CMD> setMultiCpuUsage -localCpu 8
+[04/07 17:30:58     13s] <CMD> setDesignMode -bottomRoutingLayer 2
+[04/07 17:30:58     13s] <CMD> setDesignMode -topRoutingLayer 7
+[04/07 17:30:58     13s] <CMD> globalNetConnect VDD -type pgpin -pin VDD -inst *
+[04/07 17:30:58     13s] <CMD> globalNetConnect VSS -type pgpin -pin VSS -inst *
+[04/07 17:30:58     13s] <CMD> floorPlan -site asap7sc7p5t -s 302.4 302.4 6.22 6.22 6.22 6.22 -noSnap
+[04/07 17:30:58     13s] Start create_tracks
+[04/07 17:30:58     13s] <CMD> addWellTap -cell TAPCELL_ASAP7_75t_R -cellInterval 12.960 -inRowOffset 1.296
+[04/07 17:30:58     13s] OPERPROF: Starting DPlace-Init-For-Physical at level 1, MEM:1392.9M, EPOCH TIME: 1775601058.921833
+[04/07 17:30:58     13s] OPERPROF:   Starting DPlace-Init at level 2, MEM:1392.9M, EPOCH TIME: 1775601058.932539
+[04/07 17:30:58     13s] Processing tracks to init pin-track alignment.
+[04/07 17:30:58     13s] z: 1, totalTracks: 1
+[04/07 17:30:58     13s] z: 3, totalTracks: 1
+[04/07 17:30:58     13s] z: 5, totalTracks: 1
+[04/07 17:30:58     13s] z: 7, totalTracks: 1
+[04/07 17:30:58     13s] #spOpts: N=7 dpt autoPA fgc alignH mxdDpt=1 pa7n fill1_ok mergeVia=T sncAbut 
+[04/07 17:30:58     13s] #spOpts: cut2cut hrOri=1 hrSnap=1 rpCkHalo=4 
+[04/07 17:30:58     13s] Set DBUPerIGU to techSite asap7sc7p5t width 864.
+[04/07 17:30:58     13s] OPERPROF:     Starting CceInit at level 3, MEM:1392.9M, EPOCH TIME: 1775601058.941462
+[04/07 17:30:58     13s] Initializing Route Infrastructure for color support ...
+[04/07 17:30:58     13s] OPERPROF:       Starting RouteInfrastructureColorSupport at level 4, MEM:1392.9M, EPOCH TIME: 1775601058.941607
+[04/07 17:30:58     13s] #create default rule from bind_ndr_rule rule=0x7f44fe200f80 0x7f44e85a0018
+[04/07 17:30:58     13s] #WARNING (NRDB-411) spacing table for LAYER M5 is already defined. Ignore this one.
+[04/07 17:30:58     13s] #WARNING (NRDB-411) spacing table for LAYER M6 is already defined. Ignore this one.
+[04/07 17:30:58     13s] #WARNING (NRDB-411) spacing table for LAYER M7 is already defined. Ignore this one.
+[04/07 17:30:58     13s] #WARNING (NRDB-2106) Ignoring layer Pad MINIMUMCUT rule with WIDTH (7.220000) <= the layer's MINWIDTH (8.000000). 
+[04/07 17:30:59     13s] ### import design signature (1): route=1 fixed_route=1 flt_obj=0 vio=1905142130 swire=1 shield_wire=1 net_attr=1 dirty_area=0 del_dirty_area=0 cell=0 placement=0 pin_access=1 inst_pattern=1 via=2127493176 routing_via=1
+[04/07 17:30:59     13s] #WARNING (NRDB-2040) Rule LEF_DEFAULT doesn't specify any vias that satisfy all of the area rules for layer M2 M3 M4 M5 M6 M7 M8 M9 
+[04/07 17:30:59     13s] #WARNING (NRDB-778) No multicut vias which meet all area rules for LAYER M8 are defined in RULE LEF_DEFAULT. When a LEF MINIMUMCUT rule is defined for a layer, you must define multicut vias for the layer in the LEF file. Edit your LEF file and read it in again.
+[04/07 17:30:59     13s] #WARNING (NRDB-778) No multicut vias which meet all area rules for LAYER M9 are defined in RULE LEF_DEFAULT. When a LEF MINIMUMCUT rule is defined for a layer, you must define multicut vias for the layer in the LEF file. Edit your LEF file and read it in again.
+[04/07 17:30:59     13s] #WARNING (NRDB-778) No multicut vias which meet all area rules for LAYER Pad are defined in RULE LEF_DEFAULT. When a LEF MINIMUMCUT rule is defined for a layer, you must define multicut vias for the layer in the LEF file. Edit your LEF file and read it in again.
+[04/07 17:30:59     13s] OPERPROF:       Finished RouteInfrastructureColorSupport at level 4, CPU:0.045, REAL:0.101, MEM:1435.9M, EPOCH TIME: 1775601059.042241
+[04/07 17:30:59     13s] Route Infrastructure Initialized for color support successfully.
+[04/07 17:30:59     13s] OPERPROF:     Finished CceInit at level 3, CPU:0.045, REAL:0.101, MEM:1435.9M, EPOCH TIME: 1775601059.042351
+[04/07 17:30:59     13s] OPERPROF:     Starting FgcInit at level 3, MEM:1435.9M, EPOCH TIME: 1775601059.042461
+[04/07 17:30:59     13s] OPERPROF:     Finished FgcInit at level 3, CPU:0.000, REAL:0.000, MEM:1435.9M, EPOCH TIME: 1775601059.042856
+[04/07 17:30:59     13s] All LLGs are deleted
+[04/07 17:30:59     13s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[04/07 17:30:59     13s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[04/07 17:30:59     13s] OPERPROF:     Starting spSiteCleanup(true) at level 3, MEM:1435.9M, EPOCH TIME: 1775601059.062978
+[04/07 17:30:59     13s] OPERPROF:     Finished spSiteCleanup(true) at level 3, CPU:0.000, REAL:0.004, MEM:1435.9M, EPOCH TIME: 1775601059.066763
+[04/07 17:30:59     13s] # Building top llgBox search-tree.
+[04/07 17:30:59     13s] OPERPROF:     Starting spInitSiteArr at level 3, MEM:1435.9M, EPOCH TIME: 1775601059.074306
+[04/07 17:30:59     13s] Multithreaded Timing Analysis is initialized with 8 threads
+[04/07 17:30:59     13s] 
+[04/07 17:30:59     13s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[04/07 17:30:59     13s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[04/07 17:30:59     13s] OPERPROF:       Starting spiInitFpSiteArr at level 4, MEM:1616.4M, EPOCH TIME: 1775601059.182859
+[04/07 17:30:59     13s] Max number of tech site patterns supported in site array is 256.
+[04/07 17:30:59     13s] Core basic site is asap7sc7p5t
+[04/07 17:30:59     13s] Processing tracks to init pin-track alignment.
+[04/07 17:30:59     13s] z: 1, totalTracks: 1
+[04/07 17:30:59     13s]   #Tracks: H2 Mask 0 Offset -1 Pattern Pitch 4320 gcf 0 Avg.Pitch 617, first 3280
+[04/07 17:30:59     13s] z: 3, totalTracks: 1
+[04/07 17:30:59     13s] z: 5, totalTracks: 1
+[04/07 17:30:59     13s] z: 7, totalTracks: 1
+[04/07 17:30:59     13s] # From Library, align V-Layer z-1 pins to tracks.
+[04/07 17:30:59     13s] #   V-Align Layer name: <M1>.
+[04/07 17:30:59     13s] Cell count that need to snap due to track-pitch vs. row-site-pitch mismatch: 208
+[04/07 17:30:59     13s] # vZ1 hZ0 dpt-0x0/0x78 top-1/2
+[04/07 17:30:59     13s] OPERPROF:         Starting spiCheckSiteIfFastDPInitAvailable at level 5, MEM:1616.4M, EPOCH TIME: 1775601059.219422
+[04/07 17:30:59     13s] After signature check, allow fast init is false, keep pre-filter is false.
+[04/07 17:30:59     13s] After signature check and other controls, allow fast init is false, keep pre-filter is false.
+[04/07 17:30:59     13s] OPERPROF:         Finished spiCheckSiteIfFastDPInitAvailable at level 5, CPU:0.008, REAL:0.006, MEM:1648.4M, EPOCH TIME: 1775601059.224961
+[04/07 17:30:59     13s] Use non-trimmed site array because memory saving is not enough.
+[04/07 17:30:59     13s] SiteArray: non-trimmed site array dimensions = 280 x 1400
+[04/07 17:30:59     13s] SiteArray: use 2,150,400 bytes
+[04/07 17:30:59     13s] SiteArray: current memory after site array memory allocation 1650.4M
+[04/07 17:30:59     13s] SiteArray: FP blocked sites are writable
+[04/07 17:30:59     13s] SY_THREAD_POOL_QUEUE SY-GLB-THREAD-POOL (0x3dfc5bc0): Create thread pool 0x7f44ec754288.
+[04/07 17:30:59     13s] SY_THREAD_POOL_QUEUE SY-GLB-THREAD-POOL (0x3dfc5bc0): 0 out of 1 thread pools are available.
+[04/07 17:30:59     13s] Estimated cell power/ground rail width = 0.135 um
+[04/07 17:30:59     13s] Layer info - lib-1st H=2, V=3.  Cell-FPin=1. Top-pin=2
+[04/07 17:30:59     13s] OPERPROF:         Starting RoutingBlockageFromWireViaStBox at level 5, MEM:1778.4M, EPOCH TIME: 1775601059.230546
+[04/07 17:30:59     13s] Process 0 wires and vias for routing blockage analysis
+[04/07 17:30:59     13s] OPERPROF:         Finished RoutingBlockageFromWireViaStBox at level 5, CPU:0.004, REAL:0.002, MEM:1779.4M, EPOCH TIME: 1775601059.232895
+[04/07 17:30:59     13s] z: 9, totalTracks: 1
+[04/07 17:30:59     13s] z: 1, totalTracks: 1
+[04/07 17:30:59     13s] **WARN: (IMPSP-378):	Center of Cell XOR2xp5_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+[04/07 17:30:59     13s] **WARN: (IMPSP-378):	Center of Cell XOR2x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+[04/07 17:30:59     13s] **WARN: (IMPSP-378):	Center of Cell XOR2x1_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+[04/07 17:30:59     13s] **WARN: (IMPSP-378):	Center of Cell XNOR2xp5_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+[04/07 17:30:59     13s] **WARN: (IMPSP-378):	Center of Cell XNOR2x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+[04/07 17:30:59     13s] **WARN: (IMPSP-378):	Center of Cell XNOR2x1_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+[04/07 17:30:59     13s] **WARN: (IMPSP-378):	Center of Cell TIELOx1_ASAP7_75t_R's M1(1) Pin 'L' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+[04/07 17:30:59     13s] **WARN: (IMPSP-378):	Center of Cell TIEHIx1_ASAP7_75t_R's M1(1) Pin 'H' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+[04/07 17:30:59     13s] **WARN: (IMPSP-378):	Center of Cell SDFLx4_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+[04/07 17:30:59     13s] **WARN: (IMPSP-378):	Center of Cell SDFLx3_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+[04/07 17:30:59     13s] **WARN: (IMPSP-378):	Center of Cell SDFLx2_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+[04/07 17:30:59     13s] **WARN: (IMPSP-378):	Center of Cell SDFLx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+[04/07 17:30:59     13s] **WARN: (IMPSP-378):	Center of Cell SDFHx4_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+[04/07 17:30:59     13s] **WARN: (IMPSP-378):	Center of Cell SDFHx3_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+[04/07 17:30:59     13s] **WARN: (IMPSP-378):	Center of Cell SDFHx2_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+[04/07 17:30:59     13s] **WARN: (IMPSP-378):	Center of Cell SDFHx1_ASAP7_75t_R's M1(1) Pin 'QN' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+[04/07 17:30:59     13s] **WARN: (IMPSP-378):	Center of Cell OR5x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+[04/07 17:30:59     13s] **WARN: (IMPSP-378):	Center of Cell OR5x1_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+[04/07 17:30:59     13s] **WARN: (IMPSP-378):	Center of Cell OR4x2_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+[04/07 17:30:59     13s] **WARN: (IMPSP-378):	Center of Cell OR4x1_ASAP7_75t_R's M1(1) Pin 'Y' does not fall on any existing track, given the current track offset of 0.0000 micron.  You should mark the cell dont_use.
+[04/07 17:30:59     13s] **WARN: (EMS-27):	Message (IMPSP-378) has exceeded the current message display limit of 20.
+[04/07 17:30:59     13s] To increase the message display limit, refer to the product command reference manual.
+[04/07 17:30:59     13s] WARNING (IMPSP-382): Found 197 cells with pin-to-track misalignment. All floorplan's track offset and cell's pin-offsets did not allow any alignment.
+[04/07 17:30:59     13s] SiteArray: number of non floorplan blocked sites for llg default is 392000
+[04/07 17:30:59     13s] Atter site array init, number of instance map data is 0.
+[04/07 17:30:59     13s] OPERPROF:       Finished spiInitFpSiteArr at level 4, CPU:0.062, REAL:0.065, MEM:1779.4M, EPOCH TIME: 1775601059.247928
+[04/07 17:30:59     13s] 
+[04/07 17:30:59     13s] Scanning PG Shapes for Pre-Colorizing...Done.
+[04/07 17:30:59     13s] Verbose-2062: PG Shapes are colorized in Pre_CCE_Colorize flow.
+[04/07 17:30:59     13s]  Pre_CCE_Colorizing is beginning ...
+[04/07 17:30:59     13s] 
+[04/07 17:30:59     13s]    Running colorizing using 8 threads!...
+[04/07 17:30:59     14s] 
+[04/07 17:30:59     14s]    ...Pre_Cce_Colorize MT is done!
+[04/07 17:30:59     14s] 
+[04/07 17:30:59     14s] 	Real Time: 0.130097  Cpu Time: 1.005482
+[04/07 17:30:59     14s] SY_THREAD_POOL_QUEUE SY-GLB-THREAD-POOL (0x3dfc5bc0): Rebuild thread pool 0x7f44ec754288.
+[04/07 17:30:59     14s] SY_THREAD_POOL_QUEUE SY-GLB-THREAD-POOL (0x3dfc5bc0): 0 out of 1 thread pools are available.
+[04/07 17:30:59     14s]    212 cells have been colorized (15+0+197),
+[04/07 17:30:59     14s]  Pre_CCE_Colorizing is done.
+[04/07 17:30:59     14s] OPERPROF:     Finished spInitSiteArr at level 3, CPU:1.177, REAL:0.320, MEM:1752.4M, EPOCH TIME: 1775601059.394096
+[04/07 17:30:59     14s] OPERPROF:     Starting PlacementInitSBTree at level 3, MEM:1752.4M, EPOCH TIME: 1775601059.394245
+[04/07 17:30:59     14s] OPERPROF:     Finished PlacementInitSBTree at level 3, CPU:0.002, REAL:0.002, MEM:1784.4M, EPOCH TIME: 1775601059.395858
+[04/07 17:30:59     14s] [CPU] DPlace-Init (cpu=0:00:01.2, real=0:00:01.0, mem=1784.4MB).
+[04/07 17:30:59     14s] OPERPROF:   Finished DPlace-Init at level 2, CPU:1.230, REAL:0.468, MEM:1784.4M, EPOCH TIME: 1775601059.400237
+[04/07 17:30:59     14s] OPERPROF: Finished DPlace-Init-For-Physical at level 1, CPU:1.231, REAL:0.478, MEM:1784.4M, EPOCH TIME: 1775601059.400294
+[04/07 17:30:59     14s] For 6720 new insts, OPERPROF: Starting spDPlaceCleanup(full) at level 1, MEM:1787.2M, EPOCH TIME: 1775601059.456351
+[04/07 17:30:59     14s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:6720).
+[04/07 17:30:59     14s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[04/07 17:30:59     14s] All LLGs are deleted
+[04/07 17:30:59     14s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[04/07 17:30:59     14s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[04/07 17:30:59     14s] OPERPROF:   Starting spSiteCleanup(true) at level 2, MEM:1787.2M, EPOCH TIME: 1775601059.458521
+[04/07 17:30:59     14s] OPERPROF:   Finished spSiteCleanup(true) at level 2, CPU:0.000, REAL:0.000, MEM:1785.1M, EPOCH TIME: 1775601059.458691
+[04/07 17:30:59     14s] OPERPROF:   Starting FgcCleanup at level 2, MEM:1721.1M, EPOCH TIME: 1775601059.459472
+[04/07 17:30:59     14s] OPERPROF:   Finished FgcCleanup at level 2, CPU:0.000, REAL:0.000, MEM:1721.1M, EPOCH TIME: 1775601059.459551
+[04/07 17:30:59     14s] OPERPROF: Finished spDPlaceCleanup(full) at level 1, CPU:0.003, REAL:0.003, MEM:1721.1M, EPOCH TIME: 1775601059.459669
+[04/07 17:30:59     14s] Inserted 6720 well-taps <TAPCELL_ASAP7_75t_R> cells (prefix WELLTAP).
+[04/07 17:30:59     14s] <CMD> add_tracks -snap_m1_track_to_cell_pins
+[04/07 17:30:59     14s] Start create_tracks
+[04/07 17:30:59     14s] <CMD> add_tracks -mode replace -offsets {M5 vertical 0}
+[04/07 17:30:59     14s] Start create_tracks
+[04/07 17:30:59     14s] <CMD> deleteAllFPObjects
+[04/07 17:30:59     14s] There is no pin guide defined.
+[04/07 17:30:59     14s] **WARN: (IMPFP-6001):	NO matching routing blockage found. Nothing deleted. 
+[04/07 17:30:59     14s] There is no pin blockage which matches the wildcard name [*].
+[04/07 17:30:59     14s] <CMD> addWellTap -cell TAPCELL_ASAP7_75t_R -cellInterval 12.960 -inRowOffset 1.296
+[04/07 17:30:59     14s] OPERPROF: Starting DPlace-Init-For-Physical at level 1, MEM:1720.4M, EPOCH TIME: 1775601059.546447
+[04/07 17:30:59     14s] OPERPROF:   Starting DPlace-Init at level 2, MEM:1720.4M, EPOCH TIME: 1775601059.546612
+[04/07 17:30:59     14s] z: 1, totalTracks: 0
+[04/07 17:30:59     14s] z: 3, totalTracks: 1
+[04/07 17:30:59     14s] z: 5, totalTracks: 1
+[04/07 17:30:59     14s] z: 7, totalTracks: 1
+[04/07 17:30:59     14s] #spOpts: N=7 dpt autoPA fgc pinGE3 alignH mxdDpt=1 pa7n fill1_ok mergeVia=T 
+[04/07 17:30:59     14s] #spOpts: sncAbut cut2cut hrOri=1 hrSnap=1 rpCkHalo=4 
+[04/07 17:30:59     14s] OPERPROF:     Starting CceInit at level 3, MEM:1720.4M, EPOCH TIME: 1775601059.547347
+[04/07 17:30:59     14s] Initializing Route Infrastructure for color support ...
+[04/07 17:30:59     14s] OPERPROF:       Starting RouteInfrastructureColorSupport at level 4, MEM:1720.4M, EPOCH TIME: 1775601059.547441
+[04/07 17:30:59     14s] #create default rule from bind_ndr_rule rule=0x7f44fe200f80 0x7f44e85ae018
+[04/07 17:30:59     14s] #WARNING (NRDB-411) spacing table for LAYER M5 is already defined. Ignore this one.
+[04/07 17:30:59     14s] #WARNING (NRDB-411) spacing table for LAYER M6 is already defined. Ignore this one.
+[04/07 17:30:59     14s] #WARNING (NRDB-411) spacing table for LAYER M7 is already defined. Ignore this one.
+[04/07 17:30:59     14s] #WARNING (NRDB-2106) Ignoring layer Pad MINIMUMCUT rule with WIDTH (7.220000) <= the layer's MINWIDTH (8.000000). 
+[04/07 17:30:59     14s] ### import design signature (2): route=1 fixed_route=1 flt_obj=0 vio=1905142130 swire=1 shield_wire=1 net_attr=1 dirty_area=0 del_dirty_area=0 cell=0 placement=0 pin_access=1 inst_pattern=1 via=2127493176 routing_via=1
+[04/07 17:30:59     14s] #WARNING (NRDB-2040) Rule LEF_DEFAULT doesn't specify any vias that satisfy all of the area rules for layer M2 M3 M4 M5 M6 M7 M8 M9 
+[04/07 17:30:59     14s] #WARNING (NRDB-778) No multicut vias which meet all area rules for LAYER M8 are defined in RULE LEF_DEFAULT. When a LEF MINIMUMCUT rule is defined for a layer, you must define multicut vias for the layer in the LEF file. Edit your LEF file and read it in again.
+[04/07 17:30:59     14s] #WARNING (NRDB-778) No multicut vias which meet all area rules for LAYER M9 are defined in RULE LEF_DEFAULT. When a LEF MINIMUMCUT rule is defined for a layer, you must define multicut vias for the layer in the LEF file. Edit your LEF file and read it in again.
+[04/07 17:30:59     14s] #WARNING (NRDB-778) No multicut vias which meet all area rules for LAYER Pad are defined in RULE LEF_DEFAULT. When a LEF MINIMUMCUT rule is defined for a layer, you must define multicut vias for the layer in the LEF file. Edit your LEF file and read it in again.
+[04/07 17:30:59     14s] #WARNING (NRDB-2155) Layer M1 doesn't have track defined in preferrable routing direction. Coloring cannot finish. 
+[04/07 17:30:59     14s] OPERPROF:       Finished RouteInfrastructureColorSupport at level 4, CPU:0.027, REAL:0.026, MEM:1761.4M, EPOCH TIME: 1775601059.573227
+[04/07 17:30:59     14s] Route Infrastructure Initialized for color support successfully.
+[04/07 17:30:59     14s] OPERPROF:     Finished CceInit at level 3, CPU:0.027, REAL:0.026, MEM:1761.4M, EPOCH TIME: 1775601059.573344
+[04/07 17:30:59     14s] OPERPROF:     Starting FgcInit at level 3, MEM:1761.4M, EPOCH TIME: 1775601059.573413
+[04/07 17:30:59     14s] OPERPROF:     Finished FgcInit at level 3, CPU:0.000, REAL:0.000, MEM:1761.4M, EPOCH TIME: 1775601059.573655
+[04/07 17:30:59     14s] All LLGs are deleted
+[04/07 17:30:59     14s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[04/07 17:30:59     14s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[04/07 17:30:59     14s] OPERPROF:     Starting spSiteCleanup(true) at level 3, MEM:1761.4M, EPOCH TIME: 1775601059.574859
+[04/07 17:30:59     14s] OPERPROF:     Finished spSiteCleanup(true) at level 3, CPU:0.000, REAL:0.000, MEM:1761.4M, EPOCH TIME: 1775601059.574964
+[04/07 17:30:59     14s] # Building top llgBox search-tree.
+[04/07 17:30:59     14s] OPERPROF:     Starting spInitSiteArr at level 3, MEM:1761.4M, EPOCH TIME: 1775601059.575109
+[04/07 17:30:59     14s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[04/07 17:30:59     14s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[04/07 17:30:59     14s] OPERPROF:       Starting spiInitFpSiteArr at level 4, MEM:1761.4M, EPOCH TIME: 1775601059.575219
+[04/07 17:30:59     14s] Max number of tech site patterns supported in site array is 256.
+[04/07 17:30:59     14s] Core basic site is asap7sc7p5t
+[04/07 17:30:59     14s] Processing tracks to init pin-track alignment.
+[04/07 17:30:59     14s] z: 1, totalTracks: 0
+[04/07 17:30:59     14s]   #Tracks: H2 Mask 0 Offset -1 Pattern Pitch 4320 gcf 0 Avg.Pitch 617, first 3280
+[04/07 17:30:59     14s] z: 3, totalTracks: 1
+[04/07 17:30:59     14s] z: 5, totalTracks: 1
+[04/07 17:30:59     14s] z: 7, totalTracks: 1
+[04/07 17:30:59     14s] Cell count that need to snap due to track-pitch vs. row-site-pitch mismatch: 208
+[04/07 17:30:59     14s] # vZ1 hZ0 dpt-0x0/0x78 top-1/2
+[04/07 17:30:59     14s] OPERPROF:         Starting spiCheckSiteIfFastDPInitAvailable at level 5, MEM:1761.4M, EPOCH TIME: 1775601059.577004
+[04/07 17:30:59     14s] After signature check, allow fast init is true, keep pre-filter is true.
+[04/07 17:30:59     14s] After signature check and other controls, allow fast init is false, keep pre-filter is false.
+[04/07 17:30:59     14s] OPERPROF:         Finished spiCheckSiteIfFastDPInitAvailable at level 5, CPU:0.003, REAL:0.002, MEM:1793.4M, EPOCH TIME: 1775601059.579165
+[04/07 17:30:59     14s] SiteArray: non-trimmed site array dimensions = 280 x 1400
+[04/07 17:30:59     14s] SiteArray: use 2,150,400 bytes
+[04/07 17:30:59     14s] SiteArray: current memory after site array memory allocation 1795.4M
+[04/07 17:30:59     14s] SiteArray: FP blocked sites are writable
+[04/07 17:30:59     14s] Layer info - lib-1st H=2, V=3.  Cell-FPin=1. Top-pin=2
+[04/07 17:30:59     14s] OPERPROF:         Starting RoutingBlockageFromWireViaStBox at level 5, MEM:1795.4M, EPOCH TIME: 1775601059.581069
+[04/07 17:30:59     14s] Process 0 wires and vias for routing blockage analysis
+[04/07 17:30:59     14s] OPERPROF:         Finished RoutingBlockageFromWireViaStBox at level 5, CPU:0.002, REAL:0.002, MEM:1795.4M, EPOCH TIME: 1775601059.582818
+[04/07 17:30:59     14s] z: 9, totalTracks: 1
+[04/07 17:30:59     14s] z: 1, totalTracks: 0
+[04/07 17:30:59     14s] SiteArray: number of non floorplan blocked sites for llg default is 392000
+[04/07 17:30:59     14s] Atter site array init, number of instance map data is 0.
+[04/07 17:30:59     14s] OPERPROF:       Finished spiInitFpSiteArr at level 4, CPU:0.046, REAL:0.013, MEM:1795.4M, EPOCH TIME: 1775601059.587770
+[04/07 17:30:59     14s] 
+[04/07 17:30:59     14s] Verbose-2062: PG Shapes are colorized in Pre_CCE_Colorize flow.
+[04/07 17:30:59     14s]  Skipping Pre_CCE_Colorizing (15+197)!
+[04/07 17:30:59     14s] OPERPROF:     Finished spInitSiteArr at level 3, CPU:0.048, REAL:0.014, MEM:1795.4M, EPOCH TIME: 1775601059.589364
+[04/07 17:30:59     14s] OPERPROF:     Starting PlacementInitSBTree at level 3, MEM:1795.4M, EPOCH TIME: 1775601059.589486
+[04/07 17:30:59     14s] OPERPROF:     Finished PlacementInitSBTree at level 3, CPU:0.002, REAL:0.001, MEM:1795.4M, EPOCH TIME: 1775601059.590886
+[04/07 17:30:59     14s] [CPU] DPlace-Init (cpu=0:00:00.1, real=0:00:00.0, mem=1795.4MB).
+[04/07 17:30:59     14s] OPERPROF:   Finished DPlace-Init at level 2, CPU:0.079, REAL:0.048, MEM:1795.4M, EPOCH TIME: 1775601059.594298
+[04/07 17:30:59     14s] OPERPROF: Finished DPlace-Init-For-Physical at level 1, CPU:0.079, REAL:0.048, MEM:1795.4M, EPOCH TIME: 1775601059.594342
+[04/07 17:30:59     14s] For 6720 new insts, OPERPROF: Starting spDPlaceCleanup(full) at level 1, MEM:1796.2M, EPOCH TIME: 1775601059.632827
+[04/07 17:30:59     14s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:6720).
+[04/07 17:30:59     14s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[04/07 17:30:59     14s] All LLGs are deleted
+[04/07 17:30:59     14s] Before cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[04/07 17:30:59     14s] After cleanup instance map, number of data still kept is (map:0, fakeMap:0, inst:0).
+[04/07 17:30:59     14s] OPERPROF:   Starting spSiteCleanup(true) at level 2, MEM:1796.2M, EPOCH TIME: 1775601059.633664
+[04/07 17:30:59     14s] OPERPROF:   Finished spSiteCleanup(true) at level 2, CPU:0.000, REAL:0.000, MEM:1794.1M, EPOCH TIME: 1775601059.633891
+[04/07 17:30:59     14s] OPERPROF:   Starting FgcCleanup at level 2, MEM:1730.1M, EPOCH TIME: 1775601059.634461
+[04/07 17:30:59     14s] OPERPROF:   Finished FgcCleanup at level 2, CPU:0.000, REAL:0.000, MEM:1730.1M, EPOCH TIME: 1775601059.634525
+[04/07 17:30:59     14s] OPERPROF: Finished spDPlaceCleanup(full) at level 1, CPU:0.003, REAL:0.002, MEM:1730.1M, EPOCH TIME: 1775601059.634609
+[04/07 17:30:59     14s] Inserted 6720 well-taps <TAPCELL_ASAP7_75t_R> cells (prefix WELLTAP).
+[04/07 17:30:59     14s] <CMD> setPinAssignMode -pinEditInBatch true
+[04/07 17:30:59     14s] <CMD> editPin -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side LEFT -layer 3 -spreadType center -spacing 2.016 -pin {clk in_ready {x0[4]} {x0[3]} {x0[2]} {x0[1]} {x0[0]}  {x1[4]} {x1[3]} {x1[2]} {x1[1]} {x1[0]}  {x2[4]} {x2[3]} {x2[2]} {x2[1]} {x2[0]}  {x3[4]} {x3[3]} {x3[2]} {x3[1]} {x3[0]}}
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin in_ready on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin x0[4] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin x0[3] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin x0[2] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin x0[1] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin x0[0] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin x1[4] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin x1[3] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin x1[2] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin x1[1] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin x1[0] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin x2[4] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin x2[3] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin x2[2] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin x2[1] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin x2[0] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin x3[4] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin x3[3] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin x3[2] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin x3[1] on partition top
+[04/07 17:30:59     14s] **WARN: (EMS-27):	Message (IMPPTN-1235) has exceeded the current message display limit of 20.
+[04/07 17:30:59     14s] To increase the message display limit, refer to the product command reference manual.
+[04/07 17:30:59     14s] **WARN: (IMPTR-2106):	There is no track defined on layer M1. This can be due to out of range track value and the need to use 64bit version or a problem with the track in that layer. Check the track input for layer M1. You may need to run 'generateTracks' command before proceeding.
+[04/07 17:30:59     14s] Successfully placed the IO pin clk at location (0.0000 157.4200) on layer M3.
+[04/07 17:30:59     14s] editPin : finished (cpu = 0:00:00.0 real = 0:00:00.0, mem = 1741.5M).
+[04/07 17:30:59     14s] <CMD> editPin -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side RIGHT -layer 3 -spreadType center -spacing 2.016 -pin {{w04[4]} {w04[3]} {w04[2]} {w04[1]} {w04[0]}  {w14[4]} {w14[3]} {w14[2]} {w14[1]} {w14[0]}  {w24[4]} {w24[3]} {w24[2]} {w24[1]} {w24[0]}  {w34[4]} {w34[3]} {w34[2]} {w34[1]} {w34[0]}  {w05[4]} {w05[3]} {w05[2]} {w05[1]} {w05[0]}  {w15[4]} {w15[3]} {w15[2]} {w15[1]} {w15[0]}  {w25[4]} {w25[3]} {w25[2]} {w25[1]} {w25[0]}  {w35[4]} {w35[3]} {w35[2]} {w35[1]} {w35[0]}  {w06[4]} {w06[3]} {w06[2]} {w06[1]} {w06[0]}  {w16[4]} {w16[3]} {w16[2]} {w16[1]} {w16[0]}  {w26[4]} {w26[3]} {w26[2]} {w26[1]} {w26[0]}  {w36[4]} {w36[3]} {w36[2]} {w36[1]} {w36[0]}  {w07[4]} {w07[3]} {w07[2]} {w07[1]} {w07[0]}  {w17[4]} {w17[3]} {w17[2]} {w17[1]} {w17[0]}  {w27[4]} {w27[3]} {w27[2]} {w27[1]} {w27[0]}  {w37[4]} {w37[3]} {w37[2]} {w37[1]} {w37[0]}  {w48[4]} {w48[3]} {w48[2]} {w48[1]} {w48[0]}  {w58[4]} {w58[3]} {w58[2]} {w58[1]} {w58[0]}  {w68[4]} {w68[3]} {w68[2]} {w68[1]} {w68[0]}  {w78[4]} {w78[3]} {w78[2]} {w78[1]} {w78[0]}  {w49[4]} {w49[3]} {w49[2]} {w49[1]} {w49[0]}  {w59[4]} {w59[3]} {w59[2]} {w59[1]} {w59[0]}  {w69[4]} {w69[3]} {w69[2]} {w69[1]} {w69[0]}  {w79[4]} {w79[3]} {w79[2]} {w79[1]} {w79[0]}}
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin w04[4] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin w04[3] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin w04[2] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin w04[1] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin w04[0] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin w14[4] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin w14[3] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin w14[2] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin w14[1] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin w14[0] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin w24[4] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin w24[3] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin w24[2] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin w24[1] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin w24[0] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin w34[4] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin w34[3] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin w34[2] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin w34[1] on partition top
+[04/07 17:30:59     14s] **WARN: (IMPPTN-1235):	Cannot find pin w34[0] on partition top
+[04/07 17:30:59     14s] **WARN: (EMS-27):	Message (IMPPTN-1235) has exceeded the current message display limit of 20.
+[04/07 17:30:59     14s] To increase the message display limit, refer to the product command reference manual.
+[04/07 17:30:59     14s] **ERROR: (IMPPTN-963):	Either specified pin name for the selected partition does not exist or has status 'cover'. Specify the pin or the list of pins correctly and run the command again.
+**ERROR: (IMPSYT-6692):	Invalid return code while executing 'apr_reference.tcl' was returned and script processing was stopped. Review the following error in 'apr_reference.tcl' then restart.
+[04/07 17:30:59     14s] Error info: apr_reference.tcl: 
+[04/07 17:30:59     14s]     while executing
+[04/07 17:30:59     14s] "editPin -fixOverlap 1 -unit MICRON -spreadDirection clockwise -side RIGHT -layer 3 \
+[04/07 17:30:59     14s]     -spreadType center -spacing 2.016 \
+[04/07 17:30:59     14s]     -pin {{w04[4]} {w04[3..."
+[04/07 17:30:59     14s]     (file "apr_reference.tcl" line 158)
+[04/07 17:30:59     14s]     invoked from within
+[04/07 17:30:59     14s] "::se_source_orig apr_reference.tcl"
+[04/07 17:30:59     14s]     ("uplevel" body line 1)
+[04/07 17:30:59     14s]     invoked from within
+[04/07 17:30:59     14s] "uplevel [concat ::se_source_orig $args]"
+[04/07 17:30:59     14s]     (procedure "source" line 194)
+[04/07 17:30:59     14s]     invoked from within
+[04/07 17:30:59     14s] "source apr_reference.tcl"
+[04/07 17:30:59     14s]     ("uplevel" body line 1)
+[04/07 17:30:59     14s]     invoked from within
+[04/07 17:30:59     14s] "uplevel #0 source apr_reference.tcl"
+[04/07 17:30:59     14s]     ("eval" body line 1)
+[04/07 17:30:59     14s]     invoked from within
+[04/07 17:30:59     14s] "eval {uplevel #0 source apr_reference.tcl}"
+[04/07 17:30:59     14s]     (in namespace inscope "::" script line 1)
+[04/07 17:30:59     14s]     invoked from within
+[04/07 17:30:59     14s] "namespace inscope :: eval "uplevel #0 source $fileName"".
+[04/07 17:31:08     14s] **INFO (INTERRUPT): The current script will stop before next command.
+[04/07 17:31:08     14s] **INFO (INTERRUPT): One more Ctrl-C to exit Innovus ...
+[04/07 17:31:31     14s] **INFO (INTERRUPT): The current script will stop before next command.
+[04/07 17:31:31     14s] **INFO (INTERRUPT): One more Ctrl-C to exit Innovus ...

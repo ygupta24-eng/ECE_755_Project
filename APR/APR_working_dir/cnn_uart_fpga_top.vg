@@ -1,0 +1,1523 @@
+/////////////////////////////////////////////////////////////
+// Created by: Synopsys DC Expert(TM) in wire load mode
+// Version   : X-2025.06
+// Date      : Mon Apr 27 17:13:06 2026
+/////////////////////////////////////////////////////////////
+
+
+module cnn_uart_fpga_top ( clk, rst_n, uart_rx, uart_tx, led_running, led_done, 
+        led_uart_rx, led_uart_tx );
+  input clk, rst_n, uart_rx;
+  output uart_tx, led_running, led_done, led_uart_rx, led_uart_tx;
+  wire   acc_start, n97, n99, \uart_wrapper_inst/n190 ,
+         \uart_wrapper_inst/n185 , \uart_wrapper_inst/n144 ,
+         \uart_wrapper_inst/n143 , \uart_wrapper_inst/n142 ,
+         \uart_wrapper_inst/n141 , \uart_wrapper_inst/n140 ,
+         \uart_wrapper_inst/n139 , \uart_wrapper_inst/n138 ,
+         \uart_wrapper_inst/n137 , \uart_wrapper_inst/n136 ,
+         \uart_wrapper_inst/n135 , \uart_wrapper_inst/n134 ,
+         \uart_wrapper_inst/uart_tx_send ,
+         \uart_wrapper_inst/uart_rx_inst/n180 ,
+         \uart_wrapper_inst/uart_rx_inst/n179 ,
+         \uart_wrapper_inst/uart_rx_inst/n178 ,
+         \uart_wrapper_inst/uart_rx_inst/n177 ,
+         \uart_wrapper_inst/uart_rx_inst/n176 ,
+         \uart_wrapper_inst/uart_rx_inst/n175 ,
+         \uart_wrapper_inst/uart_rx_inst/n174 ,
+         \uart_wrapper_inst/uart_rx_inst/n173 ,
+         \uart_wrapper_inst/uart_rx_inst/n172 ,
+         \uart_wrapper_inst/uart_rx_inst/n171 ,
+         \uart_wrapper_inst/uart_rx_inst/n169 ,
+         \uart_wrapper_inst/uart_rx_inst/n168 ,
+         \uart_wrapper_inst/uart_rx_inst/n167 ,
+         \uart_wrapper_inst/uart_rx_inst/n166 ,
+         \uart_wrapper_inst/uart_rx_inst/n165 ,
+         \uart_wrapper_inst/uart_rx_inst/n164 ,
+         \uart_wrapper_inst/uart_rx_inst/n163 ,
+         \uart_wrapper_inst/uart_rx_inst/n162 ,
+         \uart_wrapper_inst/uart_rx_inst/n161 ,
+         \uart_wrapper_inst/uart_rx_inst/n160 ,
+         \uart_wrapper_inst/uart_rx_inst/n159 ,
+         \uart_wrapper_inst/uart_rx_inst/n158 ,
+         \uart_wrapper_inst/uart_rx_inst/n157 ,
+         \uart_wrapper_inst/uart_rx_inst/n156 ,
+         \uart_wrapper_inst/uart_rx_inst/n155 ,
+         \uart_wrapper_inst/uart_rx_inst/n154 ,
+         \uart_wrapper_inst/uart_rx_inst/n153 ,
+         \uart_wrapper_inst/uart_rx_inst/n152 ,
+         \uart_wrapper_inst/uart_rx_inst/n151 ,
+         \uart_wrapper_inst/uart_rx_inst/n150 ,
+         \uart_wrapper_inst/uart_rx_inst/rx_d2 ,
+         \uart_wrapper_inst/uart_rx_inst/rx_d1 ,
+         \uart_wrapper_inst/uart_rx_inst/n185 ,
+         \uart_wrapper_inst/uart_rx_inst/n184 ,
+         \uart_wrapper_inst/uart_rx_inst/n183 ,
+         \uart_wrapper_inst/uart_rx_inst/n182 ,
+         \uart_wrapper_inst/uart_tx_inst/n127 ,
+         \uart_wrapper_inst/uart_tx_inst/n126 ,
+         \uart_wrapper_inst/uart_tx_inst/n125 ,
+         \uart_wrapper_inst/uart_tx_inst/n124 ,
+         \uart_wrapper_inst/uart_tx_inst/n123 ,
+         \uart_wrapper_inst/uart_tx_inst/n122 ,
+         \uart_wrapper_inst/uart_tx_inst/n121 ,
+         \uart_wrapper_inst/uart_tx_inst/n120 ,
+         \uart_wrapper_inst/uart_tx_inst/n119 ,
+         \uart_wrapper_inst/uart_tx_inst/n118 ,
+         \uart_wrapper_inst/uart_tx_inst/n117 ,
+         \uart_wrapper_inst/uart_tx_inst/n116 ,
+         \uart_wrapper_inst/uart_tx_inst/n115 ,
+         \uart_wrapper_inst/uart_tx_inst/n114 ,
+         \uart_wrapper_inst/uart_tx_inst/n113 ,
+         \uart_wrapper_inst/uart_tx_inst/n112 ,
+         \uart_wrapper_inst/uart_tx_inst/n111 ,
+         \uart_wrapper_inst/uart_tx_inst/n110 ,
+         \uart_wrapper_inst/uart_tx_inst/n109 ,
+         \uart_wrapper_inst/uart_tx_inst/n108 ,
+         \uart_wrapper_inst/uart_tx_inst/n107 ,
+         \uart_wrapper_inst/uart_tx_inst/n106 ,
+         \uart_wrapper_inst/uart_tx_inst/n104 ,
+         \uart_wrapper_inst/uart_tx_inst/n103 ,
+         \uart_wrapper_inst/uart_tx_inst/n102 ,
+         \uart_wrapper_inst/uart_tx_inst/n101 ,
+         \uart_wrapper_inst/uart_tx_inst/n100 ,
+         \uart_wrapper_inst/uart_tx_inst/n99 ,
+         \uart_wrapper_inst/uart_tx_inst/n98 ,
+         \uart_wrapper_inst/uart_tx_inst/n97 ,
+         \accelerator_inst/u_pe_array/en_latched ,
+         \accelerator_inst/u_pe_array/g_pe_row[0].g_pe_col[0].u_pe/clk_psum_gated ,
+         \accelerator_inst/u_pe_array/g_pe_row[0].g_pe_col[1].u_pe/clk_psum_gated ,
+         \accelerator_inst/u_pe_array/g_pe_row[0].g_pe_col[2].u_pe/clk_psum_gated ,
+         \accelerator_inst/u_pe_array/g_pe_row[0].g_pe_col[3].u_pe/clk_psum_gated ,
+         \accelerator_inst/u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/clk_psum_gated ,
+         \accelerator_inst/u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/clk_psum_gated ,
+         \accelerator_inst/u_pe_array/g_pe_row[1].g_pe_col[2].u_pe/clk_psum_gated ,
+         \accelerator_inst/u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/clk_psum_gated ,
+         \accelerator_inst/u_pe_array/g_pe_row[2].g_pe_col[0].u_pe/clk_psum_gated ,
+         \accelerator_inst/u_pe_array/g_pe_row[2].g_pe_col[1].u_pe/clk_psum_gated ,
+         \accelerator_inst/u_pe_array/g_pe_row[2].g_pe_col[2].u_pe/clk_psum_gated ,
+         \accelerator_inst/u_pe_array/g_pe_row[2].g_pe_col[3].u_pe/clk_psum_gated ,
+         \accelerator_inst/u_pe_array/g_pe_row[3].g_pe_col[0].u_pe/clk_psum_gated ,
+         \accelerator_inst/u_pe_array/g_pe_row[3].g_pe_col[1].u_pe/clk_psum_gated ,
+         \accelerator_inst/u_pe_array/g_pe_row[3].g_pe_col[2].u_pe/clk_psum_gated ,
+         \accelerator_inst/u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/clk_psum_gated ,
+         n124, n204, n1365, n1366, n1367, n1368, n1369, n1370, n1372, n1373,
+         n1374, n1375, n1376, n1377, n1378, n1379, n1380, n1381, n1382, n1383,
+         n1384, n1385, n1386, n1387, net53799, net53804, net53805, net53806,
+         net53807, net53809, net53810, net53813, net53815, net53816, net53821,
+         net53824, net53825, net53826, net53827, net53832, net53841, net53845,
+         net53846, net53848, net53850, net53854, net53857, net53858, net53859,
+         net53860, net53864, net53865, net53871, net53875, net53877, net53879,
+         net53883, net53884, net53885, net53889, net53890, net53891, net53894,
+         net54008, net54016, net54029, net54038, net54042, net54047, net54052,
+         net54070, net54076, net54098, net54100, net54118, net54160, net54175,
+         net54179, net54189, net54194, net54199, net54198, net54203, net54215,
+         net54220, net54240, net54243, net54245, net54255, net54261, net58049,
+         net58051, net58058, net58067, net58107, net54069, net53870, net53869,
+         net53867, net53866, net54119, net54111, net54054, net53903, net53902,
+         net53862, net53851, net53908, net53906, net54006, net53907, net53901,
+         net53808, net53904, net53900, net53898, net53897, net53853, net53836,
+         net53814, net53800, n1397, n1398, n1399, n1400, n1401, n1402, n1403,
+         n1404, n1405, n1406, n1407, n1408, n1409, n1410, n1411, n1412, n1413,
+         n1414, n1415, n1416, n1417, n1418, n1419, n1420, n1421, n1422, n1423,
+         n1424, n1425, n1426, n1427, n1428, n1429, n1430, n1431, n1432, n1433,
+         n1434, n1435, n1436, n1437, n1438, n1439, n1440, n1441, n1442, n1443,
+         n1444, n1445, n1446, n1447, n1448, n1449, n1450, n1451, n1452, n1453,
+         n1454, n1455, n1456, n1457, n1458, n1459, n1460, n1461, n1462, n1463,
+         n1464, n1465, n1466, n1467, n1468, n1469, n1470, n1471, n1472, n1473,
+         n1474, n1475, n1476, n1477, n1478, n1479, n1480, n1481, n1482, n1483,
+         n1484, n1485, n1486, n1487, n1488, n1489, n1490, n1491, n1492, n1493,
+         n1494, n1495, n1496, n1497, n1498, n1499, n1500, n1501, n1502, n1503,
+         n1504, n1505, n1506, n1507, n1508, n1509, n1510, n1511, n1512, n1513,
+         n1514, n1515, n1516, n1517, n1518, n1519, n1520, n1521, n1522, n1523,
+         n1524, n1525, n1526, n1527, n1528, n1529, n1530, n1531, n1532, n1533,
+         n1534, n1535, n1536, n1537, n1538, n1539, n1540, n1541, n1542, n1543,
+         n1544, n1545, n1546, n1547, n1548, n1549, n1550, n1551, n1552, n1553,
+         n1554, n1555, n1556, n1557, n1558, n1559, n1560, n1561, n1562, n1563,
+         n1564, n1565, n1566, n1567, n1568, n1569, n1570, n1571, n1572, n1573,
+         n1574, n1575, n1576, n1577, n1578, n1579, n1580, n1581, n1582, n1583,
+         n1584, n1585, n1586, n1587, n1588, n1589, n1590, n1591, n1592, n1593,
+         n1594, n1595, n1596, n1597, n1598, n1599, n1600, n1601, n1602, n1603,
+         n1604, n1605, n1606, n1607, n1608, n1609, n1610, n1611, n1612, n1613,
+         n1614, n1615, n1616, n1617, n1618, n1619, n1620, n1621, n1622, n1623,
+         n1624, n1625, n1626, n1627, n1628, n1629, n1630, n1631, n1632, n1633,
+         n1634, n1635, n1636, n1637, n1638, n1639, n1640, n1641, n1642, n1643,
+         n1644, n1645, n1646, n1647, n1648, n1649, n1650, n1651, n1652, n1653,
+         n1654, n1655, n1656, n1657, n1658, n1659, n1660, n1661, n1662, n1663,
+         n1664, n1665, n1666, n1667, n1668, n1669, n1670, n1671, n1672, n1673,
+         n1674, n1675, n1676, n1677, n1678, n1679, n1680, n1681, n1682, n1683,
+         n1684, n1685, n1686, n1687, n1688, n1689, n1690, n1691, n1692, n1693,
+         n1694, n1695, n1696, n1697, n1698, n1699, n1700, n1701, n1702, n1703,
+         n1704, n1705, n1706, n1707, n1708, n1709, n1710, n1711, n1712, n1713,
+         n1714, n1715, n1716, n1717, n1718, n1719, n1720, n1721, n1722, n1723,
+         n1724, n1725, n1726, n1727, n1728, n1729, n1730, n1731, n1732, n1733,
+         n1734, n1735, n1736, n1737, n1738, n1739, n1740, n1741, n1742, n1743,
+         n1744, n1745, n1746, n1747, n1748, n1749, n1750, n1751, n1752, n1753,
+         n1754, n1755, n1756, n1757, n1758, n1759, n1760, n1761, n1762, n1763,
+         n1764, n1765, n1766, n1767, n1768, n1769, n1770, n1771, n1772, n1773,
+         n1774, n1775, n1776, n1777, n1778, n1779, n1780, n1781, n1782, n1783,
+         n1784, n1785, n1786, n1787, n1788, n1789, n1790, n1791, n1792, n1793,
+         n1794, n1795, n1796;
+  wire   [23:0] led_counter;
+  wire   [3:0] \uart_wrapper_inst/pstate ;
+  wire   [7:0] \uart_wrapper_inst/uart_tx_data ;
+  wire   [7:0] \uart_wrapper_inst/uart_rx_data ;
+  wire   [3:0] \uart_wrapper_inst/uart_rx_inst/bit_count ;
+  wire   [15:0] \uart_wrapper_inst/uart_rx_inst/sample_count ;
+  wire   [2:0] \uart_wrapper_inst/uart_rx_inst/state ;
+  wire   [3:0] \uart_wrapper_inst/uart_tx_inst/bit_count ;
+  wire   [7:0] \uart_wrapper_inst/uart_tx_inst/shift_reg ;
+  wire   [2:0] \uart_wrapper_inst/uart_tx_inst/state ;
+  wire   [15:0] \uart_wrapper_inst/uart_tx_inst/sample_count ;
+
+  DFFASRHQNx1_ASAP7_75t_R \led_counter_reg[0]  ( .D(n1501), .CLK(clk), .SETN(
+        rst_n), .RESETN(n1469), .QN(led_counter[0]) );
+  DFFASRHQNx1_ASAP7_75t_R \led_counter_reg[1]  ( .D(n1375), .CLK(clk), .SETN(
+        rst_n), .RESETN(n1469), .QN(led_counter[1]) );
+  DFFASRHQNx1_ASAP7_75t_R \led_counter_reg[2]  ( .D(n1387), .CLK(clk), .SETN(
+        rst_n), .RESETN(n1469), .QN(led_counter[2]) );
+  DFFASRHQNx1_ASAP7_75t_R \led_counter_reg[4]  ( .D(n1378), .CLK(clk), .SETN(
+        rst_n), .RESETN(n1469), .QN(led_counter[4]) );
+  DFFASRHQNx1_ASAP7_75t_R \led_counter_reg[5]  ( .D(n1369), .CLK(clk), .SETN(
+        rst_n), .RESETN(n1469), .QN(led_counter[5]) );
+  DFFASRHQNx1_ASAP7_75t_R \led_counter_reg[9]  ( .D(n1366), .CLK(clk), .SETN(
+        rst_n), .RESETN(n1469), .QN(led_counter[9]) );
+  DFFASRHQNx1_ASAP7_75t_R \led_counter_reg[6]  ( .D(n1383), .CLK(clk), .SETN(
+        rst_n), .RESETN(n1469), .QN(led_counter[6]) );
+  DFFASRHQNx1_ASAP7_75t_R led_running_reg ( .D(n97), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(led_running) );
+  DFFASRHQNx1_ASAP7_75t_R \led_counter_reg[3]  ( .D(n1386), .CLK(clk), .SETN(
+        rst_n), .RESETN(n1469), .QN(led_counter[3]) );
+  DFFASRHQNx1_ASAP7_75t_R \led_counter_reg[7]  ( .D(n1374), .CLK(clk), .SETN(
+        rst_n), .RESETN(n1469), .QN(led_counter[7]) );
+  DFFASRHQNx1_ASAP7_75t_R led_done_reg ( .D(n99), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(led_done) );
+  DFFASRHQNx1_ASAP7_75t_R \led_counter_reg[12]  ( .D(n1382), .CLK(clk), .SETN(
+        rst_n), .RESETN(n1469), .QN(led_counter[12]) );
+  DFFASRHQNx1_ASAP7_75t_R \led_counter_reg[18]  ( .D(n1793), .CLK(clk), .SETN(
+        rst_n), .RESETN(n1469), .QN(led_counter[18]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/pstate_reg[3]  ( .D(
+        \uart_wrapper_inst/n190 ), .CLK(clk), .SETN(rst_n), .RESETN(n1469), 
+        .QN(\uart_wrapper_inst/pstate [3]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/pstate_reg[0]  ( .D(
+        \uart_wrapper_inst/n142 ), .CLK(clk), .SETN(rst_n), .RESETN(n1469), 
+        .QN(\uart_wrapper_inst/pstate [0]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/shift_reg_reg[6]  ( 
+        .D(\uart_wrapper_inst/uart_rx_inst/n174 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_rx_data [6]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/shift_reg_reg[7]  ( 
+        .D(\uart_wrapper_inst/uart_rx_inst/n151 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_rx_data [7]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/sample_count_reg[15]  ( 
+        .D(\uart_wrapper_inst/uart_rx_inst/n153 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_rx_inst/sample_count [15])
+         );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/sample_count_reg[8]  ( 
+        .D(\uart_wrapper_inst/uart_rx_inst/n160 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_rx_inst/sample_count [8])
+         );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/sample_count_reg[0]  ( 
+        .D(\uart_wrapper_inst/uart_rx_inst/n152 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_rx_inst/sample_count [0])
+         );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/sample_count_reg[10]  ( 
+        .D(\uart_wrapper_inst/uart_rx_inst/n158 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_rx_inst/sample_count [10])
+         );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/sample_count_reg[1]  ( 
+        .D(\uart_wrapper_inst/uart_rx_inst/n167 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_rx_inst/sample_count [1])
+         );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/state_reg[1]  ( .D(
+        \uart_wrapper_inst/uart_rx_inst/n168 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_rx_inst/state [1]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/rx_d2_reg  ( .D(n204), .CLK(clk), .SETN(n1469), .RESETN(rst_n), .QN(
+        \uart_wrapper_inst/uart_rx_inst/rx_d2 ) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/sample_count_reg[4]  ( 
+        .D(\uart_wrapper_inst/uart_rx_inst/n164 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_rx_inst/sample_count [4])
+         );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/sample_count_reg[5]  ( 
+        .D(\uart_wrapper_inst/uart_rx_inst/n163 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_rx_inst/sample_count [5])
+         );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/rx_d1_reg  ( .D(n124), .CLK(clk), .SETN(n1469), .RESETN(rst_n), .QN(
+        \uart_wrapper_inst/uart_rx_inst/rx_d1 ) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_inst/sample_count_reg[0]  ( 
+        .D(\uart_wrapper_inst/uart_tx_inst/n98 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_tx_inst/sample_count [0])
+         );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_inst/sample_count_reg[1]  ( 
+        .D(\uart_wrapper_inst/uart_tx_inst/n99 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_tx_inst/sample_count [1])
+         );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_inst/sample_count_reg[2]  ( 
+        .D(\uart_wrapper_inst/uart_tx_inst/n100 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_tx_inst/sample_count [2])
+         );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_inst/sample_count_reg[3]  ( 
+        .D(\uart_wrapper_inst/uart_tx_inst/n101 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_tx_inst/sample_count [3])
+         );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_inst/sample_count_reg[4]  ( 
+        .D(\uart_wrapper_inst/uart_tx_inst/n102 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_tx_inst/sample_count [4])
+         );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_inst/sample_count_reg[5]  ( 
+        .D(\uart_wrapper_inst/uart_tx_inst/n103 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_tx_inst/sample_count [5])
+         );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_inst/sample_count_reg[8]  ( 
+        .D(\uart_wrapper_inst/uart_tx_inst/n106 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_tx_inst/sample_count [8])
+         );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_inst/sample_count_reg[9]  ( 
+        .D(\uart_wrapper_inst/uart_tx_inst/n107 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_tx_inst/sample_count [9])
+         );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_inst/sample_count_reg[10]  ( 
+        .D(\uart_wrapper_inst/uart_tx_inst/n108 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_tx_inst/sample_count [10])
+         );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_inst/sample_count_reg[11]  ( 
+        .D(\uart_wrapper_inst/uart_tx_inst/n109 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_tx_inst/sample_count [11])
+         );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_inst/sample_count_reg[12]  ( 
+        .D(\uart_wrapper_inst/uart_tx_inst/n110 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_tx_inst/sample_count [12])
+         );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_inst/sample_count_reg[13]  ( 
+        .D(\uart_wrapper_inst/uart_tx_inst/n111 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_tx_inst/sample_count [13])
+         );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_inst/sample_count_reg[14]  ( 
+        .D(\uart_wrapper_inst/uart_tx_inst/n112 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_tx_inst/sample_count [14])
+         );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_inst/state_reg[1]  ( .D(
+        \uart_wrapper_inst/uart_tx_inst/n97 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_tx_inst/state [1]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_inst/tx_reg  ( .D(
+        \uart_wrapper_inst/uart_tx_inst/n127 ), .CLK(clk), .SETN(n1469), 
+        .RESETN(rst_n), .QN(uart_tx) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_inst/state_reg[0]  ( .D(
+        \uart_wrapper_inst/uart_tx_inst/n114 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_tx_inst/state [0]) );
+  AND2x2_ASAP7_75t_R \accelerator_inst/u_pe_array/g_pe_row[0].g_pe_col[0].u_pe/U85  ( 
+        .A(\accelerator_inst/u_pe_array/en_latched ), .B(clk), .Y(
+        \accelerator_inst/u_pe_array/g_pe_row[0].g_pe_col[0].u_pe/clk_psum_gated ) );
+  AND2x2_ASAP7_75t_R \accelerator_inst/u_pe_array/g_pe_row[0].g_pe_col[1].u_pe/U85  ( 
+        .A(\accelerator_inst/u_pe_array/en_latched ), .B(clk), .Y(
+        \accelerator_inst/u_pe_array/g_pe_row[0].g_pe_col[1].u_pe/clk_psum_gated ) );
+  AND2x2_ASAP7_75t_R \accelerator_inst/u_pe_array/g_pe_row[0].g_pe_col[2].u_pe/U85  ( 
+        .A(\accelerator_inst/u_pe_array/en_latched ), .B(clk), .Y(
+        \accelerator_inst/u_pe_array/g_pe_row[0].g_pe_col[2].u_pe/clk_psum_gated ) );
+  AND2x2_ASAP7_75t_R \accelerator_inst/u_pe_array/g_pe_row[0].g_pe_col[3].u_pe/U85  ( 
+        .A(\accelerator_inst/u_pe_array/en_latched ), .B(clk), .Y(
+        \accelerator_inst/u_pe_array/g_pe_row[0].g_pe_col[3].u_pe/clk_psum_gated ) );
+  AND2x2_ASAP7_75t_R \accelerator_inst/u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/U85  ( 
+        .A(\accelerator_inst/u_pe_array/en_latched ), .B(clk), .Y(
+        \accelerator_inst/u_pe_array/g_pe_row[1].g_pe_col[0].u_pe/clk_psum_gated ) );
+  AND2x2_ASAP7_75t_R \accelerator_inst/u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/U85  ( 
+        .A(\accelerator_inst/u_pe_array/en_latched ), .B(clk), .Y(
+        \accelerator_inst/u_pe_array/g_pe_row[1].g_pe_col[1].u_pe/clk_psum_gated ) );
+  AND2x2_ASAP7_75t_R \accelerator_inst/u_pe_array/g_pe_row[1].g_pe_col[2].u_pe/U85  ( 
+        .A(\accelerator_inst/u_pe_array/en_latched ), .B(clk), .Y(
+        \accelerator_inst/u_pe_array/g_pe_row[1].g_pe_col[2].u_pe/clk_psum_gated ) );
+  AND2x2_ASAP7_75t_R \accelerator_inst/u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/U85  ( 
+        .A(\accelerator_inst/u_pe_array/en_latched ), .B(clk), .Y(
+        \accelerator_inst/u_pe_array/g_pe_row[1].g_pe_col[3].u_pe/clk_psum_gated ) );
+  AND2x2_ASAP7_75t_R \accelerator_inst/u_pe_array/g_pe_row[2].g_pe_col[0].u_pe/U85  ( 
+        .A(\accelerator_inst/u_pe_array/en_latched ), .B(clk), .Y(
+        \accelerator_inst/u_pe_array/g_pe_row[2].g_pe_col[0].u_pe/clk_psum_gated ) );
+  AND2x2_ASAP7_75t_R \accelerator_inst/u_pe_array/g_pe_row[2].g_pe_col[1].u_pe/U85  ( 
+        .A(\accelerator_inst/u_pe_array/en_latched ), .B(clk), .Y(
+        \accelerator_inst/u_pe_array/g_pe_row[2].g_pe_col[1].u_pe/clk_psum_gated ) );
+  AND2x2_ASAP7_75t_R \accelerator_inst/u_pe_array/g_pe_row[2].g_pe_col[2].u_pe/U85  ( 
+        .A(\accelerator_inst/u_pe_array/en_latched ), .B(clk), .Y(
+        \accelerator_inst/u_pe_array/g_pe_row[2].g_pe_col[2].u_pe/clk_psum_gated ) );
+  AND2x2_ASAP7_75t_R \accelerator_inst/u_pe_array/g_pe_row[2].g_pe_col[3].u_pe/U85  ( 
+        .A(\accelerator_inst/u_pe_array/en_latched ), .B(clk), .Y(
+        \accelerator_inst/u_pe_array/g_pe_row[2].g_pe_col[3].u_pe/clk_psum_gated ) );
+  AND2x2_ASAP7_75t_R \accelerator_inst/u_pe_array/g_pe_row[3].g_pe_col[0].u_pe/U85  ( 
+        .A(\accelerator_inst/u_pe_array/en_latched ), .B(clk), .Y(
+        \accelerator_inst/u_pe_array/g_pe_row[3].g_pe_col[0].u_pe/clk_psum_gated ) );
+  AND2x2_ASAP7_75t_R \accelerator_inst/u_pe_array/g_pe_row[3].g_pe_col[1].u_pe/U85  ( 
+        .A(\accelerator_inst/u_pe_array/en_latched ), .B(clk), .Y(
+        \accelerator_inst/u_pe_array/g_pe_row[3].g_pe_col[1].u_pe/clk_psum_gated ) );
+  AND2x2_ASAP7_75t_R \accelerator_inst/u_pe_array/g_pe_row[3].g_pe_col[2].u_pe/U85  ( 
+        .A(\accelerator_inst/u_pe_array/en_latched ), .B(clk), .Y(
+        \accelerator_inst/u_pe_array/g_pe_row[3].g_pe_col[2].u_pe/clk_psum_gated ) );
+  AND2x2_ASAP7_75t_R \accelerator_inst/u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/U85  ( 
+        .A(\accelerator_inst/u_pe_array/en_latched ), .B(clk), .Y(
+        \accelerator_inst/u_pe_array/g_pe_row[3].g_pe_col[3].u_pe/clk_psum_gated ) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/data_valid_reg  ( 
+        .D(\uart_wrapper_inst/uart_rx_inst/n173 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_rx_inst/n185 ) );
+  DFFASRHQNx1_ASAP7_75t_R \led_counter_reg[15]  ( .D(n1365), .CLK(clk), .SETN(
+        rst_n), .RESETN(n1469), .QN(led_counter[15]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_inst/sample_count_reg[6]  ( 
+        .D(\uart_wrapper_inst/uart_tx_inst/n104 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_tx_inst/sample_count [6])
+         );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_inst/sample_count_reg[7]  ( 
+        .D(n1794), .CLK(clk), .SETN(rst_n), .RESETN(n1469), .QN(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [7]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_inst/sample_count_reg[15]  ( 
+        .D(\uart_wrapper_inst/uart_tx_inst/n113 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_tx_inst/sample_count [15])
+         );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/shift_reg_reg[4]  ( 
+        .D(\uart_wrapper_inst/uart_rx_inst/n176 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_rx_inst/n183 ) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/sample_count_reg[6]  ( 
+        .D(\uart_wrapper_inst/uart_rx_inst/n162 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_rx_inst/sample_count [6])
+         );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/sample_count_reg[2]  ( 
+        .D(\uart_wrapper_inst/uart_rx_inst/n166 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_rx_inst/sample_count [2])
+         );
+  DFFASRHQNx1_ASAP7_75t_R \led_counter_reg[10]  ( .D(n1367), .CLK(clk), .SETN(
+        rst_n), .RESETN(n1469), .QN(led_counter[10]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/sample_count_reg[3]  ( 
+        .D(\uart_wrapper_inst/uart_rx_inst/n165 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_rx_inst/sample_count [3])
+         );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/sample_count_reg[7]  ( 
+        .D(\uart_wrapper_inst/uart_rx_inst/n161 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_rx_inst/sample_count [7])
+         );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_send_reg  ( .D(n1796), 
+        .CLK(clk), .SETN(rst_n), .RESETN(n1469), .QN(
+        \uart_wrapper_inst/uart_tx_send ) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_inst/shift_reg_reg[7]  ( 
+        .D(\uart_wrapper_inst/uart_tx_inst/n119 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_tx_inst/shift_reg [7]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/shift_reg_reg[3]  ( 
+        .D(\uart_wrapper_inst/uart_rx_inst/n177 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_rx_data [3]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/shift_reg_reg[2]  ( 
+        .D(\uart_wrapper_inst/uart_rx_inst/n178 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_rx_data [2]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/shift_reg_reg[5]  ( 
+        .D(\uart_wrapper_inst/uart_rx_inst/n175 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_rx_inst/n182 ) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/shift_reg_reg[0]  ( 
+        .D(\uart_wrapper_inst/uart_rx_inst/n180 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_rx_data [0]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/shift_reg_reg[1]  ( 
+        .D(\uart_wrapper_inst/uart_rx_inst/n179 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_rx_inst/n184 ) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_inst/bit_count_reg[1]  ( 
+        .D(\uart_wrapper_inst/uart_tx_inst/n116 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_tx_inst/bit_count [1]) );
+  DFFASRHQNx1_ASAP7_75t_R \led_counter_reg[21]  ( .D(n1380), .CLK(clk), .SETN(
+        rst_n), .RESETN(n1469), .QN(led_counter[21]) );
+  DFFASRHQNx1_ASAP7_75t_R \led_counter_reg[19]  ( .D(n1368), .CLK(clk), .SETN(
+        rst_n), .RESETN(n1469), .QN(led_counter[19]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_data_reg[0]  ( .D(
+        \uart_wrapper_inst/n141 ), .CLK(clk), .SETN(rst_n), .RESETN(n1469), 
+        .QN(\uart_wrapper_inst/uart_tx_data [0]) );
+  DFFASRHQNx1_ASAP7_75t_R \led_counter_reg[8]  ( .D(n1379), .CLK(clk), .SETN(
+        rst_n), .RESETN(n1469), .QN(led_counter[8]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/acc_start_reg  ( .D(
+        \uart_wrapper_inst/n185 ), .CLK(clk), .SETN(rst_n), .RESETN(n1469), 
+        .QN(acc_start) );
+  DFFASRHQNx1_ASAP7_75t_R \led_counter_reg[23]  ( .D(n1385), .CLK(clk), .SETN(
+        rst_n), .RESETN(n1469), .QN(led_counter[23]) );
+  DFFASRHQNx1_ASAP7_75t_R \led_counter_reg[13]  ( .D(n1376), .CLK(clk), .SETN(
+        rst_n), .RESETN(n1469), .QN(led_counter[13]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_data_reg[5]  ( .D(
+        \uart_wrapper_inst/n136 ), .CLK(clk), .SETN(rst_n), .RESETN(n1469), 
+        .QN(\uart_wrapper_inst/uart_tx_data [5]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_data_reg[3]  ( .D(
+        \uart_wrapper_inst/n138 ), .CLK(clk), .SETN(rst_n), .RESETN(n1469), 
+        .QN(\uart_wrapper_inst/uart_tx_data [3]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_data_reg[1]  ( .D(
+        \uart_wrapper_inst/n140 ), .CLK(clk), .SETN(rst_n), .RESETN(n1469), 
+        .QN(\uart_wrapper_inst/uart_tx_data [1]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_inst/bit_count_reg[3]  ( 
+        .D(\uart_wrapper_inst/uart_tx_inst/n118 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_tx_inst/bit_count [3]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/pstate_reg[1]  ( .D(
+        \uart_wrapper_inst/n143 ), .CLK(clk), .SETN(rst_n), .RESETN(n1469), 
+        .QN(\uart_wrapper_inst/pstate [1]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_data_reg[6]  ( .D(
+        \uart_wrapper_inst/n135 ), .CLK(clk), .SETN(rst_n), .RESETN(n1469), 
+        .QN(\uart_wrapper_inst/uart_tx_data [6]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_data_reg[4]  ( .D(
+        \uart_wrapper_inst/n137 ), .CLK(clk), .SETN(rst_n), .RESETN(n1469), 
+        .QN(\uart_wrapper_inst/uart_tx_data [4]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_data_reg[2]  ( .D(
+        \uart_wrapper_inst/n139 ), .CLK(clk), .SETN(rst_n), .RESETN(n1469), 
+        .QN(\uart_wrapper_inst/uart_tx_data [2]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_data_reg[7]  ( .D(
+        \uart_wrapper_inst/n134 ), .CLK(clk), .SETN(rst_n), .RESETN(n1469), 
+        .QN(\uart_wrapper_inst/uart_tx_data [7]) );
+  DFFASRHQNx1_ASAP7_75t_R \led_counter_reg[20]  ( .D(n1370), .CLK(clk), .SETN(
+        rst_n), .RESETN(n1469), .QN(led_counter[20]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_inst/bit_count_reg[0]  ( 
+        .D(\uart_wrapper_inst/uart_tx_inst/n115 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_tx_inst/bit_count [0]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/bit_count_reg[1]  ( 
+        .D(\uart_wrapper_inst/uart_rx_inst/n172 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_rx_inst/bit_count [1]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/bit_count_reg[0]  ( 
+        .D(\uart_wrapper_inst/uart_rx_inst/n169 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_rx_inst/bit_count [0]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/bit_count_reg[3]  ( 
+        .D(\uart_wrapper_inst/uart_rx_inst/n171 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_rx_inst/bit_count [3]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_inst/shift_reg_reg[0]  ( 
+        .D(\uart_wrapper_inst/uart_tx_inst/n126 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_tx_inst/shift_reg [0]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/pstate_reg[2]  ( .D(
+        \uart_wrapper_inst/n144 ), .CLK(clk), .SETN(rst_n), .RESETN(n1469), 
+        .QN(\uart_wrapper_inst/pstate [2]) );
+  DFFASRHQNx1_ASAP7_75t_R \led_counter_reg[17]  ( .D(n1373), .CLK(clk), .SETN(
+        rst_n), .RESETN(n1469), .QN(led_counter[17]) );
+  DFFASRHQNx1_ASAP7_75t_R \led_counter_reg[22]  ( .D(n1384), .CLK(clk), .SETN(
+        rst_n), .RESETN(n1469), .QN(led_counter[22]) );
+  DFFASRHQNx1_ASAP7_75t_R \led_counter_reg[16]  ( .D(n1372), .CLK(clk), .SETN(
+        rst_n), .RESETN(n1469), .QN(led_counter[16]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/state_reg[0]  ( .D(
+        \uart_wrapper_inst/uart_rx_inst/n150 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_rx_inst/state [0]) );
+  DFFASRHQNx1_ASAP7_75t_R \led_counter_reg[14]  ( .D(n1377), .CLK(clk), .SETN(
+        rst_n), .RESETN(n1469), .QN(led_counter[14]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/sample_count_reg[12]  ( 
+        .D(\uart_wrapper_inst/uart_rx_inst/n156 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_rx_inst/sample_count [12])
+         );
+  DFFASRHQNx1_ASAP7_75t_R \led_counter_reg[11]  ( .D(n1381), .CLK(clk), .SETN(
+        rst_n), .RESETN(n1469), .QN(led_counter[11]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/sample_count_reg[13]  ( 
+        .D(\uart_wrapper_inst/uart_rx_inst/n155 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_rx_inst/sample_count [13])
+         );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/sample_count_reg[11]  ( 
+        .D(\uart_wrapper_inst/uart_rx_inst/n157 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_rx_inst/sample_count [11])
+         );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/bit_count_reg[2]  ( 
+        .D(n1795), .CLK(clk), .SETN(rst_n), .RESETN(n1469), .QN(
+        \uart_wrapper_inst/uart_rx_inst/bit_count [2]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_inst/shift_reg_reg[1]  ( 
+        .D(\uart_wrapper_inst/uart_tx_inst/n120 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_tx_inst/shift_reg [1]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_inst/bit_count_reg[2]  ( 
+        .D(\uart_wrapper_inst/uart_tx_inst/n117 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_tx_inst/bit_count [2]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/sample_count_reg[14]  ( 
+        .D(\uart_wrapper_inst/uart_rx_inst/n154 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_rx_inst/sample_count [14])
+         );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_inst/shift_reg_reg[6]  ( 
+        .D(\uart_wrapper_inst/uart_tx_inst/n125 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_tx_inst/shift_reg [6]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_inst/shift_reg_reg[5]  ( 
+        .D(\uart_wrapper_inst/uart_tx_inst/n124 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_tx_inst/shift_reg [5]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_inst/shift_reg_reg[4]  ( 
+        .D(\uart_wrapper_inst/uart_tx_inst/n123 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_tx_inst/shift_reg [4]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_inst/shift_reg_reg[3]  ( 
+        .D(\uart_wrapper_inst/uart_tx_inst/n122 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_tx_inst/shift_reg [3]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_tx_inst/shift_reg_reg[2]  ( 
+        .D(\uart_wrapper_inst/uart_tx_inst/n121 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_tx_inst/shift_reg [2]) );
+  DFFASRHQNx1_ASAP7_75t_R \uart_wrapper_inst/uart_rx_inst/sample_count_reg[9]  ( 
+        .D(\uart_wrapper_inst/uart_rx_inst/n159 ), .CLK(clk), .SETN(rst_n), 
+        .RESETN(n1469), .QN(\uart_wrapper_inst/uart_rx_inst/sample_count [9])
+         );
+  DLLx1_ASAP7_75t_R \accelerator_inst/u_pe_array/en_latched_reg  ( .CLK(clk), 
+        .D(n1397), .Q(\accelerator_inst/u_pe_array/en_latched ) );
+  TIELOx1_ASAP7_75t_R U1915 ( .L(led_uart_rx) );
+  TIEHIx1_ASAP7_75t_R U1916 ( .H(n1469) );
+  TIELOx1_ASAP7_75t_R U1917 ( .L(n1397) );
+  NAND2xp5_ASAP7_75t_R U1918 ( .A(\uart_wrapper_inst/uart_tx_data [6]), .B(
+        n1796), .Y(\uart_wrapper_inst/n135 ) );
+  INVx1_ASAP7_75t_R U1919 ( .A(n1774), .Y(\uart_wrapper_inst/n139 ) );
+  INVx1_ASAP7_75t_R U1920 ( .A(n1777), .Y(\uart_wrapper_inst/n137 ) );
+  INVx1_ASAP7_75t_R U1921 ( .A(n1770), .Y(\uart_wrapper_inst/n141 ) );
+  AOI211xp5_ASAP7_75t_R U1922 ( .A1(\uart_wrapper_inst/uart_tx_data [1]), .A2(
+        n1470), .B(n1477), .C(n1397), .Y(\uart_wrapper_inst/n140 ) );
+  AOI211xp5_ASAP7_75t_R U1923 ( .A1(\uart_wrapper_inst/uart_tx_data [3]), .A2(
+        n1470), .B(n1477), .C(n1397), .Y(\uart_wrapper_inst/n138 ) );
+  AOI211xp5_ASAP7_75t_R U1924 ( .A1(\uart_wrapper_inst/uart_tx_data [5]), .A2(
+        n1470), .B(n1477), .C(n1397), .Y(\uart_wrapper_inst/n136 ) );
+  NOR2x1_ASAP7_75t_R U1925 ( .A(n1477), .B(n1780), .Y(\uart_wrapper_inst/n134 ) );
+  OAI21xp5_ASAP7_75t_R U1926 ( .A1(n1767), .A2(n1766), .B(led_done), .Y(n99)
+         );
+  OAI21xp5_ASAP7_75t_R U1927 ( .A1(n1398), .A2(n1401), .B(n1721), .Y(n1383) );
+  HB1xp67_ASAP7_75t_R U1928 ( .A(n1720), .Y(n1398) );
+  OAI21xp5_ASAP7_75t_R U1929 ( .A1(n1446), .A2(n1722), .B(n1723), .Y(n1374) );
+  INVxp67_ASAP7_75t_R U1930 ( .A(n1721), .Y(n1722) );
+  INVxp67_ASAP7_75t_R U1931 ( .A(n1461), .Y(n1488) );
+  AND5x1_ASAP7_75t_R U1932 ( .A(n1739), .B(led_counter[11]), .C(n1505), .D(
+        n1724), .E(led_counter[9]), .Y(n1399) );
+  OAI21xp33_ASAP7_75t_R U1933 ( .A1(n1631), .A2(n1617), .B(n1616), .Y(n1618)
+         );
+  INVxp67_ASAP7_75t_R U1934 ( .A(n1635), .Y(n1524) );
+  AND2x2_ASAP7_75t_R U1935 ( .A(n1732), .B(n1731), .Y(n1400) );
+  BUFx3_ASAP7_75t_R U1936 ( .A(led_counter[6]), .Y(n1401) );
+  INVxp67_ASAP7_75t_R U1937 ( .A(n1736), .Y(n1724) );
+  HB1xp67_ASAP7_75t_R U1938 ( .A(\uart_wrapper_inst/pstate [0]), .Y(n1402) );
+  INVx2_ASAP7_75t_R U1939 ( .A(\uart_wrapper_inst/pstate [1]), .Y(n1525) );
+  INVx2_ASAP7_75t_R U1940 ( .A(n1526), .Y(n1705) );
+  INVxp33_ASAP7_75t_R U1941 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [7]), .Y(n1403) );
+  INVx1_ASAP7_75t_R U1942 ( .A(n1403), .Y(n1404) );
+  INVx1_ASAP7_75t_R U1943 ( .A(n1739), .Y(n1405) );
+  NOR3x1_ASAP7_75t_R U1944 ( .A(n1642), .B(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [12]), .C(n1635), .Y(
+        n1582) );
+  INVxp33_ASAP7_75t_R U1945 ( .A(led_counter[9]), .Y(n1406) );
+  INVx2_ASAP7_75t_R U1946 ( .A(n1406), .Y(n1407) );
+  NAND2xp5_ASAP7_75t_R U1947 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [9]), .B(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [8]), .Y(n1634) );
+  INVxp67_ASAP7_75t_R U1948 ( .A(\uart_wrapper_inst/uart_rx_inst/n183 ), .Y(
+        n1562) );
+  NAND2xp5_ASAP7_75t_R U1949 ( .A(\uart_wrapper_inst/uart_rx_inst/n183 ), .B(
+        n1567), .Y(n1693) );
+  OAI21xp5_ASAP7_75t_R U1950 ( .A1(n1669), .A2(n1668), .B(n1667), .Y(
+        \uart_wrapper_inst/uart_tx_inst/n118 ) );
+  NOR2xp33_ASAP7_75t_R U1951 ( .A(n1783), .B(n1661), .Y(n1408) );
+  NOR2xp33_ASAP7_75t_R U1952 ( .A(n1783), .B(n1661), .Y(n1669) );
+  NOR4xp25_ASAP7_75t_R U1953 ( .A(n1411), .B(n1422), .C(n1508), .D(n1633), .Y(
+        n1409) );
+  OAI21xp33_ASAP7_75t_R U1954 ( .A1(n1555), .A2(n1427), .B(net53824), .Y(n1556) );
+  NOR2x1p5_ASAP7_75t_R U1955 ( .A(net53841), .B(n1546), .Y(n1547) );
+  NAND2xp5_ASAP7_75t_R U1956 ( .A(n1547), .B(net53810), .Y(n1528) );
+  INVx3_ASAP7_75t_R U1957 ( .A(n1443), .Y(net54029) );
+  NAND2xp5_ASAP7_75t_R U1958 ( .A(n1433), .B(n1439), .Y(n1438) );
+  NOR4xp25_ASAP7_75t_R U1959 ( .A(n1411), .B(n1422), .C(n1508), .D(n1633), .Y(
+        n1583) );
+  NOR3xp33_ASAP7_75t_R U1960 ( .A(n1634), .B(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [14]), .C(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [15]), .Y(n1585) );
+  INVxp67_ASAP7_75t_R U1961 ( .A(n1567), .Y(n1474) );
+  BUFx3_ASAP7_75t_R U1962 ( .A(net54098), .Y(n1424) );
+  INVx1_ASAP7_75t_R U1963 ( .A(n1447), .Y(n1431) );
+  AOI221xp5_ASAP7_75t_R U1964 ( .A1(n1522), .A2(
+        \uart_wrapper_inst/uart_tx_inst/shift_reg [0]), .B1(
+        \uart_wrapper_inst/uart_tx_inst/shift_reg [1]), .B2(n1790), .C(n1789), 
+        .Y(\uart_wrapper_inst/uart_tx_inst/n126 ) );
+  INVxp67_ASAP7_75t_R U1965 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [2]), .Y(n1435) );
+  INVx1_ASAP7_75t_R U1966 ( .A(n1590), .Y(n1591) );
+  NAND3xp33_ASAP7_75t_R U1967 ( .A(n1465), .B(n1689), .C(n1688), .Y(n1410) );
+  NAND2xp33_ASAP7_75t_R U1968 ( .A(\uart_wrapper_inst/uart_tx_send ), .B(n1791), .Y(n1479) );
+  INVxp67_ASAP7_75t_R U1969 ( .A(\uart_wrapper_inst/uart_tx_inst/bit_count [1]), .Y(n1654) );
+  OAI21xp33_ASAP7_75t_R U1970 ( .A1(n1740), .A2(led_counter[15]), .B(n1745), 
+        .Y(n1365) );
+  INVxp33_ASAP7_75t_R U1971 ( .A(n1751), .Y(n1740) );
+  INVxp67_ASAP7_75t_R U1972 ( .A(n1711), .Y(n1712) );
+  NAND2xp33_ASAP7_75t_R U1973 ( .A(n1761), .B(n1711), .Y(n1375) );
+  INVxp67_ASAP7_75t_R U1974 ( .A(n1713), .Y(n1714) );
+  NAND2xp5_ASAP7_75t_R U1975 ( .A(n1712), .B(n1507), .Y(n1713) );
+  OAI21xp33_ASAP7_75t_R U1976 ( .A1(n1745), .A2(n1746), .B(n1744), .Y(n1793)
+         );
+  OAI21xp33_ASAP7_75t_R U1977 ( .A1(n1751), .A2(n1743), .B(n1742), .Y(n1744)
+         );
+  INVxp33_ASAP7_75t_R U1978 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [9]), .Y(n1606) );
+  BUFx3_ASAP7_75t_R U1979 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [13]), .Y(n1411) );
+  INVxp67_ASAP7_75t_R U1980 ( .A(n1516), .Y(n1451) );
+  INVxp67_ASAP7_75t_R U1981 ( .A(n1702), .Y(n1701) );
+  NAND2xp33_ASAP7_75t_R U1982 ( .A(n1423), .B(n1772), .Y(n1781) );
+  INVxp33_ASAP7_75t_R U1983 ( .A(\uart_wrapper_inst/uart_rx_data [6]), .Y(
+        n1412) );
+  INVxp67_ASAP7_75t_R U1984 ( .A(n1412), .Y(n1413) );
+  INVx1_ASAP7_75t_R U1985 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [5]), .Y(n1633) );
+  HB1xp67_ASAP7_75t_R U1986 ( .A(n1463), .Y(n1414) );
+  NOR3xp33_ASAP7_75t_R U1987 ( .A(n1593), .B(n1601), .C(n1594), .Y(n1463) );
+  NAND2xp5_ASAP7_75t_R U1988 ( .A(n1732), .B(n1505), .Y(n1415) );
+  OA21x2_ASAP7_75t_R U1989 ( .A1(n1675), .A2(n1678), .B(n1778), .Y(n1416) );
+  INVxp33_ASAP7_75t_R U1990 ( .A(\uart_wrapper_inst/uart_rx_inst/n184 ), .Y(
+        n1577) );
+  NOR2xp33_ASAP7_75t_R U1991 ( .A(\uart_wrapper_inst/uart_rx_inst/n183 ), .B(
+        \uart_wrapper_inst/uart_rx_inst/n182 ), .Y(n1417) );
+  NOR2xp33_ASAP7_75t_R U1992 ( .A(\uart_wrapper_inst/uart_rx_inst/n183 ), .B(
+        \uart_wrapper_inst/uart_rx_inst/n182 ), .Y(n1576) );
+  HB1xp67_ASAP7_75t_R U1993 ( .A(n1739), .Y(n1418) );
+  NAND2xp33_ASAP7_75t_R U1994 ( .A(n1703), .B(n1527), .Y(n1708) );
+  NAND2xp5_ASAP7_75t_R U1995 ( .A(n1527), .B(n1769), .Y(n1779) );
+  NAND2xp5_ASAP7_75t_R U1996 ( .A(n1399), .B(n1484), .Y(n1419) );
+  NAND2xp33_ASAP7_75t_R U1997 ( .A(n1399), .B(n1484), .Y(n1730) );
+  INVx2_ASAP7_75t_R U1998 ( .A(n1482), .Y(n1420) );
+  INVx2_ASAP7_75t_R U1999 ( .A(n1442), .Y(n1482) );
+  OR3x2_ASAP7_75t_R U2000 ( .A(n1523), .B(n1705), .C(n1566), .Y(n1778) );
+  INVxp67_ASAP7_75t_R U2001 ( .A(n1730), .Y(n1733) );
+  NAND2xp33_ASAP7_75t_R U2002 ( .A(n1495), .B(n1461), .Y(n1771) );
+  INVxp33_ASAP7_75t_R U2003 ( .A(n1699), .Y(n1682) );
+  INVxp33_ASAP7_75t_R U2004 ( .A(\uart_wrapper_inst/pstate [2]), .Y(n1564) );
+  INVx2_ASAP7_75t_R U2005 ( .A(n1728), .Y(n1732) );
+  INVxp33_ASAP7_75t_R U2006 ( .A(n1737), .Y(n1731) );
+  NAND4xp25_ASAP7_75t_R U2007 ( .A(n1585), .B(n1582), .C(n1583), .D(n1584), 
+        .Y(n1421) );
+  NAND4xp25_ASAP7_75t_R U2008 ( .A(n1585), .B(n1409), .C(n1582), .D(n1584), 
+        .Y(n1673) );
+  BUFx3_ASAP7_75t_R U2009 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [11]), .Y(n1422) );
+  INVxp33_ASAP7_75t_R U2010 ( .A(n1411), .Y(n1619) );
+  NAND2xp5_ASAP7_75t_R U2011 ( .A(n1495), .B(n1461), .Y(n1423) );
+  NOR2x1_ASAP7_75t_R U2012 ( .A(n1462), .B(n1681), .Y(n1461) );
+  XOR2xp5_ASAP7_75t_R U2013 ( .A(net54160), .B(n1424), .Y(n1530) );
+  INVx2_ASAP7_75t_R U2014 ( .A(n1745), .Y(n1425) );
+  INVxp33_ASAP7_75t_R U2015 ( .A(n1745), .Y(n1747) );
+  OA21x2_ASAP7_75t_R U2016 ( .A1(net54038), .A2(n1549), .B(net53816), .Y(n1426) );
+  NOR2x1_ASAP7_75t_R U2017 ( .A(n1436), .B(n1438), .Y(n1437) );
+  OR2x2_ASAP7_75t_R U2018 ( .A(n1718), .B(n1736), .Y(n1726) );
+  INVx2_ASAP7_75t_R U2019 ( .A(n1718), .Y(n1739) );
+  NAND2x1p5_ASAP7_75t_R U2020 ( .A(n1727), .B(n1407), .Y(n1728) );
+  INVxp67_ASAP7_75t_R U2021 ( .A(\uart_wrapper_inst/uart_tx_inst/state [0]), 
+        .Y(n1671) );
+  OAI21xp33_ASAP7_75t_R U2022 ( .A1(
+        \uart_wrapper_inst/uart_tx_inst/bit_count [0]), .A2(n1784), .B(n1651), 
+        .Y(\uart_wrapper_inst/uart_tx_inst/n115 ) );
+  INVxp33_ASAP7_75t_R U2023 ( .A(net53845), .Y(net53846) );
+  NAND2xp5_ASAP7_75t_R U2024 ( .A(n1547), .B(net53810), .Y(n1427) );
+  NAND2xp33_ASAP7_75t_R U2025 ( .A(n1529), .B(n1551), .Y(n1548) );
+  OAI21xp33_ASAP7_75t_R U2026 ( .A1(n1551), .A2(n1427), .B(n1550), .Y(n1552)
+         );
+  INVx1_ASAP7_75t_R U2027 ( .A(n1453), .Y(n1428) );
+  AND2x4_ASAP7_75t_R U2028 ( .A(n1547), .B(net53810), .Y(n1453) );
+  NAND2x1p5_ASAP7_75t_R U2029 ( .A(n1467), .B(n1460), .Y(n1681) );
+  NAND2x1p5_ASAP7_75t_R U2030 ( .A(led_counter[16]), .B(n1425), .Y(n1741) );
+  OAI21xp33_ASAP7_75t_R U2031 ( .A1(led_counter[16]), .A2(n1747), .B(n1741), 
+        .Y(n1372) );
+  INVxp67_ASAP7_75t_R U2032 ( .A(\uart_wrapper_inst/pstate [3]), .Y(n1480) );
+  NAND2xp33_ASAP7_75t_R U2033 ( .A(n1489), .B(n1627), .Y(n1623) );
+  INVxp33_ASAP7_75t_R U2034 ( .A(n1612), .Y(n1615) );
+  INVxp33_ASAP7_75t_R U2035 ( .A(n1510), .Y(n1587) );
+  XNOR2xp5_ASAP7_75t_R U2036 ( .A(n1468), .B(n1510), .Y(n1588) );
+  NAND2xp33_ASAP7_75t_R U2037 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [1]), .B(n1510), .Y(n1605) );
+  NAND2x1_ASAP7_75t_R U2038 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [1]), .B(n1510), .Y(n1642) );
+  NAND2xp5_ASAP7_75t_R U2039 ( .A(\uart_wrapper_inst/uart_rx_data [0]), .B(
+        n1523), .Y(n1462) );
+  INVx2_ASAP7_75t_R U2040 ( .A(n1726), .Y(n1727) );
+  NAND2xp5_ASAP7_75t_R U2041 ( .A(n1720), .B(n1429), .Y(n1723) );
+  AND2x2_ASAP7_75t_R U2042 ( .A(n1401), .B(n1446), .Y(n1429) );
+  INVxp67_ASAP7_75t_R U2043 ( .A(n1445), .Y(n1446) );
+  HB1xp67_ASAP7_75t_R U2044 ( .A(n1727), .Y(n1430) );
+  AO21x1_ASAP7_75t_R U2045 ( .A1(n1729), .A2(n1431), .B(n1399), .Y(n1381) );
+  INVxp67_ASAP7_75t_R U2046 ( .A(n1723), .Y(n1725) );
+  NOR3xp33_ASAP7_75t_R U2047 ( .A(n1736), .B(n1737), .C(n1735), .Y(n1432) );
+  NAND4xp25_ASAP7_75t_R U2048 ( .A(led_counter[11]), .B(led_counter[10]), .C(
+        led_counter[13]), .D(led_counter[12]), .Y(n1737) );
+  NAND2x1p5_ASAP7_75t_R U2049 ( .A(\uart_wrapper_inst/uart_rx_inst/state [1]), 
+        .B(net53853), .Y(net53814) );
+  XOR2x2_ASAP7_75t_R U2050 ( .A(net58049), .B(net53857), .Y(n1537) );
+  NAND2xp5_ASAP7_75t_R U2051 ( .A(n1476), .B(n1441), .Y(n1440) );
+  INVxp67_ASAP7_75t_R U2052 ( .A(n1601), .Y(n1602) );
+  NAND2xp33_ASAP7_75t_R U2053 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [4]), .B(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [5]), .Y(n1601) );
+  INVx1_ASAP7_75t_R U2054 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [3]), .Y(n1433) );
+  INVx1_ASAP7_75t_R U2055 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [4]), .Y(n1434) );
+  NAND2xp5_ASAP7_75t_R U2056 ( .A(n1434), .B(n1435), .Y(n1436) );
+  NOR2x1_ASAP7_75t_R U2057 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [10]), .B(
+        \uart_wrapper_inst/uart_tx_inst/state [0]), .Y(n1439) );
+  INVxp67_ASAP7_75t_R U2058 ( .A(n1478), .Y(n1785) );
+  OAI21xp33_ASAP7_75t_R U2059 ( .A1(led_counter[20]), .A2(n1420), .B(n1749), 
+        .Y(n1370) );
+  AND3x2_ASAP7_75t_R U2060 ( .A(n1437), .B(n1641), .C(n1640), .Y(n1441) );
+  AND2x2_ASAP7_75t_R U2061 ( .A(n1475), .B(n1466), .Y(n1442) );
+  AND3x2_ASAP7_75t_R U2062 ( .A(led_counter[0]), .B(led_counter[3]), .C(
+        led_counter[4]), .Y(n1716) );
+  AND5x1_ASAP7_75t_R U2063 ( .A(led_counter[15]), .B(led_counter[16]), .C(
+        led_counter[19]), .D(led_counter[18]), .E(led_counter[17]), .Y(n1466)
+         );
+  NAND2xp5_ASAP7_75t_R U2064 ( .A(n1545), .B(net53810), .Y(net53845) );
+  INVxp67_ASAP7_75t_R U2065 ( .A(n1549), .Y(n1545) );
+  NAND2xp33_ASAP7_75t_R U2066 ( .A(net53897), .B(net53898), .Y(net53862) );
+  BUFx3_ASAP7_75t_R U2067 ( .A(\uart_wrapper_inst/uart_rx_inst/state [1]), .Y(
+        net54076) );
+  INVxp67_ASAP7_75t_R U2068 ( .A(n1440), .Y(n1784) );
+  XNOR2xp5_ASAP7_75t_R U2069 ( .A(\uart_wrapper_inst/uart_rx_inst/n183 ), .B(
+        \uart_wrapper_inst/uart_rx_inst/n182 ), .Y(n1581) );
+  AND2x4_ASAP7_75t_R U2070 ( .A(n1478), .B(n1782), .Y(n1522) );
+  XOR2x1_ASAP7_75t_R U2071 ( .A(n1752), .B(led_counter[22]), .Y(n1384) );
+  NOR4xp25_ASAP7_75t_R U2072 ( .A(n1680), .B(n1699), .C(n1681), .D(n1693), .Y(
+        n1574) );
+  INVx1_ASAP7_75t_R U2073 ( .A(n1521), .Y(n1680) );
+  AND2x2_ASAP7_75t_R U2074 ( .A(net53897), .B(net53898), .Y(n1443) );
+  NAND2xp5_ASAP7_75t_R U2075 ( .A(net53836), .B(net53800), .Y(net53898) );
+  INVx2_ASAP7_75t_R U2076 ( .A(net53814), .Y(net53836) );
+  AOI211xp5_ASAP7_75t_R U2077 ( .A1(net54076), .A2(net54100), .B(net53836), 
+        .C(net53846), .Y(\uart_wrapper_inst/uart_rx_inst/n168 ) );
+  NAND2xp5_ASAP7_75t_R U2078 ( .A(net54240), .B(net53836), .Y(net53841) );
+  NAND2xp5_ASAP7_75t_R U2079 ( .A(net53836), .B(net53825), .Y(net53827) );
+  NAND2xp5_ASAP7_75t_R U2080 ( .A(net53900), .B(net53808), .Y(net53800) );
+  INVxp33_ASAP7_75t_R U2081 ( .A(net53800), .Y(net53799) );
+  INVx1_ASAP7_75t_R U2082 ( .A(net53901), .Y(net53900) );
+  OAI21xp33_ASAP7_75t_R U2083 ( .A1(net53826), .A2(net53814), .B(net53827), 
+        .Y(net53821) );
+  NAND2xp5_ASAP7_75t_R U2084 ( .A(net53807), .B(net53814), .Y(net53813) );
+  INVx1_ASAP7_75t_R U2085 ( .A(\uart_wrapper_inst/uart_rx_inst/state [0]), .Y(
+        net53853) );
+  INVxp33_ASAP7_75t_R U2086 ( .A(net53853), .Y(net54111) );
+  NOR2xp33_ASAP7_75t_R U2087 ( .A(\uart_wrapper_inst/uart_rx_inst/state [1]), 
+        .B(net53853), .Y(net53848) );
+  INVxp33_ASAP7_75t_R U2088 ( .A(net53808), .Y(net54198) );
+  NAND2xp5_ASAP7_75t_R U2089 ( .A(net53808), .B(net54076), .Y(net53904) );
+  OAI321xp33_ASAP7_75t_R U2090 ( .A1(net53902), .A2(net53901), .A3(net53903), 
+        .B1(net53805), .B2(net53904), .C(net54111), .Y(net53897) );
+  OR2x2_ASAP7_75t_R U2091 ( .A(\uart_wrapper_inst/uart_rx_inst/state [1]), .B(
+        \uart_wrapper_inst/uart_rx_inst/state [0]), .Y(net53816) );
+  AND4x1_ASAP7_75t_R U2092 ( .A(net54098), .B(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [6]), .C(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [9]), .D(n1444), .Y(
+        net53808) );
+  NOR2xp33_ASAP7_75t_R U2093 ( .A(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [4]), .B(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [7]), .Y(n1444) );
+  BUFx3_ASAP7_75t_R U2094 ( .A(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [0]), .Y(net54098) );
+  NAND2xp5_ASAP7_75t_R U2095 ( .A(net54006), .B(net53906), .Y(net53901) );
+  NOR5xp2_ASAP7_75t_R U2096 ( .A(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [10]), .B(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [11]), .C(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [12]), .D(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [3]), .E(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [15]), .Y(net54006) );
+  INVx1_ASAP7_75t_R U2097 ( .A(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [6]), .Y(net53851) );
+  AND3x1_ASAP7_75t_R U2098 ( .A(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [6]), .B(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [5]), .C(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [8]), .Y(net53884) );
+  NOR2xp33_ASAP7_75t_R U2099 ( .A(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [4]), .B(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [7]), .Y(net58107) );
+  NAND2xp33_ASAP7_75t_R U2100 ( .A(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [7]), .B(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [4]), .Y(net53885) );
+  HB1xp67_ASAP7_75t_R U2101 ( .A(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [4]), .Y(net54054) );
+  INVxp33_ASAP7_75t_R U2102 ( .A(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [7]), .Y(net54118) );
+  AND3x2_ASAP7_75t_R U2103 ( .A(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [2]), .B(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [1]), .C(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [0]), .Y(net54047) );
+  NAND2xp5_ASAP7_75t_R U2104 ( .A(net53907), .B(net53906), .Y(net53805) );
+  NAND5xp2_ASAP7_75t_R U2105 ( .A(net54255), .B(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [11]), .C(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [13]), .D(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [10]), .E(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [9]), .Y(net53871) );
+  NOR5xp2_ASAP7_75t_R U2106 ( .A(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [10]), .B(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [11]), .C(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [3]), .D(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [15]), .E(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [12]), .Y(net53907) );
+  HB1xp67_ASAP7_75t_R U2107 ( .A(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [11]), .Y(net54243) );
+  HB1xp67_ASAP7_75t_R U2108 ( .A(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [12]), .Y(net54255) );
+  INVxp67_ASAP7_75t_R U2109 ( .A(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [3]), .Y(net54069) );
+  INVxp33_ASAP7_75t_R U2110 ( .A(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [15]), .Y(net58051) );
+  NOR4xp75_ASAP7_75t_R U2111 ( .A(net53908), .B(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [14]), .C(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [2]), .D(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [13]), .Y(net53906) );
+  NAND3x1_ASAP7_75t_R U2112 ( .A(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [1]), .B(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [8]), .C(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [5]), .Y(net53908) );
+  NAND5xp2_ASAP7_75t_R U2113 ( .A(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [14]), .B(net54070), .C(
+        net54047), .D(net53869), .E(net53870), .Y(net53866) );
+  OAI211xp5_ASAP7_75t_R U2114 ( .A1(net53867), .A2(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [14]), .B(net54029), .C(
+        net53866), .Y(\uart_wrapper_inst/uart_rx_inst/n154 ) );
+  AO21x1_ASAP7_75t_R U2115 ( .A1(net54160), .A2(n1424), .B(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [2]), .Y(net53864) );
+  INVxp33_ASAP7_75t_R U2116 ( .A(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [13]), .Y(net58058) );
+  HB1xp67_ASAP7_75t_R U2117 ( .A(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [1]), .Y(net54160) );
+  INVxp33_ASAP7_75t_R U2118 ( .A(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [8]), .Y(net54261) );
+  HB1xp67_ASAP7_75t_R U2119 ( .A(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [5]), .Y(net54245) );
+  BUFx3_ASAP7_75t_R U2120 ( .A(net53862), .Y(net54016) );
+  OR2x2_ASAP7_75t_R U2121 ( .A(\uart_wrapper_inst/uart_rx_inst/bit_count [3]), 
+        .B(net54111), .Y(net53806) );
+  NAND3xp33_ASAP7_75t_R U2122 ( .A(net53799), .B(net54076), .C(net54111), .Y(
+        \uart_wrapper_inst/uart_rx_inst/n173 ) );
+  OR3x1_ASAP7_75t_R U2123 ( .A(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [9]), .B(net54098), .C(
+        \uart_wrapper_inst/uart_rx_inst/state [1]), .Y(net53903) );
+  NAND3xp33_ASAP7_75t_R U2124 ( .A(net54119), .B(net54054), .C(net53851), .Y(
+        net53902) );
+  AND2x2_ASAP7_75t_R U2125 ( .A(net53850), .B(net53851), .Y(net58067) );
+  INVx1_ASAP7_75t_R U2126 ( .A(net53851), .Y(net54240) );
+  NOR2xp33_ASAP7_75t_R U2127 ( .A(net53851), .B(net53891), .Y(net53889) );
+  AND2x2_ASAP7_75t_R U2128 ( .A(net54189), .B(net54054), .Y(net53894) );
+  HB1xp67_ASAP7_75t_R U2129 ( .A(net54054), .Y(net54042) );
+  HB1xp67_ASAP7_75t_R U2130 ( .A(net54119), .Y(net54052) );
+  INVxp67_ASAP7_75t_R U2131 ( .A(net54118), .Y(net54119) );
+  NOR3xp33_ASAP7_75t_R U2132 ( .A(net53859), .B(net53858), .C(net53871), .Y(
+        net53867) );
+  XOR2xp5_ASAP7_75t_R U2133 ( .A(net58051), .B(net53866), .Y(net53865) );
+  INVx1_ASAP7_75t_R U2134 ( .A(net53871), .Y(net53870) );
+  INVx2_ASAP7_75t_R U2135 ( .A(net53859), .Y(net53869) );
+  NAND3xp33_ASAP7_75t_R U2136 ( .A(net53883), .B(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [9]), .C(net53869), .Y(
+        net53857) );
+  NAND2xp5_ASAP7_75t_R U2137 ( .A(net53879), .B(net53869), .Y(net53877) );
+  INVx1_ASAP7_75t_R U2138 ( .A(net54069), .Y(net54070) );
+  INVx1_ASAP7_75t_R U2139 ( .A(net54069), .Y(net54189) );
+  INVxp33_ASAP7_75t_R U2140 ( .A(led_counter[7]), .Y(n1445) );
+  HB1xp67_ASAP7_75t_R U2141 ( .A(led_counter[11]), .Y(n1447) );
+  NAND4xp75_ASAP7_75t_R U2142 ( .A(led_counter[6]), .B(led_counter[5]), .C(
+        led_counter[8]), .D(led_counter[7]), .Y(n1736) );
+  NAND3xp33_ASAP7_75t_R U2143 ( .A(n1771), .B(n1779), .C(n1772), .Y(n1448) );
+  OAI21xp33_ASAP7_75t_R U2144 ( .A1(n1407), .A2(n1430), .B(n1728), .Y(n1366)
+         );
+  NAND5xp2_ASAP7_75t_R U2145 ( .A(n1647), .B(n1644), .C(n1645), .D(n1646), .E(
+        n1643), .Y(n1449) );
+  NOR2xp33_ASAP7_75t_R U2146 ( .A(n1561), .B(n1560), .Y(
+        \uart_wrapper_inst/uart_rx_inst/n150 ) );
+  NOR4xp25_ASAP7_75t_R U2147 ( .A(n1559), .B(net53804), .C(net54038), .D(
+        net53806), .Y(n1560) );
+  OA21x2_ASAP7_75t_R U2148 ( .A1(n1544), .A2(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [9]), .B(net53857), .Y(
+        n1450) );
+  NAND2xp5_ASAP7_75t_R U2149 ( .A(n1450), .B(net54016), .Y(
+        \uart_wrapper_inst/uart_rx_inst/n159 ) );
+  INVx1_ASAP7_75t_R U2150 ( .A(n1782), .Y(n1783) );
+  BUFx3_ASAP7_75t_R U2151 ( .A(n1781), .Y(n1477) );
+  INVxp33_ASAP7_75t_R U2152 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [1]), .Y(n1468) );
+  NAND2xp33_ASAP7_75t_R U2153 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/bit_count [2]), .B(n1662), .Y(n1659)
+         );
+  INVxp67_ASAP7_75t_R U2154 ( .A(n1440), .Y(n1790) );
+  NOR2x1_ASAP7_75t_R U2155 ( .A(\uart_wrapper_inst/uart_rx_data [6]), .B(
+        \uart_wrapper_inst/uart_rx_data [7]), .Y(n1460) );
+  NOR2x1_ASAP7_75t_R U2156 ( .A(\uart_wrapper_inst/uart_rx_data [2]), .B(
+        \uart_wrapper_inst/uart_rx_data [3]), .Y(n1467) );
+  NOR3xp33_ASAP7_75t_R U2157 ( .A(n1634), .B(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [15]), .C(n1633), .Y(
+        n1637) );
+  NOR3x1_ASAP7_75t_R U2158 ( .A(net54008), .B(n1539), .C(n1538), .Y(net53879)
+         );
+  OAI22xp33_ASAP7_75t_R U2159 ( .A1(n1685), .A2(n1778), .B1(n1684), .B2(n1683), 
+        .Y(n1691) );
+  INVxp67_ASAP7_75t_R U2160 ( .A(n1572), .Y(n1706) );
+  INVxp33_ASAP7_75t_R U2161 ( .A(led_counter[21]), .Y(n1759) );
+  INVx2_ASAP7_75t_R U2162 ( .A(n1631), .Y(n1487) );
+  HB1xp67_ASAP7_75t_R U2163 ( .A(n1779), .Y(n1470) );
+  NAND2x1_ASAP7_75t_R U2164 ( .A(n1476), .B(n1441), .Y(n1782) );
+  AND2x2_ASAP7_75t_R U2165 ( .A(net53816), .B(net53845), .Y(n1452) );
+  XOR2xp5_ASAP7_75t_R U2166 ( .A(net54261), .B(n1535), .Y(n1536) );
+  INVx2_ASAP7_75t_R U2167 ( .A(n1525), .Y(n1526) );
+  AO21x1_ASAP7_75t_R U2168 ( .A1(n1454), .A2(n1455), .B(n1456), .Y(n1772) );
+  NAND3xp33_ASAP7_75t_R U2169 ( .A(n1467), .B(n1460), .C(n1579), .Y(n1454) );
+  OR2x2_ASAP7_75t_R U2170 ( .A(n1581), .B(n1580), .Y(n1455) );
+  NAND4xp25_ASAP7_75t_R U2171 ( .A(n1465), .B(n1705), .C(n1523), .D(n1521), 
+        .Y(n1456) );
+  AOI21xp33_ASAP7_75t_R U2172 ( .A1(n1655), .A2(n1654), .B(n1662), .Y(n1657)
+         );
+  XNOR2xp5_ASAP7_75t_R U2173 ( .A(n1512), .B(n1487), .Y(n1610) );
+  NOR4xp25_ASAP7_75t_R U2174 ( .A(n1691), .B(n1692), .C(n1709), .D(n1690), .Y(
+        \uart_wrapper_inst/n142 ) );
+  INVx1_ASAP7_75t_R U2175 ( .A(n1566), .Y(n1769) );
+  AOI21xp33_ASAP7_75t_R U2176 ( .A1(n1595), .A2(n1633), .B(n1414), .Y(n1596)
+         );
+  AND3x1_ASAP7_75t_R U2177 ( .A(n1509), .B(n1527), .C(n1571), .Y(n1457) );
+  NOR2xp33_ASAP7_75t_R U2178 ( .A(n1411), .B(n1639), .Y(n1640) );
+  NOR2xp33_ASAP7_75t_R U2179 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [12]), .B(n1638), .Y(
+        n1641) );
+  NOR2xp33_ASAP7_75t_R U2180 ( .A(n1665), .B(n1440), .Y(n1660) );
+  NOR3xp33_ASAP7_75t_R U2181 ( .A(n1427), .B(
+        \uart_wrapper_inst/uart_rx_inst/bit_count [2]), .C(net53825), .Y(n1553) );
+  XOR2xp5_ASAP7_75t_R U2182 ( .A(net58058), .B(n1541), .Y(n1542) );
+  NOR2xp33_ASAP7_75t_R U2183 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [14]), .B(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [15]), .Y(n1647) );
+  AND2x2_ASAP7_75t_R U2184 ( .A(led_counter[2]), .B(led_counter[1]), .Y(n1458)
+         );
+  NOR2xp33_ASAP7_75t_R U2185 ( .A(n1788), .B(n1787), .Y(n1789) );
+  NOR2xp33_ASAP7_75t_R U2186 ( .A(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [9]), .B(net54098), .Y(
+        n1459) );
+  AOI21xp33_ASAP7_75t_R U2187 ( .A1(n1696), .A2(n1695), .B(n1694), .Y(n1698)
+         );
+  AOI31xp33_ASAP7_75t_R U2188 ( .A1(led_counter[22]), .A2(led_counter[21]), 
+        .A3(led_counter[20]), .B(led_counter[23]), .Y(n1753) );
+  INVxp33_ASAP7_75t_R U2189 ( .A(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [10]), .Y(net58049) );
+  XOR2xp5_ASAP7_75t_R U2190 ( .A(n1599), .B(n1502), .Y(n1600) );
+  AND2x2_ASAP7_75t_R U2191 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [7]), .B(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [8]), .Y(n1464) );
+  NOR2xp33_ASAP7_75t_R U2192 ( .A(\uart_wrapper_inst/pstate [3]), .B(
+        \uart_wrapper_inst/pstate [2]), .Y(n1465) );
+  AOI22xp33_ASAP7_75t_R U2193 ( .A1(\uart_wrapper_inst/uart_tx_data [7]), .A2(
+        n1511), .B1(\uart_wrapper_inst/uart_tx_inst/shift_reg [7]), .B2(n1522), 
+        .Y(\uart_wrapper_inst/uart_tx_inst/n119 ) );
+  INVx1_ASAP7_75t_R U2194 ( .A(\uart_wrapper_inst/uart_rx_inst/n182 ), .Y(
+        n1567) );
+  NOR2xp33_ASAP7_75t_R U2195 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [12]), .B(n1422), .Y(
+        n1644) );
+  AOI221xp5_ASAP7_75t_R U2196 ( .A1(n1631), .A2(n1630), .B1(n1487), .B2(n1629), 
+        .C(n1628), .Y(n1632) );
+  NOR2xp33_ASAP7_75t_R U2197 ( .A(n1626), .B(n1625), .Y(n1629) );
+  O2A1O1Ixp33_ASAP7_75t_R U2198 ( .A1(n1608), .A2(n1607), .B(n1606), .C(n1487), 
+        .Y(n1609) );
+  AOI21xp33_ASAP7_75t_R U2199 ( .A1(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [14]), .A2(n1627), .B(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [15]), .Y(n1628) );
+  OR2x2_ASAP7_75t_R U2200 ( .A(\uart_wrapper_inst/uart_rx_data [6]), .B(
+        \uart_wrapper_inst/uart_rx_data [7]), .Y(n1580) );
+  OR2x2_ASAP7_75t_R U2201 ( .A(n1494), .B(led_counter[0]), .Y(n1761) );
+  HB1xp67_ASAP7_75t_R U2202 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [10]), .Y(n1503) );
+  AND2x2_ASAP7_75t_R U2203 ( .A(\uart_wrapper_inst/uart_tx_send ), .B(n1791), 
+        .Y(n1511) );
+  NAND2xp33_ASAP7_75t_R U2204 ( .A(n1402), .B(n1521), .Y(n1572) );
+  INVxp67_ASAP7_75t_R U2205 ( .A(n1504), .Y(n1505) );
+  NOR2xp33_ASAP7_75t_R U2206 ( .A(led_counter[15]), .B(led_counter[16]), .Y(
+        n1760) );
+  AOI21xp5_ASAP7_75t_R U2207 ( .A1(led_running), .A2(n1768), .B(acc_start), 
+        .Y(n97) );
+  TIELOx1_ASAP7_75t_R U2208 ( .L(led_uart_tx) );
+  INVxp67_ASAP7_75t_R U2209 ( .A(n1523), .Y(n1689) );
+  INVx2_ASAP7_75t_R U2210 ( .A(\uart_wrapper_inst/uart_tx_inst/state [1]), .Y(
+        n1639) );
+  NOR2xp33_ASAP7_75t_R U2211 ( .A(n1411), .B(
+        \uart_wrapper_inst/uart_tx_inst/state [1]), .Y(n1650) );
+  NOR3xp33_ASAP7_75t_R U2212 ( .A(led_counter[20]), .B(led_counter[8]), .C(
+        led_counter[6]), .Y(n1763) );
+  AOI22xp5_ASAP7_75t_R U2213 ( .A1(n1574), .A2(n1573), .B1(n1457), .B2(n1572), 
+        .Y(n1697) );
+  INVx1_ASAP7_75t_R U2214 ( .A(n1525), .Y(n1527) );
+  INVx1_ASAP7_75t_R U2215 ( .A(n1562), .Y(n1471) );
+  INVxp33_ASAP7_75t_R U2216 ( .A(n1535), .Y(n1472) );
+  INVxp67_ASAP7_75t_R U2217 ( .A(n1472), .Y(n1473) );
+  NAND3x1_ASAP7_75t_R U2218 ( .A(net54052), .B(net54240), .C(net53890), .Y(
+        n1535) );
+  OAI31xp33_ASAP7_75t_R U2219 ( .A1(n1786), .A2(n1666), .A3(n1665), .B(n1664), 
+        .Y(n1667) );
+  INVxp67_ASAP7_75t_R U2220 ( .A(\uart_wrapper_inst/uart_rx_data [3]), .Y(
+        n1519) );
+  AND2x2_ASAP7_75t_R U2221 ( .A(n1432), .B(n1739), .Y(n1475) );
+  INVxp67_ASAP7_75t_R U2222 ( .A(\uart_wrapper_inst/uart_rx_data [2]), .Y(
+        n1517) );
+  OAI21xp33_ASAP7_75t_R U2223 ( .A1(n1783), .A2(n1661), .B(
+        \uart_wrapper_inst/uart_tx_inst/bit_count [0]), .Y(n1651) );
+  NOR2xp33_ASAP7_75t_R U2224 ( .A(n1678), .B(n1677), .Y(n1692) );
+  AND2x2_ASAP7_75t_R U2225 ( .A(n1636), .B(n1637), .Y(n1476) );
+  NAND2xp5_ASAP7_75t_R U2226 ( .A(\uart_wrapper_inst/uart_tx_send ), .B(n1791), 
+        .Y(n1478) );
+  INVxp67_ASAP7_75t_R U2227 ( .A(n1480), .Y(n1481) );
+  OR2x2_ASAP7_75t_R U2228 ( .A(n1738), .B(n1405), .Y(n1751) );
+  NAND2x1p5_ASAP7_75t_R U2229 ( .A(n1458), .B(n1716), .Y(n1718) );
+  INVxp33_ASAP7_75t_R U2230 ( .A(led_counter[12]), .Y(n1483) );
+  INVx1_ASAP7_75t_R U2231 ( .A(n1483), .Y(n1484) );
+  HB1xp67_ASAP7_75t_R U2232 ( .A(net54243), .Y(net54220) );
+  OA21x2_ASAP7_75t_R U2233 ( .A1(n1500), .A2(n1792), .B(n1673), .Y(n1485) );
+  OA21x2_ASAP7_75t_R U2234 ( .A1(n1500), .A2(n1792), .B(n1673), .Y(n1486) );
+  OAI21xp33_ASAP7_75t_R U2235 ( .A1(led_counter[4]), .A2(n1717), .B(n1405), 
+        .Y(n1378) );
+  BUFx2_ASAP7_75t_R U2236 ( .A(net54245), .Y(net54215) );
+  OAI22xp33_ASAP7_75t_R U2237 ( .A1(n1413), .A2(n1529), .B1(n1474), .B2(n1453), 
+        .Y(\uart_wrapper_inst/uart_rx_inst/n175 ) );
+  NOR3xp33_ASAP7_75t_R U2238 ( .A(n1605), .B(n1603), .C(n1604), .Y(n1489) );
+  INVxp33_ASAP7_75t_R U2239 ( .A(net53890), .Y(net54203) );
+  INVx1_ASAP7_75t_R U2240 ( .A(net53891), .Y(net53890) );
+  INVxp67_ASAP7_75t_R U2241 ( .A(net54198), .Y(net54199) );
+  HB1xp67_ASAP7_75t_R U2242 ( .A(net54255), .Y(net54194) );
+  OAI22xp33_ASAP7_75t_R U2243 ( .A1(\uart_wrapper_inst/uart_rx_inst/rx_d2 ), 
+        .A2(n1529), .B1(\uart_wrapper_inst/uart_rx_data [7]), .B2(n1453), .Y(
+        \uart_wrapper_inst/uart_rx_inst/n151 ) );
+  OAI22xp33_ASAP7_75t_R U2244 ( .A1(\uart_wrapper_inst/uart_rx_data [7]), .A2(
+        n1427), .B1(n1453), .B2(n1413), .Y(
+        \uart_wrapper_inst/uart_rx_inst/n174 ) );
+  INVxp33_ASAP7_75t_R U2245 ( .A(n1571), .Y(n1490) );
+  INVxp67_ASAP7_75t_R U2246 ( .A(\uart_wrapper_inst/pstate [3]), .Y(n1571) );
+  NAND2xp33_ASAP7_75t_R U2247 ( .A(n1476), .B(n1441), .Y(n1516) );
+  NAND2xp33_ASAP7_75t_R U2248 ( .A(n1476), .B(n1441), .Y(n1786) );
+  INVxp33_ASAP7_75t_R U2249 ( .A(led_counter[3]), .Y(n1491) );
+  INVx1_ASAP7_75t_R U2250 ( .A(n1491), .Y(n1492) );
+  HB1xp67_ASAP7_75t_R U2251 ( .A(net54194), .Y(net54179) );
+  INVxp33_ASAP7_75t_R U2252 ( .A(net53860), .Y(net54175) );
+  INVx1_ASAP7_75t_R U2253 ( .A(net54008), .Y(net53860) );
+  INVx2_ASAP7_75t_R U2254 ( .A(net54047), .Y(net54008) );
+  INVxp33_ASAP7_75t_R U2255 ( .A(led_counter[1]), .Y(n1493) );
+  INVxp67_ASAP7_75t_R U2256 ( .A(n1493), .Y(n1494) );
+  AND5x1_ASAP7_75t_R U2257 ( .A(n1578), .B(n1705), .C(n1521), .D(n1577), .E(
+        n1576), .Y(n1495) );
+  INVxp33_ASAP7_75t_R U2258 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [4]), .Y(n1496) );
+  INVx1_ASAP7_75t_R U2259 ( .A(n1496), .Y(n1497) );
+  BUFx3_ASAP7_75t_R U2260 ( .A(\uart_wrapper_inst/uart_rx_inst/n184 ), .Y(
+        n1498) );
+  HB1xp67_ASAP7_75t_R U2261 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [3]), .Y(n1499) );
+  OAI21xp33_ASAP7_75t_R U2262 ( .A1(led_counter[13]), .A2(n1733), .B(n1734), 
+        .Y(n1376) );
+  INVx1_ASAP7_75t_R U2263 ( .A(n1671), .Y(n1500) );
+  NOR2xp33_ASAP7_75t_R U2264 ( .A(\uart_wrapper_inst/uart_rx_data [0]), .B(
+        n1693), .Y(n1696) );
+  HB1xp67_ASAP7_75t_R U2265 ( .A(led_counter[0]), .Y(n1501) );
+  INVxp33_ASAP7_75t_R U2266 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [8]), .Y(n1502) );
+  AOI21xp33_ASAP7_75t_R U2267 ( .A1(n1620), .A2(n1619), .B(n1618), .Y(n1621)
+         );
+  INVxp33_ASAP7_75t_R U2268 ( .A(n1620), .Y(n1611) );
+  INVxp33_ASAP7_75t_R U2269 ( .A(led_counter[10]), .Y(n1504) );
+  NAND2xp33_ASAP7_75t_R U2270 ( .A(n1494), .B(led_counter[0]), .Y(n1711) );
+  NOR3xp33_ASAP7_75t_R U2271 ( .A(led_counter[23]), .B(led_counter[22]), .C(
+        led_counter[11]), .Y(n1758) );
+  OAI21xp33_ASAP7_75t_R U2272 ( .A1(n1488), .A2(n1700), .B(n1699), .Y(n1702)
+         );
+  INVxp33_ASAP7_75t_R U2273 ( .A(led_counter[2]), .Y(n1506) );
+  INVx1_ASAP7_75t_R U2274 ( .A(n1506), .Y(n1507) );
+  BUFx3_ASAP7_75t_R U2275 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [2]), .Y(n1508) );
+  BUFx3_ASAP7_75t_R U2276 ( .A(\uart_wrapper_inst/pstate [2]), .Y(n1509) );
+  OAI22xp33_ASAP7_75t_R U2277 ( .A1(n1528), .A2(n1474), .B1(n1471), .B2(n1453), 
+        .Y(\uart_wrapper_inst/uart_rx_inst/n176 ) );
+  O2A1O1Ixp33_ASAP7_75t_R U2278 ( .A1(n1674), .A2(n1421), .B(n1672), .C(n1511), 
+        .Y(\uart_wrapper_inst/uart_tx_inst/n114 ) );
+  NAND2xp33_ASAP7_75t_R U2279 ( .A(n1421), .B(n1671), .Y(n1672) );
+  AOI21xp5_ASAP7_75t_R U2280 ( .A1(n1586), .A2(n1685), .B(n1792), .Y(
+        \uart_wrapper_inst/uart_tx_inst/n97 ) );
+  BUFx3_ASAP7_75t_R U2281 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [0]), .Y(n1510) );
+  XOR2x1_ASAP7_75t_R U2282 ( .A(n1741), .B(led_counter[17]), .Y(n1373) );
+  OAI21xp33_ASAP7_75t_R U2283 ( .A1(n1484), .A2(n1399), .B(n1419), .Y(n1382)
+         );
+  NOR3xp33_ASAP7_75t_R U2284 ( .A(led_counter[14]), .B(led_counter[13]), .C(
+        led_counter[12]), .Y(n1756) );
+  INVx2_ASAP7_75t_R U2285 ( .A(n1685), .Y(n1791) );
+  INVxp33_ASAP7_75t_R U2286 ( .A(n1503), .Y(n1512) );
+  OAI21xp33_ASAP7_75t_R U2287 ( .A1(led_counter[8]), .A2(n1725), .B(n1726), 
+        .Y(n1379) );
+  OAI21xp33_ASAP7_75t_R U2288 ( .A1(n1507), .A2(n1712), .B(n1713), .Y(n1387)
+         );
+  INVxp33_ASAP7_75t_R U2289 ( .A(net53799), .Y(net54100) );
+  NOR3xp33_ASAP7_75t_R U2290 ( .A(led_counter[19]), .B(led_counter[7]), .C(
+        led_counter[3]), .Y(n1762) );
+  OR3x1_ASAP7_75t_R U2291 ( .A(n1699), .B(n1680), .C(n1681), .Y(n1678) );
+  NAND2xp33_ASAP7_75t_R U2292 ( .A(n1422), .B(n1503), .Y(n1513) );
+  NAND2xp5_ASAP7_75t_R U2293 ( .A(n1489), .B(n1514), .Y(n1612) );
+  INVx1_ASAP7_75t_R U2294 ( .A(n1513), .Y(n1514) );
+  HB1xp67_ASAP7_75t_R U2295 ( .A(n1404), .Y(n1515) );
+  OAI21xp33_ASAP7_75t_R U2296 ( .A1(led_counter[23]), .A2(n1420), .B(n1755), 
+        .Y(n1385) );
+  OAI21xp33_ASAP7_75t_R U2297 ( .A1(led_counter[10]), .A2(n1732), .B(n1415), 
+        .Y(n1367) );
+  AOI21xp5_ASAP7_75t_R U2298 ( .A1(n1754), .A2(n1442), .B(n1753), .Y(n1755) );
+  NOR3xp33_ASAP7_75t_R U2299 ( .A(led_counter[10]), .B(led_counter[18]), .C(
+        led_counter[17]), .Y(n1757) );
+  AOI211xp5_ASAP7_75t_R U2300 ( .A1(n1682), .A2(n1681), .B(n1704), .C(n1680), 
+        .Y(n1683) );
+  INVx1_ASAP7_75t_R U2301 ( .A(n1776), .Y(n1796) );
+  INVxp67_ASAP7_75t_R U2302 ( .A(n1642), .Y(n1645) );
+  AOI21xp33_ASAP7_75t_R U2303 ( .A1(n1642), .A2(n1435), .B(n1591), .Y(n1589)
+         );
+  OAI21xp33_ASAP7_75t_R U2304 ( .A1(led_counter[5]), .A2(n1418), .B(n1719), 
+        .Y(n1369) );
+  NOR3xp33_ASAP7_75t_R U2305 ( .A(led_counter[9]), .B(led_counter[5]), .C(
+        led_counter[4]), .Y(n1764) );
+  INVxp67_ASAP7_75t_R U2306 ( .A(n1517), .Y(n1518) );
+  INVxp67_ASAP7_75t_R U2307 ( .A(n1519), .Y(n1520) );
+  NOR2xp33_ASAP7_75t_R U2308 ( .A(\uart_wrapper_inst/pstate [3]), .B(
+        \uart_wrapper_inst/pstate [2]), .Y(n1578) );
+  NAND2x1p5_ASAP7_75t_R U2309 ( .A(led_counter[15]), .B(n1475), .Y(n1745) );
+  INVxp33_ASAP7_75t_R U2310 ( .A(n1424), .Y(net53854) );
+  NOR2xp33_ASAP7_75t_R U2311 ( .A(\uart_wrapper_inst/uart_rx_data [0]), .B(
+        n1498), .Y(n1579) );
+  NOR2xp33_ASAP7_75t_R U2312 ( .A(n1498), .B(n1693), .Y(n1568) );
+  OAI22xp33_ASAP7_75t_R U2313 ( .A1(n1528), .A2(n1498), .B1(
+        \uart_wrapper_inst/uart_rx_data [0]), .B2(n1453), .Y(
+        \uart_wrapper_inst/uart_rx_inst/n180 ) );
+  OAI22xp33_ASAP7_75t_R U2314 ( .A1(n1528), .A2(n1518), .B1(n1498), .B2(n1453), 
+        .Y(\uart_wrapper_inst/uart_rx_inst/n179 ) );
+  NOR2xp33_ASAP7_75t_R U2315 ( .A(\uart_wrapper_inst/uart_rx_data [0]), .B(
+        n1498), .Y(n1563) );
+  OAI22xp33_ASAP7_75t_R U2316 ( .A1(n1520), .A2(n1529), .B1(n1453), .B2(n1518), 
+        .Y(\uart_wrapper_inst/uart_rx_inst/n178 ) );
+  OAI22xp33_ASAP7_75t_R U2317 ( .A1(n1471), .A2(n1529), .B1(n1520), .B2(n1453), 
+        .Y(\uart_wrapper_inst/uart_rx_inst/n177 ) );
+  NOR3xp33_ASAP7_75t_R U2318 ( .A(net53859), .B(net53858), .C(n1539), .Y(n1540) );
+  NOR2xp33_ASAP7_75t_R U2319 ( .A(net53858), .B(net53859), .Y(n1544) );
+  NAND2x1_ASAP7_75t_R U2320 ( .A(net53884), .B(net53850), .Y(net53859) );
+  HB1xp67_ASAP7_75t_R U2321 ( .A(net53805), .Y(net54038) );
+  BUFx3_ASAP7_75t_R U2322 ( .A(\uart_wrapper_inst/uart_rx_inst/n185 ), .Y(
+        n1521) );
+  INVxp67_ASAP7_75t_R U2323 ( .A(n1612), .Y(n1613) );
+  NOR4xp25_ASAP7_75t_R U2324 ( .A(n1422), .B(n1635), .C(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [14]), .D(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [7]), .Y(n1636) );
+  NOR2xp33_ASAP7_75t_R U2325 ( .A(net54076), .B(net53815), .Y(n1557) );
+  BUFx3_ASAP7_75t_R U2326 ( .A(\uart_wrapper_inst/pstate [0]), .Y(n1523) );
+  INVx2_ASAP7_75t_R U2327 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [6]), .Y(n1635) );
+  NAND2xp33_ASAP7_75t_R U2328 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [3]), .B(n1510), .Y(n1594) );
+  NOR2xp33_ASAP7_75t_R U2329 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [3]), .B(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [4]), .Y(n1649) );
+  NAND2xp33_ASAP7_75t_R U2330 ( .A(n1489), .B(n1503), .Y(n1620) );
+  AOI221xp5_ASAP7_75t_R U2331 ( .A1(n1500), .A2(
+        \uart_wrapper_inst/uart_tx_inst/state [1]), .B1(
+        \uart_wrapper_inst/uart_tx_inst/shift_reg [0]), .B2(n1792), .C(n1791), 
+        .Y(\uart_wrapper_inst/uart_tx_inst/n127 ) );
+  NOR4xp25_ASAP7_75t_R U2332 ( .A(n1670), .B(
+        \uart_wrapper_inst/uart_tx_inst/bit_count [3]), .C(n1500), .D(n1791), 
+        .Y(n1674) );
+  NAND2xp33_ASAP7_75t_R U2333 ( .A(n1508), .B(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [1]), .Y(n1593) );
+  NAND4xp25_ASAP7_75t_R U2334 ( .A(n1508), .B(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [5]), .C(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [4]), .D(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [3]), .Y(n1604) );
+  NAND2xp5_ASAP7_75t_R U2335 ( .A(n1547), .B(net53810), .Y(n1529) );
+  INVx2_ASAP7_75t_R U2336 ( .A(net53805), .Y(net53810) );
+  NAND4xp25_ASAP7_75t_R U2337 ( .A(n1411), .B(n1422), .C(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [12]), .D(n1503), .Y(
+        n1617) );
+  NOR4xp25_ASAP7_75t_R U2338 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [10]), .B(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [7]), .C(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [3]), .D(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [4]), .Y(n1584) );
+  NOR2xp33_ASAP7_75t_R U2339 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [10]), .B(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [7]), .Y(n1648) );
+  NAND4xp25_ASAP7_75t_R U2340 ( .A(n1503), .B(n1422), .C(n1411), .D(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [12]), .Y(n1626) );
+  OAI22xp33_ASAP7_75t_R U2341 ( .A1(acc_start), .A2(n1702), .B1(n1701), .B2(
+        n1523), .Y(\uart_wrapper_inst/n185 ) );
+  AOI21xp33_ASAP7_75t_R U2342 ( .A1(n1457), .A2(n1523), .B(n1521), .Y(n1684)
+         );
+  NOR3xp33_ASAP7_75t_R U2343 ( .A(n1523), .B(n1490), .C(n1705), .Y(n1694) );
+  NOR2xp33_ASAP7_75t_R U2344 ( .A(n1402), .B(n1526), .Y(n1569) );
+  NOR2xp33_ASAP7_75t_R U2345 ( .A(n1787), .B(n1448), .Y(n1770) );
+  NOR2xp33_ASAP7_75t_R U2346 ( .A(n1448), .B(n1775), .Y(n1777) );
+  NOR2xp33_ASAP7_75t_R U2347 ( .A(n1448), .B(n1773), .Y(n1774) );
+  NAND2xp5_ASAP7_75t_R U2348 ( .A(net54016), .B(n1530), .Y(
+        \uart_wrapper_inst/uart_rx_inst/n167 ) );
+  NAND2xp5_ASAP7_75t_R U2349 ( .A(net54070), .B(net53860), .Y(n1543) );
+  INVx1_ASAP7_75t_R U2350 ( .A(n1543), .Y(n1531) );
+  NAND3xp33_ASAP7_75t_R U2351 ( .A(net53860), .B(net54042), .C(net54070), .Y(
+        n1532) );
+  OAI211xp5_ASAP7_75t_R U2352 ( .A1(net54042), .A2(n1531), .B(net54029), .C(
+        n1532), .Y(\uart_wrapper_inst/uart_rx_inst/n164 ) );
+  INVx1_ASAP7_75t_R U2353 ( .A(n1532), .Y(n1533) );
+  NAND3xp33_ASAP7_75t_R U2354 ( .A(net54047), .B(net54215), .C(net53894), .Y(
+        net53891) );
+  OAI211xp5_ASAP7_75t_R U2355 ( .A1(net54215), .A2(n1533), .B(net54029), .C(
+        net54203), .Y(\uart_wrapper_inst/uart_rx_inst/n163 ) );
+  XOR2xp5_ASAP7_75t_R U2356 ( .A(net54240), .B(net53890), .Y(n1534) );
+  NAND2xp5_ASAP7_75t_R U2357 ( .A(net54016), .B(n1534), .Y(
+        \uart_wrapper_inst/uart_rx_inst/n162 ) );
+  OAI211xp5_ASAP7_75t_R U2358 ( .A1(net53889), .A2(net54052), .B(net54029), 
+        .C(n1473), .Y(\uart_wrapper_inst/uart_rx_inst/n161 ) );
+  NAND2xp5_ASAP7_75t_R U2359 ( .A(net54016), .B(n1536), .Y(
+        \uart_wrapper_inst/uart_rx_inst/n160 ) );
+  NAND2xp5_ASAP7_75t_R U2360 ( .A(net54070), .B(net54047), .Y(net53858) );
+  INVx1_ASAP7_75t_R U2361 ( .A(net53858), .Y(net53883) );
+  INVx1_ASAP7_75t_R U2362 ( .A(net53885), .Y(net53850) );
+  NAND2xp5_ASAP7_75t_R U2363 ( .A(net54016), .B(n1537), .Y(
+        \uart_wrapper_inst/uart_rx_inst/n158 ) );
+  NAND2xp5_ASAP7_75t_R U2364 ( .A(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [10]), .B(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [9]), .Y(n1539) );
+  NAND2xp5_ASAP7_75t_R U2365 ( .A(net54243), .B(net54189), .Y(n1538) );
+  OAI211xp5_ASAP7_75t_R U2366 ( .A1(n1540), .A2(net54220), .B(net54029), .C(
+        net53877), .Y(\uart_wrapper_inst/uart_rx_inst/n157 ) );
+  INVx1_ASAP7_75t_R U2367 ( .A(net53877), .Y(net53875) );
+  NAND2xp5_ASAP7_75t_R U2368 ( .A(net54194), .B(net53875), .Y(n1541) );
+  OAI211xp5_ASAP7_75t_R U2369 ( .A1(net54179), .A2(net53875), .B(net54029), 
+        .C(n1541), .Y(\uart_wrapper_inst/uart_rx_inst/n156 ) );
+  NAND2xp5_ASAP7_75t_R U2370 ( .A(net54016), .B(n1542), .Y(
+        \uart_wrapper_inst/uart_rx_inst/n155 ) );
+  NAND2xp5_ASAP7_75t_R U2371 ( .A(net54016), .B(net53865), .Y(
+        \uart_wrapper_inst/uart_rx_inst/n153 ) );
+  NAND3xp33_ASAP7_75t_R U2372 ( .A(net54029), .B(net54175), .C(net53864), .Y(
+        \uart_wrapper_inst/uart_rx_inst/n166 ) );
+  OAI211xp5_ASAP7_75t_R U2373 ( .A1(net54070), .A2(net53860), .B(net54029), 
+        .C(n1543), .Y(\uart_wrapper_inst/uart_rx_inst/n165 ) );
+  NAND2xp5_ASAP7_75t_R U2374 ( .A(net53854), .B(net54016), .Y(
+        \uart_wrapper_inst/uart_rx_inst/n152 ) );
+  NAND3xp33_ASAP7_75t_R U2375 ( .A(net53848), .B(n1459), .C(net58067), .Y(
+        n1549) );
+  INVx1_ASAP7_75t_R U2376 ( .A(uart_rx), .Y(n124) );
+  INVx1_ASAP7_75t_R U2377 ( .A(\uart_wrapper_inst/uart_rx_inst/rx_d1 ), .Y(
+        n204) );
+  NAND3xp33_ASAP7_75t_R U2378 ( .A(
+        \uart_wrapper_inst/uart_rx_inst/sample_count [9]), .B(net58107), .C(
+        net54098), .Y(n1546) );
+  INVx1_ASAP7_75t_R U2379 ( .A(\uart_wrapper_inst/uart_rx_inst/bit_count [0]), 
+        .Y(n1551) );
+  A2O1A1Ixp33_ASAP7_75t_R U2380 ( .A1(n1452), .A2(n1528), .B(n1551), .C(n1548), 
+        .Y(\uart_wrapper_inst/uart_rx_inst/n169 ) );
+  NAND2xp5_ASAP7_75t_R U2381 ( .A(
+        \uart_wrapper_inst/uart_rx_inst/bit_count [1]), .B(
+        \uart_wrapper_inst/uart_rx_inst/bit_count [0]), .Y(net53825) );
+  INVx1_ASAP7_75t_R U2382 ( .A(net53827), .Y(net53832) );
+  INVx1_ASAP7_75t_R U2383 ( .A(\uart_wrapper_inst/uart_rx_inst/bit_count [1]), 
+        .Y(n1550) );
+  A2O1A1Ixp33_ASAP7_75t_R U2384 ( .A1(n1426), .A2(n1428), .B(net53832), .C(
+        n1552), .Y(\uart_wrapper_inst/uart_rx_inst/n172 ) );
+  NAND2xp5_ASAP7_75t_R U2385 ( .A(n1453), .B(net53827), .Y(n1554) );
+  AOI31xp67_ASAP7_75t_R U2386 ( .A1(
+        \uart_wrapper_inst/uart_rx_inst/bit_count [2]), .A2(n1554), .A3(n1426), 
+        .B(n1553), .Y(n1795) );
+  AND2x2_ASAP7_75t_R U2387 ( .A(\uart_wrapper_inst/uart_rx_inst/bit_count [3]), 
+        .B(\uart_wrapper_inst/uart_rx_inst/bit_count [2]), .Y(net53826) );
+  INVx1_ASAP7_75t_R U2388 ( .A(net53825), .Y(net53809) );
+  NAND2xp5_ASAP7_75t_R U2389 ( .A(net53809), .B(
+        \uart_wrapper_inst/uart_rx_inst/bit_count [2]), .Y(n1555) );
+  INVx1_ASAP7_75t_R U2390 ( .A(\uart_wrapper_inst/uart_rx_inst/bit_count [3]), 
+        .Y(net53824) );
+  A2O1A1Ixp33_ASAP7_75t_R U2391 ( .A1(n1452), .A2(n1428), .B(net53821), .C(
+        n1556), .Y(\uart_wrapper_inst/uart_rx_inst/n171 ) );
+  AND2x2_ASAP7_75t_R U2392 ( .A(net58067), .B(n1459), .Y(n1558) );
+  INVx1_ASAP7_75t_R U2393 ( .A(net53816), .Y(net53815) );
+  NAND2xp5_ASAP7_75t_R U2394 ( .A(\uart_wrapper_inst/uart_rx_inst/rx_d2 ), .B(
+        net53815), .Y(net53807) );
+  AOI331xp33_ASAP7_75t_R U2395 ( .A1(net54199), .A2(net53810), .A3(net54076), 
+        .B1(n1558), .B2(net53810), .B3(n1557), .C1(net53813), .Y(n1561) );
+  NAND3xp33_ASAP7_75t_R U2396 ( .A(
+        \uart_wrapper_inst/uart_rx_inst/bit_count [2]), .B(net54199), .C(
+        net53809), .Y(n1559) );
+  INVx1_ASAP7_75t_R U2397 ( .A(net53807), .Y(net53804) );
+  NAND3xp33_ASAP7_75t_R U2398 ( .A(n1474), .B(n1563), .C(n1562), .Y(n1675) );
+  OR4x1_ASAP7_75t_R U2399 ( .A(n1523), .B(n1527), .C(n1481), .D(n1509), .Y(
+        n1699) );
+  NAND2xp5_ASAP7_75t_R U2400 ( .A(\uart_wrapper_inst/pstate [3]), .B(n1564), 
+        .Y(n1566) );
+  NAND3xp33_ASAP7_75t_R U2401 ( .A(n1509), .B(n1706), .C(n1571), .Y(n1565) );
+  INVx1_ASAP7_75t_R U2402 ( .A(n1565), .Y(n1703) );
+  NAND3xp33_ASAP7_75t_R U2403 ( .A(n1769), .B(n1705), .C(n1689), .Y(n1686) );
+  AND3x1_ASAP7_75t_R U2404 ( .A(n1416), .B(n1708), .C(n1686), .Y(
+        \uart_wrapper_inst/n190 ) );
+  INVx1_ASAP7_75t_R U2405 ( .A(n1678), .Y(n1695) );
+  NAND3xp33_ASAP7_75t_R U2406 ( .A(n1695), .B(
+        \uart_wrapper_inst/uart_rx_data [0]), .C(n1568), .Y(n1575) );
+  NAND3xp33_ASAP7_75t_R U2407 ( .A(n1509), .B(n1571), .C(n1569), .Y(n1679) );
+  INVx1_ASAP7_75t_R U2408 ( .A(\uart_wrapper_inst/uart_rx_data [0]), .Y(n1570)
+         );
+  NAND2xp5_ASAP7_75t_R U2409 ( .A(n1498), .B(n1570), .Y(n1676) );
+  INVx1_ASAP7_75t_R U2410 ( .A(n1676), .Y(n1573) );
+  AND3x1_ASAP7_75t_R U2411 ( .A(n1575), .B(n1679), .C(n1697), .Y(
+        \uart_wrapper_inst/n144 ) );
+  NAND5xp2_ASAP7_75t_R U2412 ( .A(n1577), .B(n1578), .C(n1521), .D(n1705), .E(
+        n1417), .Y(n1700) );
+  NAND3xp33_ASAP7_75t_R U2413 ( .A(n1779), .B(n1772), .C(n1423), .Y(n1776) );
+  XOR2xp5_ASAP7_75t_R U2414 ( .A(n1639), .B(n1421), .Y(n1586) );
+  OR2x2_ASAP7_75t_R U2415 ( .A(\uart_wrapper_inst/uart_tx_inst/state [1]), .B(
+        \uart_wrapper_inst/uart_tx_inst/state [0]), .Y(n1685) );
+  NAND2xp5_ASAP7_75t_R U2416 ( .A(\uart_wrapper_inst/uart_tx_inst/state [1]), 
+        .B(n1671), .Y(n1663) );
+  INVx1_ASAP7_75t_R U2417 ( .A(n1663), .Y(n1792) );
+  NAND2xp5_ASAP7_75t_R U2418 ( .A(n1587), .B(n1485), .Y(
+        \uart_wrapper_inst/uart_tx_inst/n98 ) );
+  NAND2xp5_ASAP7_75t_R U2419 ( .A(n1486), .B(n1588), .Y(
+        \uart_wrapper_inst/uart_tx_inst/n99 ) );
+  NAND3xp33_ASAP7_75t_R U2420 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [1]), .B(n1510), .C(n1508), .Y(n1590) );
+  NAND2xp5_ASAP7_75t_R U2421 ( .A(n1485), .B(n1589), .Y(
+        \uart_wrapper_inst/uart_tx_inst/n100 ) );
+  NAND2xp5_ASAP7_75t_R U2422 ( .A(n1591), .B(n1499), .Y(n1608) );
+  OAI211xp5_ASAP7_75t_R U2423 ( .A1(n1499), .A2(n1591), .B(n1608), .C(n1486), 
+        .Y(\uart_wrapper_inst/uart_tx_inst/n101 ) );
+  INVx1_ASAP7_75t_R U2424 ( .A(n1608), .Y(n1592) );
+  NAND2xp5_ASAP7_75t_R U2425 ( .A(n1592), .B(n1497), .Y(n1595) );
+  OAI211xp5_ASAP7_75t_R U2426 ( .A1(n1592), .A2(n1497), .B(n1595), .C(n1485), 
+        .Y(\uart_wrapper_inst/uart_tx_inst/n102 ) );
+  NAND2xp5_ASAP7_75t_R U2427 ( .A(n1486), .B(n1596), .Y(
+        \uart_wrapper_inst/uart_tx_inst/n103 ) );
+  XOR2xp5_ASAP7_75t_R U2428 ( .A(n1524), .B(n1414), .Y(n1597) );
+  NAND2xp5_ASAP7_75t_R U2429 ( .A(n1485), .B(n1597), .Y(
+        \uart_wrapper_inst/uart_tx_inst/n104 ) );
+  NAND3xp33_ASAP7_75t_R U2430 ( .A(n1515), .B(n1524), .C(n1463), .Y(n1599) );
+  AO21x1_ASAP7_75t_R U2431 ( .A1(n1463), .A2(n1524), .B(n1515), .Y(n1598) );
+  NAND3xp33_ASAP7_75t_R U2432 ( .A(n1486), .B(n1599), .C(n1598), .Y(n1794) );
+  NAND2xp5_ASAP7_75t_R U2433 ( .A(n1486), .B(n1600), .Y(
+        \uart_wrapper_inst/uart_tx_inst/n106 ) );
+  NAND3xp33_ASAP7_75t_R U2434 ( .A(n1602), .B(n1464), .C(n1524), .Y(n1607) );
+  NAND3xp33_ASAP7_75t_R U2435 ( .A(n1464), .B(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [9]), .C(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [6]), .Y(n1603) );
+  OR3x1_ASAP7_75t_R U2436 ( .A(n1603), .B(n1604), .C(n1605), .Y(n1631) );
+  NAND2xp5_ASAP7_75t_R U2437 ( .A(n1485), .B(n1609), .Y(
+        \uart_wrapper_inst/uart_tx_inst/n107 ) );
+  NAND2xp5_ASAP7_75t_R U2438 ( .A(n1486), .B(n1610), .Y(
+        \uart_wrapper_inst/uart_tx_inst/n108 ) );
+  OAI211xp5_ASAP7_75t_R U2439 ( .A1(n1422), .A2(n1611), .B(n1612), .C(n1486), 
+        .Y(\uart_wrapper_inst/uart_tx_inst/n109 ) );
+  NAND2xp5_ASAP7_75t_R U2440 ( .A(n1613), .B(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [12]), .Y(n1614) );
+  OAI211xp5_ASAP7_75t_R U2441 ( .A1(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [12]), .A2(n1615), .B(
+        n1614), .C(n1485), .Y(\uart_wrapper_inst/uart_tx_inst/n110 ) );
+  AO21x1_ASAP7_75t_R U2442 ( .A1(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [12]), .A2(n1422), .B(
+        n1411), .Y(n1616) );
+  NAND2xp5_ASAP7_75t_R U2443 ( .A(n1485), .B(n1621), .Y(
+        \uart_wrapper_inst/uart_tx_inst/n111 ) );
+  INVx1_ASAP7_75t_R U2444 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [14]), .Y(n1624) );
+  INVx1_ASAP7_75t_R U2445 ( .A(n1626), .Y(n1627) );
+  INVx1_ASAP7_75t_R U2446 ( .A(n1623), .Y(n1622) );
+  OAI221xp5_ASAP7_75t_R U2447 ( .A1(n1624), .A2(n1623), .B1(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [14]), .B2(n1622), .C(
+        n1485), .Y(\uart_wrapper_inst/uart_tx_inst/n112 ) );
+  INVx1_ASAP7_75t_R U2448 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [15]), .Y(n1630) );
+  NAND2xp5_ASAP7_75t_R U2449 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [15]), .B(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [14]), .Y(n1625) );
+  NAND2xp5_ASAP7_75t_R U2450 ( .A(n1486), .B(n1632), .Y(
+        \uart_wrapper_inst/uart_tx_inst/n113 ) );
+  NAND2xp5_ASAP7_75t_R U2451 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [1]), .B(n1510), .Y(n1638) );
+  AND2x2_ASAP7_75t_R U2452 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [8]), .B(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [9]), .Y(n1646) );
+  AND2x2_ASAP7_75t_R U2453 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [6]), .B(
+        \uart_wrapper_inst/uart_tx_inst/state [0]), .Y(n1643) );
+  NAND5xp2_ASAP7_75t_R U2454 ( .A(n1647), .B(n1646), .C(n1645), .D(n1644), .E(
+        n1643), .Y(n1653) );
+  NAND5xp2_ASAP7_75t_R U2455 ( .A(n1650), .B(n1435), .C(
+        \uart_wrapper_inst/uart_tx_inst/sample_count [5]), .D(n1649), .E(n1648), .Y(n1652) );
+  NAND2xp5_ASAP7_75t_R U2456 ( .A(\uart_wrapper_inst/uart_tx_send ), .B(n1791), 
+        .Y(n1788) );
+  OAI21xp5_ASAP7_75t_R U2457 ( .A1(n1653), .A2(n1652), .B(n1788), .Y(n1661) );
+  OA21x2_ASAP7_75t_R U2458 ( .A1(n1449), .A2(n1652), .B(n1479), .Y(n1658) );
+  INVx1_ASAP7_75t_R U2459 ( .A(\uart_wrapper_inst/uart_tx_inst/bit_count [0]), 
+        .Y(n1655) );
+  NAND2xp5_ASAP7_75t_R U2460 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/bit_count [0]), .B(
+        \uart_wrapper_inst/uart_tx_inst/bit_count [1]), .Y(n1665) );
+  NAND2xp5_ASAP7_75t_R U2461 ( .A(n1792), .B(n1665), .Y(n1662) );
+  NAND2xp5_ASAP7_75t_R U2462 ( .A(n1516), .B(n1654), .Y(n1656) );
+  A2O1A1Ixp33_ASAP7_75t_R U2463 ( .A1(n1658), .A2(n1440), .B(n1657), .C(n1656), 
+        .Y(\uart_wrapper_inst/uart_tx_inst/n116 ) );
+  OAI22xp5_ASAP7_75t_R U2464 ( .A1(n1660), .A2(
+        \uart_wrapper_inst/uart_tx_inst/bit_count [2]), .B1(n1408), .B2(n1659), 
+        .Y(\uart_wrapper_inst/uart_tx_inst/n117 ) );
+  A2O1A1Ixp33_ASAP7_75t_R U2465 ( .A1(
+        \uart_wrapper_inst/uart_tx_inst/bit_count [3]), .A2(
+        \uart_wrapper_inst/uart_tx_inst/bit_count [2]), .B(n1663), .C(n1662), 
+        .Y(n1668) );
+  INVx1_ASAP7_75t_R U2466 ( .A(\uart_wrapper_inst/uart_tx_inst/bit_count [2]), 
+        .Y(n1666) );
+  INVx1_ASAP7_75t_R U2467 ( .A(\uart_wrapper_inst/uart_tx_inst/bit_count [3]), 
+        .Y(n1664) );
+  NAND3xp33_ASAP7_75t_R U2468 ( .A(
+        \uart_wrapper_inst/uart_tx_inst/bit_count [2]), .B(
+        \uart_wrapper_inst/uart_tx_inst/bit_count [1]), .C(
+        \uart_wrapper_inst/uart_tx_inst/bit_count [0]), .Y(n1670) );
+  A2O1A1Ixp33_ASAP7_75t_R U2469 ( .A1(n1498), .A2(n1676), .B(n1693), .C(n1675), 
+        .Y(n1677) );
+  INVx1_ASAP7_75t_R U2470 ( .A(n1679), .Y(n1704) );
+  INVx1_ASAP7_75t_R U2471 ( .A(n1686), .Y(n1687) );
+  NAND2xp5_ASAP7_75t_R U2472 ( .A(n1687), .B(n1521), .Y(n1710) );
+  INVx1_ASAP7_75t_R U2473 ( .A(n1710), .Y(n1709) );
+  AND2x2_ASAP7_75t_R U2474 ( .A(n1527), .B(n1521), .Y(n1688) );
+  NAND3xp33_ASAP7_75t_R U2475 ( .A(n1457), .B(n1521), .C(n1689), .Y(n1707) );
+  NAND2xp5_ASAP7_75t_R U2476 ( .A(n1410), .B(n1707), .Y(n1690) );
+  AND3x1_ASAP7_75t_R U2477 ( .A(n1698), .B(n1416), .C(n1697), .Y(
+        \uart_wrapper_inst/n143 ) );
+  NAND3xp33_ASAP7_75t_R U2478 ( .A(n1492), .B(n1501), .C(n1458), .Y(n1715) );
+  OAI21xp5_ASAP7_75t_R U2479 ( .A1(n1492), .A2(n1714), .B(n1715), .Y(n1386) );
+  INVx1_ASAP7_75t_R U2480 ( .A(n1715), .Y(n1717) );
+  NAND2xp5_ASAP7_75t_R U2481 ( .A(n1739), .B(led_counter[5]), .Y(n1719) );
+  INVx1_ASAP7_75t_R U2482 ( .A(n1719), .Y(n1720) );
+  NAND2xp5_ASAP7_75t_R U2483 ( .A(n1720), .B(n1401), .Y(n1721) );
+  NAND2xp5_ASAP7_75t_R U2484 ( .A(n1732), .B(n1505), .Y(n1729) );
+  NAND2xp5_ASAP7_75t_R U2485 ( .A(n1732), .B(n1731), .Y(n1734) );
+  NAND2xp5_ASAP7_75t_R U2486 ( .A(led_counter[14]), .B(led_counter[9]), .Y(
+        n1735) );
+  OR3x1_ASAP7_75t_R U2487 ( .A(n1736), .B(n1737), .C(n1735), .Y(n1738) );
+  OAI21xp5_ASAP7_75t_R U2488 ( .A1(led_counter[14]), .A2(n1400), .B(n1751), 
+        .Y(n1377) );
+  NAND3xp33_ASAP7_75t_R U2489 ( .A(led_counter[17]), .B(led_counter[18]), .C(
+        led_counter[16]), .Y(n1746) );
+  NAND3xp33_ASAP7_75t_R U2490 ( .A(led_counter[17]), .B(led_counter[16]), .C(
+        led_counter[15]), .Y(n1743) );
+  INVx1_ASAP7_75t_R U2491 ( .A(led_counter[18]), .Y(n1742) );
+  INVx1_ASAP7_75t_R U2492 ( .A(n1746), .Y(n1748) );
+  A2O1A1Ixp33_ASAP7_75t_R U2493 ( .A1(n1747), .A2(n1748), .B(led_counter[19]), 
+        .C(n1482), .Y(n1368) );
+  NAND2xp5_ASAP7_75t_R U2494 ( .A(n1442), .B(led_counter[20]), .Y(n1749) );
+  NAND3xp33_ASAP7_75t_R U2495 ( .A(n1466), .B(led_counter[20]), .C(
+        led_counter[21]), .Y(n1750) );
+  OR2x2_ASAP7_75t_R U2496 ( .A(n1751), .B(n1750), .Y(n1752) );
+  A2O1A1Ixp33_ASAP7_75t_R U2497 ( .A1(n1420), .A2(led_counter[20]), .B(
+        led_counter[21]), .C(n1752), .Y(n1380) );
+  AND4x1_ASAP7_75t_R U2498 ( .A(led_counter[23]), .B(led_counter[21]), .C(
+        led_counter[20]), .D(led_counter[22]), .Y(n1754) );
+  NAND5xp2_ASAP7_75t_R U2499 ( .A(n1760), .B(n1759), .C(n1758), .D(n1757), .E(
+        n1756), .Y(n1767) );
+  INVx1_ASAP7_75t_R U2500 ( .A(n1761), .Y(n1765) );
+  NAND5xp2_ASAP7_75t_R U2501 ( .A(n1765), .B(n1506), .C(n1764), .D(n1763), .E(
+        n1762), .Y(n1766) );
+  INVx1_ASAP7_75t_R U2502 ( .A(led_counter[20]), .Y(n1768) );
+  INVx1_ASAP7_75t_R U2503 ( .A(\uart_wrapper_inst/uart_tx_data [0]), .Y(n1787)
+         );
+  INVx1_ASAP7_75t_R U2504 ( .A(\uart_wrapper_inst/uart_tx_data [2]), .Y(n1773)
+         );
+  INVx1_ASAP7_75t_R U2505 ( .A(\uart_wrapper_inst/uart_tx_data [4]), .Y(n1775)
+         );
+  AND2x2_ASAP7_75t_R U2506 ( .A(\uart_wrapper_inst/uart_tx_data [7]), .B(n1779), .Y(n1780) );
+  AOI222xp33_ASAP7_75t_R U2507 ( .A1(
+        \uart_wrapper_inst/uart_tx_inst/shift_reg [6]), .A2(n1522), .B1(
+        \uart_wrapper_inst/uart_tx_data [6]), .B2(n1511), .C1(
+        \uart_wrapper_inst/uart_tx_inst/shift_reg [7]), .C2(n1784), .Y(
+        \uart_wrapper_inst/uart_tx_inst/n125 ) );
+  AOI222xp33_ASAP7_75t_R U2508 ( .A1(
+        \uart_wrapper_inst/uart_tx_inst/shift_reg [5]), .A2(n1522), .B1(
+        \uart_wrapper_inst/uart_tx_data [5]), .B2(n1511), .C1(
+        \uart_wrapper_inst/uart_tx_inst/shift_reg [6]), .C2(n1784), .Y(
+        \uart_wrapper_inst/uart_tx_inst/n124 ) );
+  AOI222xp33_ASAP7_75t_R U2509 ( .A1(
+        \uart_wrapper_inst/uart_tx_inst/shift_reg [4]), .A2(n1522), .B1(
+        \uart_wrapper_inst/uart_tx_data [4]), .B2(n1511), .C1(
+        \uart_wrapper_inst/uart_tx_inst/shift_reg [5]), .C2(n1451), .Y(
+        \uart_wrapper_inst/uart_tx_inst/n123 ) );
+  AOI222xp33_ASAP7_75t_R U2510 ( .A1(
+        \uart_wrapper_inst/uart_tx_inst/shift_reg [3]), .A2(n1522), .B1(
+        \uart_wrapper_inst/uart_tx_data [3]), .B2(n1511), .C1(
+        \uart_wrapper_inst/uart_tx_inst/shift_reg [4]), .C2(n1451), .Y(
+        \uart_wrapper_inst/uart_tx_inst/n122 ) );
+  AOI222xp33_ASAP7_75t_R U2511 ( .A1(
+        \uart_wrapper_inst/uart_tx_inst/shift_reg [2]), .A2(n1522), .B1(
+        \uart_wrapper_inst/uart_tx_data [2]), .B2(n1511), .C1(
+        \uart_wrapper_inst/uart_tx_inst/shift_reg [3]), .C2(n1790), .Y(
+        \uart_wrapper_inst/uart_tx_inst/n121 ) );
+  AOI222xp33_ASAP7_75t_R U2512 ( .A1(n1522), .A2(
+        \uart_wrapper_inst/uart_tx_inst/shift_reg [1]), .B1(
+        \uart_wrapper_inst/uart_tx_data [1]), .B2(n1785), .C1(
+        \uart_wrapper_inst/uart_tx_inst/shift_reg [2]), .C2(n1451), .Y(
+        \uart_wrapper_inst/uart_tx_inst/n120 ) );
+endmodule
+

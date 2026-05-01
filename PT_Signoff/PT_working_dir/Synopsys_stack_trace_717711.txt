@@ -1,0 +1,278 @@
+GNU gdb (Debian 10.1-1.7) 10.1.90.20210103-git
+Copyright (C) 2021 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+Attaching to process 717711
+[New LWP 717712]
+[New LWP 717714]
+[New LWP 717729]
+[New LWP 717732]
+[New LWP 717733]
+[New LWP 717734]
+[New LWP 717735]
+[New LWP 717736]
+[New LWP 717737]
+[New LWP 717738]
+[New LWP 717739]
+[New LWP 717740]
+[New LWP 717741]
+[New LWP 717742]
+[New LWP 717743]
+[New LWP 717744]
+[New LWP 717745]
+[New LWP 717757]
+[New LWP 717758]
+[New LWP 717766]
+[New LWP 717767]
+[New LWP 717768]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+0x00007f8318f717f7 in __GI___wait4 (pid=774145, 
+    stat_loc=stat_loc@entry=0x4585e5748, options=options@entry=0, 
+    usage=usage@entry=0x0) at ../sysdeps/unix/sysv/linux/wait4.c:27
+(gdb) (gdb) 
+Thread 23 (Thread 0x7f83011b3700 (LWP 717768) "pt_shell_exec"):
+#0  futex_wait_cancelable (private=0, expected=0, futex_word=0x7f8303848ee0 <thread_status+352>) at ../sysdeps/nptl/futex-internal.h:186
+#1  __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7f8303848e90 <thread_status+272>, cond=0x7f8303848eb8 <thread_status+312>) at pthread_cond_wait.c:508
+#2  __pthread_cond_wait (cond=0x7f8303848eb8 <thread_status+312>, mutex=0x7f8303848e90 <thread_status+272>) at pthread_cond_wait.c:638
+#3  0x00007f8301bce6fb in blas_thread_server () from /cae/apps/data/synopsys-2025/prime/X-2025.06/etc/Python/lib/python3.11/site-packages/numpy/core/../../numpy.libs/libopenblas64_p-r0-0cf96a72.3.23.dev.so
+#4  0x0000000021903bc9 in SNPSee_d9c72da67e7a1f57e9891545cd875e2719332304182309de ()
+#5  0x00007f8333d76ea7 in start_thread (arg=<optimized out>) at pthread_create.c:477
+#6  0x00007f8318fa5adf in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+
+Thread 22 (Thread 0x7f83057cd700 (LWP 717767) "pt_shell_exec"):
+#0  futex_wait_cancelable (private=0, expected=0, futex_word=0x7f8303848e60 <thread_status+224>) at ../sysdeps/nptl/futex-internal.h:186
+#1  __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7f8303848e10 <thread_status+144>, cond=0x7f8303848e38 <thread_status+184>) at pthread_cond_wait.c:508
+#2  __pthread_cond_wait (cond=0x7f8303848e38 <thread_status+184>, mutex=0x7f8303848e10 <thread_status+144>) at pthread_cond_wait.c:638
+#3  0x00007f8301bce6fb in blas_thread_server () from /cae/apps/data/synopsys-2025/prime/X-2025.06/etc/Python/lib/python3.11/site-packages/numpy/core/../../numpy.libs/libopenblas64_p-r0-0cf96a72.3.23.dev.so
+#4  0x0000000021903bc9 in SNPSee_d9c72da67e7a1f57e9891545cd875e2719332304182309de ()
+#5  0x00007f8333d76ea7 in start_thread (arg=<optimized out>) at pthread_create.c:477
+#6  0x00007f8318fa5adf in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+
+Thread 21 (Thread 0x7f83047cb700 (LWP 717766) "pt_shell_exec"):
+#0  futex_wait_cancelable (private=0, expected=0, futex_word=0x7f8303848de0 <thread_status+96>) at ../sysdeps/nptl/futex-internal.h:186
+#1  __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7f8303848d90 <thread_status+16>, cond=0x7f8303848db8 <thread_status+56>) at pthread_cond_wait.c:508
+#2  __pthread_cond_wait (cond=0x7f8303848db8 <thread_status+56>, mutex=0x7f8303848d90 <thread_status+16>) at pthread_cond_wait.c:638
+#3  0x00007f8301bce6fb in blas_thread_server () from /cae/apps/data/synopsys-2025/prime/X-2025.06/etc/Python/lib/python3.11/site-packages/numpy/core/../../numpy.libs/libopenblas64_p-r0-0cf96a72.3.23.dev.so
+#4  0x0000000021903bc9 in SNPSee_d9c72da67e7a1f57e9891545cd875e2719332304182309de ()
+#5  0x00007f8333d76ea7 in start_thread (arg=<optimized out>) at pthread_create.c:477
+#6  0x00007f8318fa5adf in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+
+Thread 20 (Thread 0x7f83067cf700 (LWP 717758) "pt_shell_exec"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x00007f8332fd6d6c in SNPSle_a2e58ed30c9b1003751fd53ab587caac26b6948a216105b9648652fe3040d478ed2099b584f6aa37 () from /cae/apps/data/synopsys-2025/prime/X-2025.06/linux64/syn/bin/../../pt/shlib/libtbb.so.12
+#2  0x00007f8332fd0a48 in SNPSle_a2e58ed30c9b1003751fd53ab587caacda05d616f2cccd92dfee012f35ece435bc693db1512c7f02465c21be10da1f0415a9e6f40323378a () from /cae/apps/data/synopsys-2025/prime/X-2025.06/linux64/syn/bin/../../pt/shlib/libtbb.so.12
+#3  0x0000000021903bc9 in SNPSee_d9c72da67e7a1f57e9891545cd875e2719332304182309de ()
+#4  0x00007f8333d76ea7 in start_thread (arg=<optimized out>) at pthread_create.c:477
+#5  0x00007f8318fa5adf in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+
+Thread 19 (Thread 0x7f8305fce700 (LWP 717757) "pt_shell_exec"):
+#0  syscall () at ../sysdeps/unix/sysv/linux/x86_64/syscall.S:38
+#1  0x00007f8332fd6d6c in SNPSle_a2e58ed30c9b1003751fd53ab587caac26b6948a216105b9648652fe3040d478ed2099b584f6aa37 () from /cae/apps/data/synopsys-2025/prime/X-2025.06/linux64/syn/bin/../../pt/shlib/libtbb.so.12
+#2  0x00007f8332fd0a48 in SNPSle_a2e58ed30c9b1003751fd53ab587caacda05d616f2cccd92dfee012f35ece435bc693db1512c7f02465c21be10da1f0415a9e6f40323378a () from /cae/apps/data/synopsys-2025/prime/X-2025.06/linux64/syn/bin/../../pt/shlib/libtbb.so.12
+#3  0x0000000021903bc9 in SNPSee_d9c72da67e7a1f57e9891545cd875e2719332304182309de ()
+#4  0x00007f8333d76ea7 in start_thread (arg=<optimized out>) at pthread_create.c:477
+#5  0x00007f8318fa5adf in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+
+Thread 18 (Thread 0x7f8306fd0700 (LWP 717745) "pt_shell_exec"):
+#0  futex_abstimed_wait_cancelable (private=0, abstime=0x7f8306f94cb0, clockid=117001248, expected=0, futex_word=0x458a91ab0) at ../sysdeps/nptl/futex-internal.h:323
+#1  __pthread_cond_wait_common (abstime=0x7f8306f94cb0, clockid=117001248, mutex=0x458a91a60, cond=0x458a91a88) at pthread_cond_wait.c:520
+#2  __pthread_cond_timedwait (cond=0x458a91a88, mutex=0x458a91a60, abstime=0x7f8306f94cb0) at pthread_cond_wait.c:656
+#3  0x0000000021df3c2a in SNPSee_b71249bc6c685971abb10b7440ee764236074df731c84333005120aa2875f0e4cc9ee18b4cf661bcc64f588d87d212421c3c40d6cdab81e9 ()
+#4  0x0000000021903bc9 in SNPSee_d9c72da67e7a1f57e9891545cd875e2719332304182309de ()
+#5  0x00007f8333d76ea7 in start_thread (arg=<optimized out>) at pthread_create.c:477
+#6  0x00007f8318fa5adf in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+
+Thread 17 (Thread 0x7f8307c6b080 (LWP 717744) "pt_shell_exec"):
+#0  futex_wait_cancelable (private=0, expected=0, futex_word=0x458b45f70) at ../sysdeps/nptl/futex-internal.h:186
+#1  __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x458b45f20, cond=0x458b45f48) at pthread_cond_wait.c:508
+#2  __pthread_cond_wait (cond=0x458b45f48, mutex=0x458b45f20) at pthread_cond_wait.c:638
+#3  0x000000001736cdf8 in SNPSee_c4e6733fd6b7faa013a61ef6581007b5907daec8dc268df7 ()
+#4  0x0000000021903bc9 in SNPSee_d9c72da67e7a1f57e9891545cd875e2719332304182309de ()
+#5  0x00007f8333d76ea7 in start_thread (arg=<optimized out>) at pthread_create.c:477
+#6  0x00007f8318fa5adf in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+
+Thread 16 (Thread 0x7f8308906080 (LWP 717743) "pt_shell_exec"):
+#0  futex_wait_cancelable (private=0, expected=0, futex_word=0x458b45e38) at ../sysdeps/nptl/futex-internal.h:186
+#1  __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x458b45de8, cond=0x458b45e10) at pthread_cond_wait.c:508
+#2  __pthread_cond_wait (cond=0x458b45e10, mutex=0x458b45de8) at pthread_cond_wait.c:638
+#3  0x000000001736cdf8 in SNPSee_c4e6733fd6b7faa013a61ef6581007b5907daec8dc268df7 ()
+#4  0x0000000021903bc9 in SNPSee_d9c72da67e7a1f57e9891545cd875e2719332304182309de ()
+#5  0x00007f8333d76ea7 in start_thread (arg=<optimized out>) at pthread_create.c:477
+#6  0x00007f8318fa5adf in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+
+Thread 15 (Thread 0x7f83095a1080 (LWP 717742) "pt_shell_exec"):
+#0  futex_wait_cancelable (private=0, expected=0, futex_word=0x458b45d00) at ../sysdeps/nptl/futex-internal.h:186
+#1  __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x458b45cb0, cond=0x458b45cd8) at pthread_cond_wait.c:508
+#2  __pthread_cond_wait (cond=0x458b45cd8, mutex=0x458b45cb0) at pthread_cond_wait.c:638
+#3  0x000000001736cdf8 in SNPSee_c4e6733fd6b7faa013a61ef6581007b5907daec8dc268df7 ()
+#4  0x0000000021903bc9 in SNPSee_d9c72da67e7a1f57e9891545cd875e2719332304182309de ()
+#5  0x00007f8333d76ea7 in start_thread (arg=<optimized out>) at pthread_create.c:477
+#6  0x00007f8318fa5adf in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+
+Thread 14 (Thread 0x7f830a23c080 (LWP 717741) "pt_shell_exec"):
+#0  futex_wait_cancelable (private=0, expected=0, futex_word=0x458b45bc8) at ../sysdeps/nptl/futex-internal.h:186
+#1  __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x458b45b78, cond=0x458b45ba0) at pthread_cond_wait.c:508
+#2  __pthread_cond_wait (cond=0x458b45ba0, mutex=0x458b45b78) at pthread_cond_wait.c:638
+#3  0x000000001736cdf8 in SNPSee_c4e6733fd6b7faa013a61ef6581007b5907daec8dc268df7 ()
+#4  0x0000000021903bc9 in SNPSee_d9c72da67e7a1f57e9891545cd875e2719332304182309de ()
+#5  0x00007f8333d76ea7 in start_thread (arg=<optimized out>) at pthread_create.c:477
+#6  0x00007f8318fa5adf in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+
+Thread 13 (Thread 0x7f830aed7080 (LWP 717740) "pt_shell_exec"):
+#0  futex_wait_cancelable (private=0, expected=0, futex_word=0x458b45a94) at ../sysdeps/nptl/futex-internal.h:186
+#1  __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x458b45a40, cond=0x458b45a68) at pthread_cond_wait.c:508
+#2  __pthread_cond_wait (cond=0x458b45a68, mutex=0x458b45a40) at pthread_cond_wait.c:638
+#3  0x000000001736cdf8 in SNPSee_c4e6733fd6b7faa013a61ef6581007b5907daec8dc268df7 ()
+#4  0x0000000021903bc9 in SNPSee_d9c72da67e7a1f57e9891545cd875e2719332304182309de ()
+#5  0x00007f8333d76ea7 in start_thread (arg=<optimized out>) at pthread_create.c:477
+#6  0x00007f8318fa5adf in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+
+Thread 12 (Thread 0x7f830bb72080 (LWP 717739) "pt_shell_exec"):
+#0  futex_wait_cancelable (private=0, expected=0, futex_word=0x458b4595c) at ../sysdeps/nptl/futex-internal.h:186
+#1  __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x458b45908, cond=0x458b45930) at pthread_cond_wait.c:508
+#2  __pthread_cond_wait (cond=0x458b45930, mutex=0x458b45908) at pthread_cond_wait.c:638
+#3  0x000000001736cdf8 in SNPSee_c4e6733fd6b7faa013a61ef6581007b5907daec8dc268df7 ()
+#4  0x0000000021903bc9 in SNPSee_d9c72da67e7a1f57e9891545cd875e2719332304182309de ()
+#5  0x00007f8333d76ea7 in start_thread (arg=<optimized out>) at pthread_create.c:477
+#6  0x00007f8318fa5adf in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+
+Thread 11 (Thread 0x7f830c80d080 (LWP 717738) "pt_shell_exec"):
+#0  futex_wait_cancelable (private=0, expected=0, futex_word=0x458b45824) at ../sysdeps/nptl/futex-internal.h:186
+#1  __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x458b457d0, cond=0x458b457f8) at pthread_cond_wait.c:508
+#2  __pthread_cond_wait (cond=0x458b457f8, mutex=0x458b457d0) at pthread_cond_wait.c:638
+#3  0x000000001736cdf8 in SNPSee_c4e6733fd6b7faa013a61ef6581007b5907daec8dc268df7 ()
+#4  0x0000000021903bc9 in SNPSee_d9c72da67e7a1f57e9891545cd875e2719332304182309de ()
+#5  0x00007f8333d76ea7 in start_thread (arg=<optimized out>) at pthread_create.c:477
+#6  0x00007f8318fa5adf in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+
+Thread 10 (Thread 0x7f830d4a8080 (LWP 717737) "pt_shell_exec"):
+#0  futex_wait_cancelable (private=0, expected=0, futex_word=0x458b456e8) at ../sysdeps/nptl/futex-internal.h:186
+#1  __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x458b45698, cond=0x458b456c0) at pthread_cond_wait.c:508
+#2  __pthread_cond_wait (cond=0x458b456c0, mutex=0x458b45698) at pthread_cond_wait.c:638
+#3  0x000000001736cdf8 in SNPSee_c4e6733fd6b7faa013a61ef6581007b5907daec8dc268df7 ()
+#4  0x0000000021903bc9 in SNPSee_d9c72da67e7a1f57e9891545cd875e2719332304182309de ()
+#5  0x00007f8333d76ea7 in start_thread (arg=<optimized out>) at pthread_create.c:477
+#6  0x00007f8318fa5adf in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+
+Thread 9 (Thread 0x7f830e143080 (LWP 717736) "pt_shell_exec"):
+#0  futex_wait_cancelable (private=0, expected=0, futex_word=0x458b455b0) at ../sysdeps/nptl/futex-internal.h:186
+#1  __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x458b45560, cond=0x458b45588) at pthread_cond_wait.c:508
+#2  __pthread_cond_wait (cond=0x458b45588, mutex=0x458b45560) at pthread_cond_wait.c:638
+#3  0x000000001736cdf8 in SNPSee_c4e6733fd6b7faa013a61ef6581007b5907daec8dc268df7 ()
+#4  0x0000000021903bc9 in SNPSee_d9c72da67e7a1f57e9891545cd875e2719332304182309de ()
+#5  0x00007f8333d76ea7 in start_thread (arg=<optimized out>) at pthread_create.c:477
+#6  0x00007f8318fa5adf in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+
+Thread 8 (Thread 0x7f830edde080 (LWP 717735) "pt_shell_exec"):
+#0  futex_wait_cancelable (private=0, expected=0, futex_word=0x458b45478) at ../sysdeps/nptl/futex-internal.h:186
+#1  __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x458b45428, cond=0x458b45450) at pthread_cond_wait.c:508
+#2  __pthread_cond_wait (cond=0x458b45450, mutex=0x458b45428) at pthread_cond_wait.c:638
+#3  0x000000001736cdf8 in SNPSee_c4e6733fd6b7faa013a61ef6581007b5907daec8dc268df7 ()
+#4  0x0000000021903bc9 in SNPSee_d9c72da67e7a1f57e9891545cd875e2719332304182309de ()
+#5  0x00007f8333d76ea7 in start_thread (arg=<optimized out>) at pthread_create.c:477
+#6  0x00007f8318fa5adf in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+
+Thread 7 (Thread 0x7f830fa79080 (LWP 717734) "pt_shell_exec"):
+#0  futex_wait_cancelable (private=0, expected=0, futex_word=0x458b45340) at ../sysdeps/nptl/futex-internal.h:186
+#1  __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x458b452f0, cond=0x458b45318) at pthread_cond_wait.c:508
+#2  __pthread_cond_wait (cond=0x458b45318, mutex=0x458b452f0) at pthread_cond_wait.c:638
+#3  0x000000001736cdf8 in SNPSee_c4e6733fd6b7faa013a61ef6581007b5907daec8dc268df7 ()
+#4  0x0000000021903bc9 in SNPSee_d9c72da67e7a1f57e9891545cd875e2719332304182309de ()
+#5  0x00007f8333d76ea7 in start_thread (arg=<optimized out>) at pthread_create.c:477
+#6  0x00007f8318fa5adf in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+
+Thread 6 (Thread 0x7f8310714080 (LWP 717733) "pt_shell_exec"):
+#0  futex_wait_cancelable (private=0, expected=0, futex_word=0x458b45208) at ../sysdeps/nptl/futex-internal.h:186
+#1  __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x458b451b8, cond=0x458b451e0) at pthread_cond_wait.c:508
+#2  __pthread_cond_wait (cond=0x458b451e0, mutex=0x458b451b8) at pthread_cond_wait.c:638
+#3  0x000000001736cdf8 in SNPSee_c4e6733fd6b7faa013a61ef6581007b5907daec8dc268df7 ()
+#4  0x0000000021903bc9 in SNPSee_d9c72da67e7a1f57e9891545cd875e2719332304182309de ()
+#5  0x00007f8333d76ea7 in start_thread (arg=<optimized out>) at pthread_create.c:477
+#6  0x00007f8318fa5adf in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+
+Thread 5 (Thread 0x7f8310f15700 (LWP 717732) "pt_shell_exec"):
+#0  futex_abstimed_wait_cancelable (private=0, abstime=0x7f8310ed9c90, clockid=284007408, expected=0, futex_word=0x2d88443c) at ../sysdeps/nptl/futex-internal.h:323
+#1  __pthread_cond_wait_common (abstime=0x7f8310ed9c90, clockid=284007408, mutex=0x2d8843e8, cond=0x2d884410) at pthread_cond_wait.c:520
+#2  __pthread_cond_timedwait (cond=0x2d884410, mutex=0x2d8843e8, abstime=0x7f8310ed9c90) at pthread_cond_wait.c:656
+#3  0x000000001736757f in SNPSee_23e791ebed4eefeffb2f914fd807e1917a0938c57a6ac6f1 ()
+#4  0x0000000021903bc9 in SNPSee_d9c72da67e7a1f57e9891545cd875e2719332304182309de ()
+#5  0x00007f8333d76ea7 in start_thread (arg=<optimized out>) at pthread_create.c:477
+#6  0x00007f8318fa5adf in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+
+Thread 4 (Thread 0x7f8311716700 (LWP 717729) "pt_shell_exec"):
+#0  0x00007f8318f9bed3 in __GI___select (nfds=0, readfds=0x0, writefds=0x0, exceptfds=0x0, timeout=0x7f83116dac50) at ../sysdeps/unix/sysv/linux/select.c:41
+#1  0x0000000021713e3e in SNPSee_554ec7c90557bab679d871cd58526530 ()
+#2  0x0000000021903bc9 in SNPSee_d9c72da67e7a1f57e9891545cd875e2719332304182309de ()
+#3  0x00007f8333d76ea7 in start_thread (arg=<optimized out>) at pthread_create.c:477
+#4  0x00007f8318fa5adf in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+
+Thread 3 (Thread 0x7f83121fe700 (LWP 717714) "pt_shell_exec"):
+#0  0x00007f8318f6c251 in __GI___clock_nanosleep (clock_id=clock_id@entry=0, flags=flags@entry=0, req=0x7f83121c2cc0, rem=0x7f83121c2cc0) at ../sysdeps/unix/sysv/linux/clock_nanosleep.c:48
+#1  0x00007f8318f71a33 in __GI___nanosleep (requested_time=<optimized out>, remaining=<optimized out>) at nanosleep.c:27
+#2  0x00000000178037c2 in SNPSee_d082cde5977e413db73d0ca12ca1094d07b137c80ac8b0285017be8fc378ea2522058640e5eace887b101d2ed2e0e8d17e3fb04333f8b960cdbe730d77814416bd509d4117f0492491f63fef0a47703dfab52e9a2e6c78e51ade4d570771377d ()
+#3  0x00007f8330a86f43 in SNPSle_f6b8248d61bec50514df5b576d8029fdbc7e834c9a6ab83ef6f9818f469a618c () from /cae/apps/data/synopsys-2025/prime/X-2025.06/linux64/syn/bin/../../pt/shlib/libstdc++.so.6
+#4  0x0000000021903bc9 in SNPSee_d9c72da67e7a1f57e9891545cd875e2719332304182309de ()
+#5  0x00007f8333d76ea7 in start_thread (arg=<optimized out>) at pthread_create.c:477
+#6  0x00007f8318fa5adf in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+
+Thread 2 (Thread 0x7f83129ff700 (LWP 717712) "jemalloc_bg_thd"):
+#0  futex_wait_cancelable (private=0, expected=0, futex_word=0x7f8313016630) at ../sysdeps/nptl/futex-internal.h:186
+#1  __pthread_cond_wait_common (abstime=0x0, clockid=0, mutex=0x7f8313016678, cond=0x7f8313016608) at pthread_cond_wait.c:508
+#2  __pthread_cond_wait (cond=cond@entry=0x7f8313016608, mutex=mutex@entry=0x7f8313016678) at pthread_cond_wait.c:638
+#3  0x00007f8332440a73 in background_thread_sleep (tsdn=<optimized out>, interval=<optimized out>, info=<optimized out>) at src/background_thread.c:137
+#4  background_work_sleep_once (ind=0, info=<optimized out>, tsdn=<optimized out>) at src/background_thread.c:229
+#5  background_thread0_work (tsd=<optimized out>) at src/background_thread.c:374
+#6  background_work (ind=<optimized out>, tsd=<optimized out>) at src/background_thread.c:412
+#7  background_thread_entry (ind_arg=<optimized out>) at src/background_thread.c:444
+#8  0x0000000021903bc9 in SNPSee_d9c72da67e7a1f57e9891545cd875e2719332304182309de ()
+#9  0x00007f8333d76ea7 in start_thread (arg=<optimized out>) at pthread_create.c:477
+#10 0x00007f8318fa5adf in clone () at ../sysdeps/unix/sysv/linux/x86_64/clone.S:95
+
+Thread 1 (Thread 0x7f8313419880 (LWP 717711) "pt_shell_exec"):
+#0  0x00007f8318f717f7 in __GI___wait4 (pid=774145, stat_loc=stat_loc@entry=0x4585e5748, options=options@entry=0, usage=usage@entry=0x0) at ../sysdeps/unix/sysv/linux/wait4.c:27
+#1  0x00007f8318f71777 in __GI___waitpid (pid=<optimized out>, stat_loc=stat_loc@entry=0x4585e5748, options=options@entry=0) at waitpid.c:38
+#2  0x00007f8318eefb67 in do_system (line=<optimized out>) at ../sysdeps/posix/system.c:172
+#3  0x000000002192a24d in SNPSee_4f1eca636f186904 ()
+#4  0x000000002190b86d in SNPSee_216f3c2f4c55dbceb170dcb7639b9c2cdd496024a8e266b98132685c735317487fd2aa296d8a7317 ()
+#5  0x000000002190d3c5 in SNPSee_216f3c2f4c55dbceb170dcb7639b9c2cdd496024a8e266b98132685c73531748e1eb9162e9fd7182 ()
+#6  0x00000000078c683a in SNPSee_b809e85fd48ae9cb7334117cf092be43fdbe4c9ef87aef20aa940e08182cf0edbf47ade14f482cd4 ()
+#7  0x000000001780625a in SNPSee_3aa8788d18979c88c6f97e16561daa3f6ee6245dc89e94d610b3bfef1d6ffa39463ab11166871f8848b186f0aa629ec8 ()
+#8  <signal handler called>
+#9  0x00007f834ab92083 in do_lookup_x (undef_name=undef_name@entry=0x31d568 "write", new_hash=new_hash@entry=279491920, old_hash=old_hash@entry=0x7ffdedea7ec0, ref=0x217000, result=result@entry=0x7ffdedea7ed0, scope=<optimized out>, i=23, version=0x7f83134373f8, flags=5, skip=<optimized out>, type_class=1, undef_map=0x7f834abb4180) at dl-lookup.c:408
+#10 0x00007f834ab92ce1 in _dl_lookup_symbol_x (undef_name=0x31d568 "write", undef_map=0x7f834abb4180, ref=ref@entry=0x7ffdedea7f68, symbol_scope=0x7f834abb44e8, version=0x7f83134373f8, type_class=type_class@entry=1, flags=5, skip_map=0x0) at dl-lookup.c:861
+#11 0x00007f834ab97623 in _dl_fixup (l=<optimized out>, reloc_arg=<optimized out>) at ../elf/dl-runtime.c:112
+#12 0x00007f834ab9e68a in _dl_runtime_resolve_xsavec () at ../sysdeps/x86_64/dl-trampoline.h:126
+#13 0x00000000218ea63e in SNPSee_72d0a675da6c0e6484cb1326733bdbc8 ()
+#14 0x00000000218ebe14 in SNPSee_90b679668a13573c2b6ce74bac5d71a3 ()
+#15 0x0000000021963bd8 in SNPSee_616b6e047c741ff1baf571efe85d3536eac68d027a1be0e0030a066449e92897 ()
+#16 0x000000002196358a in SNPSee_b5b74bb29e23928e271a046254d5c62e ()
+#17 <signal handler called>
+#18 0x00007f8318f954ba in __GI___libc_read (nbytes=1024, buf=0x466977800, fd=0) at ../sysdeps/unix/sysv/linux/read.c:26
+#19 __GI___libc_read (fd=0, buf=0x466977800, nbytes=1024) at ../sysdeps/unix/sysv/linux/read.c:24
+#20 0x00007f8318f2759a in _IO_new_file_underflow (fp=0x7f8319078980 <_IO_2_1_stdin_>) at libioP.h:948
+#21 0x00007f8318f28802 in __GI__IO_default_uflow (fp=0x7f8319078980 <_IO_2_1_stdin_>) at libioP.h:948
+#22 0x00007f8318f1b75c in __GI__IO_getline_info (fp=fp@entry=0x7f8319078980 <_IO_2_1_stdin_>, buf=buf@entry=0x2cbaf06c "", n=n@entry=4095, delim=delim@entry=10, extract_delim=extract_delim@entry=1, eof=eof@entry=0x0) at iogetline.c:60
+#23 0x00007f8318f1b858 in __GI__IO_getline (fp=fp@entry=0x7f8319078980 <_IO_2_1_stdin_>, buf=buf@entry=0x2cbaf06c "", n=n@entry=4095, delim=delim@entry=10, extract_delim=extract_delim@entry=1) at iogetline.c:34
+#24 0x00007f8318f1a756 in _IO_fgets (buf=0x2cbaf06c "", n=4096, fp=0x7f8319078980 <_IO_2_1_stdin_>) at iofgets.c:53
+#25 0x000000001879070e in SNPSee_84819e9227b2e0aa9cae34dc8be3b8a5cd8f264d30f37d0c6a8e358e8cb885004984e24a8c4868b7af29ce1919d3f9852683413c29440db55976ece412914bf7aae086d558d8e56cf6aad19cb919f4191408ebcf3080fe7b ()
+#26 0x0000000009e813ce in SNPSee_3ed686e8d4a659b5b71ddd12e447f33917cbb8a33ac076760fc4c1bbbacc2de678ec65c28e5937c601c2ef47280b3679 ()
+#27 0x0000000009e7e96d in SNPSee_e52978fb95288b35702010462a2fb7521b19e6c7de02e749f68bb351c5fdf77d77dcb6d7ca3d86dfab86a645dee82a58b2bd32436fe9252678dfa79a3e0c83bf ()
+#28 0x0000000009aa7d87 in SNPSee_b81f4656f0d7d3ca1b0bca755b60caea2cb50375ef5e9df280c2a7ba1e2ca19f7750e3d580600edd04a01dc4363d697fcd6b18c4d0ab558c ()
+#29 0x00000000078c08f8 in SNPSee_5a24f30b88271223 ()
+#30 0x00007f8318ecdd7a in __libc_start_main (main=0x78c07c0 <SNPSee_5a24f30b88271223>, argc=7, argv=0x7ffdedea9de8, init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, stack_end=0x7ffdedea9dd8) at ../csu/libc-start.c:308
+#31 0x00000000078c0029 in SNPSee_d06eed713327be76 ()
+(gdb) Detaching from program: /cae/apps/data/synopsys-2025/prime/X-2025.06/linux64/syn/bin/pt_shell_exec, process 717711
+[Inferior 1 (process 717711) detached]
+(gdb) 

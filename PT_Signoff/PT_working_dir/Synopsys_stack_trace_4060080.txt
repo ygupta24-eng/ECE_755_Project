@@ -1,0 +1,38 @@
+GNU gdb (Debian 10.1-1.7) 10.1.90.20210103-git
+Copyright (C) 2021 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+Type "show copying" and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<https://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+    <http://www.gnu.org/software/gdb/documentation/>.
+
+For help, type "help".
+Type "apropos word" to search for commands related to "word".
+Attaching to process 4060080
+[New LWP 4060081]
+[New LWP 4060082]
+[New LWP 4060084]
+[New LWP 4060085]
+[New LWP 4060086]
+[New LWP 4060087]
+[New LWP 4060088]
+[New LWP 4060089]
+[New LWP 4060090]
+[New LWP 4060091]
+[New LWP 4060092]
+[New LWP 4060093]
+[New LWP 4060094]
+[New LWP 4060095]
+[New LWP 4060096]
+[New LWP 4060097]
+[New LWP 4060098]
+[New LWP 4060107]
+[New LWP 4060108]
+[New LWP 4060112]
+[New LWP 4060113]
+[New LWP 4060114]

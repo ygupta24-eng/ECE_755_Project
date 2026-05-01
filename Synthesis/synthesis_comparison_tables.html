@@ -1,0 +1,135 @@
+
+<style>
+h2.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.tab{padding:6px 14px;border-radius:var(--border-radius-md);border:0.5px solid var(--color-border-secondary);font-size:13px;cursor:pointer;background:transparent;color:var(--color-text-secondary)}
+.tab.active{background:var(--color-background-secondary);color:var(--color-text-primary);border-color:var(--color-border-primary);font-weight:500}
+.panel{display:none}.panel.active{display:block}
+table{width:100%;border-collapse:collapse;font-size:13px;table-layout:fixed}
+th{text-align:left;padding:8px 10px;font-weight:500;font-size:12px;color:var(--color-text-secondary);border-bottom:0.5px solid var(--color-border-tertiary);background:var(--color-background-secondary)}
+td{padding:7px 10px;border-bottom:0.5px solid var(--color-border-tertiary);color:var(--color-text-primary);word-break:break-word}
+tr:last-child td{border-bottom:none}
+.design-name{font-weight:500;font-size:12px;color:var(--color-text-primary)}
+.best{color:#0F6E56;font-weight:500}.worst{color:#993C1D}.warn{color:#BA7517}
+.badge{display:inline-block;font-size:11px;padding:2px 7px;border-radius:var(--border-radius-md);margin-left:4px}
+.b-ok{background:#E1F5EE;color:#0F6E56}.b-warn{background:#FAEEDA;color:#854F0B}
+.note{font-size:12px;color:var(--color-text-secondary);margin-top:10px;padding:8px 10px;background:var(--color-background-secondary);border-radius:var(--border-radius-md);border-left:3px solid var(--color-border-secondary)}
+.col-design{width:28%}.col-val{width:18%}
+</style>
+<h2 class="sr-only">Synthesis comparison tables for 6 design optimizations covering area, power, timing, cell count, and compile time.</h2>
+
+<div style="padding:0.5rem 0 0">
+<div class="tabs">
+  <button class="tab active" onclick="show('area')">Area</button>
+  <button class="tab" onclick="show('power')">Power</button>
+  <button class="tab" onclick="show('timing')">Timing / QOR</button>
+  <button class="tab" onclick="show('cells')">Cell count</button>
+  <button class="tab" onclick="show('drc')">Design rules</button>
+  <button class="tab" onclick="show('compile')">Compile time</button>
+</div>
+
+<div id="area" class="panel active">
+<table>
+<colgroup><col class="col-design"><col><col><col><col></colgroup>
+<thead><tr><th>Design</th><th>Total cell area (µm²)</th><th>Comb. area (µm²)</th><th>Noncomb. area (µm²)</th><th>Buf/Inv area (µm²)</th></tr></thead>
+<tbody>
+<tr><td><span class="design-name">clk_gate_design</span><span class="badge b-warn">reference</span></td><td class="worst">742.57</td><td>457.40</td><td>285.17</td><td>115.09</td></tr>
+<tr><td><span class="design-name">act_in_out_design</span></td><td>436.71</td><td>206.37</td><td>230.35</td><td>27.38</td></tr>
+<tr><td><span class="design-name">act_in_out_wo_weight_overlap</span></td><td>420.52</td><td>202.30</td><td>218.22</td><td>23.53</td></tr>
+<tr><td><span class="design-name">act_out_design_doubt</span></td><td>427.73</td><td>197.38</td><td>230.35</td><td>22.45</td></tr>
+<tr><td><span class="design-name">act_out_wo_weight_overlap</span><span class="badge b-ok">best</span></td><td class="best">411.10</td><td class="best">192.88</td><td class="best">218.22</td><td class="best">17.77</td></tr>
+<tr><td><span class="design-name">weight_load_cycles_overlap</span></td><td>427.69</td><td>197.34</td><td>230.35</td><td>22.67</td></tr>
+</tbody>
+</table>
+<p class="note">All 5 optimized flat designs are 44–45% smaller than clk_gate_design. Among them, act_out_wo_weight_overlap achieves the smallest footprint across every area category.</p>
+</div>
+
+<div id="power" class="panel">
+<table>
+<colgroup><col class="col-design"><col><col><col><col></colgroup>
+<thead><tr><th>Design</th><th>Total power (mW)</th><th>Switch power (mW)</th><th>Internal power (mW)</th><th>Leakage (pW)</th></tr></thead>
+<tbody>
+<tr><td><span class="design-name">clk_gate_design</span><span class="badge b-ok">lowest total</span></td><td class="best">0.130</td><td>0.0210</td><td class="best">0.108</td><td class="worst">7.55×10⁵</td></tr>
+<tr><td><span class="design-name">act_in_out_design</span></td><td class="worst">0.297</td><td class="worst">0.0224</td><td class="worst">0.274</td><td>3.86×10⁵</td></tr>
+<tr><td><span class="design-name">act_in_out_wo_weight_overlap</span></td><td>0.271</td><td>0.0183</td><td>0.252</td><td>3.71×10⁵</td></tr>
+<tr><td><span class="design-name">act_out_design_doubt</span></td><td>0.296</td><td>0.0219</td><td>0.274</td><td>3.66×10⁵</td></tr>
+<tr><td><span class="design-name">act_out_wo_weight_overlap</span><span class="badge b-ok">best flat</span></td><td class="best" style="color:var(--color-text-primary)">0.270</td><td class="best">0.0180</td><td>0.251</td><td class="best">3.52×10⁵</td></tr>
+<tr><td><span class="design-name">weight_load_cycles_overlap</span></td><td>0.296</td><td>0.0220</td><td>0.274</td><td>3.66×10⁵</td></tr>
+</tbody>
+</table>
+<p class="note">clk_gate_design has the lowest total power (0.130 mW) due to gate-level clock gating reducing internal switching, but carries the highest leakage (7.55×10⁵ pW) from its much larger cell count. Among flat optimizations, act_out_wo_weight_overlap and act_in_out_wo_weight_overlap tie for lowest at ~0.270–0.271 mW.</p>
+</div>
+
+<div id="timing" class="panel">
+<table>
+<colgroup><col class="col-design"><col><col><col><col><col></colgroup>
+<thead><tr><th>Design</th><th>Critical path (ps)</th><th>Slack (ps)</th><th>Logic levels</th><th>TNS (ps)</th><th>Hold violations</th></tr></thead>
+<tbody>
+<tr><td><span class="design-name">clk_gate_design</span><span class="badge b-ok">fastest path</span></td><td class="best">59.47</td><td class="best">940.52</td><td class="best">0</td><td>0.00</td><td>0</td></tr>
+<tr><td><span class="design-name">act_in_out_design</span></td><td>193.85</td><td>806.14</td><td>6</td><td>0.00</td><td>0</td></tr>
+<tr><td><span class="design-name">act_in_out_wo_weight_overlap</span></td><td class="worst">331.47</td><td class="worst">668.52</td><td class="worst">7</td><td>0.00</td><td>0</td></tr>
+<tr><td><span class="design-name">act_out_design_doubt</span></td><td class="best" style="color:var(--color-text-primary)">193.14</td><td>806.85</td><td>6</td><td>0.00</td><td>0</td></tr>
+<tr><td><span class="design-name">act_out_wo_weight_overlap</span></td><td>268.13</td><td>731.86</td><td>7</td><td>0.00</td><td>0</td></tr>
+<tr><td><span class="design-name">weight_load_cycles_overlap</span></td><td>262.59</td><td>737.40</td><td>3</td><td>0.00</td><td>0</td></tr>
+</tbody>
+</table>
+<p class="note">All designs meet timing (TNS = 0, no hold violations). Clock period = 2000 ps. The clk_gate_design path is artificially short (register-to-register, 0 logic levels). Among flat designs, act_out_design_doubt has the shortest critical path (193.14 ps) and highest slack. The two "wo_weight_overlap" variants have longer paths at 7 logic levels.</p>
+</div>
+
+<div id="cells" class="panel">
+<table>
+<colgroup><col class="col-design"><col><col><col><col><col></colgroup>
+<thead><tr><th>Design</th><th>Total leaf cells</th><th>Comb. cells</th><th>Seq. cells</th><th>Buf/Inv cells</th><th>Nets</th></tr></thead>
+<tbody>
+<tr><td><span class="design-name">clk_gate_design</span></td><td class="worst">6205</td><td class="worst">5374</td><td class="worst">831</td><td class="worst">1705</td><td class="worst">6428</td></tr>
+<tr><td><span class="design-name">act_in_out_design</span></td><td>2977</td><td>2344</td><td>633</td><td>601</td><td>3200</td></tr>
+<tr><td><span class="design-name">act_in_out_wo_weight_overlap</span></td><td>2857</td><td>2256</td><td>601</td><td>515</td><td>3080</td></tr>
+<tr><td><span class="design-name">act_out_design_doubt</span></td><td>2750</td><td>2117</td><td>633</td><td>492</td><td>2973</td></tr>
+<tr><td><span class="design-name">act_out_wo_weight_overlap</span><span class="badge b-ok">best</span></td><td class="best">2611</td><td class="best">2010</td><td class="best" style="color:var(--color-text-primary)">601</td><td class="best">388</td><td class="best">2834</td></tr>
+<tr><td><span class="design-name">weight_load_cycles_overlap</span></td><td>2753</td><td>2120</td><td>633</td><td>492</td><td>2976</td></tr>
+</tbody>
+</table>
+<p class="note">The clk_gate_design is an unflattened hierarchical design (4×4 PE array + FSM) hence far more cells. Among flat variants, the two "wo_weight_overlap" designs share 601 sequential cells (vs. 633 in others), confirming fewer state registers. act_out_wo_weight_overlap has the lowest combinational cell and buf/inv count.</p>
+</div>
+
+<div id="drc" class="panel">
+<table>
+<colgroup><col class="col-design"><col><col><col><col></colgroup>
+<thead><tr><th>Design</th><th>Total nets</th><th>Nets w/ violations</th><th>Max trans violations</th><th>Max cap violations</th></tr></thead>
+<tbody>
+<tr><td><span class="design-name">clk_gate_design</span><span class="badge b-warn">violations</span></td><td>6428</td><td class="worst">5938</td><td class="worst">5937</td><td>0</td></tr>
+<tr><td><span class="design-name">act_in_out_design</span><span class="badge b-ok">clean</span></td><td>3200</td><td class="best">0</td><td class="best">0</td><td class="best">0</td></tr>
+<tr><td><span class="design-name">act_in_out_wo_weight_overlap</span><span class="badge b-ok">clean</span></td><td>3080</td><td class="best">0</td><td class="best">0</td><td class="best">0</td></tr>
+<tr><td><span class="design-name">act_out_design_doubt</span><span class="badge b-ok">clean</span></td><td>2973</td><td class="best">0</td><td class="best">0</td><td class="best">0</td></tr>
+<tr><td><span class="design-name">act_out_wo_weight_overlap</span><span class="badge b-ok">clean</span></td><td>2834</td><td class="best">0</td><td class="best">0</td><td class="best">0</td></tr>
+<tr><td><span class="design-name">weight_load_cycles_overlap</span><span class="badge b-ok">clean</span></td><td>2976</td><td class="best">0</td><td class="best">0</td><td class="best">0</td></tr>
+</tbody>
+</table>
+<p class="note">All 5 flat optimizations are DRC-clean. clk_gate_design has 5938 max-transition violations — this is the unoptimized hierarchical reference before transition time fixing was applied downstream.</p>
+</div>
+
+<div id="compile" class="panel">
+<table>
+<colgroup><col class="col-design"><col><col><col><col></colgroup>
+<thead><tr><th>Design</th><th>CPU time (s)</th><th>Wall time (s)</th><th>Logic opt (s)</th><th>Map opt (s)</th></tr></thead>
+<tbody>
+<tr><td><span class="design-name">clk_gate_design</span></td><td class="worst">125.92</td><td class="worst">136.79</td><td>2.43</td><td class="worst">118.01</td></tr>
+<tr><td><span class="design-name">act_in_out_design</span></td><td>4.65</td><td>3.72</td><td>1.40</td><td>2.07</td></tr>
+<tr><td><span class="design-name">act_in_out_wo_weight_overlap</span></td><td class="worst" style="color:var(--color-text-primary)">5.16</td><td class="worst" style="color:var(--color-text-primary)">4.05</td><td class="worst" style="color:var(--color-text-primary)">1.56</td><td class="worst" style="color:var(--color-text-primary)">2.42</td></tr>
+<tr><td><span class="design-name">act_out_design_doubt</span><span class="badge b-ok">fastest flat</span></td><td class="best">4.35</td><td>3.79</td><td>1.23</td><td>1.74</td></tr>
+<tr><td><span class="design-name">act_out_wo_weight_overlap</span></td><td>4.39</td><td class="best">3.73</td><td class="best">1.16</td><td>1.92</td></tr>
+<tr><td><span class="design-name">weight_load_cycles_overlap</span></td><td>4.41</td><td>3.81</td><td>1.20</td><td>1.82</td></tr>
+</tbody>
+</table>
+<p class="note">clk_gate_design took 29× longer — almost entirely in mapping optimization (118 s vs. ~2 s), reflecting the complexity of the full hierarchical PE-array design. All 5 flat optimizations compile in under 5.2 s total.</p>
+</div>
+</div>
+
+<script>
+function show(id){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>

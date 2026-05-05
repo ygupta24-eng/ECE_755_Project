@@ -29,7 +29,7 @@ set TLEF_PATH "./asap7sc7p5t_28/techlef_misc/"
 set TECH_LEF "$TLEF_PATH/asap7_tech_4x_201209.lef"
 set CELL_LEF "$LEF_PATH/asap7sc7p5t_28_R_4x_220121a.lef"
 
-puts "✓ Library paths configured"
+puts "Library paths configured"
 puts ""
 
 ##############################################################################
@@ -55,7 +55,7 @@ if {[catch {
     exit 1
 }
 
-puts "✓ Design initialized successfully"
+puts "Design initialized successfully"
 
 # Design statistics
 if {[catch {
@@ -76,7 +76,7 @@ puts "Configuring design mode..."
 setDesignMode -process 7 -node N7
 setMultiCpuUsage -localCpu 8
 
-puts "✓ Design mode configured"
+puts "Design mode configured"
 puts ""
 
 ##############################################################################
@@ -85,7 +85,7 @@ puts ""
 globalNetConnect VDD -type pgpin -pin VDD -inst *
 globalNetConnect VSS -type pgpin -pin VSS -inst *
 
-puts "✓ Global nets connected"
+puts "Global nets connected"
 puts ""
 
 ##############################################################################
@@ -128,7 +128,7 @@ if {[catch {
 # Add well taps
 if {[catch {
     addWellTap -cell TAPCELL_ASAP7_75t_R -cellInterval 12.960 -inRowOffset 1.296
-    puts "✓ Well taps added"
+    puts "Well taps added"
 } msg]} {
     puts "Warning: Well taps may not be available"
 }
@@ -284,7 +284,7 @@ set fifo_region_ury [expr {$core_ury - $pe_margin_top}]
 
 puts "  FIFO region: ($fifo_region_llx, $fifo_region_lly) to ($fifo_region_urx, $fifo_region_ury)"
 
-puts "✓ Floorplan regions defined"
+puts "Floorplan regions defined"
 puts ""
 
 ##############################################################################
@@ -318,7 +318,7 @@ if {[catch {
     puts "  PE_ARRAY_GROUP: $msg"
 }
 
-puts "✓ Placement groups configured"
+puts "Placement groups configured"
 puts ""
 
 ##############################################################################
@@ -336,7 +336,7 @@ setPlaceMode -ignoreIlmMode none
 setPlaceMode -congProp on
 setPlaceMode -congPropExponent 2.0
 
-puts "✓ Hierarchical placement configured"
+puts "Hierarchical placement configured"
 puts ""
 
 ##############################################################################
@@ -346,13 +346,13 @@ puts "Performing placement..."
 
 if {[catch {
     place_design
-    puts "✓ Initial placement complete"
+    puts "Initial placement complete"
 } msg]} {
     puts "ERROR during placement: $msg"
     # Try fallback
     if {[catch {
         placeDesign
-        puts "✓ Placement complete (fallback command)"
+        puts "Placement complete (fallback command)"
     } msg2]} {
         puts "ERROR: Placement failed: $msg2"
         exit 1
@@ -368,7 +368,7 @@ puts "Optimizing placement for timing and power..."
 
 if {[catch {
     optDesign -prePlacement
-    puts "✓ Pre-placement optimization complete"
+    puts "Pre-placement optimization complete"
 } msg]} {
     puts "  Pre-placement optimization skipped or not available"
 }
@@ -400,7 +400,7 @@ puts "  CTS skew target: ${cts_target_skew} ns"
 
 if {[catch {
     clockDesign -fixedInstBeforeCTS -genSpecFile
-    puts "✓ Clock tree synthesis complete"
+    puts "Clock tree synthesis complete"
 } msg]} {
     puts "ERROR during CTS: $msg"
     # Continue without CTS for now
@@ -423,7 +423,7 @@ setNanoRouteMode -grouteExpTdStdSlackRatio 0.0
 setNanoRouteMode -routeWithSiWire true
 setNanoRouteMode -routeWithLithoDriven true
 
-puts "✓ Routing setup complete"
+puts "Routing setup complete"
 puts ""
 
 ##############################################################################
@@ -433,7 +433,7 @@ puts "Performing global routing..."
 
 if {[catch {
     globalDetailRoute
-    puts "✓ Global routing complete"
+    puts "Global routing complete"
 } msg]} {
     puts "  Global routing: $msg"
 }
@@ -447,12 +447,12 @@ puts "Performing detailed routing..."
 
 if {[catch {
     detailedRoute -drouteConfig {./Innovus.config} -clean
-    puts "✓ Detailed routing complete"
+    puts "Detailed routing complete"
 } msg]} {
     puts "  Attempting standard detailed routing..."
     if {[catch {
         detailedRoute
-        puts "✓ Detailed routing complete (standard mode)"
+        puts "Detailed routing complete (standard mode)"
     } msg2]} {
         puts "Warning: Detailed routing: $msg2"
     }
@@ -472,7 +472,7 @@ file mkdir timingReports
 # DRC check
 if {[catch {
     verifyGeometry -report reports/verify_geometry.rpt
-    puts "✓ Geometry verification complete"
+    puts "Geometry verification complete"
 } msg]} {
     puts "  Geometry verification: $msg"
 }
@@ -481,7 +481,7 @@ if {[catch {
 if {[catch {
     timeDesign -postRoute -reportOnly -setEndTime 100 \
         > timingReports/timing_postRoute.rpt
-    puts "✓ Post-route timing report generated"
+    puts "Post-route timing report generated"
 } msg]} {
     puts "  Timing report: $msg"
 }
@@ -489,7 +489,7 @@ if {[catch {
 # Power report
 if {[catch {
     reportPower -outfile reports/power_report.rpt
-    puts "✓ Power report generated"
+    puts "Power report generated"
 } msg]} {
     puts "  Power report: $msg"
 }
@@ -497,7 +497,7 @@ if {[catch {
 # Area report
 if {[catch {
     reportArea -outfile reports/area_report.rpt
-    puts "✓ Area report generated"
+    puts "Area report generated"
 } msg]} {
     puts "  Area report: $msg"
 }
@@ -515,7 +515,7 @@ file mkdir outputs
 if {[catch {
     defOut -file outputs/${DESIGN_NAME}.def -specialCells \
         -floorplan -fillCellPadding -greenBox
-    puts "✓ DEF file exported: outputs/${DESIGN_NAME}.def"
+    puts "DEF file exported: outputs/${DESIGN_NAME}.def"
 } msg]} {
     puts "ERROR exporting DEF: $msg"
 }
@@ -523,7 +523,7 @@ if {[catch {
 # Save Verilog (netlist for verification)
 if {[catch {
     verilogOut -file outputs/${DESIGN_NAME}_apr.v -cellInst
-    puts "✓ Verilog netlist exported: outputs/${DESIGN_NAME}_apr.v"
+    puts "Verilog netlist exported: outputs/${DESIGN_NAME}_apr.v"
 } msg]} {
     puts "ERROR exporting Verilog: $msg"
 }
@@ -531,7 +531,7 @@ if {[catch {
 # Save SPEF (parasitics)
 if {[catch {
     rcOut -spef outputs/${DESIGN_NAME}_apr.spef
-    puts "✓ SPEF file exported: outputs/${DESIGN_NAME}_apr.spef"
+    puts "SPEF file exported: outputs/${DESIGN_NAME}_apr.spef"
 } msg]} {
     puts "  SPEF export: $msg"
 }
@@ -539,7 +539,7 @@ if {[catch {
 # Save SDF (timing data)
 if {[catch {
     sdfOut -file outputs/${DESIGN_NAME}_apr.sdf
-    puts "✓ SDF file exported: outputs/${DESIGN_NAME}_apr.sdf"
+    puts "SDF file exported: outputs/${DESIGN_NAME}_apr.sdf"
 } msg]} {
     puts "  SDF export: $msg"
 }
@@ -548,53 +548,12 @@ if {[catch {
 if {[catch {
     streamOut -format gds -mapfile asap7sc7p5t_28/gds2map.txt \
         -file outputs/${DESIGN_NAME}_apr.gds -merge
-    puts "✓ GDS file exported: outputs/${DESIGN_NAME}_apr.gds"
+    puts "GDS file exported: outputs/${DESIGN_NAME}_apr.gds"
 } msg]} {
     puts "Note: GDS export: $msg"
 }
 
 puts ""
 
-##############################################################################
-# Final Summary
-##############################################################################
-puts "┌─────────────────────────────────────────────────────────────────┐"
-puts "│                  APR FLOW COMPLETE                              │"
-puts "├─────────────────────────────────────────────────────────────────┤"
-puts "│ Design: $DESIGN_NAME"
-puts "│ Outputs:"
-puts "│   • DEF:      outputs/${DESIGN_NAME}.def"
-puts "│   • Verilog:  outputs/${DESIGN_NAME}_apr.v"
-puts "│   • SPEF:     outputs/${DESIGN_NAME}_apr.spef"
-puts "│   • SDF:      outputs/${DESIGN_NAME}_apr.sdf"
-puts "│   • GDS:      outputs/${DESIGN_NAME}_apr.gds"
-puts "│"
-puts "│ Floorplan Strategy:"
-puts "│   ┌─────────────────────────────────────────────┐"
-puts "│   │    zigzag_fsm (control strip, 16 µm)       │ ← TOP"
-puts "│   ├────────────────────────────────────────────┤"
-puts "│   │  PE[0][0]│PE[0][1]│PE[0][2]│PE[0][3]     │"
-puts "│   │  ──────────────────────────────────────────│"
-puts "│   │  PE[1][0]│  PE  │  PE   │  PE            │"
-puts "│   │  ──────────────────────────────────────────│"
-puts "│   │  PE[2][0]│  array │ grid  │                │"
-puts "│   │  ──────────────────────────────────────────│"
-puts "│   │  PE[3][0]│PE[3][1]│PE[3][2]│PE[3][3]     │"
-puts "│   │ ↑FIFO      (main 4×4 array)                │"
-puts "│   └────────────────────────────────────────────┘"
-puts "│"
-puts "│ I/O Ports:"
-puts "│   • TOP:    w_in[0..3] (weight chain)"
-puts "│   • RIGHT:  h_in0, h_in1 (horizontal data)"
-puts "│   • BOTTOM: v_in0, v_in1 (vertical data)"
-puts "│   • LEFT:   psum_out0, psum_out1 (output drain)"
-puts "│"
-puts "└─────────────────────────────────────────────────────────────────┘"
-
-puts "\nNext steps:"
-puts "  1. Check timing reports: cat timingReports/timing_postRoute.rpt"
-puts "  2. View GDS with Calibre RVE or similar tool"
-puts "  3. Run post-layout verification (PT SignalIntegrity)"
-puts ""
 
 exit 0
